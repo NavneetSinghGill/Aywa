@@ -31,6 +31,7 @@
 		48B112481FDE5D39001E92FE /* LandingWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B112421FDE5D39001E92FE /* LandingWorker.swift */; };
 		48B1124A1FDE69B1001E92FE /* LandingContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B112491FDE69B1001E92FE /* LandingContentViewController.swift */; };
 		48B1126A1FDEA55E001E92FE /* HelveticaBlackCyrillicBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48B112691FDEA55E001E92FE /* HelveticaBlackCyrillicBold.ttf */; };
+		534D69661FE0067E00896F0B /* Main~iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5346F9081FDFFA7A00D92D38 /* Main~iPad.storyboard */; };
 		F3E2B83D070F1488BA7CB3B7 /* Pods_aywa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB62771C59A206259FEF1D5 /* Pods_aywa.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		48B112651FDE846E001E92FE /* RealAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealAPI.swift; sourceTree = "<group>"; };
 		48B112661FDE846E001E92FE /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		48B112691FDEA55E001E92FE /* HelveticaBlackCyrillicBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HelveticaBlackCyrillicBold.ttf; sourceTree = "<group>"; };
+		5346F9091FDFFA7A00D92D38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/Main~iPad.storyboard"; sourceTree = "<group>"; };
 		ADB62771C59A206259FEF1D5 /* Pods_aywa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_aywa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -186,6 +188,7 @@
 			children = (
 				48B112261FDE5B4C001E92FE /* LaunchScreen.storyboard */,
 				48B112211FDE5B4C001E92FE /* Main.storyboard */,
+				5346F9081FDFFA7A00D92D38 /* Main~iPad.storyboard */,
 			);
 			path = StoryboardsAndXIBs;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				534D69661FE0067E00896F0B /* Main~iPad.storyboard in Resources */,
 				48B112281FDE5B4C001E92FE /* LaunchScreen.storyboard in Resources */,
 				48B1126A1FDEA55E001E92FE /* HelveticaBlackCyrillicBold.ttf in Resources */,
 				48B112251FDE5B4C001E92FE /* Assets.xcassets in Resources */,
@@ -391,6 +395,14 @@
 				48B112271FDE5B4C001E92FE /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		5346F9081FDFFA7A00D92D38 /* Main~iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5346F9091FDFFA7A00D92D38 /* Base */,
+			);
+			name = "Main~iPad.storyboard";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

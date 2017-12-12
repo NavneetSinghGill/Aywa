@@ -74,7 +74,6 @@ class LandingViewController: UIViewController, LandingDisplayLogic
     }
     
     // MARK: - IBOutlet
-    
     @IBOutlet weak var bottomActionView: UIView!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var skipButton: UIButton!
@@ -140,7 +139,7 @@ class LandingViewController: UIViewController, LandingDisplayLogic
     var pageControlViewController:UIPageViewController = UIPageViewController.init(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
     var viewControllerList:[UIViewController] = []
     var selectedPageIndex:Int? = nil
-    let pageCount = 4
+    let pageCount = 5
     
     private lazy var pageControllerView: UIView = {
         for index in 0..<pageCount {
