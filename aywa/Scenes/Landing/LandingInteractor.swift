@@ -14,7 +14,7 @@ import UIKit
 
 protocol LandingBusinessLogic
 {
-  func doSomething(request: Landing.Something.Request)
+  func fetchToken(request: Landing.JWTToken.Request)
 }
 
 protocol LandingDataStore
@@ -28,14 +28,17 @@ class LandingInteractor: LandingBusinessLogic, LandingDataStore
   var worker: LandingWorker?
   //var name: String = ""
   
-  // MARK: Do something
+  // MARK: Fetch JWT Token
   
-  func doSomething(request: Landing.Something.Request)
+  func fetchToken(request: Landing.JWTToken.Request)
   {
     worker = LandingWorker()
-    worker?.doSomeWork()
-    
-    let response = Landing.Something.Response()
-    presenter?.presentSomething(response: response)
+    worker?.fetchJWTToken(request: request, success: { (response) in
+        self.presenter?.presentNextScreen(viewModel: response)
+        
+    }, fail: { (response) in
+        self.presenter?.presentError(response: response)
+        
+    })
   }
 }

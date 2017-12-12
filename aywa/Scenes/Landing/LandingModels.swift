@@ -12,14 +12,26 @@
 
 import UIKit
 
+let tokenURL = "/token"
+let secret = "Secret"
+
 enum Landing
 {
   // MARK: Use cases
   
-  enum Something
+  enum JWTToken
   {
     struct Request
     {
+        func baseRequest() -> BaseRequest {
+            
+            let baseRequest = BaseRequest()
+            baseRequest.urlPath = tokenURL
+            baseRequest.parameters[Constants.kApiKey] = Constants.kApiKeyValue
+            baseRequest.parameters[secret] = Constants.kApiKeyValue
+            baseRequest.parameters[Constants.deviceIdentifier] = UserDefaults.standard.string(forKey: Constants.deviceIdentifier) ?? (UIDevice.current.identifierForVendor?.uuidString)!
+            return baseRequest
+        }
     }
     struct Response
     {

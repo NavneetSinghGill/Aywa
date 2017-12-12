@@ -7,13 +7,13 @@
 	<key>LocalURL</key>
 	<string>127.0.0.1</string>
 	<key>ProductionURL</key>
-	<string>api.aywa.net/</string>
+	<string>api.aywa.com/</string>
 	<key>StagingURL</key>
-	<string>api.aywa.net/</string>
+	<string>api.aywa.com/</string>
 	<key>URLPathSubstring</key>
-	<string></string>
+	<string>api</string>
 	<key>EnableSecureConnection</key>
-	<false/>
+	<true/>
 	<key>EnablePullToRefresh</key>
 	<false/>
 	<key>EnableBanner</key>

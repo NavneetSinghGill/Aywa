@@ -12,9 +12,35 @@
 
 import UIKit
 
+typealias failureResponseHandler = (_ response:Landing.JWTToken.Response) ->()
+typealias sucessResponseHandler = (_ response:Landing.JWTToken.ViewModel) ->()
+
 class LandingWorker
 {
-  func doSomeWork()
-  {
-  }
+    func fetchJWTToken(request:Landing.JWTToken.Request, success:@escaping(sucessResponseHandler), fail:@escaping(failureResponseHandler))
+    {
+        // NOTE: Do the work
+        //call network etc.
+        let manager = RequestManager()
+        
+        manager.fetchJWTToken(request: request) { (status, response) in
+            if status {
+                if let responseDict = response as? Dictionary<String, Any> {
+                    
+//                    let token:String? = responseDict["token"] as? String
+//                    if token != nil && (token!.characters.count > 0) {
+//                        success(Login.ViewModel(object: token as AnyObject))
+//                    }
+                }
+                
+            }
+            else {
+                var message:String? = Constants.kErrorMessage
+                if let result = response as? Dictionary<String, Any> {
+                    message = result["message"] as? String
+                }
+//                fail(Login.Response(object: nil, isError: true, message: message))
+            }
+        }
+    }
 }

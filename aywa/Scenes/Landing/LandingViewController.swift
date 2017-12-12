@@ -14,7 +14,8 @@ import UIKit
 
 protocol LandingDisplayLogic: class
 {
-    func displaySomething(viewModel: Landing.Something.ViewModel)
+    func displayError(response: Landing.JWTToken.Response)
+    func displayNextScreen(viewModel: Landing.JWTToken.ViewModel)
 }
 
 class LandingViewController: UIViewController, LandingDisplayLogic
@@ -69,7 +70,6 @@ class LandingViewController: UIViewController, LandingDisplayLogic
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        doSomething()
         initialSetup()
     }
     
@@ -80,12 +80,43 @@ class LandingViewController: UIViewController, LandingDisplayLogic
     @IBOutlet weak var skipButton: UIButton!
     @IBOutlet weak var pageControl: UIPageControl!
     
+    // MARK: - IBActions
+    
+    @IBAction func signupButtonTapped(_ sender: UIButton) {
+        doSignUp()
+    }
+    
+    @IBAction func signinButtonTapped(_ sender: UIButton) {
+        doSignIn()
+    }
+    
+    @IBAction func browseButtonTapped(_ sender: UIButton) {
+        doBrowse()
+    }
+    
+    // MARK: fetch token
+    
+    func fetchToken()
+    {
+        let request = Landing.JWTToken.Request()
+        interactor?.fetchToken(request: request)
+    }
+    
     // MARK: - Private Methods
     
-    func doSomething()
-    {
-        let request = Landing.Something.Request()
-        interactor?.doSomething(request: request)
+    func doSignUp() {
+        fetchToken()
+        
+    }
+    
+    func doSignIn() {
+        fetchToken()
+        
+    }
+    
+    func doBrowse() {
+        fetchToken()
+        
     }
     
     func initialSetup() {
@@ -94,9 +125,14 @@ class LandingViewController: UIViewController, LandingDisplayLogic
         skipButton.appBoldFont()
     }
     
-    func displaySomething(viewModel: Landing.Something.ViewModel)
+    func displayError(response: Landing.JWTToken.Response)
     {
-        //nameTextField.text = viewModel.name
+        print("Error occured")
+    }
+    
+    func displayNextScreen(viewModel: Landing.JWTToken.ViewModel)
+    {
+        print("Show Main Screen")
     }
     
     // MARK: Page controller methods

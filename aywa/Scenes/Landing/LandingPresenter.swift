@@ -14,18 +14,23 @@ import UIKit
 
 protocol LandingPresentationLogic
 {
-  func presentSomething(response: Landing.Something.Response)
+    func presentError(response: Landing.JWTToken.Response)
+    func presentNextScreen(viewModel: Landing.JWTToken.ViewModel)
 }
 
 class LandingPresenter: LandingPresentationLogic
 {
   weak var viewController: LandingDisplayLogic?
   
-  // MARK: Do something
-  
-  func presentSomething(response: Landing.Something.Response)
-  {
-    let viewModel = Landing.Something.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
-  }
+  // MARK: Fetch Token
+    
+    func presentError(response: Landing.JWTToken.Response)
+    {
+        viewController?.displayError(response: response)
+    }
+    
+    func presentNextScreen(viewModel: Landing.JWTToken.ViewModel)
+    {
+        viewController?.displayNextScreen(viewModel: viewModel)
+    }
 }
