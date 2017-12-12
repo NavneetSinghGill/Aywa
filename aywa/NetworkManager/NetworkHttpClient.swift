@@ -12,6 +12,8 @@ import Alamofire
 import AlamofireObjectMapper
 import ObjectMapper
 
+
+
 class NetworkHttpClient: NSObject {
     
     typealias successBlock = (_ response: Any?) -> Void
@@ -48,72 +50,41 @@ class NetworkHttpClient: NSObject {
     }
     
     // MARK: API calls
-    //TODO: need to pass generic parameter to handle response type
-    func getAPICall(_ strURL : String, parameters : Dictionary<String, Any>?, success:@escaping successBlock, failure:@escaping failureBlock) {
-        //performAPICall(response: response,strURL, methodType: .get, parameters: parameters, requestHeaders: nil, success: success, failure: failure)
+    func getAPICall<T:Mappable>(_ strURL : String, parameters : Dictionary<String, Any>?, genericResponse:T.Type, success:@escaping successBlock, failure:@escaping failureBlock) {
+        performAPICall(strURL, methodType: .get, parameters: parameters, requestHeaders: nil, genericResponse: genericResponse, success: success, failure: failure)
     }
     
-    func putAPICall(_ strURL : String, parameters : Dictionary<String, Any>?, headers : [String : String]?, success:@escaping successBlock, failure:@escaping failureBlock) {
-        //performAPICall(response: response,strURL, methodType: .put, parameters: parameters, requestHeaders: headers, success: success, failure: failure)
+    func putAPICall<T:Mappable>(_ strURL : String, parameters : Dictionary<String, Any>?, headers : [String : String]?, genericResponse:T.Type, success:@escaping successBlock, failure:@escaping failureBlock) {
+        performAPICall(strURL, methodType: .put, parameters: parameters, requestHeaders: headers, genericResponse: genericResponse, success: success, failure: failure)
     }
     
-    func postAPICall(_ strURL : String, parameters : Dictionary<String, Any>?, headers : [String : String]?, success:@escaping successBlock, failure:@escaping failureBlock) {
-        performAPICall(strURL, methodType: .post, parameters: parameters, requestHeaders: headers, success: success, failure: failure)
+    func postAPICall<T:Mappable>(_ strURL : String, parameters : Dictionary<String, Any>?, headers : [String : String]?, genericResponse:T.Type, success:@escaping successBlock, failure:@escaping failureBlock) {
+        performAPICall(strURL, methodType: .post, parameters: parameters, requestHeaders: headers, genericResponse:genericResponse, success: success, failure: failure)
     }
     
-    func deleteAPICall(_ strURL : String, parameters : Dictionary<String, Any>?, headers : [String : String]?, success:@escaping successBlock, failure:@escaping failureBlock) {
-        //performAPICall(response: response, strURL, methodType: .delete, parameters: parameters, requestHeaders: headers, success: success, failure: failure)
+    func deleteAPICall<T:Mappable>(_ strURL : String, parameters : Dictionary<String, Any>?, headers : [String : String]?, genericResponse:T.Type, success:@escaping successBlock, failure:@escaping failureBlock) {
+        performAPICall(strURL, methodType: .delete, parameters: parameters, requestHeaders: headers, genericResponse: genericResponse, success: success, failure: failure)
     }
     
-    func performAPICall(_ strURL : String, methodType: HTTPMethod, parameters : Dictionary<String, Any>?, requestHeaders : [String : String]?, success:@escaping successBlock, failure:@escaping failureBlock){
+    func performAPICall<T:Mappable>(_ strURL : String, methodType: HTTPMethod, parameters : Dictionary<String, Any>?, requestHeaders : [String : String]?, genericResponse:T.Type, success:@escaping successBlock, failure:@escaping failureBlock){
         let completeURL:String = NetworkHttpClient.baseUrl() + BaseRequest.getUrl(path: strURL)
         var headers = requestHeaders
         if headers == nil {
             headers = NetworkHttpClient.getHeader() as? HTTPHeaders
         }
         
-        
-        var request = URLRequest(url: URL(string: completeURL)!)
-        request.httpMethod = "POST"
-        request.setValue(Constants.kApiKeyValue, forHTTPHeaderField: Constants.kApiKey)
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        
-        
-        
-        let data = try! JSONSerialization.data(withJSONObject: parameters!, options: JSONSerialization.WritingOptions.prettyPrinted)
-        
-        let json = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
-        if let json = json {
-            print(json)
-        }
-        request.httpBody = json!.data(using: String.Encoding.utf8.rawValue);
-
-        
-        
-
-        Alamofire.request(request).responseJSON { (responseObject) -> Void in
-
-            if responseObject.result.isSuccess {
-                success(responseObject)
+        Alamofire.request(completeURL, method: methodType, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseObject { (response: DataResponse<T>) in
+            
+            switch response.result {
+            case .success(let value):
+               print(value)
+               success(response)
+            case .failure(let error):
+                print(error.localizedDescription)
+                failure(response)
             }
-            if responseObject.result.isFailure {
-                failure(responseObject)
-            }
+            
         }
-        
-//        Alamofire.request(completeURL, method: methodType, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseObject { (response: DataResponse<T>) in
-//            
-//            let authResponse = response.result.value
-//            print(authResponse ?? "fail....")
-//            if response.result.isSuccess {
-//                success(response)
-//            }
-//            if response.result.isFailure {
-//                failure(response)
-//            }
-//            
-//        }
     }
     
     func multipartPostAPICall(_ strURL: String, parameters: Dictionary<String, Any>?, data: Data, name: String, fileName: String, mimeType: String, success: @escaping successBlock, failure: @escaping failureBlock) -> Void{
@@ -137,10 +108,12 @@ class NetworkHttpClient: NSObject {
         var header: HTTPHeaders = [String : String]()
         header[Constants.kApiKey] = Constants.kApiKeyValue
         header["Content-Type"] = "application/json"
-//        if UserDefaults.standard.value(forKey: Constants.kSessionKey) != nil {
-//            header[Constants.kSessionKey] = "Bearer " + (UserDefaults.standard.value(forKey: Constants.kSessionKey) as! String)
-//        }
+        header["Origin"] = "www.aywa.com"
+        //        if UserDefaults.standard.value(forKey: Constants.kSessionKey) != nil {
+        //            header[Constants.kSessionKey] = "Bearer " + (UserDefaults.standard.value(forKey: Constants.kSessionKey) as! String)
+        //        }
         print("Header: \(header)")
         return header
     }
 }
+

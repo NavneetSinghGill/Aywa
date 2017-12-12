@@ -19,28 +19,30 @@ class LandingWorker
 {
     func fetchJWTToken(request:Landing.JWTToken.Request, success:@escaping(sucessResponseHandler), fail:@escaping(failureResponseHandler))
     {
-        // NOTE: Do the work
         //call network etc.
         let manager = RequestManager()
         
         manager.fetchJWTToken(request: request) { (status, response) in
+            var message:String = Constants.kErrorMessage
             if status {
-                if let responseDict = response as? Dictionary<String, Any> {
-                    
-//                    let token:String? = responseDict["token"] as? String
-//                    if token != nil && (token!.characters.count > 0) {
-//                        success(Login.ViewModel(object: token as AnyObject))
-//                    }
+                if let result = response as? Landing.JWTToken.Response {
+                    success(result.viewModel!)
+                    return
                 }
-                
             }
             else {
-                var message:String? = Constants.kErrorMessage
-                if let result = response as? Dictionary<String, Any> {
-                    message = result["message"] as? String
+                if let result = response as? Landing.JWTToken.Response {
+                    fail(result)
+                    return
                 }
-//                fail(Login.Response(object: nil, isError: true, message: message))
+                else
+                {
+                    if let result = response as? String {
+                        message = result
+                    }
+                }
             }
+            fail(Landing.JWTToken.Response(message:message)!)
         }
     }
 }

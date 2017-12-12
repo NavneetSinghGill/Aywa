@@ -41,7 +41,7 @@ struct Constants {
     static let ResponseStatusSuccess = 200
     static let ResponseStatusCreated = 201
     static let ResponseStatusAccepted = 202
-    static let ResponseStatusForbidden = 401
+    static let ResponseStatusForbidden = 403
     
     // MARK: - Network Keys
     static let InsecureProtocol = "http://"

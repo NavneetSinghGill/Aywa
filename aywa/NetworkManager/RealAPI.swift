@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import ObjectMapper
 
 class RealAPI: NSObject {
     
@@ -15,103 +16,100 @@ class RealAPI: NSObject {
     var isForbiddenRetry: Bool = false
     var realAPIBlock: CompletionHandler = { _,_ in }
     
-    func putObject(request: BaseRequest, completion: @escaping CompletionHandler) -> Void {
-        interactAPIWithPutObject(request: request, completion: completion)
+    func putObject<T:Mappable>(request: BaseRequest, genericResponse:T.Type, completion: @escaping CompletionHandler) -> Void {
+        interactAPIWithPutObject(request: request, genericResponse: genericResponse, completion: completion)
     }
     
-    func getObject(request: BaseRequest, completion: @escaping CompletionHandler) -> Void {
-        interactAPIWithGetObject(request: request, completion: completion)
+    func getObject<T:Mappable>(request: BaseRequest, genericResponse:T.Type, completion: @escaping CompletionHandler) -> Void {
+        interactAPIWithGetObject(request: request, genericResponse: genericResponse, completion: completion)
     }
     
-    func postObject(request: BaseRequest, completion: @escaping CompletionHandler) -> Void {
-        interactAPIWithPostObject(request: request, completion: completion)
+    func postObject<T:Mappable>(request: BaseRequest, genericResponse:T.Type, completion: @escaping CompletionHandler) -> Void {
+        interactAPIWithPostObject(request: request, genericResponse: genericResponse, completion: completion)
     }
     
-    func deleteObject(request: BaseRequest, completion: @escaping CompletionHandler) -> Void {
-        interactAPIWithDeleteObject(request: request, completion: completion)
+    func deleteObject<T:Mappable>(request: BaseRequest, genericResponse:T.Type, completion: @escaping CompletionHandler) -> Void {
+        interactAPIWithDeleteObject(request: request, genericResponse: genericResponse, completion: completion)
     }
     
-    func multiPartObjectPost(request: BaseRequest, completion: @escaping CompletionHandler) -> Void {
-        interactAPIWithMultipartObjectPost(request: request, completion: completion)
+    func multiPartObjectPost<T:Mappable>(request: BaseRequest, genericResponse:T.Type, completion: @escaping CompletionHandler) -> Void {
+        interactAPIWithMultipartObjectPost(request: request, genericResponse: genericResponse, completion: completion)
     }
     
     // MARK: Request methods
-    func interactAPIWithGetObject(request: BaseRequest, completion: @escaping CompletionHandler) -> Void {
+    func interactAPIWithGetObject<T:Mappable>(request: BaseRequest, genericResponse:T.Type, completion: @escaping CompletionHandler) -> Void {
         initialSetup(request: request, requestType: Constants.RequestType.GET.rawValue)
-        NetworkHttpClient.sharedInstance.getAPICall(request.urlPath, parameters: request.getParams(), success: { (responseObject) in
-            self.handleSuccessResponse(response: responseObject, block: completion)
+        NetworkHttpClient.sharedInstance.getAPICall(request.urlPath, parameters: request.getParams(), genericResponse: genericResponse, success: { (responseObject) in
+            
+            
+            self.handleSuccessResponse(response: responseObject as? DataResponse<T>, block: completion)
         }, failure: { (responseObject) in
-            self.handleError(response: responseObject, block: completion)
+            self.handleError(response: responseObject as? DataResponse<T>, block: completion)
         })
     }
     
-    func interactAPIWithPutObject(request: BaseRequest, completion: @escaping CompletionHandler) -> Void {
+    func interactAPIWithPutObject<T:Mappable>(request: BaseRequest, genericResponse:T.Type, completion: @escaping CompletionHandler) -> Void {
         initialSetup(request: request, requestType: Constants.RequestType.PUT.rawValue)
-        NetworkHttpClient.sharedInstance.putAPICall(request.urlPath, parameters: request.getParams(), headers: request.headers, success: { (responseObject) in
-            self.handleSuccessResponse(response: responseObject, block: completion)
+        NetworkHttpClient.sharedInstance.putAPICall(request.urlPath, parameters: request.getParams(), headers: request.headers, genericResponse: genericResponse, success: { (responseObject) in
+            self.handleSuccessResponse(response: responseObject as? DataResponse<T>, block: completion)
         }, failure: { (responseObject) in
-            self.handleError(response: responseObject, block: completion)
+            self.handleError(response: responseObject as? DataResponse<T>, block: completion)
         })
     }
     
-    func interactAPIWithPostObject(request: BaseRequest, completion: @escaping CompletionHandler) -> Void {
+    func interactAPIWithPostObject<T:Mappable>(request: BaseRequest, genericResponse:T.Type, completion: @escaping CompletionHandler) -> Void {
         initialSetup(request: request, requestType: Constants.RequestType.POST.rawValue)
-        NetworkHttpClient.sharedInstance.postAPICall(request.urlPath, parameters: request.getParams(), headers: request.headers, success: { (responseObject) in
-            self.handleSuccessResponse(response: responseObject, block: completion)
+        NetworkHttpClient.sharedInstance.postAPICall(request.urlPath, parameters: request.getParams(), headers: request.headers, genericResponse: genericResponse, success: { (responseObject) in
+            self.handleSuccessResponse(response: responseObject as? DataResponse<T>, block: completion)
         }, failure: { (responseObject) in
-            self.handleError(response: responseObject, block: completion)
+            self.handleError(response: responseObject as? DataResponse<T>, block: completion)
         })
     }
     
-    func interactAPIWithDeleteObject(request: BaseRequest, completion: @escaping CompletionHandler) -> Void {
+    func interactAPIWithDeleteObject<T:Mappable>(request: BaseRequest, genericResponse:T.Type, completion: @escaping CompletionHandler) -> Void {
         initialSetup(request: request, requestType: Constants.RequestType.DELETE.rawValue)
-        NetworkHttpClient.sharedInstance.deleteAPICall(request.urlPath, parameters: request.getParams(), headers: request.headers, success: { (responseObject) in
-            self.handleSuccessResponse(response: responseObject, block: completion)
+        NetworkHttpClient.sharedInstance.deleteAPICall(request.urlPath, parameters: request.getParams(), headers: request.headers, genericResponse: genericResponse, success: { (responseObject) in
+            self.handleSuccessResponse(response: responseObject as? DataResponse<T>, block: completion)
         }, failure: { (responseObject) in
-            self.handleError(response: responseObject, block: completion)
+            self.handleError(response: responseObject as? DataResponse<T>, block: completion)
         })
     }
     
-    func interactAPIWithMultipartObjectPost(request: BaseRequest, completion: @escaping CompletionHandler) -> Void {
+    func interactAPIWithMultipartObjectPost<T:Mappable>(request: BaseRequest, genericResponse:T.Type, completion: @escaping CompletionHandler) -> Void {
         initialSetup(request: request, requestType: Constants.RequestType.MultiPartPost.rawValue)
         NetworkHttpClient.sharedInstance.multipartPostAPICall(request.urlPath, parameters: request.getParams(), data: request.fileData, name: request.dataFilename, fileName: request.fileName, mimeType: request.mimeType, success: { (responseObject) in
-            self.handleSuccessResponse(response: responseObject, block: completion)
+            self.handleSuccessResponse(response: responseObject as? DataResponse<T>, block: completion)
         }, failure: { (responseObject) in
-            self.handleError(response: responseObject, block: completion)
+            self.handleError(response: responseObject as? DataResponse<T>, block: completion)
         })
     }
     
     //Handling success response
-    func handleSuccessResponse(response: Any?, block:@escaping CompletionHandler) -> Void {
+    func handleSuccessResponse<T:Mappable>(response: DataResponse<T>?, block:@escaping CompletionHandler) -> Void {
         
-        let responseStatus = (response as! DataResponse<Any>).response
+        let responseStatus = response?.response
         let message: String = String.init(format: "Success:- URL:%@\n", (responseStatus?.url?.absoluteString)!)
         print(message)
         
         if responseStatus?.statusCode == Constants.ResponseStatusSuccess || responseStatus?.statusCode == Constants.ResponseStatusCreated {
             if response != nil {
                 isForbiddenRetry = false
-                if let result = (response as! DataResponse<Any>).result.value {
-                    let JSON = result as! NSDictionary
-                    print(JSON)
-                    block(true, JSON)
+                if let result = response?.result.value {
+                    block(true, result)
                 }
                 return
             }
         }
-        else if self.isForbiddenResponse(statusCode: (responseStatus?.statusCode)) {
+        else if self.isForbiddenResponse(statusCode: (responseStatus?.statusCode), url: responseStatus?.url?.absoluteString) {
             realAPIBlock = block
             renewLogin()
             return
         }
         else{
             if response != nil {
-                if let result = (response as! DataResponse<Any>).result.value {
-                    if let JSON = result as? NSDictionary {
-                        print(JSON)
-                        block(false, JSON)
-                        return
-                    }
+                if let result = response?.result.value {
+                    block(false, result)
+                    return
                 }
             }
         }
@@ -120,10 +118,10 @@ class RealAPI: NSObject {
     }
     
     //Handling Error response
-    func handleError(response: Any?, block: @escaping CompletionHandler) -> Void {
-        if let responseStatus = (response as! DataResponse<Any>).response{
+    func handleError<T:Mappable>(response: DataResponse<T>?, block: @escaping CompletionHandler) -> Void {
+        if let responseStatus = response?.response{
            
-            if self.isForbiddenResponse(statusCode: (responseStatus.statusCode)) {
+            if self.isForbiddenResponse(statusCode: (responseStatus.statusCode), url: responseStatus.url?.absoluteString) {
                 realAPIBlock = block
                 renewLogin()
                 return
@@ -132,7 +130,7 @@ class RealAPI: NSObject {
         
         var errorResponse: Any?
         
-        let error : Error? = (response as! DataResponse<Any>).result.error!
+        let error : Error? = response?.result.error!
         
         let detailedError: NSError = error! as NSError
         if detailedError.localizedRecoverySuggestion != nil {
@@ -145,7 +143,7 @@ class RealAPI: NSObject {
             }
         }
         else {
-            block(false, detailedError.description)
+            block(false, detailedError.localizedDescription)
         }
     }
     
@@ -156,12 +154,13 @@ class RealAPI: NSObject {
         print(message)
     }
     
-    func isForbiddenResponse(statusCode: NSInteger?) -> Bool {
-        if statusCode != nil && statusCode == Constants.ResponseStatusForbidden && isForbiddenRetry == false {
+    func isForbiddenResponse(statusCode: NSInteger?, url:String?) -> Bool {
+        if statusCode != nil && statusCode == Constants.ResponseStatusForbidden && isForbiddenRetry == false && !(url!.hasSuffix(tokenURL)) {
             isForbiddenRetry = true
             return true
         }
         else if statusCode != nil && statusCode == Constants.ResponseStatusForbidden && isForbiddenRetry == true {
+            //TODO: logout on token invalid
 //            ApplicationDelegate.performLogout()
         }
         return false
@@ -196,7 +195,7 @@ class RealAPI: NSObject {
     
     func renewLoginRequestCompleted() {
         // calling failed API again
-        switch VMRequest.requestType {
+       /* switch VMRequest.requestType {
         case Constants.RequestType.GET.rawValue:
             self.interactAPIWithGetObject(request: VMRequest, completion: realAPIBlock)
             break
@@ -214,6 +213,6 @@ class RealAPI: NSObject {
             break
         default:
             break
-        }
+        }*/
     }
 }

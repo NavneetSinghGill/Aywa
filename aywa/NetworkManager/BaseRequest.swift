@@ -18,8 +18,7 @@ class BaseRequest: NSObject {
     var fileName: String
     var mimeType: String
     var headers: [String: String]?
-    var parameters: Dictionary<String, Any>
-    
+    var parameters: Dictionary<String, Any>    
     
     let authUrl = "users/"
     let paymentCreationUrl = "payments/"

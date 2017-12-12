@@ -127,12 +127,12 @@ class LandingViewController: UIViewController, LandingDisplayLogic
     
     func displayError(response: Landing.JWTToken.Response)
     {
-        print("Error occured")
+        print("Error occured: \(response)")
     }
     
     func displayNextScreen(viewModel: Landing.JWTToken.ViewModel)
     {
-        print("Show Main Screen")
+        print("Show Next Screen: \(viewModel)")
     }
     
     // MARK: Page controller methods
