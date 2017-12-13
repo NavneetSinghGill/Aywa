@@ -77,6 +77,11 @@ class LandingViewController: UIViewController, LandingDisplayLogic
     @IBOutlet weak var bottomActionView: UIView!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var skipButton: UIButton!
+    
+    @IBOutlet weak var bottomActionView2: UIView!
+    @IBOutlet weak var loginButton2: UIButton!
+    @IBOutlet weak var skipButton2: UIButton!
+    
     @IBOutlet weak var pageControl: UIPageControl!
     
     // MARK: - IBActions
@@ -150,6 +155,8 @@ class LandingViewController: UIViewController, LandingDisplayLogic
         pageControlViewController.delegate = self
         pageControlViewController.setViewControllers([viewControllerList[0]] as [UIViewController], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
         
+        self.setBottomViewsFor(index: 0)
+        
         let pageControllerView = pageControlViewController.view!
         pageControllerView.backgroundColor = UIColor.clear
         
@@ -163,6 +170,10 @@ extension LandingViewController: UIPageViewControllerDataSource, UIPageViewContr
         view.addSubview(pageControllerView)
         //applyPageConstraints()
         view.bringSubview(toFront: bottomActionView)
+        view.bringSubview(toFront: pageControl)
+        if isiPad {
+            view.bringSubview(toFront: bottomActionView2)
+        }
     }
     
     private func applyPageConstraints() {
@@ -190,6 +201,28 @@ extension LandingViewController: UIPageViewControllerDataSource, UIPageViewContr
         return pageContentViewController
     }
     
+    func setBottomViewsFor(index: Int) {
+        if !isiPad {
+            return
+        }
+        var showBottomView1 = true
+        if index != 0 && index != 4 {
+            showBottomView1 = false
+        }
+        
+        skipButton.layer.borderColor = UIColor.white.cgColor
+        loginButton.layer.borderColor = UIColor.white.cgColor
+        loginButton2.layer.borderColor = UIColor.white.cgColor
+        skipButton.layer.borderWidth = 1
+        loginButton.layer.borderWidth = 1
+        loginButton2.layer.borderWidth = 1
+        
+        UIView.animate(withDuration: 0.5) {
+            self.bottomActionView.alpha = showBottomView1 ? 1 : 0
+            self.bottomActionView2.alpha = !showBottomView1 ? 1 : 0
+        }
+    }
+    
     // MARK: - UIPageVieControllerDelegate Methods
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         if (completed && finished) {
@@ -197,6 +230,8 @@ extension LandingViewController: UIPageViewControllerDataSource, UIPageViewContr
                 if(selectedPageIndex != currentVC.pageIndex){
                     selectedPageIndex = currentVC.pageIndex
                     pageControl.currentPage = selectedPageIndex ?? 0
+                    
+                    setBottomViewsFor(index: selectedPageIndex!)
                 }
             }
         }

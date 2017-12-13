@@ -13,6 +13,8 @@ let ApplicationDelegate = UIApplication.shared.delegate as! AppDelegate
 
 typealias CompletionHandler = (_ success: Bool, _ response: Any?) -> Void
 
+let isiPad: Bool = UIDevice.current.userInterfaceIdiom == .pad
+
 struct Constants {
 
     // MARK: - General Constants
