@@ -17,7 +17,8 @@ class LandingContentViewController: UIViewController {
     @IBOutlet weak var initialHeaderView: UIView!
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var upperLogo: UIImageView!
-    @IBOutlet weak var upperLogoPage5: UIImageView!
+    @IBOutlet weak var upperLogoPage5PAD: UIImageView!
+    @IBOutlet weak var upperLogoPage1: UIImageView!
     
     @IBOutlet weak var bottomTextView: UIView!
     @IBOutlet weak var leftBottomTextView: UIView!
@@ -33,6 +34,15 @@ class LandingContentViewController: UIViewController {
     @IBOutlet weak var lastPageDollarLabel: UILabel!
     @IBOutlet weak var lastPageGlobeLabel: UILabel!
     
+    @IBOutlet weak var hdView: UIView!
+    @IBOutlet weak var tvView: UIView!
+    @IBOutlet weak var videoView: UIView!
+    @IBOutlet weak var dollarView: UIView!
+    @IBOutlet weak var globeView: UIView!
+    @IBOutlet weak var dollar7View: UIView!
+    
+    var didExecuteOnceInLifeTimeInDidAppear: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,14 +52,31 @@ class LandingContentViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if pageIndex != 4 {
-            bottomTextView.alpha = 0
-            UIView.animate(withDuration: 1, animations: {
-                self.bottomTextView.alpha = 1
-            })
-            animateBottomViewiPad()
-        }
+        adjustLeftEnglishLabelAlignmentIPAD()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
+        if !didExecuteOnceInLifeTimeInDidAppear {
+            UIView.animate(withDuration: 0, delay: 1, options: .curveEaseInOut, animations: {
+            }, completion: { (complete) in
+                self.animateLogos()
+                self.animatePage5Content()
+                self.animateBottomView()
+            })
+            didExecuteOnceInLifeTimeInDidAppear = true
+        }
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - Private Methods
+    
+    func adjustLeftEnglishLabelAlignmentIPAD() {
         if isiPad {
             switch pageIndex {
             case 1:
@@ -62,13 +89,25 @@ class LandingContentViewController: UIViewController {
         }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func animateBottomView() {
+        if pageIndex != 4 {
+            bottomTextView.alpha = 0
+            UIView.animate(withDuration: 1, animations: {
+                self.bottomTextView.alpha = 1
+            })
+            animateBottomViewIPAD()
+        }
     }
     
-    func animateBottomViewiPad() {
-        if isiPad {
+    func animateBottomViewIPAD() {
+        if !isiPad {
+            arabicTextLabel.alpha = 0
+            englishTextLabel.alpha = 0
+            UIView.animate(withDuration: 1, animations: {
+                self.arabicTextLabel?.alpha = 1
+                self.englishTextLabel?.alpha = 1
+            })
+        } else {
             var viewToAnimate: UIView?
             if pageIndex == 0 {
                 viewToAnimate = middleBottomTextView
@@ -89,7 +128,90 @@ class LandingContentViewController: UIViewController {
         }
     }
     
-    // MARK: - Private Methods
+    func animateLogos() {
+        if !isiPad {
+            switch pageIndex {
+            case 0:
+                UIView.transition(with: upperLogoPage1, duration: 0.5, options: .transitionFlipFromRight, animations: nil, completion: nil)
+            case 1:
+                fallthrough
+            case 2:
+                fallthrough
+            case 4:
+                UIView.transition(with: upperLogo, duration: 0.5, options: .transitionFlipFromRight, animations: nil, completion: nil)
+            default:
+                break
+            }
+        } else {
+            switch pageIndex {
+            case 0:
+                UIView.transition(with: upperLogoPage1, duration: 0.5, options: .transitionFlipFromRight, animations: nil, completion: nil)
+            case 1:
+                fallthrough
+            case 2:
+                UIView.transition(with: upperLogo, duration: 0.5, options: .transitionFlipFromRight, animations: nil, completion: nil)
+            case 4:
+                UIView.transition(with: upperLogoPage5PAD, duration: 0.5, options: .transitionFlipFromRight, animations: nil, completion: nil)
+            default:
+                break
+            }
+        }
+    }
+    
+    func animatePage5Content() {
+        let animationDuration = 0.5
+        let differenceOfTime: TimeInterval = 0.2
+        let constantDelay: TimeInterval = 0.2
+        
+        hdView.alpha = 0
+        UIView.animate(withDuration: animationDuration,
+                       delay: 0 * differenceOfTime + constantDelay,
+                       options: .curveEaseInOut,
+                       animations: {
+                        self.hdView.alpha = 1
+        }, completion: nil)
+        
+        tvView.alpha = 0
+        UIView.animate(withDuration: animationDuration,
+                       delay: 1 * differenceOfTime + constantDelay,
+                       options: .curveEaseInOut,
+                       animations: {
+                        self.tvView.alpha = 1
+        }, completion: nil)
+        
+        videoView.alpha = 0
+        UIView.animate(withDuration: animationDuration,
+                       delay: 2 * differenceOfTime + constantDelay,
+                       options: .curveEaseInOut,
+                       animations: {
+                        self.videoView.alpha = 1
+        }, completion: nil)
+        
+        dollarView.alpha = 0
+        UIView.animate(withDuration: animationDuration,
+                       delay: 3 * differenceOfTime + constantDelay,
+                       options: .curveEaseInOut,
+                       animations: {
+                        self.dollarView.alpha = 1
+        }, completion: nil)
+        
+        globeView.alpha = 0
+        UIView.animate(withDuration: animationDuration,
+                       delay: 4 * differenceOfTime + constantDelay,
+                       options: .curveEaseInOut,
+                       animations: {
+                        self.globeView.alpha = 1
+        }, completion: nil)
+        
+        dollar7View.alpha = 0
+        UIView.animate(withDuration: animationDuration,
+                       delay: 5 * differenceOfTime + constantDelay,
+                       options: .curveEaseInOut,
+                       animations: {
+                        self.dollar7View.alpha = 1
+        }, completion: nil)
+        
+    }
     
     func setup(){
         initialHeaderView.isHidden = pageIndex != 0
@@ -102,6 +224,8 @@ class LandingContentViewController: UIViewController {
             subtitleLabel.text = "Movies & TV Shows\nOn demand"
             upperLogo.isHidden = pageIndex == 0 || pageIndex == 3
             
+            arabicTextLabel.alpha = 0
+            englishTextLabel.alpha = 0
             arabicTextLabel.text = landingScreenTextArabic[pageIndex]
             englishTextLabel.text = landingScreenTextEnglish[pageIndex]
             
@@ -112,7 +236,7 @@ class LandingContentViewController: UIViewController {
         } else {
             upperLogo.isHidden = pageIndex == 0 || pageIndex == 3 || pageIndex == 4
             
-            upperLogoPage5.isHidden = pageIndex != 4
+            upperLogoPage5PAD.isHidden = pageIndex != 4
             
             leftBottomTextView.isHidden = true
             middleBottomTextView.isHidden = true
@@ -122,6 +246,18 @@ class LandingContentViewController: UIViewController {
             lastPageTVLabel.text = "Watch on your PC, TV, phone and tablet."
             lastPageDollarLabel.text = "Onetime payment options available."
             lastPageGlobeLabel.text = "Unlimited streaming anytime anywhere."
+            
+            //Bottom Views
+            var viewToAnimate: UIView?
+            if pageIndex == 0 {
+                viewToAnimate = middleBottomTextView
+            } else if pageIndex == 1 || pageIndex == 2 {
+                viewToAnimate = leftBottomTextView
+            } else if pageIndex == 3 {
+                viewToAnimate = rightBottomTextView
+            }
+            viewToAnimate?.alpha = 0
+            viewToAnimate?.alpha = 0
         }
     }
     

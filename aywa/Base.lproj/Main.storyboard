@@ -131,7 +131,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qGs-iY-FvG" userLabel="HeaderViewPage1">
                                 <rect key="frame" x="0.0" y="67" width="320" height="180"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="page1Logo" translatesAutoresizingMaskIntoConstraints="NO" id="REW-KG-mKq">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="page1Logo" translatesAutoresizingMaskIntoConstraints="NO" id="REW-KG-mKq" userLabel="page5Logo">
                                         <rect key="frame" x="60" y="0.0" width="200" height="69"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="Dta-qa-BN9"/>
@@ -202,7 +202,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j0i-Al-X34" userLabel="LastPageView">
                                 <rect key="frame" x="30" y="125" width="290" height="293"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ihh-JM-85W" userLabel="HD">
+                                    <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ihh-JM-85W" userLabel="HD">
                                         <rect key="frame" x="0.0" y="0.0" width="290" height="49"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HD" translatesAutoresizingMaskIntoConstraints="NO" id="WYU-8z-p4m">
@@ -229,7 +229,7 @@
                                             <constraint firstItem="ZyY-2n-aQH" firstAttribute="top" secondItem="Ihh-JM-85W" secondAttribute="top" id="evv-lu-gwh"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="koC-VS-onW" userLabel="TV">
+                                    <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="koC-VS-onW" userLabel="TV">
                                         <rect key="frame" x="0.0" y="49" width="290" height="48.5"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TV" translatesAutoresizingMaskIntoConstraints="NO" id="6aW-go-Jza">
@@ -256,7 +256,7 @@
                                             <constraint firstItem="6aW-go-Jza" firstAttribute="centerY" secondItem="koC-VS-onW" secondAttribute="centerY" id="xYg-gf-34s"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sfT-wL-2Nk" userLabel="Video">
+                                    <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sfT-wL-2Nk" userLabel="Video">
                                         <rect key="frame" x="0.0" y="97.5" width="290" height="49"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="video" translatesAutoresizingMaskIntoConstraints="NO" id="IBd-Jd-XcJ">
@@ -283,7 +283,7 @@
                                             <constraint firstItem="IBd-Jd-XcJ" firstAttribute="leading" secondItem="sfT-wL-2Nk" secondAttribute="leading" id="zeE-dz-CJ2"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3st-LH-wSv" userLabel="Dollar">
+                                    <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3st-LH-wSv" userLabel="Dollar">
                                         <rect key="frame" x="0.0" y="146.5" width="290" height="49"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dollar" translatesAutoresizingMaskIntoConstraints="NO" id="drK-nF-YFX">
@@ -310,7 +310,7 @@
                                             <constraint firstAttribute="trailing" secondItem="xv5-ME-P0g" secondAttribute="trailing" id="rPM-H0-cXu"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s1T-TX-CTc" userLabel="Globe">
+                                    <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s1T-TX-CTc" userLabel="Globe">
                                         <rect key="frame" x="0.0" y="195.5" width="290" height="48.5"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="globe" translatesAutoresizingMaskIntoConstraints="NO" id="B79-u9-2fj">
@@ -337,7 +337,7 @@
                                             <constraint firstAttribute="bottom" secondItem="Ayr-Oy-TG7" secondAttribute="bottom" id="rUJ-Vc-Fmp"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DUV-mo-mPW" userLabel="$7">
+                                    <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DUV-mo-mPW" userLabel="$7">
                                         <rect key="frame" x="0.0" y="243.5" width="290" height="49"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="$7" translatesAutoresizingMaskIntoConstraints="NO" id="Aqd-Jg-Mkl">
@@ -419,7 +419,11 @@
                         <outlet property="arabicTextLabel" destination="Ym7-kF-zxt" id="gLz-Ru-SJg"/>
                         <outlet property="backgroundImageView" destination="ZRM-MQ-sJt" id="j1y-xL-mJ8"/>
                         <outlet property="bottomTextView" destination="grK-r8-qFB" id="5Ib-bN-gvS"/>
+                        <outlet property="dollar7View" destination="DUV-mo-mPW" id="kFI-nU-cvO"/>
+                        <outlet property="dollarView" destination="3st-LH-wSv" id="y4F-yE-f1M"/>
                         <outlet property="englishTextLabel" destination="d2J-uF-K9E" id="nyI-Zi-3nS"/>
+                        <outlet property="globeView" destination="s1T-TX-CTc" id="srz-l2-wgq"/>
+                        <outlet property="hdView" destination="Ihh-JM-85W" id="Zqh-h6-9vF"/>
                         <outlet property="initialHeaderView" destination="qGs-iY-FvG" id="ALk-kA-6MO"/>
                         <outlet property="lastPageDollarLabel" destination="xv5-ME-P0g" id="1cE-Eb-5XK"/>
                         <outlet property="lastPageGlobeLabel" destination="Ayr-Oy-TG7" id="qSB-OW-YhI"/>
@@ -427,7 +431,10 @@
                         <outlet property="lastPageTVLabel" destination="3Hd-bC-FmF" id="AHV-b1-AHP"/>
                         <outlet property="lastPageView" destination="j0i-Al-X34" id="FXe-mY-TZS"/>
                         <outlet property="subtitleLabel" destination="bcj-Ei-yXo" id="8eY-8u-o9h"/>
+                        <outlet property="tvView" destination="koC-VS-onW" id="8T5-Pv-HVM"/>
                         <outlet property="upperLogo" destination="F9f-T1-RwQ" id="sa6-YV-ExI"/>
+                        <outlet property="upperLogoPage1" destination="REW-KG-mKq" id="hZj-c2-cuH"/>
+                        <outlet property="videoView" destination="sfT-wL-2Nk" id="Co2-em-Qma"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="298-eY-n4j" userLabel="First Responder" sceneMemberID="firstResponder"/>

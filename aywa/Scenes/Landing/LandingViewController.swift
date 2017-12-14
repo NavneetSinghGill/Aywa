@@ -18,7 +18,7 @@ protocol LandingDisplayLogic: class
     func displayNextScreen(viewModel: Landing.JWTToken.ViewModel)
 }
 
-class LandingViewController: UIViewController, LandingDisplayLogic
+class LandingViewController: UIViewController, LandingDisplayLogic, UIScrollViewDelegate
 {
     var interactor: LandingBusinessLogic?
     var router: (NSObjectProtocol & LandingRoutingLogic & LandingDataPassing)?
@@ -162,6 +162,27 @@ class LandingViewController: UIViewController, LandingDisplayLogic
         
         return pageControllerView
     }()
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if isiPad {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.setBottomViewsAlpha(to: 0.4)
+            })
+        }
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if isiPad {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.setBottomViewsAlpha(to: 1)
+            })
+        }
+    }
+    
+    func setBottomViewsAlpha(to: CGFloat) {
+        bottomActionView.alpha = to
+        bottomActionView2.alpha = to
+    }
 }
 
 extension LandingViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate{
