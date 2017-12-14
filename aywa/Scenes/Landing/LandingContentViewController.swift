@@ -25,6 +25,7 @@ class LandingContentViewController: UIViewController {
     @IBOutlet weak var rightBottomTextView: UIView!
     @IBOutlet weak var arabicTextLabel: UILabel!
     @IBOutlet weak var englishTextLabel: UILabel!
+    @IBOutlet weak var leftBottomTextViewEnglishLabelIPad: UILabel!
     
     @IBOutlet weak var lastPageView: UIView!
     @IBOutlet weak var lastPageHDLabel: UILabel!
@@ -47,6 +48,17 @@ class LandingContentViewController: UIViewController {
                 self.bottomTextView.alpha = 1
             })
             animateBottomViewiPad()
+        }
+        
+        if isiPad {
+            switch pageIndex {
+            case 1:
+                leftBottomTextViewEnglishLabelIPad.textAlignment = .left
+            case 2:
+                leftBottomTextViewEnglishLabelIPad.textAlignment = .center
+            default:
+                break
+            }
         }
     }
     

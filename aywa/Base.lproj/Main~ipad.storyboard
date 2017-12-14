@@ -99,7 +99,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="Mya-od-GVi"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Helvetica-Black_cyr-Bold" family="Helvetica" pointSize="23"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Black_cyr-Bold" family="Helvetica" pointSize="24"/>
                                         <state key="normal" title="Sign Up">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -109,7 +109,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTY-bh-yWf">
                                         <rect key="frame" x="0.0" y="75" width="264" height="55"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Black_cyr-Bold" family="Helvetica" pointSize="23"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Black_cyr-Bold" family="Helvetica" pointSize="24"/>
                                         <state key="normal" title="Sign In">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -119,7 +119,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y8V-TU-Cdv">
                                         <rect key="frame" x="0.0" y="150" width="264" height="55"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Black_cyr-Bold" family="Helvetica" pointSize="23"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Black_cyr-Bold" family="Helvetica" pointSize="24"/>
                                         <state key="normal" title="Browse">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -461,20 +461,20 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PO5-XA-jHf" userLabel="LeftBottomTextView">
-                                <rect key="frame" x="85" y="464" width="78.5" height="140"/>
+                                <rect key="frame" x="85" y="464" width="81" height="140"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="11" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhN-X9-XPD">
-                                        <rect key="frame" x="-40" y="38" width="158.5" height="60"/>
+                                        <rect key="frame" x="-40" y="37" width="161" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="NeU-qj-gmo"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Helvetica-Black_cyr-Bold" family="Helvetica" pointSize="41"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Black_cyr-Bold" family="Helvetica" pointSize="42"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="12" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mzg-k9-C0x">
-                                        <rect key="frame" x="0.0" y="103" width="78.5" height="37"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Black_cyr-Bold" family="Helvetica" pointSize="32"/>
+                                        <rect key="frame" x="0.0" y="102" width="81" height="38"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Black_cyr-Bold" family="Helvetica" pointSize="33"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -492,17 +492,17 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gyt-FL-MXe" userLabel="RightBottomTextView">
-                                <rect key="frame" x="477" y="681.5" width="475" height="62.5"/>
+                                <rect key="frame" x="477" y="646.5" width="475" height="97.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="11" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ea-QB-8Wo">
-                                        <rect key="frame" x="0.0" y="0.0" width="73.5" height="35"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Black_cyr-Bold" family="Helvetica" pointSize="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="105.5" height="49.5"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Black_cyr-Bold" family="Helvetica" pointSize="43"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="12" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ThN-ia-xvN">
-                                        <rect key="frame" x="0.0" y="35.5" width="73.5" height="27"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Black_cyr-Bold" family="Helvetica" pointSize="23"/>
+                                        <rect key="frame" x="0.0" y="59.5" width="105.5" height="38"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Black_cyr-Bold" family="Helvetica" pointSize="33"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -513,7 +513,7 @@
                                     <constraint firstAttribute="width" constant="475" id="5Oc-55-ShC"/>
                                     <constraint firstItem="0Ea-QB-8Wo" firstAttribute="top" secondItem="gyt-FL-MXe" secondAttribute="top" id="HLt-jn-BiL"/>
                                     <constraint firstAttribute="bottom" secondItem="ThN-ia-xvN" secondAttribute="bottom" id="I1O-RH-r44"/>
-                                    <constraint firstItem="ThN-ia-xvN" firstAttribute="top" secondItem="0Ea-QB-8Wo" secondAttribute="bottom" id="M29-re-lW5"/>
+                                    <constraint firstItem="ThN-ia-xvN" firstAttribute="top" secondItem="0Ea-QB-8Wo" secondAttribute="bottom" constant="10" id="M29-re-lW5"/>
                                     <constraint firstItem="ThN-ia-xvN" firstAttribute="leading" secondItem="gyt-FL-MXe" secondAttribute="leading" id="OZG-2X-wWi"/>
                                     <constraint firstItem="0Ea-QB-8Wo" firstAttribute="centerX" secondItem="ThN-ia-xvN" secondAttribute="centerX" id="yV1-xs-5j8"/>
                                 </constraints>
@@ -556,6 +556,7 @@
                         <outlet property="lastPageTVLabel" destination="3Hd-bC-FmF" id="AHV-b1-AHP"/>
                         <outlet property="lastPageView" destination="j0i-Al-X34" id="FXe-mY-TZS"/>
                         <outlet property="leftBottomTextView" destination="PO5-XA-jHf" id="hwT-U1-Gjk"/>
+                        <outlet property="leftBottomTextViewEnglishLabelIPad" destination="mzg-k9-C0x" id="AUN-am-xwM"/>
                         <outlet property="middleBottomTextView" destination="grK-r8-qFB" id="TNB-0Q-7eQ"/>
                         <outlet property="rightBottomTextView" destination="gyt-FL-MXe" id="wXg-xG-s4F"/>
                         <outlet property="upperLogo" destination="F9f-T1-RwQ" id="sa6-YV-ExI"/>
