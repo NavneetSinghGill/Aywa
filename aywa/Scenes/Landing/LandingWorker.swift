@@ -12,21 +12,22 @@
 
 import UIKit
 
-typealias failureResponseHandler = (_ response:Landing.JWTToken.Response) ->()
-typealias sucessResponseHandler = (_ response:Landing.JWTToken.ViewModel) ->()
+typealias accessTokenResponseHandler = (_ response:Landing.JWTToken.Response) ->()
+
+typealias refreshTokenResponseHandler = (_ response:Landing.RefreshToken.Response) ->()
 
 class LandingWorker
 {
-    func fetchJWTToken(request:Landing.JWTToken.Request, success:@escaping(sucessResponseHandler), fail:@escaping(failureResponseHandler))
+    func fetchJWTToken(request:Landing.JWTToken.Request, success:@escaping(accessTokenResponseHandler), fail:@escaping(accessTokenResponseHandler))
     {
         //call network etc.
         let manager = RequestManager()
         
-        manager.fetchJWTToken(request: request) { (status, response) in
+        manager.fetchJWTToken(request: request.baseRequest()) { (status, response) in
             var message:String = Constants.kErrorMessage
             if status {
                 if let result = response as? Landing.JWTToken.Response {
-                    success(result.viewModel!)
+                    success(result)
                     return
                 }
             }
@@ -43,6 +44,35 @@ class LandingWorker
                 }
             }
             fail(Landing.JWTToken.Response(message:message)!)
+        }
+    }
+    
+    func fetchRefreshToken(refreshToken:String, success:@escaping(refreshTokenResponseHandler), fail:@escaping(refreshTokenResponseHandler))
+    {
+        //call network etc.
+        let manager = RequestManager()
+        
+        manager.fetchRefreshToken(request: Landing.RefreshToken.Request().baseRequest(refreshToken: refreshToken)) { (status, response) in
+            var message:String = Constants.kErrorMessage
+            if status {
+                if let result = response as? Landing.RefreshToken.Response {
+                    success(result)
+                    return
+                }
+            }
+            else {
+                if let result = response as? Landing.RefreshToken.Response {
+                    fail(result)
+                    return
+                }
+                else
+                {
+                    if let result = response as? String {
+                        message = result
+                    }
+                }
+            }
+            fail(Landing.RefreshToken.Response(message:message)!)
         }
     }
 }

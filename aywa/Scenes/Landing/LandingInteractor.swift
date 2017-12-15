@@ -14,36 +14,79 @@ import UIKit
 
 protocol LandingBusinessLogic
 {
-  func fetchToken(request: Landing.JWTToken.Request)
+    func fetchToken(request: Landing.JWTToken.Request)
 }
 
 protocol LandingDataStore
 {
-  //var name: String { get set }
+    //var name: String { get set }
 }
 
 class LandingInteractor: LandingBusinessLogic, LandingDataStore
 {
-  var presenter: LandingPresentationLogic?
-  var worker: LandingWorker?
-  var securityStorageWorker = SecurityStorageWorker()
+    var presenter: LandingPresentationLogic?
+    var worker: LandingWorker?
+    var securityStorageWorker = SecurityStorageWorker()
     
-  //var name: String = ""
-  
-  // MARK: Fetch JWT Token
-  
-  func fetchToken(request: Landing.JWTToken.Request)
-  {
+    // MARK: Fetch JWT Token
     
-    worker = LandingWorker()
-    worker?.fetchJWTToken(request: request, success: { (response) in
-      //  print(response)
-      // securityStorageWorker.setValue(<#T##value: Any?##Any?#>, forKey: String)
-        self.presenter?.presentNextScreen(viewModel: response)
+    func fetchToken(request: Landing.JWTToken.Request) {
         
-    }, fail: { (response) in
-        self.presenter?.presentError(response: response)
+        var fetchTokenAPI = true
         
-    })
-  }
+        // check if valid token already exist
+        if let accessTokenExpiry = UserDefaults.standard.object(forKey: Constants.kAccessTokenExpiryKey) as? Date {
+            if accessTokenExpiry.isInFuture {
+                // Access token is valid, fetch it from keychain
+                if securityStorageWorker.getKeychainValue(key: Constants.kAccessTokenKey) != nil {
+                    self.presenter?.presentNextScreen()
+                    fetchTokenAPI = false
+                }
+            }
+            else {
+                // Access token is expired, check if refresh token is valid
+                if let refreshTokenLife = UserDefaults.standard.object(forKey: Constants.kRefreshTokenLifeKey) as? Date {
+                    if refreshTokenLife.isInFuture {
+                       // Refresh token is valid, fetch it from keychain
+                        if let refreshToken = securityStorageWorker.getKeychainValue(key: Constants.kRefreshTokenKey) {
+                            // Fetch refresh token APi api/token/refresh
+                            worker = LandingWorker()
+                            worker?.fetchRefreshToken(refreshToken: refreshToken, success: { (response) in
+                                print(response)
+                                if self.securityStorageWorker.storeRefreshTokenResponse(response: response) {
+                                    self.presenter?.presentNextScreen()
+                                    fetchTokenAPI = false
+                                }
+                                
+                            }, fail: { (response) in
+                                //TODO: show login screen
+                                self.presenter?.presentRefreshTokenError(response: response)
+                            })
+                            return
+                        }
+                    }
+                }
+            }
+        }
+        else
+        {
+            // Not exist, First time
+            fetchTokenAPI = true
+        }
+        
+        if (fetchTokenAPI) {
+            
+            worker = LandingWorker()
+            worker?.fetchJWTToken(request: request, success: { (response) in
+                print(response)
+                if self.securityStorageWorker.storeAccessTokenResponse(response: response) {
+                    self.presenter?.presentNextScreen()
+                }
+                
+            }, fail: { (response) in
+                self.presenter?.presentError(response: response)
+                
+            })
+        }
+    }
 }

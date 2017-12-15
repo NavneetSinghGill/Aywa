@@ -15,7 +15,8 @@ import UIKit
 protocol LandingDisplayLogic: class
 {
     func displayError(response: Landing.JWTToken.Response)
-    func displayNextScreen(viewModel: Landing.JWTToken.ViewModel)
+    func displayRefreshTokenError(response: Landing.RefreshToken.Response)
+    func displayNextScreen()
 }
 
 class LandingViewController: UIViewController, LandingDisplayLogic, UIScrollViewDelegate
@@ -134,10 +135,14 @@ class LandingViewController: UIViewController, LandingDisplayLogic, UIScrollView
         print("Error occured: \(response)")
     }
     
-    func displayNextScreen(viewModel: Landing.JWTToken.ViewModel)
+    func displayNextScreen()
     {
-        print("Show Next Screen: \(viewModel)")
-        print("Show AccessToken :\(viewModel.accessToken!)")
+        print("Show Next Screen!!!")
+    }
+    
+    func displayRefreshTokenError(response: Landing.RefreshToken.Response) {
+        print("Error occured: \(response)")
+        
     }
     
     // MARK: Page controller methods
