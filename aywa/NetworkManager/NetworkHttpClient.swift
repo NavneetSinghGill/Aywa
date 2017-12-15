@@ -50,8 +50,8 @@ class NetworkHttpClient: NSObject {
     }
     
     // MARK: API calls
-    func getAPICall<T:Mappable>(_ strURL : String, parameters : Dictionary<String, Any>?, genericResponse:T.Type, success:@escaping successBlock, failure:@escaping failureBlock) {
-        performAPICall(strURL, methodType: .get, parameters: parameters, requestHeaders: nil, genericResponse: genericResponse, success: success, failure: failure)
+    func getAPICall<T:Mappable>(_ strURL : String, parameters : Dictionary<String, Any>?, headers : [String : String]?, genericResponse:T.Type, success:@escaping successBlock, failure:@escaping failureBlock) {
+        performAPICall(strURL, methodType: .get, parameters: parameters, requestHeaders: headers, genericResponse: genericResponse, success: success, failure: failure)
     }
     
     func putAPICall<T:Mappable>(_ strURL : String, parameters : Dictionary<String, Any>?, headers : [String : String]?, genericResponse:T.Type, success:@escaping successBlock, failure:@escaping failureBlock) {
@@ -73,7 +73,7 @@ class NetworkHttpClient: NSObject {
             headers = NetworkHttpClient.getHeader() as? HTTPHeaders
         }
         
-        Alamofire.request(completeURL, method: methodType, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseObject { (response: DataResponse<T>) in
+        Alamofire.request(completeURL, method: methodType, parameters: parameters, encoding: (methodType == .get ? URLEncoding.default : JSONEncoding.default), headers: headers).responseObject { (response: DataResponse<T>) in
             
             switch response.result {
             case .success(let value):
@@ -106,13 +106,15 @@ class NetworkHttpClient: NSObject {
     
     class func getHeader() -> Dictionary<String, Any> {
         var header: HTTPHeaders = [String : String]()
-        header[Constants.kApiKey] = Constants.kApiKeyValue
-        header["Content-Type"] = "application/json"
-        header["Origin"] = "www.aywa.com"
-        //        if UserDefaults.standard.value(forKey: Constants.kSessionKey) != nil {
-        //            header[Constants.kSessionKey] = "Bearer " + (UserDefaults.standard.value(forKey: Constants.kSessionKey) as! String)
-        //        }
-        print("Header: \(header)")
+        if let accessToken = SecurityStorageWorker().getKeychainValue(key: Constants.kAccessTokenKey) {
+            header[Constants.kAccessTokenKey] = accessToken
+            header[Constants.kContentTypeKey] = Constants.kContentTypeValue
+            header[Constants.kOriginKey] = Constants.kOriginValue
+            //        if UserDefaults.standard.value(forKey: Constants.kSessionKey) != nil {
+            //            header[Constants.kSessionKey] = "Bearer " + (UserDefaults.standard.value(forKey: Constants.kSessionKey) as! String)
+            //        }
+            print("Header: \(header)")
+        }
         return header
     }
 }

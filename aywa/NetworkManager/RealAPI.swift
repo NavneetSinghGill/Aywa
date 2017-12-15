@@ -39,9 +39,7 @@ class RealAPI: NSObject {
     // MARK: Request methods
     func interactAPIWithGetObject<T:Mappable>(request: BaseRequest, genericResponse:T.Type, completion: @escaping CompletionHandler) -> Void {
         initialSetup(request: request, requestType: Constants.RequestType.GET.rawValue)
-        NetworkHttpClient.sharedInstance.getAPICall(request.urlPath, parameters: request.getParams(), genericResponse: genericResponse, success: { (responseObject) in
-            
-            
+        NetworkHttpClient.sharedInstance.getAPICall(request.urlPath, parameters: request.getParams(), headers: request.headers, genericResponse: genericResponse, success: { (responseObject) in
             self.handleSuccessResponse(response: responseObject as? DataResponse<T>, block: completion)
         }, failure: { (responseObject) in
             self.handleError(response: responseObject as? DataResponse<T>, block: completion)

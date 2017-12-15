@@ -60,7 +60,11 @@ class LandingInteractor: LandingBusinessLogic, LandingDataStore
                                 
                             }, fail: { (response) in
                                 //TODO: show login screen
-                                self.presenter?.presentRefreshTokenError(response: response)
+//                                self.presenter?.presentRefreshTokenError(response: response)
+                                
+                                // for now I am calling in a fresh way with assumption that we are calling it first time
+                                self.fetchJWTTokenAPI(request: request)
+                                
                             })
                             return
                         }
@@ -75,18 +79,21 @@ class LandingInteractor: LandingBusinessLogic, LandingDataStore
         }
         
         if (fetchTokenAPI) {
-            
-            worker = LandingWorker()
-            worker?.fetchJWTToken(request: request, success: { (response) in
-                print(response)
-                if self.securityStorageWorker.storeAccessTokenResponse(response: response) {
-                    self.presenter?.presentNextScreen()
-                }
-                
-            }, fail: { (response) in
-                self.presenter?.presentError(response: response)
-                
-            })
+            fetchJWTTokenAPI(request: request)
         }
+    }
+    
+    func fetchJWTTokenAPI(request: Landing.JWTToken.Request) {
+        worker = LandingWorker()
+        worker?.fetchJWTToken(request: request, success: { (response) in
+            print(response)
+            if self.securityStorageWorker.storeAccessTokenResponse(response: response) {
+                self.presenter?.presentNextScreen()
+            }
+            
+        }, fail: { (response) in
+            self.presenter?.presentError(response: response)
+            
+        })
     }
 }
