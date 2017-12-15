@@ -137,6 +137,7 @@ class LandingViewController: UIViewController, LandingDisplayLogic, UIScrollView
     func displayNextScreen(viewModel: Landing.JWTToken.ViewModel)
     {
         print("Show Next Screen: \(viewModel)")
+        print("Show AccessToken :\(viewModel.accessToken!)")
     }
     
     // MARK: Page controller methods

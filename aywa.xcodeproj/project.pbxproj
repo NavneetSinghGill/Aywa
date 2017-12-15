@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		235C87221FE2ADCF00994340 /* SecurityStorageWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235C87211FE2ADCF00994340 /* SecurityStorageWorker.swift */; };
 		483B29491FDFBAC7005F5D67 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B112661FDE846E001E92FE /* RequestManager.swift */; };
 		483B294A1FDFBACE005F5D67 /* RealAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B112651FDE846E001E92FE /* RealAPI.swift */; };
 		483B294B1FDFBAD2005F5D67 /* NetworkHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B112641FDE846E001E92FE /* NetworkHttpClient.swift */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		1EA5F6901C24964F1FD838DC /* Pods-aywa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aywa.release.xcconfig"; path = "Pods/Target Support Files/Pods-aywa/Pods-aywa.release.xcconfig"; sourceTree = "<group>"; };
+		235C87211FE2ADCF00994340 /* SecurityStorageWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityStorageWorker.swift; sourceTree = "<group>"; };
 		427E8D1FCB73A698E054AFAA /* Pods-aywa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aywa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-aywa/Pods-aywa.debug.xcconfig"; sourceTree = "<group>"; };
 		4880E4621FDEAB4400467054 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		48B1121A1FDE5B4C001E92FE /* aywa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aywa.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				48B112301FDE5BD2001E92FE /* Landing */,
+				235C87211FE2ADCF00994340 /* SecurityStorageWorker.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -327,6 +331,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -369,6 +374,7 @@
 				48B1124A1FDE69B1001E92FE /* LandingContentViewController.swift in Sources */,
 				483B294A1FDFBACE005F5D67 /* RealAPI.swift in Sources */,
 				48B112471FDE5D39001E92FE /* LandingViewController.swift in Sources */,
+				235C87221FE2ADCF00994340 /* SecurityStorageWorker.swift in Sources */,
 				48B112481FDE5D39001E92FE /* LandingWorker.swift in Sources */,
 				483B294C1FDFBAD6005F5D67 /* BaseRequest.swift in Sources */,
 				48B1121E1FDE5B4C001E92FE /* AppDelegate.swift in Sources */,

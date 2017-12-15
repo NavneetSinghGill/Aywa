@@ -26,14 +26,19 @@ class LandingInteractor: LandingBusinessLogic, LandingDataStore
 {
   var presenter: LandingPresentationLogic?
   var worker: LandingWorker?
+  var securityStorageWorker = SecurityStorageWorker()
+    
   //var name: String = ""
   
   // MARK: Fetch JWT Token
   
   func fetchToken(request: Landing.JWTToken.Request)
   {
+    
     worker = LandingWorker()
     worker?.fetchJWTToken(request: request, success: { (response) in
+      //  print(response)
+      // securityStorageWorker.setValue(<#T##value: Any?##Any?#>, forKey: String)
         self.presenter?.presentNextScreen(viewModel: response)
         
     }, fail: { (response) in

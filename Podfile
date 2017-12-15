@@ -9,5 +9,5 @@ target 'aywa' do
  pod 'AlamofireObjectMapper', '~> 5.0'
  pod 'ReachabilitySwift'
  pod 'NotificationBannerSwift'
-
+ pod 'SwiftKeychainWrapper', '~> 3.0'
 end
