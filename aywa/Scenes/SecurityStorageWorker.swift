@@ -41,15 +41,6 @@ class SecurityStorageWorker: NSObject {
         return storedSuccessfully
     }
     
-    public func storeRefreshTokenResponse(response:Landing.RefreshToken.Response) -> Bool {
-        var storedSuccessfully = false
-        if let tokenResponseModel = response.viewModel {
-            storedSuccessfully = storeResponse(accessTokenOptional:tokenResponseModel.accessToken, refreshTokenOptional: tokenResponseModel.refreshToken, expiresInOptional:tokenResponseModel.expiresIn, refreshLifeOptional:tokenResponseModel.refreshLife)
-        }
-        
-        return storedSuccessfully
-    }
-    
     func storeResponse(accessTokenOptional:String?, refreshTokenOptional:String?, expiresInOptional:Int?, refreshLifeOptional:Int?) -> Bool {
         var storedSuccessfully = false
         

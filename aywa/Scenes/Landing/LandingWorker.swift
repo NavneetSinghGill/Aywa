@@ -14,7 +14,7 @@ import UIKit
 
 typealias accessTokenResponseHandler = (_ response:Landing.JWTToken.Response) ->()
 
-typealias refreshTokenResponseHandler = (_ response:Landing.RefreshToken.Response) ->()
+typealias refreshTokenResponseHandler = (_ response:Landing.JWTToken.Response) ->()
 
 class LandingWorker
 {
@@ -24,26 +24,7 @@ class LandingWorker
         let manager = RequestManager()
         
         manager.fetchJWTToken(request: request.baseRequest()) { (status, response) in
-            var message:String = Constants.kErrorMessage
-            if status {
-                if let result = response as? Landing.JWTToken.Response {
-                    success(result)
-                    return
-                }
-            }
-            else {
-                if let result = response as? Landing.JWTToken.Response {
-                    fail(result)
-                    return
-                }
-                else
-                {
-                    if let result = response as? String {
-                        message = result
-                    }
-                }
-            }
-            fail(Landing.JWTToken.Response(message:message)!)
+            self.handleTokenResponse(success: success, fail: fail, status: status, response: response)
         }
     }
     
@@ -52,27 +33,31 @@ class LandingWorker
         //call network etc.
         let manager = RequestManager()
         
-        manager.fetchRefreshToken(request: Landing.RefreshToken.Request().baseRequest(refreshToken: refreshToken)) { (status, response) in
-            var message:String = Constants.kErrorMessage
-            if status {
-                if let result = response as? Landing.RefreshToken.Response {
-                    success(result)
-                    return
-                }
-            }
-            else {
-                if let result = response as? Landing.RefreshToken.Response {
-                    fail(result)
-                    return
-                }
-                else
-                {
-                    if let result = response as? String {
-                        message = result
-                    }
-                }
-            }
-            fail(Landing.RefreshToken.Response(message:message)!)
+        manager.fetchRefreshToken(request: Landing.JWTToken.RefreshRequest().baseRequest(refreshToken: refreshToken)) { (status, response) in
+            self.handleTokenResponse(success: success, fail: fail, status: status, response: response)
         }
+    }
+    
+    func handleTokenResponse(success:@escaping(refreshTokenResponseHandler), fail:@escaping(refreshTokenResponseHandler), status: Bool, response: Any?) {
+        var message:String = Constants.kErrorMessage
+        if status {
+            if let result = response as? Landing.JWTToken.Response {
+                success(result)
+                return
+            }
+        }
+        else {
+            if let result = response as? Landing.JWTToken.Response {
+                fail(result)
+                return
+            }
+            else
+            {
+                if let result = response as? String {
+                    message = result
+                }
+            }
+        }
+        fail(Landing.JWTToken.Response(message:message)!)
     }
 }

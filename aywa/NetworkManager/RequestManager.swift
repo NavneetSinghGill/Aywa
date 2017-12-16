@@ -24,7 +24,7 @@ class RequestManager: NSObject {
     
     func fetchRefreshToken(request:BaseRequest, completion:@escaping CompletionHandler){
         if ApplicationDelegate.isNetworkAvailable{
-            RealAPI().getObject(request:request, genericResponse: Landing.RefreshToken.Response.self, completion:completion)
+            RealAPI().getObject(request:request, genericResponse: Landing.JWTToken.Response.self, completion:completion)
         }
         else{
             completion(false, Constants.kNoNetworkMessage)

@@ -53,14 +53,14 @@ class LandingInteractor: LandingBusinessLogic, LandingDataStore
                             worker = LandingWorker()
                             worker?.fetchRefreshToken(refreshToken: refreshToken, success: { (response) in
                                 print(response)
-                                if self.securityStorageWorker.storeRefreshTokenResponse(response: response) {
+                                if self.securityStorageWorker.storeAccessTokenResponse(response: response) {
                                     self.presenter?.presentNextScreen()
                                     fetchTokenAPI = false
                                 }
                                 
                             }, fail: { (response) in
                                 //TODO: show login screen
-//                                self.presenter?.presentRefreshTokenError(response: response)
+//                                self.presenter?.presentError(response: response)
                                 
                                 // for now I am calling in a fresh way with assumption that we are calling it first time
                                 self.fetchJWTTokenAPI(request: request)

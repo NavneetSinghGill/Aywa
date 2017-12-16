@@ -15,7 +15,6 @@ import UIKit
 protocol LandingPresentationLogic
 {
     func presentError(response: Landing.JWTToken.Response)
-    func presentRefreshTokenError(response: Landing.RefreshToken.Response)
     func presentNextScreen()
 }
 
@@ -30,15 +29,8 @@ class LandingPresenter: LandingPresentationLogic
         viewController?.displayError(response: response)
     }
     
-    
     func presentNextScreen()
     {
         viewController?.displayNextScreen()
     }
-    
-    func presentRefreshTokenError(response: Landing.RefreshToken.Response) {
-        
-        viewController?.displayRefreshTokenError(response: response)
-    }
-        
 }
