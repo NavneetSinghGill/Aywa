@@ -37,6 +37,9 @@ struct Constants {
     static let kRefreshTokenKey = "RefreshToken"
     static let kRefreshTokenLifeKey = "RefreshTokenLife"
     
+    static let kAuthorizationkey = "Authorization"
+    static let kBearerkey = "Bearer "
+    
     // MARK: - User Defaults
     
     // MARK: - Enums

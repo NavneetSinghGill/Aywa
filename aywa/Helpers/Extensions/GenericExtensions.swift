@@ -2,7 +2,7 @@
 //  AppFont.swift
 //  aywa
 //
-//  Created by Best Peers on 11/12/17.
+//  Created by Zoeb on 11/12/17.
 //  Copyright © 2017 Alpha Solutions. All rights reserved.
 //
 

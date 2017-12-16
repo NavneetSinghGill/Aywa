@@ -32,7 +32,7 @@ enum Landing {
                 baseRequest.urlPath = tokenURL
                 baseRequest.parameters[Constants.kApiKey] = Constants.kApiKeyValue
                 baseRequest.parameters[secret] = Constants.kApiKeyValue
-                baseRequest.parameters[Constants.deviceIdentifier] = UserDefaults.standard.string(forKey: Constants.deviceIdentifier) ?? (UIDevice.current.identifierForVendor?.uuidString)!
+                baseRequest.parameters[Constants.deviceIdentifier] = Utils.deviceIdentifier()
                 baseRequest.headers = getHeader()
                 return baseRequest
             }

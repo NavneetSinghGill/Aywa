@@ -73,6 +73,11 @@ class LandingViewController: UIViewController, LandingDisplayLogic, UIScrollView
         initialSetup()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        hideNavigationBar()
+    }
+    
     // MARK: - IBOutlet
     @IBOutlet weak var bottomActionView: UIView!
     @IBOutlet weak var loginButton: UIButton!

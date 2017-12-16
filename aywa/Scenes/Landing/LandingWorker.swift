@@ -16,7 +16,7 @@ typealias accessTokenResponseHandler = (_ response:Landing.JWTToken.Response) ->
 
 typealias refreshTokenResponseHandler = (_ response:Landing.JWTToken.Response) ->()
 
-class LandingWorker
+class LandingWorker:BaseWorker
 {
     func fetchJWTToken(request:Landing.JWTToken.Request, success:@escaping(accessTokenResponseHandler), fail:@escaping(accessTokenResponseHandler))
     {
@@ -36,28 +36,5 @@ class LandingWorker
         manager.fetchRefreshToken(request: Landing.JWTToken.RefreshRequest().baseRequest(refreshToken: refreshToken)) { (status, response) in
             self.handleTokenResponse(success: success, fail: fail, status: status, response: response)
         }
-    }
-    
-    func handleTokenResponse(success:@escaping(refreshTokenResponseHandler), fail:@escaping(refreshTokenResponseHandler), status: Bool, response: Any?) {
-        var message:String = Constants.kErrorMessage
-        if status {
-            if let result = response as? Landing.JWTToken.Response {
-                success(result)
-                return
-            }
-        }
-        else {
-            if let result = response as? Landing.JWTToken.Response {
-                fail(result)
-                return
-            }
-            else
-            {
-                if let result = response as? String {
-                    message = result
-                }
-            }
-        }
-        fail(Landing.JWTToken.Response(message:message)!)
     }
 }

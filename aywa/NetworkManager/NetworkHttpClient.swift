@@ -107,12 +107,9 @@ class NetworkHttpClient: NSObject {
     class func getHeader() -> Dictionary<String, Any> {
         var header: HTTPHeaders = [String : String]()
         if let accessToken = SecurityStorageWorker().getKeychainValue(key: Constants.kAccessTokenKey) {
-            header[Constants.kAccessTokenKey] = accessToken
+            header[Constants.kAuthorizationkey] = Constants.kBearerkey + accessToken
             header[Constants.kContentTypeKey] = Constants.kContentTypeValue
             header[Constants.kOriginKey] = Constants.kOriginValue
-            //        if UserDefaults.standard.value(forKey: Constants.kSessionKey) != nil {
-            //            header[Constants.kSessionKey] = "Bearer " + (UserDefaults.standard.value(forKey: Constants.kSessionKey) as! String)
-            //        }
             print("Header: \(header)")
         }
         return header
