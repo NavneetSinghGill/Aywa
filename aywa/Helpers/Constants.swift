@@ -20,7 +20,7 @@ struct Constants {
     // MARK: - General Constants
     static let deviceIdentifier = "DeviceIdentifier"
     static let DeviceInfoKey = "device_info"
-    static let DeviceTypeKey = "device_type"
+    static let DeviceTypeKey = "DeviceType"
     static let EmptyString = ""
     static let kErrorMessage = "Something went wrong while processing your request"
     static let kNoNetworkMessage = "No network available"
@@ -40,6 +40,8 @@ struct Constants {
     static let kAuthorizationkey = "Authorization"
     static let kBearerkey = "Bearer "
     
+    static let kAppName = "Aywa"
+
     // MARK: - User Defaults
     
     // MARK: - Enums
@@ -64,5 +66,21 @@ struct Constants {
     static let LocalEnviroment = "LOCAL"
     static let StagingEnviroment = "STAGING"
     static let LiveEnviroment = "LIVE"
+    
+    //MARK: - Signup keys
+    static let kEmailKey = "Email"
+    static let kPasswordKey = "Password"
+    static let kConfirmPassword = "confirmPassword"
+    static let kNameKey = "Name"
+    static let kBirthdayKey = "Birthday"
+    static let kAgeGroupKey = "AgeGroup"
+    static let kGenderKey = "Gender"
+    static let kCountryKey = "Country"
+    static let kCountryNameKey = "CountryName"
+    static let kPhoneKey = "Phone"
+    static let kIPAddressKey = "IPAddress"
+    
+    //MARK: - Login keys
+    static let kUserName = "UserName"
 }
 

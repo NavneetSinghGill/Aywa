@@ -32,21 +32,92 @@ class SignupInteractor: SignupBusinessLogic, SignupDataStore
     
     func doSignup(request: Signup.Register.Request)
     {
-        if request.email == nil || request.password == nil || request.name == nil {
-            return (presenter?.presentError(response: Landing.JWTToken.Response(message: "Fields may not be empty.")!))!
+        if isDataValid(request: request) {
+            worker = SignupWorker()
+            worker?.register(request: request, success: { (response) in
+                print(response)
+                if self.securityStorageWorker.storeAccessTokenResponse(response: response) {
+                    self.presenter?.presentNextScreen()
+                }
+                
+            }, fail: { (response) in
+                self.presenter?.presentError(response: response)
+                
+            })
+        }
+        else{
+            return (presenter?.presentError(response: Landing.JWTToken.Response(message: "This field is required.")!))!
         }
         
-        worker = SignupWorker()
-        worker?.register(request: request, success: { (response) in
-            print(response)
-            if self.securityStorageWorker.storeAccessTokenResponse(response: response) {
-                self.presenter?.presentNextScreen()
-            }
-            
-        }, fail: { (response) in
-            self.presenter?.presentError(response: response)
-            
-        })
+    }
+ 
+    // MARK:- Validation For Signup Request
+    private func isDataValid(request: Signup.Register.Request) -> Bool {
+        var isValid = false
+        var errorMsg : String?
         
+        if request.email == nil || request.password == nil || request.name == nil || request.ageGroup == nil || request.gender == nil {
+            print("This field is required.")
+        }
+        else if ((request.name!.count) < 1)
+        {
+            errorMsg = "This field is required."
+        }
+        else if ((request.email!.characters.count) < 1)
+        {
+            errorMsg = "This field is required."
+        }
+        else if !(Utils.isValid(email: (request.email)!))
+        {
+            errorMsg = "This email address is invalid."
+        }
+        else if ((request.password!.characters.count) < 5)
+        {
+            errorMsg = "Password field may not be empty and must be minimum 5 length."
+        }
+        else if ((request.confirmPassword!.characters.count) < 5)
+        {
+            errorMsg = "Password is too short."
+        }
+        else if !( request.password! .isEqual(request.confirmPassword!) ) {
+            errorMsg = "Confirm Password and Password field  not match."
+        }
+        else if !(request.birthday == nil )
+        {
+//            if !(request.birthday == nil )
+//            {
+//                errorMsg = "Birthday field may not be empty."
+            //            } // TODO: date formate validation
+        }
+        else if ((request.ageGroup!.count) < 1){
+            errorMsg = "This field is required."
+        }
+        else if ((request.gender!.count) < 1){
+            errorMsg = "This field is required."
+        }
+        else if !(request.country == nil){
+            if ((request.country!.count) < 1){
+                errorMsg = "Country field may not be empty."
+            }
+        }
+        else if !(request.countryName == nil){
+            if ((request.countryName!.count) < 1){
+                errorMsg = "Country name field may not be empty."
+            }        }
+        else if !(request.phone == nil){
+            if ((request.phone!.count) < 10){
+                errorMsg = "Phone field may not be empty and Must be minimum 10 digit."
+            }
+        }
+         
+        else {
+            isValid = true
+            
+        }
+        if(!isValid && errorMsg!.characters.count > 0) {
+            //Utils.showAlertWith(title: "Oops!", message: errorMsg!, inController: SignupInteractor)
+            print(errorMsg!)
+        }
+        return isValid
     }
 }

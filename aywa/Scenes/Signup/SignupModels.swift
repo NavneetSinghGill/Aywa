@@ -24,6 +24,7 @@ enum Signup
     {
         var email :String?
         var password :String?
+        var confirmPassword :String?
         var name :String?
         var deviceIdentifier:String?
         var deviceType :Int?
@@ -39,9 +40,19 @@ enum Signup
             
             let baseRequest = BaseRequest()
             baseRequest.urlPath = registrationURL
-            baseRequest.parameters[Constants.kApiKey] = Constants.kApiKeyValue
-            baseRequest.parameters[secret] = Constants.kApiKeyValue
+            baseRequest.parameters[Constants.kEmailKey] = email
+            baseRequest.parameters[Constants.kPasswordKey] = password
+            baseRequest.parameters[Constants.kConfirmPassword] = confirmPassword
+            baseRequest.parameters[Constants.kNameKey] = name
             baseRequest.parameters[Constants.deviceIdentifier] = deviceIdentifier
+            baseRequest.parameters[Constants.DeviceTypeKey] = deviceType
+            baseRequest.parameters[Constants.kBirthdayKey] = birthday
+            baseRequest.parameters[Constants.kAgeGroupKey] = ageGroup
+            baseRequest.parameters[Constants.kGenderKey] = gender
+            baseRequest.parameters[Constants.kCountryKey] = country
+            baseRequest.parameters[Constants.kCountryNameKey] = countryName
+            baseRequest.parameters[Constants.kPhoneKey] = phone
+            baseRequest.parameters[Constants.kIPAddressKey] = ipAddress //TODO: need R&D on this
             return baseRequest
         }
     }

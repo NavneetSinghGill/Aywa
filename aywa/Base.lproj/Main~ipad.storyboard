@@ -54,6 +54,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="signinButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5W4-gB-IA6"/>
+                                                    <segue destination="Byn-dP-gam" kind="show" id="sbb-Ae-x5p"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYA-6g-97i">
@@ -117,6 +118,7 @@
                                         </state>
                                         <connections>
                                             <action selector="signinButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rQs-25-VDf"/>
+                                            <segue destination="Byn-dP-gam" kind="show" id="2Ha-pg-boi"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y8V-TU-Cdv">
@@ -577,6 +579,14 @@
             </objects>
             <point key="canvasLocation" x="959.89208633093529" y="33.093525179856115"/>
         </scene>
+        <!--LoginViewController-->
+        <scene sceneID="iYS-fo-pNk">
+            <objects>
+                <viewControllerPlaceholder storyboardName="UniversalStoryboard" referencedIdentifier="LoginViewController" id="Byn-dP-gam" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gqz-BO-nOC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="247" y="423"/>
+        </scene>
         <!--SignupViewController-->
         <scene sceneID="TqE-nr-rMM">
             <objects>
@@ -615,6 +625,7 @@
         <image name="video_iPad" width="54" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FfB-10-vT6"/>
+        <segue reference="ztE-nr-2zR"/>
+        <segue reference="sbb-Ae-x5p"/>
     </inferredMetricsTieBreakers>
 </document>

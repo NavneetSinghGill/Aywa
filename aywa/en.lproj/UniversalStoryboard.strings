@@ -1,0 +1,45 @@
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "3Ag-4M-KRh"; */
+"3Ag-4M-KRh.placeholder" = "Password";
+
+/* Class = "UITextField"; placeholder = "Age Group"; ObjectID = "7iI-om-gCw"; */
+"7iI-om-gCw.placeholder" = "Age Group";
+
+/* Class = "UITextField"; text = "19-24"; ObjectID = "7iI-om-gCw"; */
+"7iI-om-gCw.text" = "19-24";
+
+/* Class = "UITextField"; placeholder = "Email id"; ObjectID = "JjU-hE-xME"; */
+"JjU-hE-xME.placeholder" = "Email id";
+
+/* Class = "UIButton"; normalTitle = "Sign Up"; ObjectID = "O2b-a3-pNw"; */
+"O2b-a3-pNw.normalTitle" = "Sign Up";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "V9u-61-zKD"; */
+"V9u-61-zKD.placeholder" = "Password";
+
+/* Class = "UITextField"; text = "123456"; ObjectID = "V9u-61-zKD"; */
+"V9u-61-zKD.text" = "123456";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "Wup-Ie-kGM"; */
+"Wup-Ie-kGM.normalTitle" = "Login";
+
+/* Class = "UITextField"; placeholder = "Name"; ObjectID = "YgK-Ad-0cm"; */
+"YgK-Ad-0cm.placeholder" = "Name";
+
+/* Class = "UITextField"; placeholder = "Gender"; ObjectID = "dPd-CH-4BY"; */
+"dPd-CH-4BY.placeholder" = "Gender";
+
+/* Class = "UITextField"; text = "M"; ObjectID = "dPd-CH-4BY"; */
+"dPd-CH-4BY.text" = "M";
+
+/* Class = "UITextField"; placeholder = "Confirm Password"; ObjectID = "j8c-uf-hT9"; */
+"j8c-uf-hT9.placeholder" = "Confirm Password";
+
+/* Class = "UITextField"; text = "123456"; ObjectID = "j8c-uf-hT9"; */
+"j8c-uf-hT9.text" = "123456";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "oUI-f2-LN2"; */
+"oUI-f2-LN2.placeholder" = "Email";
+
+/* Class = "UITextField"; text = "@yopmail.com"; ObjectID = "oUI-f2-LN2"; */
+"oUI-f2-LN2.text" = "@yopmail.com";

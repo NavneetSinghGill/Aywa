@@ -24,3 +24,10 @@
 "InvalidUsernameMessage" = "Name should be between 4-30 characters.";
 "PasswordTooShortTitle" = "Password too short";
 "PasswordTooShortMessage" = "Password should be at least 8 characters long.";
+
+// Error MSG Signup
+"Field required" = "This field is required.";
+"Email addrees invalid" = "This email address is invalid.";
+"Invalid email/password" = "Invalid email address/password combination.";
+"Password is too short" = "Password is too short.";
+

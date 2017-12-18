@@ -58,6 +58,7 @@
                                         </state>
                                         <connections>
                                             <action selector="signinButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5W4-gB-IA6"/>
+                                            <segue destination="f65-hU-67G" kind="show" id="YhD-Q1-4hR"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYA-6g-97i">
@@ -119,6 +120,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uny-cD-wDJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="305" y="461"/>
+        </scene>
+        <!--LoginViewController-->
+        <scene sceneID="L6R-Po-IJL">
+            <objects>
+                <viewControllerPlaceholder storyboardName="UniversalStoryboard" referencedIdentifier="LoginViewController" id="f65-hU-67G" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WnC-1I-fHU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="719" y="480"/>
         </scene>
         <!--Landing Content View Controller-->
         <scene sceneID="dN8-6d-f0X">
