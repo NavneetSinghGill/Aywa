@@ -84,3 +84,11 @@ struct Constants {
     static let kUserName = "UserName"
 }
 
+struct Identifiers {
+    //CollectionView
+    static let homeAdvertCollectionCell = "HomeHeaderAdvertisementCollectionViewCell"
+    static let homeImagesCollectionCell = "HomeImagesCollectionViewCell"
+    // TableView
+    static let homeTableCell = "HomeTableViewCell"
+}
+
