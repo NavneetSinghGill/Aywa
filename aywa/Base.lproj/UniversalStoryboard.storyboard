@@ -70,7 +70,6 @@
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
                                     <action selector="signupButtonTapped:" destination="wKh-GD-z1k" eventType="touchUpInside" id="jcX-1S-3Eo"/>
-                                    <segue destination="8P3-nz-1eY" kind="show" identifier="MainTabBarController" id="Laa-ha-ffu"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -118,7 +117,6 @@
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="loginButtonTapped:" destination="bFY-JS-lCR" eventType="touchUpInside" id="ryB-be-kkH"/>
-                                    <segue destination="8P3-nz-1eY" kind="show" identifier="MainTabBarController" id="sie-6N-KpO"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -337,7 +335,4 @@
         <image name="page1Logo" width="193" height="67"/>
         <image name="screenCast" width="35" height="28"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="sie-6N-KpO"/>
-    </inferredMetricsTieBreakers>
 </document>
