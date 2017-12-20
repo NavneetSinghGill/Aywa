@@ -12,6 +12,8 @@
 
 import UIKit
 
+
+
 protocol LoginDisplayLogic: class
 {
     func displayError(response: Landing.JWTToken.Response)
@@ -106,6 +108,7 @@ class LoginViewController: UIViewController, LoginDisplayLogic
     func displayHomeScreen()
     {
         print("Show Home Screen!!!")
+        router?.routeToTabBar(segue: nil)
     }
     
     

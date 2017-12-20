@@ -107,5 +107,6 @@ class SignupViewController: UIViewController, SignupDisplayLogic
     func displayHomeScreen()
     {
         print("Show Home Screen!!!")
+        router?.routeToTabBar(segue: nil)
     }
 }
