@@ -23,7 +23,8 @@ class HomeViewController: UIViewController, HomeDisplayLogic, UITableViewDelegat
 {
     var interactor: HomeBusinessLogic?
     var router: (NSObjectProtocol & HomeRoutingLogic & HomeDataPassing)?
-    
+    let homeSliderBannerViewController  = "HomeSliderBannerViewController"
+
     // MARK: Object lifecycle
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -78,21 +79,24 @@ class HomeViewController: UIViewController, HomeDisplayLogic, UITableViewDelegat
         self.tableView.dataSource = self
         self.tableView.delegate = self
         
-        self.homeHeader = self.storyboard?.instantiateViewController(withIdentifier: "HomeHeaderAdvertisementViewController") as! HomeHeaderAdvertisementViewController
+        self.homeHeader = self.storyboard?.instantiateViewController(withIdentifier: homeSliderBannerViewController) as! HomeSliderBannerViewController
         self.homeHeader.view.bounds.size = CGSize(width: self.view.frame.size.width, height: 240)
         self.tableView.tableHeaderView = homeHeader.view
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        showNavigationBar()
+        // showNavigationBar()
+        self.navigationItem.hidesBackButton = true
+        self.navigationController?.isNavigationBarHidden = true
+        //  UIApplication.shared.statusBarStyle = .lightContent
     }
     
     // MARK: Do something
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headerView: UIView!
-    var homeHeader = HomeHeaderAdvertisementViewController()
+    var homeHeader = HomeSliderBannerViewController()
     
     var storedOffsets = [Int: CGFloat]()
     let verticalCellHeight: CGFloat = 235
@@ -145,7 +149,11 @@ class HomeViewController: UIViewController, HomeDisplayLogic, UITableViewDelegat
     
     func displayHomeScreen()
     {
-        print("Show Next Screen!!!")
+        print("Show Home Screen!!!")
     }
     
+    //MARK: For StatusBarStyle
+    //    override var preferredStatusBarStyle: UIStatusBarStyle {
+    //        return .lightContent
+    //    }
 }

@@ -85,6 +85,9 @@ struct Constants {
     
     //MARK: - Login keys
     static let kUserName = "UserName"
+    
+    //MARK: - SliderBanner keys
+    
 }
 
 struct Identifiers {

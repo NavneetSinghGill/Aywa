@@ -25,6 +25,12 @@
 		236F94C21FE9330700B16981 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236F94BC1FE9330300B16981 /* HomeViewController.swift */; };
 		236F94C31FE9330700B16981 /* HomeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236F94BD1FE9330300B16981 /* HomeWorker.swift */; };
 		23EE18531FE9484000B1FB8C /* HomeImageHorizontalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23EE18511FE9484000B1FB8C /* HomeImageHorizontalCollectionViewCell.xib */; };
+		239310991FEA610300337C4B /* HomeSliderBannerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239310931FEA610300337C4B /* HomeSliderBannerInteractor.swift */; };
+		2393109A1FEA610300337C4B /* HomeSliderBannerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239310941FEA610300337C4B /* HomeSliderBannerModels.swift */; };
+		2393109B1FEA610300337C4B /* HomeSliderBannerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239310951FEA610300337C4B /* HomeSliderBannerPresenter.swift */; };
+		2393109C1FEA610300337C4B /* HomeSliderBannerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239310961FEA610300337C4B /* HomeSliderBannerRouter.swift */; };
+		2393109D1FEA610300337C4B /* HomeSliderBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239310971FEA610300337C4B /* HomeSliderBannerViewController.swift */; };
+		2393109E1FEA610300337C4B /* HomeSliderBannerWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239310981FEA610300337C4B /* HomeSliderBannerWorker.swift */; };
 		483B29491FDFBAC7005F5D67 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B112661FDE846E001E92FE /* RequestManager.swift */; };
 		483B294A1FDFBACE005F5D67 /* RealAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B112651FDE846E001E92FE /* RealAPI.swift */; };
 		483B294B1FDFBAD2005F5D67 /* NetworkHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B112641FDE846E001E92FE /* NetworkHttpClient.swift */; };
@@ -85,7 +91,6 @@
 		48B1126A1FDEA55E001E92FE /* HelveticaBlackCyrillicBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48B112691FDEA55E001E92FE /* HelveticaBlackCyrillicBold.ttf */; };
 		534788DC1FE795220031B727 /* HomeHeaderAdvertisementCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534788DA1FE795220031B727 /* HomeHeaderAdvertisementCollectionViewCell.swift */; };
 		534788DD1FE795220031B727 /* HomeHeaderAdvertisementCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 534788DB1FE795220031B727 /* HomeHeaderAdvertisementCollectionViewCell.xib */; };
-		534788DF1FE797140031B727 /* HomeHeaderAdvertisementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534788DE1FE797140031B727 /* HomeHeaderAdvertisementViewController.swift */; };
 		534788E31FE7B7E00031B727 /* ShowImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534788E11FE7B7E00031B727 /* ShowImageTableViewCell.swift */; };
 		534788E41FE7B7E00031B727 /* ShowImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 534788E21FE7B7E00031B727 /* ShowImageTableViewCell.xib */; };
 		F3E2B83D070F1488BA7CB3B7 /* Pods_aywa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB62771C59A206259FEF1D5 /* Pods_aywa.framework */; };
@@ -111,6 +116,12 @@
 		236F94BC1FE9330300B16981 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		236F94BD1FE9330300B16981 /* HomeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorker.swift; sourceTree = "<group>"; };
 		23EE18511FE9484000B1FB8C /* HomeImageHorizontalCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeImageHorizontalCollectionViewCell.xib; sourceTree = "<group>"; };
+		239310931FEA610300337C4B /* HomeSliderBannerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSliderBannerInteractor.swift; sourceTree = "<group>"; };
+		239310941FEA610300337C4B /* HomeSliderBannerModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSliderBannerModels.swift; sourceTree = "<group>"; };
+		239310951FEA610300337C4B /* HomeSliderBannerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSliderBannerPresenter.swift; sourceTree = "<group>"; };
+		239310961FEA610300337C4B /* HomeSliderBannerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSliderBannerRouter.swift; sourceTree = "<group>"; };
+		239310971FEA610300337C4B /* HomeSliderBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSliderBannerViewController.swift; sourceTree = "<group>"; };
+		239310981FEA610300337C4B /* HomeSliderBannerWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSliderBannerWorker.swift; sourceTree = "<group>"; };
 		427E8D1FCB73A698E054AFAA /* Pods-aywa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aywa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-aywa/Pods-aywa.debug.xcconfig"; sourceTree = "<group>"; };
 		48728CDF1FE3ADAC00780DBF /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		48728CE01FE3ADAC00780DBF /* BoolExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolExtensions.swift; sourceTree = "<group>"; };
@@ -174,7 +185,6 @@
 		48B112691FDEA55E001E92FE /* HelveticaBlackCyrillicBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HelveticaBlackCyrillicBold.ttf; sourceTree = "<group>"; };
 		534788DA1FE795220031B727 /* HomeHeaderAdvertisementCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderAdvertisementCollectionViewCell.swift; sourceTree = "<group>"; };
 		534788DB1FE795220031B727 /* HomeHeaderAdvertisementCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeHeaderAdvertisementCollectionViewCell.xib; sourceTree = "<group>"; };
-		534788DE1FE797140031B727 /* HomeHeaderAdvertisementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderAdvertisementViewController.swift; sourceTree = "<group>"; };
 		534788E11FE7B7E00031B727 /* ShowImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowImageTableViewCell.swift; sourceTree = "<group>"; };
 		534788E21FE7B7E00031B727 /* ShowImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowImageTableViewCell.xib; sourceTree = "<group>"; };
 		ADB62771C59A206259FEF1D5 /* Pods_aywa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_aywa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -208,6 +218,12 @@
 		23677A681FEA2CF800650EA3 /* HomeSliderBanner */ = {
 			isa = PBXGroup;
 			children = (
+				239310931FEA610300337C4B /* HomeSliderBannerInteractor.swift */,
+				239310941FEA610300337C4B /* HomeSliderBannerModels.swift */,
+				239310951FEA610300337C4B /* HomeSliderBannerPresenter.swift */,
+				239310961FEA610300337C4B /* HomeSliderBannerRouter.swift */,
+				239310971FEA610300337C4B /* HomeSliderBannerViewController.swift */,
+				239310981FEA610300337C4B /* HomeSliderBannerWorker.swift */,
 			);
 			path = HomeSliderBanner;
 			sourceTree = "<group>";
@@ -233,7 +249,6 @@
 				236F94BB1FE9330300B16981 /* HomeRouter.swift */,
 				236F94BC1FE9330300B16981 /* HomeViewController.swift */,
 				236F94BD1FE9330300B16981 /* HomeWorker.swift */,
-				534788DE1FE797140031B727 /* HomeHeaderAdvertisementViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -587,10 +602,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2393109D1FEA610300337C4B /* HomeSliderBannerViewController.swift in Sources */,
 				48728D0E1FE3AED000780DBF /* ArrayExtensions.swift in Sources */,
 				48AAD6641FE508690097C0F3 /* SignupViewController.swift in Sources */,
 				48728D0F1FE3AED000780DBF /* BoolExtensions.swift in Sources */,
 				236F94C01FE9330700B16981 /* HomePresenter.swift in Sources */,
+				2393109A1FEA610300337C4B /* HomeSliderBannerModels.swift in Sources */,
 				236F94BE1FE9330700B16981 /* HomeInteractor.swift in Sources */,
 				48728D101FE3AED000780DBF /* CharacterExtensions.swift in Sources */,
 				48728D111FE3AED000780DBF /* CGColorExtensions.swift in Sources */,
@@ -611,12 +628,14 @@
 				48728D191FE3AED000780DBF /* CollectionExtensions.swift in Sources */,
 				48728D1A1FE3AED000780DBF /* DataExtensions.swift in Sources */,
 				48728D1B1FE3AED000780DBF /* DateExtensions.swift in Sources */,
+				239310991FEA610300337C4B /* HomeSliderBannerInteractor.swift in Sources */,
 				534788DC1FE795220031B727 /* HomeHeaderAdvertisementCollectionViewCell.swift in Sources */,
 				48728D1C1FE3AED000780DBF /* DictionaryExtensions.swift in Sources */,
 				48728D1D1FE3AED000780DBF /* DoubleExtensions.swift in Sources */,
 				48728D1E1FE3AED000780DBF /* FloatExtensions.swift in Sources */,
 				2356E9441FEA4AD8009B7AC8 /* LoginViewController.swift in Sources */,
 				48728D1F1FE3AED000780DBF /* IntExtensions.swift in Sources */,
+				2393109B1FEA610300337C4B /* HomeSliderBannerPresenter.swift in Sources */,
 				48AAD6701FE5380A0097C0F3 /* BaseWorker.swift in Sources */,
 				236F94B01FE8DC4E00B16981 /* HomeTableViewCell.swift in Sources */,
 				48728D201FE3AED000780DBF /* LocaleExtensions.swift in Sources */,
@@ -628,9 +647,11 @@
 				2356E9411FEA4AD8009B7AC8 /* LoginModels.swift in Sources */,
 				48728D3A1FE3AED000780DBF /* URLExtensions.swift in Sources */,
 				483B29521FDFBB23005F5D67 /* AppSettings.plist in Sources */,
+				2393109E1FEA610300337C4B /* HomeSliderBannerWorker.swift in Sources */,
 				483B29531FDFBB23005F5D67 /* Localizable.strings in Sources */,
 				48AAD66E1FE533E80097C0F3 /* Utils.swift in Sources */,
 				48B112441FDE5D39001E92FE /* LandingModels.swift in Sources */,
+				2393109C1FEA610300337C4B /* HomeSliderBannerRouter.swift in Sources */,
 				48B112461FDE5D39001E92FE /* LandingRouter.swift in Sources */,
 				483B294D1FDFBAE0005F5D67 /* AppSettings.swift in Sources */,
 				483B294E1FDFBAE4005F5D67 /* RemoteNotificationManager.swift in Sources */,
@@ -648,7 +669,6 @@
 				48B112481FDE5D39001E92FE /* LandingWorker.swift in Sources */,
 				2356E9401FEA4AD8009B7AC8 /* LoginInteractor.swift in Sources */,
 				483B294C1FDFBAD6005F5D67 /* BaseRequest.swift in Sources */,
-				534788DF1FE797140031B727 /* HomeHeaderAdvertisementViewController.swift in Sources */,
 				2356E9421FEA4AD8009B7AC8 /* LoginPresenter.swift in Sources */,
 				48B1121E1FDE5B4C001E92FE /* AppDelegate.swift in Sources */,
 				236F94BF1FE9330700B16981 /* HomeModels.swift in Sources */,

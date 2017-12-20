@@ -70,6 +70,7 @@
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
                                     <action selector="signupButtonTapped:" destination="wKh-GD-z1k" eventType="touchUpInside" id="jcX-1S-3Eo"/>
+                                    <segue destination="8P3-nz-1eY" kind="show" identifier="MainTabBarController" id="Laa-ha-ffu"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -97,14 +98,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email id" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JjU-hE-xME">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test_user1@gmail.com" borderStyle="roundedRect" placeholder="Email id" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JjU-hE-xME">
                                 <rect key="frame" x="47" y="124" width="281" height="30"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Ag-4M-KRh">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Ag-4M-KRh">
                                 <rect key="frame" x="47" y="179" width="281" height="30"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -117,6 +118,7 @@
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="loginButtonTapped:" destination="bFY-JS-lCR" eventType="touchUpInside" id="ryB-be-kkH"/>
+                                    <segue destination="8P3-nz-1eY" kind="show" identifier="MainTabBarController" id="sie-6N-KpO"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -217,10 +219,10 @@
             </objects>
             <point key="canvasLocation" x="942" y="48"/>
         </scene>
-        <!--Home Header Advertisement View Controller-->
+        <!--Home Slider Banner View Controller-->
         <scene sceneID="xJW-4h-P2k">
             <objects>
-                <viewController storyboardIdentifier="HomeHeaderAdvertisementViewController" id="Uq9-WU-oQ2" customClass="HomeHeaderAdvertisementViewController" customModule="aywa" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeSliderBannerViewController" id="Uq9-WU-oQ2" customClass="HomeSliderBannerViewController" customModule="aywa" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TEf-ir-Bve">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -250,13 +252,74 @@
                                     <outlet property="delegate" destination="Uq9-WU-oQ2" id="eLt-0J-zWj"/>
                                 </connections>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZYo-g0-Bvd" userLabel="ContainerView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="page1Logo" translatesAutoresizingMaskIntoConstraints="NO" id="aDL-Ky-af3" userLabel="ImageAywa">
+                                        <rect key="frame" x="10" y="7" width="93" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="dAT-1A-HO9">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="39"/>
+                                            </constraint>
+                                            <constraint firstAttribute="width" constant="93" id="iDv-xT-slx">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="125"/>
+                                            </constraint>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="31o-ME-Acq" userLabel="MenuButton">
+                                        <rect key="frame" x="339" y="7" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="0tz-YS-K8s">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="39"/>
+                                            </constraint>
+                                            <constraint firstAttribute="width" constant="30" id="vxN-zH-r3M">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="39"/>
+                                            </constraint>
+                                        </constraints>
+                                        <state key="normal" image="menu"/>
+                                        <connections>
+                                            <action selector="menuButtonTapped:" destination="Uq9-WU-oQ2" eventType="touchUpInside" id="l4D-E0-rOt"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FTp-ex-29k">
+                                        <rect key="frame" x="297" y="8" width="35" height="28"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="35" id="Fff-Db-FCe">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="45"/>
+                                            </constraint>
+                                            <constraint firstAttribute="height" constant="28" id="Kst-Zo-gzh">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="36"/>
+                                            </constraint>
+                                        </constraints>
+                                        <state key="normal" image="screenCast">
+                                            <color key="titleColor" red="0.92133051156997681" green="0.13921850919723511" blue="0.14212876558303833" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tvShareButtonTapped:" destination="Uq9-WU-oQ2" eventType="touchUpInside" id="MRI-nE-56T"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="31o-ME-Acq" firstAttribute="leading" secondItem="FTp-ex-29k" secondAttribute="trailing" constant="7" id="0DA-30-Bpd"/>
+                                    <constraint firstItem="aDL-Ky-af3" firstAttribute="centerY" secondItem="ZYo-g0-Bvd" secondAttribute="centerY" id="CkL-28-WLe"/>
+                                    <constraint firstItem="31o-ME-Acq" firstAttribute="centerY" secondItem="ZYo-g0-Bvd" secondAttribute="centerY" id="cFr-66-fk0"/>
+                                    <constraint firstItem="FTp-ex-29k" firstAttribute="centerY" secondItem="ZYo-g0-Bvd" secondAttribute="centerY" id="hXA-Xy-51T"/>
+                                    <constraint firstAttribute="trailing" secondItem="31o-ME-Acq" secondAttribute="trailing" constant="6" id="hhP-WC-IZ1"/>
+                                    <constraint firstItem="aDL-Ky-af3" firstAttribute="leading" secondItem="ZYo-g0-Bvd" secondAttribute="leading" constant="10" id="kgt-NF-am2"/>
+                                    <constraint firstAttribute="height" constant="44" id="pAQ-vu-uQA"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="IvY-XT-3h4" secondAttribute="bottom" id="7db-DF-m9a"/>
+                            <constraint firstItem="ZYo-g0-Bvd" firstAttribute="top" secondItem="TEf-ir-Bve" secondAttribute="top" id="Ts6-5l-1Uc"/>
                             <constraint firstItem="IvY-XT-3h4" firstAttribute="top" secondItem="TEf-ir-Bve" secondAttribute="top" id="Vhi-KJ-Dqe"/>
+                            <constraint firstItem="ZYo-g0-Bvd" firstAttribute="leading" secondItem="abq-kQ-m3f" secondAttribute="leading" id="X8q-UU-Nca"/>
                             <constraint firstAttribute="trailing" secondItem="IvY-XT-3h4" secondAttribute="trailing" id="dW5-oo-0ey"/>
                             <constraint firstItem="IvY-XT-3h4" firstAttribute="leading" secondItem="TEf-ir-Bve" secondAttribute="leading" id="nep-hZ-Pc6"/>
+                            <constraint firstItem="ZYo-g0-Bvd" firstAttribute="trailing" secondItem="abq-kQ-m3f" secondAttribute="trailing" id="qQL-RS-JSD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="abq-kQ-m3f"/>
                     </view>
@@ -266,7 +329,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pnq-va-Y7j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2498" y="34"/>
+            <point key="canvasLocation" x="2496.8000000000002" y="33.733133433283363"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="menu" width="6" height="22"/>
+        <image name="page1Logo" width="193" height="67"/>
+        <image name="screenCast" width="35" height="28"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="sie-6N-KpO"/>
+    </inferredMetricsTieBreakers>
 </document>
