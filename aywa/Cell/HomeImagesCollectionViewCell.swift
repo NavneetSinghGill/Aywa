@@ -15,8 +15,5 @@ class HomeImagesCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
-    func setImageSize(imageWidth: CGFloat, imageHeight: CGFloat)  {
-        displayImageView.frame = CGRect(x: 0, y: 0, width: imageWidth, height: imageHeight)
-    }
+    
 }

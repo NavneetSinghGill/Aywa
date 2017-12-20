@@ -77,6 +77,9 @@ class LoginViewController: UIViewController, LoginDisplayLogic
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        emailTextField.text = "test_user1@gmail.com"
+        passwordTextField.text = "123456"
     }
     
     override func viewWillAppear(_ animated: Bool) {

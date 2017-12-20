@@ -95,7 +95,8 @@ class HomeViewController: UIViewController, HomeDisplayLogic, UITableViewDelegat
     var homeHeader = HomeHeaderAdvertisementViewController()
     
     var storedOffsets = [Int: CGFloat]()
-    let heightOfCell: CGFloat = 265
+    let verticalCellHeight: CGFloat = 235
+    let horizontalCellHeight: CGFloat = 175
     
     //MARK:- TableView Delegate And Datasource Methods
     //MARK: Datasource
@@ -106,24 +107,35 @@ class HomeViewController: UIViewController, HomeDisplayLogic, UITableViewDelegat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: HomeTableViewCell = tableView.dequeueReusableCell(withIdentifier: Identifiers.homeTableCell, for: indexPath) as! HomeTableViewCell
+        
+        if indexPath.row == 1 {
+            cell.cellAlignment = .Horizontal
+        } else {
+            cell.cellAlignment = .Vertical
+        }
+        cell.setCollectionView(forRow: indexPath.row)
+        
         return cell
     }
     //MARK: Delegate
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        guard let tableViewCell = cell as? HomeTableViewCell else { return }
-        
-        tableViewCell.setCollectionViewDataSourceDelegate(self , forRow: indexPath.row)
-        tableViewCell.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
-    }
-    
-    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        guard let tableViewCell = cell as? HomeTableViewCell else { return }
-        
-        storedOffsets[indexPath.row] = tableViewCell.collectionViewOffset
-    }
+//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        guard let tableViewCell = cell as? HomeTableViewCell else { return }
+//
+//        tableViewCell.setCollectionViewDataSourceDelegate(self , forRow: indexPath.row)
+//        tableViewCell.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
+//    }
+//
+//    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        guard let tableViewCell = cell as? HomeTableViewCell else { return }
+//
+//        storedOffsets[indexPath.row] = tableViewCell.collectionViewOffset
+//    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return heightOfCell
+        if indexPath.row == 1 {
+            return horizontalCellHeight
+        }
+        return verticalCellHeight
     }
     
     func displayError(response: Landing.JWTToken.Response)
@@ -136,22 +148,4 @@ class HomeViewController: UIViewController, HomeDisplayLogic, UITableViewDelegat
         print("Show Next Screen!!!")
     }
     
-}
-
-extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    //MARK:- CollectionView Delegate And Datasource Methods
-    //MARK: Datasource
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // return model[collectionView.tag].count
-        return 10
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: HomeImagesCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.homeImagesCollectionCell, for: indexPath) as! HomeImagesCollectionViewCell
-        return cell
-    }
-    //MARK: Delegate
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Collection view at row \(collectionView.tag) selected index path \(indexPath)")
-    }
 }

@@ -41,6 +41,9 @@ struct Constants {
     static let kBearerkey = "Bearer "
     
     static let kAppName = "Aywa"
+    
+    static let generalHorizontalCellAspectRatio: CGFloat = 476/268
+    static let generalVerticalCellAspectRatio: CGFloat = 220/320
 
     // MARK: - User Defaults
     
@@ -87,8 +90,14 @@ struct Constants {
 struct Identifiers {
     //CollectionView
     static let homeAdvertCollectionCell = "HomeHeaderAdvertisementCollectionViewCell"
-    static let homeImagesCollectionCell = "HomeImagesCollectionViewCell"
+    static let homeImageVerticalCollectionViewCell = "HomeImageVerticalCollectionViewCell"
+    static let homeImageHorizontalCollectionViewCell = "HomeImageHorizontalCollectionViewCell"
     // TableView
     static let homeTableCell = "HomeTableViewCell"
+}
+
+enum CellAlignment {
+    case Vertical
+    case Horizontal
 }
 
