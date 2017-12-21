@@ -10,4 +10,5 @@ target 'aywa' do
  pod 'ReachabilitySwift'
  pod 'NotificationBannerSwift'
  pod 'SwiftKeychainWrapper', '~> 3.0'
+ pod 'SDWebImage', '~> 4.0'
 end

@@ -14,7 +14,8 @@ import UIKit
 
 protocol HomeSliderBannerDisplayLogic: class
 {
-    //func displaySomething(viewModel: HomeSliderBanner.Something.ViewModel)
+    func displayError(response: HomeSliderBanner.SliderBanner.Response)
+    func displayHomeScreen(response: HomeSliderBanner.SliderBanner.Response)
 }
 
 class HomeSliderBannerViewController: UIViewController, HomeSliderBannerDisplayLogic
@@ -69,16 +70,23 @@ class HomeSliderBannerViewController: UIViewController, HomeSliderBannerDisplayL
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
+        // Call Slider Banner API
+        doCallSliderBannerAPI()
         let nib = UINib(nibName: Identifiers.homeAdvertCollectionCell, bundle: Bundle.main)
         homeHeaderCollectionView.register(nib, forCellWithReuseIdentifier: Identifiers.homeAdvertCollectionCell)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
     
     // MARK: Do something
     
+    var sliderBannarArray = [HomeSliderBanner.SliderBanner.Banners]()
+    
     @IBOutlet weak var homeHeaderCollectionView: UICollectionView!
-   
+    
     @IBAction func tvShareButtonTapped(_ sender: Any) {
         doTVShareAction()
     }
@@ -86,7 +94,7 @@ class HomeSliderBannerViewController: UIViewController, HomeSliderBannerDisplayL
         doMenuAction()
     }
     
-  
+    
     //MARK: Do TV Share Action
     func doTVShareAction() {
         print("Perform TV Share Action")
@@ -95,6 +103,35 @@ class HomeSliderBannerViewController: UIViewController, HomeSliderBannerDisplayL
     func doMenuAction() {
         print("Perform Menu Action")
     }
+    
+    func displayError(response: HomeSliderBanner.SliderBanner.Response)
+    {
+        print("Error occured: \(response)")
+    }
+    
+    func displayHomeScreen(response: HomeSliderBanner.SliderBanner.Response)
+    {
+        print("Show Home Screen Data!!!:\(String(describing: response.banners)) ")
+        sliderBannarArray = (response.banners)!
+        
+        //        sliderBannarArray = sliderBannarArray.sorted{ ($0 as! HomeSliderBanner.SliderBanner.Banners).displayOrder! < ($1 as! HomeSliderBanner.SliderBanner.Banners).displayOrder! }
+        
+        sliderBannarArray = sliderBannarArray.sorted{ ($0 ).displayOrder! < ($1 ).displayOrder! }
+        
+        print(sliderBannarArray)
+        
+        print(sliderBannarArray.count)
+        print(response.banners![0].titleImage ?? String() )
+        print((sliderBannarArray[0]).titleImage as! String )
+        self.homeHeaderCollectionView.reloadData()
+        
+    }
+    
+    //MARK: For Call Slider Banner API
+    func doCallSliderBannerAPI()  {
+        let request = HomeSliderBanner.SliderBanner.Request()
+        interactor?.doCallSliderBannerAPI(request: request)
+    }
 }
 
 extension HomeSliderBannerViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -102,11 +139,12 @@ extension HomeSliderBannerViewController: UICollectionViewDelegate, UICollection
     //MARK: Datasource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return self.sliderBannarArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: HomeHeaderAdvertisementCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.homeAdvertCollectionCell, for: indexPath) as! HomeHeaderAdvertisementCollectionViewCell
+        cell.setUIForSliderBanner(indexPathValueIs: indexPath.row, arrayOfValue: self.sliderBannarArray)
         return cell
     }
     
@@ -114,5 +152,9 @@ extension HomeSliderBannerViewController: UICollectionViewDelegate, UICollection
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("Collection view at row \(collectionView.tag) selected index path \(indexPath)")
     }
 }

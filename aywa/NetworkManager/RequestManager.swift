@@ -31,4 +31,14 @@ class RequestManager: NSObject {
             BannerManager.showFailureBanner(subtitle: Constants.kNoNetworkMessage)
         }
     }
+    
+    func fetchSliderBanner(request:BaseRequest, completion:@escaping CompletionHandler){
+        if ApplicationDelegate.isNetworkAvailable{
+            RealAPI().getObject(request:request, genericResponse: HomeSliderBanner.SliderBanner.Response.self, completion:completion)
+        }
+        else{
+            completion(false, Constants.kNoNetworkMessage)
+            BannerManager.showFailureBanner(subtitle: Constants.kNoNetworkMessage)
+        }
+    }
 }

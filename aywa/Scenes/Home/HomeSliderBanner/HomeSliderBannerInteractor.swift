@@ -14,28 +14,37 @@ import UIKit
 
 protocol HomeSliderBannerBusinessLogic
 {
- // func doSomething(request: HomeSliderBanner.Something.Request)
+    func doCallSliderBannerAPI(request: HomeSliderBanner.SliderBanner.Request)
+    
 }
 
 protocol HomeSliderBannerDataStore
 {
-  //var name: String { get set }
+    //var name: String { get set }
 }
 
 class HomeSliderBannerInteractor: HomeSliderBannerBusinessLogic, HomeSliderBannerDataStore
 {
-  var presenter: HomeSliderBannerPresentationLogic?
-  var worker: HomeSliderBannerWorker?
-  //var name: String = ""
-  
-  // MARK: Do something
-  
-//  func doSomething(request: HomeSliderBanner.Something.Request)
-//  {
-//    worker = HomeSliderBannerWorker()
-//    worker?.doSomeWork()
-//
-//    let response = HomeSliderBanner.Something.Response()
-//    presenter?.presentSomething(response: response)
-//  }
+    var presenter: HomeSliderBannerPresentationLogic?
+    var worker: HomeSliderBannerWorker?
+    var securityStorageWorker = SecurityStorageWorker()
+    
+    
+    // MARK: Do CallSliderBannerAPI
+    
+    func doCallSliderBannerAPI(request: HomeSliderBanner.SliderBanner.Request)
+    {
+        var message:String = Constants.kErrorMessage
+
+        worker = HomeSliderBannerWorker()
+        worker?.sliderBanner(request: request, success: { (response) in
+            print(response)
+            self.presenter?.presentNextScreen(response:response)
+//            if self.securityStorageWorker.storeAccessTokenResponse(response: response) {
+//            self.presenter?.presentNextScreen()
+//            }
+        }, fail: { (response) in
+            self.presenter?.presentError(response: HomeSliderBanner.SliderBanner.Response(message: message)!)
+        })
+    }
 }

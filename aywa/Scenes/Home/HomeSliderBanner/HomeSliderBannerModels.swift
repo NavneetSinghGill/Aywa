@@ -11,23 +11,164 @@
 //
 
 import UIKit
+import Alamofire
+import ObjectMapper
 
 let sliderURL = "/slider"
 
 enum HomeSliderBanner
 {
-  // MARK: Use cases
-  
-  enum SliderBanner
-  {
-    struct Request
+    // MARK: Use cases
+    
+    enum SliderBanner
     {
+        struct Request
+        {
+            func baseRequest() -> BaseRequest {
+                let baseRequest = BaseRequest()
+                baseRequest.urlPath = sliderURL
+                baseRequest.parameters[Constants.kClientTypeKey] = Constants.kClientTypeValue
+                baseRequest.parameters[Constants.kCatalogIdKey] = 0 // 2 For home Screen
+                return baseRequest
+            }
+        }
+        struct Response: Mappable
+        {
+            
+            // MARK: Declaration for string constants to be used to decode and also serialize.
+            private struct SerializationKeys {
+                static let banners = "Banners"
+                static let message = "Message"
+                
+            }
+            
+            // MARK: Properties
+            public var banners: [Banners]?
+            public var message: String?
+            
+            // MARK: ObjectMapper Initializers
+            /// Map a JSON object to this class using ObjectMapper.
+            ///
+            /// - parameter map: A mapping from ObjectMapper.
+            public init?(map: Map){
+                
+            }
+            public init?(message: String){
+                self.message = message
+            }
+            /// Map a JSON object to this class using ObjectMapper.
+            ///
+            /// - parameter map: A mapping from ObjectMapper.
+            public mutating func mapping(map: Map) {
+                banners <- map[SerializationKeys.banners]
+                message <- map[SerializationKeys.message]
+                
+            }
+            
+            /// Generates description of the object in the form of a NSDictionary.
+            ///
+            /// - returns: A Key value pair containing all valid values in the object.
+            public func dictionaryRepresentation() -> [String: Any] {
+                var dictionary: [String: Any] = [:]
+                if let value = banners { dictionary[SerializationKeys.banners] = value.map { $0.dictionaryRepresentation() } }
+                if let value = message { dictionary[SerializationKeys.message] = value }
+                return dictionary
+            }
+            
+        }
+        struct Banners: Mappable {
+            
+            // MARK: Declaration for string constants to be used to decode and also serialize.
+            private struct SerializationKeys {
+                static let isMobile = "IsMobile"
+                static let isTV = "IsTV"
+                static let image = "Image"
+                static let displayOrder = "DisplayOrder"
+                static let isPlayShow = "IsPlayShow"
+                static let id = "Id"
+                static let isWeb = "IsWeb"
+                static let isArabic = "IsArabic"
+                static let catalogId = "CatalogId"
+                static let url = "Url"
+                static let titleImage = "TitleImage"
+                static let isEnglish = "IsEnglish"
+                static let styleType = "StyleType"
+                static let showId = "ShowId"
+                static let urlName = "UrlName"
+            }
+            
+            // MARK: Properties
+            public var isMobile: Bool? = false
+            public var isTV: Bool? = false
+            public var image: String?
+            public var displayOrder: Int?
+            public var isPlayShow: Bool? = false
+            public var id: Int?
+            public var isWeb: Bool? = false
+            public var isArabic: Bool? = false
+            public var catalogId: Int?
+            public var url: String?
+            public var titleImage: String?
+            public var isEnglish: Bool? = false
+            public var styleType: String?
+            public var showId: Int?
+            public var urlName: String?
+            
+            // MARK: ObjectMapper Initializers
+            /// Map a JSON object to this class using ObjectMapper.
+            ///
+            /// - parameter map: A mapping from ObjectMapper.
+            public init?(map: Map){
+                
+            }
+            
+            /// Map a JSON object to this class using ObjectMapper.
+            ///
+            /// - parameter map: A mapping from ObjectMapper.
+            public mutating func mapping(map: Map) {
+                isMobile <- map[SerializationKeys.isMobile]
+                isTV <- map[SerializationKeys.isTV]
+                image <- map[SerializationKeys.image]
+                displayOrder <- map[SerializationKeys.displayOrder]
+                isPlayShow <- map[SerializationKeys.isPlayShow]
+                id <- map[SerializationKeys.id]
+                isWeb <- map[SerializationKeys.isWeb]
+                isArabic <- map[SerializationKeys.isArabic]
+                catalogId <- map[SerializationKeys.catalogId]
+                url <- map[SerializationKeys.url]
+                titleImage <- map[SerializationKeys.titleImage]
+                isEnglish <- map[SerializationKeys.isEnglish]
+                styleType <- map[SerializationKeys.styleType]
+                showId <- map[SerializationKeys.showId]
+                urlName <- map[SerializationKeys.urlName]
+            }
+            
+            /// Generates description of the object in the form of a NSDictionary.
+            ///
+            /// - returns: A Key value pair containing all valid values in the object.
+            public func dictionaryRepresentation() -> [String: Any] {
+                var dictionary: [String: Any] = [:]
+                dictionary[SerializationKeys.isMobile] = isMobile
+                dictionary[SerializationKeys.isTV] = isTV
+                if let value = image { dictionary[SerializationKeys.image] = value }
+                if let value = displayOrder { dictionary[SerializationKeys.displayOrder] = value }
+                dictionary[SerializationKeys.isPlayShow] = isPlayShow
+                if let value = id { dictionary[SerializationKeys.id] = value }
+                dictionary[SerializationKeys.isWeb] = isWeb
+                dictionary[SerializationKeys.isArabic] = isArabic
+                if let value = catalogId { dictionary[SerializationKeys.catalogId] = value }
+                if let value = url { dictionary[SerializationKeys.url] = value }
+                if let value = titleImage { dictionary[SerializationKeys.titleImage] = value }
+                dictionary[SerializationKeys.isEnglish] = isEnglish
+                if let value = styleType { dictionary[SerializationKeys.styleType] = value }
+                if let value = showId { dictionary[SerializationKeys.showId] = value }
+                if let value = urlName { dictionary[SerializationKeys.urlName] = value }
+                return dictionary
+            }
+            
+        }
+        struct ViewModel
+        {
+        }
     }
-    struct Response
-    {
-    }
-    struct ViewModel
-    {
-    }
-  }
 }

@@ -14,7 +14,7 @@ import UIKit
 
 protocol HomeDisplayLogic: class
 {
-    // func displayError(response: Landing.JWTToken.Response)
+    func displayError(response: Landing.JWTToken.Response)
     func displayHomeScreen()
     
 }

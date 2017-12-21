@@ -12,9 +12,40 @@
 
 import UIKit
 
-class HomeSliderBannerWorker
+typealias sliderBannerResponseHandler = (_ response:HomeSliderBanner.SliderBanner.Response) ->()
+
+class HomeSliderBannerWorker: BaseWorker
 {
-  func doSomeWork()
-  {
-  }
+    func sliderBanner(request:HomeSliderBanner.SliderBanner.Request, success:@escaping(sliderBannerResponseHandler), fail:@escaping(sliderBannerResponseHandler))
+    {
+        //call network etc.
+        let manager = RequestManager()
+        manager.fetchSliderBanner(request: request.baseRequest()) { (status, response) in
+            self.handleSlideBannerResponse(success: success, fail: fail, status: status, response: response)
+            
+        }
+    }
+    
+    func handleSlideBannerResponse(success:@escaping(sliderBannerResponseHandler), fail:@escaping(sliderBannerResponseHandler), status: Bool, response: Any?) {
+        var message:String = Constants.kErrorMessage
+        if status {
+            if let result = response as? HomeSliderBanner.SliderBanner.Response {
+                success(result)
+                return
+            }
+        }
+        else {
+            if let result = response as? HomeSliderBanner.SliderBanner.Response {
+                fail(result)
+                return
+            }
+            else
+            {
+                if let result = response as? String {
+                    message = result
+                }
+            }
+        }
+        fail(HomeSliderBanner.SliderBanner.Response(message: message)!)
+    }
 }

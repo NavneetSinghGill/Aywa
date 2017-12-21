@@ -14,14 +14,24 @@ import UIKit
 
 protocol HomePresentationLogic
 {
-  //func presentSomething(response: Home.Something.Response)
+    func presentError(response: Landing.JWTToken.Response)
+    func presentNextScreen()
 }
 
 class HomePresenter: HomePresentationLogic
 {
   weak var viewController: HomeDisplayLogic?
   
-  // MARK: Do something
+  // MARK: Do Slider
   
-  
+    
+    func presentError(response: Landing.JWTToken.Response)
+    {
+        viewController?.displayError(response: response)
+    }
+    
+    func presentNextScreen()
+    {
+        viewController?.displayHomeScreen()
+    }
 }

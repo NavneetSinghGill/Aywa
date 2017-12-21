@@ -10,7 +10,7 @@ import UIKit
 
 class BaseWorker {
     
-    public func handleTokenResponse(success:@escaping(refreshTokenResponseHandler), fail:@escaping(refreshTokenResponseHandler), status: Bool, response: Any?) {
+    public func handleTokenResponse(success:@escaping(accessTokenResponseHandler), fail:@escaping(accessTokenResponseHandler), status: Bool, response: Any?) {
         var message:String = Constants.kErrorMessage
         if status {
             if let result = response as? Landing.JWTToken.Response {

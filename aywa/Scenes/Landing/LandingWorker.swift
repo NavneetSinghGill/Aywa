@@ -14,7 +14,6 @@ import UIKit
 
 typealias accessTokenResponseHandler = (_ response:Landing.JWTToken.Response) ->()
 
-typealias refreshTokenResponseHandler = (_ response:Landing.JWTToken.Response) ->()
 
 class LandingWorker:BaseWorker
 {
@@ -28,7 +27,7 @@ class LandingWorker:BaseWorker
         }
     }
     
-    func fetchRefreshToken(refreshToken:String, success:@escaping(refreshTokenResponseHandler), fail:@escaping(refreshTokenResponseHandler))
+    func fetchRefreshToken(refreshToken:String, success:@escaping(accessTokenResponseHandler), fail:@escaping(accessTokenResponseHandler))
     {
         //call network etc.
         let manager = RequestManager()

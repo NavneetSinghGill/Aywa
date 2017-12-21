@@ -16,7 +16,7 @@ typealias CompletionHandler = (_ success: Bool, _ response: Any?) -> Void
 let isiPad: Bool = UIDevice.current.userInterfaceIdiom == .pad
 
 struct Constants {
-
+    
     // MARK: - General Constants
     static let deviceIdentifier = "DeviceIdentifier"
     static let DeviceInfoKey = "device_info"
@@ -44,7 +44,7 @@ struct Constants {
     
     static let generalHorizontalCellAspectRatio: CGFloat = 476/268
     static let generalVerticalCellAspectRatio: CGFloat = 220/320
-
+    
     // MARK: - User Defaults
     
     // MARK: - Enums
@@ -87,6 +87,9 @@ struct Constants {
     static let kUserName = "UserName"
     
     //MARK: - SliderBanner keys
+    static let kClientTypeKey = "clientType"
+    static let kClientTypeValue = 2 // 2 for mobile
+    static let kCatalogIdKey = "catalogId"
     
 }
 
