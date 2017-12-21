@@ -40,9 +40,7 @@ class HomeSliderBannerInteractor: HomeSliderBannerBusinessLogic, HomeSliderBanne
         worker?.sliderBanner(request: request, success: { (response) in
             print(response)
             self.presenter?.presentNextScreen(response:response)
-//            if self.securityStorageWorker.storeAccessTokenResponse(response: response) {
-//            self.presenter?.presentNextScreen()
-//            }
+
         }, fail: { (response) in
             self.presenter?.presentError(response: HomeSliderBanner.SliderBanner.Response(message: message)!)
         })

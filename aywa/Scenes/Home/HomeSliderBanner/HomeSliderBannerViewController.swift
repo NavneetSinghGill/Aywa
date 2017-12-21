@@ -129,8 +129,8 @@ class HomeSliderBannerViewController: UIViewController, HomeSliderBannerDisplayL
     
     //MARK: For Call Slider Banner API
     func doCallSliderBannerAPI()  {
-        let request = HomeSliderBanner.SliderBanner.Request()
-        interactor?.doCallSliderBannerAPI(request: request)
+//        let request = HomeSliderBanner.SliderBanner.Request()
+//        interactor?.doCallSliderBannerAPI(request: request)
     }
 }
 

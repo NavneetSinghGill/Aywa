@@ -91,6 +91,13 @@ struct Constants {
     static let kClientTypeValue = 2 // 2 for mobile
     static let kCatalogIdKey = "catalogId"
     
+    //MARK: - Section Keys
+    static let kMenuSectionsOnlyKey = "MenuSectionsOnly"
+    static let kMenuSectionsOnlyValue = "false"
+    static let kShowTypeKey = "ShowType"
+    static let kIncludeShowsKey = "IncludeShows"
+    static let kIncludeShowsValue = "true"
+    
 }
 
 struct Identifiers {

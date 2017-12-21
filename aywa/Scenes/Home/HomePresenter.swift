@@ -14,8 +14,8 @@ import UIKit
 
 protocol HomePresentationLogic
 {
-    func presentError(response: Landing.JWTToken.Response)
-    func presentNextScreen()
+    func presentError(response: Home.Section.Response)
+    func presentNextScreen(response: Home.Section.Response)
 }
 
 class HomePresenter: HomePresentationLogic
@@ -25,13 +25,13 @@ class HomePresenter: HomePresentationLogic
   // MARK: Do Slider
   
     
-    func presentError(response: Landing.JWTToken.Response)
+    func presentError(response: Home.Section.Response)
     {
         viewController?.displayError(response: response)
     }
     
-    func presentNextScreen()
+    func presentNextScreen(response: Home.Section.Response)
     {
-        viewController?.displayHomeScreen()
+        viewController?.displayHomeScreen(response: response)
     }
 }

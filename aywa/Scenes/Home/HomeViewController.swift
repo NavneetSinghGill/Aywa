@@ -14,8 +14,8 @@ import UIKit
 
 protocol HomeDisplayLogic: class
 {
-    func displayError(response: Landing.JWTToken.Response)
-    func displayHomeScreen()
+    func displayError(response: Home.Section.Response)
+    func displayHomeScreen(response: Home.Section.Response)
     
 }
 
@@ -24,7 +24,7 @@ class HomeViewController: UIViewController, HomeDisplayLogic, UITableViewDelegat
     var interactor: HomeBusinessLogic?
     var router: (NSObjectProtocol & HomeRoutingLogic & HomeDataPassing)?
     let homeSliderBannerViewController  = "HomeSliderBannerViewController"
-
+    
     // MARK: Object lifecycle
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -73,6 +73,7 @@ class HomeViewController: UIViewController, HomeDisplayLogic, UITableViewDelegat
     {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+       
         let searchNIB = UINib(nibName: Identifiers.homeTableCell, bundle: nil)
         tableView.register(searchNIB, forCellReuseIdentifier: Identifiers.homeTableCell)
         
@@ -90,6 +91,8 @@ class HomeViewController: UIViewController, HomeDisplayLogic, UITableViewDelegat
         self.navigationItem.hidesBackButton = true
         self.navigationController?.isNavigationBarHidden = true
         //  UIApplication.shared.statusBarStyle = .lightContent
+        // Call section API
+           doSectionAPI()
     }
     
     // MARK: Do something
@@ -101,12 +104,14 @@ class HomeViewController: UIViewController, HomeDisplayLogic, UITableViewDelegat
     var storedOffsets = [Int: CGFloat]()
     let verticalCellHeight: CGFloat = 235
     let horizontalCellHeight: CGFloat = 175
+    var sectionArray = [Home.Section.Response]()
+    
     
     //MARK:- TableView Delegate And Datasource Methods
     //MARK: Datasource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //return model.count
-        return 11
+        return self.sectionArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -122,18 +127,18 @@ class HomeViewController: UIViewController, HomeDisplayLogic, UITableViewDelegat
         return cell
     }
     //MARK: Delegate
-//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//        guard let tableViewCell = cell as? HomeTableViewCell else { return }
-//
-//        tableViewCell.setCollectionViewDataSourceDelegate(self , forRow: indexPath.row)
-//        tableViewCell.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
-//    }
-//
-//    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//        guard let tableViewCell = cell as? HomeTableViewCell else { return }
-//
-//        storedOffsets[indexPath.row] = tableViewCell.collectionViewOffset
-//    }
+    //    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    //        guard let tableViewCell = cell as? HomeTableViewCell else { return }
+    //
+    //        tableViewCell.setCollectionViewDataSourceDelegate(self , forRow: indexPath.row)
+    //        tableViewCell.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
+    //    }
+    //
+    //    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    //        guard let tableViewCell = cell as? HomeTableViewCell else { return }
+    //
+    //        storedOffsets[indexPath.row] = tableViewCell.collectionViewOffset
+    //    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 1 {
@@ -141,19 +146,28 @@ class HomeViewController: UIViewController, HomeDisplayLogic, UITableViewDelegat
         }
         return verticalCellHeight
     }
-    
-    func displayError(response: Landing.JWTToken.Response)
+    //MARK:- Show Response
+    func displayError(response: Home.Section.Response)
     {
         print("Error occured: \(response)")
     }
     
-    func displayHomeScreen()
+    func displayHomeScreen(response: Home.Section.Response)
     {
-        print("Show Home Screen!!!")
+        print("Show Home Section Data!!!")
+        sectionArray = [response]
+        print("Section Counter: \(sectionArray.count)")
+        self.tableView.reloadData()
     }
     
     //MARK: For StatusBarStyle
     //    override var preferredStatusBarStyle: UIStatusBarStyle {
     //        return .lightContent
     //    }
+    
+    //MARK: For Call Section API
+    func doSectionAPI()  {
+        let request = Home.Section.Request()
+        interactor?.doSectionAPI(request: request)
+    }
 }

@@ -31,12 +31,22 @@ class RequestManager: NSObject {
             BannerManager.showFailureBanner(subtitle: Constants.kNoNetworkMessage)
         }
     }
-    
+    //MARK:- Feath Slider Banner
     func fetchSliderBanner(request:BaseRequest, completion:@escaping CompletionHandler){
         if ApplicationDelegate.isNetworkAvailable{
             RealAPI().getObject(request:request, genericResponse: HomeSliderBanner.SliderBanner.Response.self, completion:completion)
         }
         else{
+            completion(false, Constants.kNoNetworkMessage)
+            BannerManager.showFailureBanner(subtitle: Constants.kNoNetworkMessage)
+        }
+    }
+    
+  // Feach Section
+    func fetchSection(request: BaseRequest, completion:@escaping CompletionHandler)  {
+        if ApplicationDelegate.isNetworkAvailable {
+            RealAPI().getObject(request: request, genericResponse: Home.Section.Response.self, completion: completion)
+        }else{
             completion(false, Constants.kNoNetworkMessage)
             BannerManager.showFailureBanner(subtitle: Constants.kNoNetworkMessage)
         }
