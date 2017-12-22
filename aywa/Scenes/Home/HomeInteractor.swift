@@ -41,14 +41,13 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore
 //  }
     
     func doSectionAPI(request: Home.Section.Request) {
-        var message:String = Constants.kErrorMessage
         worker = HomeWorker()
         worker?.homeSection(request: request, success: { (response) in
             print(response)
             self.presenter?.presentNextScreen(response:response)
             
         }, fail: { (response) in
-            self.presenter?.presentError(response: Home.Section.Response(message: message)!)
+            self.presenter?.presentError(response: response)
         })
     }
 }

@@ -122,15 +122,14 @@ class HomeSliderBannerViewController: UIViewController, HomeSliderBannerDisplayL
         
         print(sliderBannarArray.count)
         print(response.banners![0].titleImage ?? String() )
-        print((sliderBannarArray[0]).titleImage as! String )
         self.homeHeaderCollectionView.reloadData()
         
     }
     
     //MARK: For Call Slider Banner API
     func doCallSliderBannerAPI()  {
-//        let request = HomeSliderBanner.SliderBanner.Request()
-//        interactor?.doCallSliderBannerAPI(request: request)
+        let request = HomeSliderBanner.SliderBanner.Request()
+        interactor?.doCallSliderBannerAPI(request: request)
     }
 }
 

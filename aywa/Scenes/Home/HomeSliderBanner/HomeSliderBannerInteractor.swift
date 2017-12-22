@@ -34,15 +34,13 @@ class HomeSliderBannerInteractor: HomeSliderBannerBusinessLogic, HomeSliderBanne
     
     func doCallSliderBannerAPI(request: HomeSliderBanner.SliderBanner.Request)
     {
-        var message:String = Constants.kErrorMessage
-
         worker = HomeSliderBannerWorker()
         worker?.sliderBanner(request: request, success: { (response) in
             print(response)
             self.presenter?.presentNextScreen(response:response)
 
         }, fail: { (response) in
-            self.presenter?.presentError(response: HomeSliderBanner.SliderBanner.Response(message: message)!)
+            self.presenter?.presentError(response: response)
         })
     }
 }

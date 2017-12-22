@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 
 class BaseRequest: NSObject {
+    static let hasArrayResponse = "HasArrayResponse"
 
     var urlPath: String
     var requestType: NSInteger
@@ -18,11 +19,7 @@ class BaseRequest: NSObject {
     var fileName: String
     var mimeType: String
     var headers: [String: String]?
-    var parameters: Dictionary<String, Any>    
-    
-    let authUrl = "users/"
-    let paymentCreationUrl = "payments/"
-    let placesUrl = "places/"
+    var parameters: Dictionary<String, Any>
     
     override init() {
         urlPath = ""
@@ -42,22 +39,5 @@ class BaseRequest: NSObject {
     public class func getUrl(path: String) -> String {
         let client: NetworkHttpClient = NetworkHttpClient.sharedInstance
         return String.init(format: "%@%@",client.urlPathSubstring, path)
-    }
-    
-    func initwithAuthRequest(email:String, password:String) -> BaseRequest{
-        parameters["email"] = email
-        parameters["password"] = password
-        urlPath = authUrl
-        return self
-    }
-    
-    func initwithPaymentListRequest() -> BaseRequest{
-        urlPath = paymentCreationUrl
-        return self
-    }
-    
-    func initwithPlacesRequest() -> BaseRequest{
-        urlPath = placesUrl
-        return self
     }
 }

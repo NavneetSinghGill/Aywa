@@ -11,24 +11,25 @@
 //
 
 import UIKit
-typealias homeSectionResponseHandler = (_ response:Home.Section.Response) ->()
+typealias homeSectionSuccessResponseHandler = (_ response:[Home.Section.Response]) ->()
+typealias homeSectionFailureResponseHandler = (_ response:Home.Section.Response) ->()
 
 class HomeWorker
 {
-    func homeSection(request:Home.Section.Request, success:@escaping(homeSectionResponseHandler), fail:@escaping(homeSectionResponseHandler))
+    func homeSection(request:Home.Section.Request, success:@escaping(homeSectionSuccessResponseHandler), fail:@escaping(homeSectionFailureResponseHandler))
     {
         //call network etc.
         let manager = RequestManager()
-        manager.fetchSliderBanner(request: request.baseRequest()) { (status, response) in
+        manager.fetchSection(request: request.baseRequest()) { (status, response) in
             self.handleSectionResponse(success: success, fail: fail, status: status, response: response)
 
         }
     }
     
-    func handleSectionResponse(success:@escaping(homeSectionResponseHandler), fail:@escaping(homeSectionResponseHandler), status: Bool, response: Any?) {
+    func handleSectionResponse(success:@escaping(homeSectionSuccessResponseHandler), fail:@escaping(homeSectionFailureResponseHandler), status: Bool, response: Any?) {
         var message:String = Constants.kErrorMessage
         if status {
-            if let result = response as? Home.Section.Response {
+            if let result = response as? [Home.Section.Response] {
                 success(result)
                 return
             }

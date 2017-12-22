@@ -72,11 +72,13 @@ class NetworkHttpClient: NSObject {
         if headers == nil {
             headers = NetworkHttpClient.getHeader() as? HTTPHeaders
         }
-       
-        if (methodType == .get) {
-
-            Alamofire.request(completeURL, method: methodType, parameters: parameters, encoding: (methodType == .get ? URLEncoding.default : JSONEncoding.default), headers: headers).responseJSON { response in
-
+        
+        if parameters?[BaseRequest.hasArrayResponse] != nil {
+            var params:Dictionary<String, Any> = parameters!
+            params[BaseRequest.hasArrayResponse] = nil
+            
+            Alamofire.request(completeURL, method: methodType, parameters: params, encoding: (methodType == .get ? URLEncoding.default : JSONEncoding.default), headers: headers).responseArray { (response: DataResponse<[T]>) in
+                
                 switch response.result {
                 case .success(let value):
                     print(value)
@@ -85,12 +87,10 @@ class NetworkHttpClient: NSObject {
                     print(error.localizedDescription)
                     failure(response)
                 }
-
             }
         }
         else
         {
-
             Alamofire.request(completeURL, method: methodType, parameters: parameters, encoding: (methodType == .get ? URLEncoding.default : JSONEncoding.default), headers: headers).responseObject { (response: DataResponse<T>) in
                 
                 switch response.result {
@@ -101,10 +101,8 @@ class NetworkHttpClient: NSObject {
                     print(error.localizedDescription)
                     failure(response)
                 }
-                
             }
         }
-        
     }
     
     func multipartPostAPICall(_ strURL: String, parameters: Dictionary<String, Any>?, data: Data, name: String, fileName: String, mimeType: String, success: @escaping successBlock, failure: @escaping failureBlock) -> Void{
@@ -135,4 +133,20 @@ class NetworkHttpClient: NSObject {
         return header
     }
 }
+
+
+/*
+ Alamofire.request(completeURL, method: methodType, parameters: parameters, encoding: (methodType == .get ? URLEncoding.default : JSONEncoding.default), headers: headers).responseJSON { response in
+ 
+ switch response.result {
+ case .success(let value):
+ print(value)
+ success(response)
+ case .failure(let error):
+ print(error.localizedDescription)
+ failure(response)
+ }
+ 
+ }
+ */
 

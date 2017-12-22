@@ -15,7 +15,7 @@ import UIKit
 protocol HomeDisplayLogic: class
 {
     func displayError(response: Home.Section.Response)
-    func displayHomeScreen(response: Home.Section.Response)
+    func displayHomeScreen(response: [Home.Section.Response])
     
 }
 
@@ -152,10 +152,10 @@ class HomeViewController: UIViewController, HomeDisplayLogic, UITableViewDelegat
         print("Error occured: \(response)")
     }
     
-    func displayHomeScreen(response: Home.Section.Response)
+    func displayHomeScreen(response: [Home.Section.Response])
     {
         print("Show Home Section Data!!!")
-        sectionArray = [response]
+        sectionArray = response
         print("Section Counter: \(sectionArray.count)")
         self.tableView.reloadData()
     }

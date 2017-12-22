@@ -15,7 +15,7 @@ import UIKit
 protocol HomePresentationLogic
 {
     func presentError(response: Home.Section.Response)
-    func presentNextScreen(response: Home.Section.Response)
+    func presentNextScreen(response: [Home.Section.Response])
 }
 
 class HomePresenter: HomePresentationLogic
@@ -30,7 +30,7 @@ class HomePresenter: HomePresentationLogic
         viewController?.displayError(response: response)
     }
     
-    func presentNextScreen(response: Home.Section.Response)
+    func presentNextScreen(response: [Home.Section.Response])
     {
         viewController?.displayHomeScreen(response: response)
     }

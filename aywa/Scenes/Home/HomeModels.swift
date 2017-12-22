@@ -29,6 +29,7 @@ enum Home
                 baseRequest.parameters[Constants.kIncludeShowsKey] = Constants.kIncludeShowsValue
                 baseRequest.parameters[Constants.kCatalogIdKey] = 0 // 2 For home Screen
                 baseRequest.parameters[Constants.kMenuSectionsOnlyKey] = Constants.kMenuSectionsOnlyValue
+                baseRequest.parameters[BaseRequest.hasArrayResponse] = true
                 return baseRequest
             }
         }

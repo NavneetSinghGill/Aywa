@@ -40,59 +40,60 @@ class RealAPI: NSObject {
     func interactAPIWithGetObject<T:Mappable>(request: BaseRequest, genericResponse:T.Type, completion: @escaping CompletionHandler) -> Void {
         initialSetup(request: request, requestType: Constants.RequestType.GET.rawValue)
         NetworkHttpClient.sharedInstance.getAPICall(request.urlPath, parameters: request.getParams(), headers: request.headers, genericResponse: genericResponse, success: { (responseObject) in
-            self.handleSuccessResponse(response: responseObject as? DataResponse<T>, block: completion)
+            self.handleSuccessResponse(response: responseObject as? DataResponse<T>, responseArray: responseObject as? DataResponse<[T]>, block: completion)
         }, failure: { (responseObject) in
-            self.handleError(response: responseObject as? DataResponse<T>, block: completion)
+            self.handleError(response: responseObject as? DataResponse<T>, responseArray: responseObject as? DataResponse<[T]>, block: completion)
         })
     }
     
     func interactAPIWithPutObject<T:Mappable>(request: BaseRequest, genericResponse:T.Type, completion: @escaping CompletionHandler) -> Void {
         initialSetup(request: request, requestType: Constants.RequestType.PUT.rawValue)
         NetworkHttpClient.sharedInstance.putAPICall(request.urlPath, parameters: request.getParams(), headers: request.headers, genericResponse: genericResponse, success: { (responseObject) in
-            self.handleSuccessResponse(response: responseObject as? DataResponse<T>, block: completion)
+            self.handleSuccessResponse(response: responseObject as? DataResponse<T>, responseArray: responseObject as? DataResponse<[T]>, block: completion)
         }, failure: { (responseObject) in
-            self.handleError(response: responseObject as? DataResponse<T>, block: completion)
+            self.handleError(response: responseObject as? DataResponse<T>, responseArray: responseObject as? DataResponse<[T]>, block: completion)
         })
     }
     
     func interactAPIWithPostObject<T:Mappable>(request: BaseRequest, genericResponse:T.Type, completion: @escaping CompletionHandler) -> Void {
         initialSetup(request: request, requestType: Constants.RequestType.POST.rawValue)
         NetworkHttpClient.sharedInstance.postAPICall(request.urlPath, parameters: request.getParams(), headers: request.headers, genericResponse: genericResponse, success: { (responseObject) in
-            self.handleSuccessResponse(response: responseObject as? DataResponse<T>, block: completion)
+            self.handleSuccessResponse(response: responseObject as? DataResponse<T>, responseArray: responseObject as? DataResponse<[T]>, block: completion)
         }, failure: { (responseObject) in
-            self.handleError(response: responseObject as? DataResponse<T>, block: completion)
+            self.handleError(response: responseObject as? DataResponse<T>, responseArray: responseObject as? DataResponse<[T]>, block: completion)
         })
     }
     
     func interactAPIWithDeleteObject<T:Mappable>(request: BaseRequest, genericResponse:T.Type, completion: @escaping CompletionHandler) -> Void {
         initialSetup(request: request, requestType: Constants.RequestType.DELETE.rawValue)
         NetworkHttpClient.sharedInstance.deleteAPICall(request.urlPath, parameters: request.getParams(), headers: request.headers, genericResponse: genericResponse, success: { (responseObject) in
-            self.handleSuccessResponse(response: responseObject as? DataResponse<T>, block: completion)
+            self.handleSuccessResponse(response: responseObject as? DataResponse<T>, responseArray: responseObject as? DataResponse<[T]>, block: completion)
         }, failure: { (responseObject) in
-            self.handleError(response: responseObject as? DataResponse<T>, block: completion)
+            self.handleError(response: responseObject as? DataResponse<T>, responseArray: responseObject as? DataResponse<[T]>, block: completion)
         })
     }
     
     func interactAPIWithMultipartObjectPost<T:Mappable>(request: BaseRequest, genericResponse:T.Type, completion: @escaping CompletionHandler) -> Void {
         initialSetup(request: request, requestType: Constants.RequestType.MultiPartPost.rawValue)
         NetworkHttpClient.sharedInstance.multipartPostAPICall(request.urlPath, parameters: request.getParams(), data: request.fileData, name: request.dataFilename, fileName: request.fileName, mimeType: request.mimeType, success: { (responseObject) in
-            self.handleSuccessResponse(response: responseObject as? DataResponse<T>, block: completion)
+            self.handleSuccessResponse(response: responseObject as? DataResponse<T>, responseArray: responseObject as? DataResponse<[T]>, block: completion)
         }, failure: { (responseObject) in
-            self.handleError(response: responseObject as? DataResponse<T>, block: completion)
+            self.handleError(response: responseObject as? DataResponse<T>, responseArray: responseObject as? DataResponse<[T]>, block: completion)
         })
     }
     
     //Handling success response
-    func handleSuccessResponse<T:Mappable>(response: DataResponse<T>?, block:@escaping CompletionHandler) -> Void {
+    func handleSuccessResponse<T:Mappable>(response: DataResponse<T>?, responseArray: DataResponse<[T]>?, block:@escaping CompletionHandler) -> Void {
+        let responseStatus = response != nil ? response?.response : responseArray?.response
         
-        let responseStatus = response?.response
         let message: String = String.init(format: "Success:- URL:%@\n", (responseStatus?.url?.absoluteString)!)
         print(message)
         
         if responseStatus?.statusCode == Constants.ResponseStatusSuccess || responseStatus?.statusCode == Constants.ResponseStatusCreated {
-            if response != nil {
+            if response != nil || responseArray != nil {
                 isForbiddenRetry = false
-                if let result = response?.result.value {
+                let value = getResultValue(response: response, responseArray: responseArray)
+                if let result = value {
                     block(true, result)
                 }
                 return
@@ -104,8 +105,9 @@ class RealAPI: NSObject {
             return
         }
         else{
-            if response != nil {
-                if let result = response?.result.value {
+            if response != nil || responseArray != nil {
+                let value = getResultValue(response: response, responseArray: responseArray)
+                if let result = value {
                     block(false, result)
                     return
                 }
@@ -115,20 +117,32 @@ class RealAPI: NSObject {
         block(false, nil)
     }
     
+    func getResultValue<T:Mappable>(response: DataResponse<T>?, responseArray: DataResponse<[T]>?) -> Any? {
+        var value:Any?
+        
+        if response != nil {
+            value = response?.result.value
+        }
+        else if responseArray != nil {
+            value = responseArray?.result.value
+        }
+        
+        return value
+    }
+    
     //Handling Error response
-    func handleError<T:Mappable>(response: DataResponse<T>?, block: @escaping CompletionHandler) -> Void {
-        if let responseStatus = response?.response{
-           
-            if self.isForbiddenResponse(statusCode: (responseStatus.statusCode), url: responseStatus.url?.absoluteString) {
-                realAPIBlock = block
-                renewLogin()
-                return
-            }
+    func handleError<T:Mappable>(response: DataResponse<T>?, responseArray: DataResponse<[T]>?, block: @escaping CompletionHandler) -> Void {
+        let responseStatus = response != nil ? response?.response : responseArray?.response
+        
+        if self.isForbiddenResponse(statusCode: (responseStatus?.statusCode), url: responseStatus?.url?.absoluteString) {
+            realAPIBlock = block
+            renewLogin()
+            return
         }
         
         var errorResponse: Any?
         
-        let error : Error? = response?.result.error!
+        let error : Error? =  response != nil ? response?.result.error! : responseArray?.result.error!
         
         let detailedError: NSError = error! as NSError
         if detailedError.localizedRecoverySuggestion != nil {
