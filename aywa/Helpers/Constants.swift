@@ -97,7 +97,6 @@ struct Constants {
     static let kShowTypeKey = "ShowType"
     static let kIncludeShowsKey = "IncludeShows"
     static let kIncludeShowsValue = "true"
-    
 }
 
 struct Identifiers {

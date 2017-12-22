@@ -41,7 +41,7 @@ class HomeHeaderAdvertisementCollectionViewCell: UICollectionViewCell {
     func setUIForSliderBanner(indexPathValueIs: Int , arrayOfValue: [HomeSliderBanner.SliderBanner.Banners] ) {
         let urlString = (arrayOfValue[indexPathValueIs]).image
         let urlStringTitleImage = (arrayOfValue[indexPathValueIs]).titleImage
-       
+
         if let styleTypeDetails = (arrayOfValue[indexPathValueIs]).styleType {
             print(styleTypeDetails)
             isVideo = true

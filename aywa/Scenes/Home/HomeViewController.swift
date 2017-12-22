@@ -104,8 +104,8 @@ class HomeViewController: UIViewController, HomeDisplayLogic, UITableViewDelegat
     var storedOffsets = [Int: CGFloat]()
     let verticalCellHeight: CGFloat = 235
     let horizontalCellHeight: CGFloat = 175
-    var sectionArray = [Home.Section.Response]()
-    
+    public var sectionArray = [Home.Section.Response]()
+    var sectionDictionary = [String:Home.Section.Response]()
     
     //MARK:- TableView Delegate And Datasource Methods
     //MARK: Datasource
@@ -117,28 +117,15 @@ class HomeViewController: UIViewController, HomeDisplayLogic, UITableViewDelegat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: HomeTableViewCell = tableView.dequeueReusableCell(withIdentifier: Identifiers.homeTableCell, for: indexPath) as! HomeTableViewCell
         
-        if indexPath.row == 1 {
+        if self.sectionArray[indexPath.row].configuration == "E" {
             cell.cellAlignment = .Horizontal
         } else {
             cell.cellAlignment = .Vertical
         }
-        cell.setCollectionView(forRow: indexPath.row)
-        
+        cell.setCollectionView(forRow: indexPath.row, sectionData: self.sectionArray[indexPath.row])
+         //cell.setCollectionView(forRow: indexPath.row)
         return cell
     }
-    //MARK: Delegate
-    //    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-    //        guard let tableViewCell = cell as? HomeTableViewCell else { return }
-    //
-    //        tableViewCell.setCollectionViewDataSourceDelegate(self , forRow: indexPath.row)
-    //        tableViewCell.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
-    //    }
-    //
-    //    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-    //        guard let tableViewCell = cell as? HomeTableViewCell else { return }
-    //
-    //        storedOffsets[indexPath.row] = tableViewCell.collectionViewOffset
-    //    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 1 {
@@ -156,8 +143,9 @@ class HomeViewController: UIViewController, HomeDisplayLogic, UITableViewDelegat
     {
         print("Show Home Section Data!!!")
         sectionArray = response
-        print("Section Counter: \(sectionArray.count)")
         self.tableView.reloadData()
+        print(response)
+      
     }
     
     //MARK: For StatusBarStyle

@@ -18,7 +18,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="217" height="124"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="movieImage" translatesAutoresizingMaskIntoConstraints="NO" id="czf-gJ-2cc">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="czf-gJ-2cc">
                         <rect key="frame" x="2" y="2" width="213" height="120"/>
                     </imageView>
                 </subviews>
@@ -31,10 +31,10 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="215" height="124"/>
+            <connections>
+                <outlet property="displayImageView" destination="czf-gJ-2cc" id="cw0-Om-4p1"/>
+            </connections>
             <point key="canvasLocation" x="20.5" y="60"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="movieImage" width="226" height="170"/>
-    </resources>
 </document>

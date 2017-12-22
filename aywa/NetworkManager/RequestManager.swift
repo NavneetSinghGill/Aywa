@@ -31,7 +31,7 @@ class RequestManager: NSObject {
             BannerManager.showFailureBanner(subtitle: Constants.kNoNetworkMessage)
         }
     }
-    //MARK:- Feath Slider Banner
+    //MARK:- Fetch Slider Banner
     func fetchSliderBanner(request:BaseRequest, completion:@escaping CompletionHandler){
         if ApplicationDelegate.isNetworkAvailable{
             RealAPI().getObject(request:request, genericResponse: HomeSliderBanner.SliderBanner.Response.self, completion:completion)
@@ -42,7 +42,7 @@ class RequestManager: NSObject {
         }
     }
     
-  // Feach Section
+    //MARK:- Fetch Section
     func fetchSection(request: BaseRequest, completion:@escaping CompletionHandler)  {
         if ApplicationDelegate.isNetworkAvailable {
             RealAPI().getObject(request: request, genericResponse: Home.Section.Response.self, completion: completion)

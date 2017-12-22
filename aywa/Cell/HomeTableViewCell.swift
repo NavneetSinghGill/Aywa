@@ -14,7 +14,12 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var SectionTitle: UILabel!
     
     var cellAlignment: CellAlignment = .Vertical
+    var homeViewController: HomeViewController?
+    var sectionData : Home.Section.Response?
     
+    var indexOfCell: Int?
+    
+    //var tableViewIndexValue: Int?
     
     
     override func awakeFromNib() {
@@ -41,31 +46,40 @@ class HomeTableViewCell: UITableViewCell {
     
 }
 extension HomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-   
+    
     var collectionViewOffset: CGFloat {
         set { collectionView.contentOffset.x = newValue }
         get { return collectionView.contentOffset.x }
     }
     
-    func setCollectionView(forRow row: Int) {
-        collectionView.tag = row
-        collectionView.reloadData()
+    func setCollectionView(forRow row: Int, sectionData: Home.Section.Response) {
+        indexOfCell = row
+        
+        self.sectionData = sectionData
+        SectionTitle!.text = sectionData.name!
+        self.collectionView.reloadData()
     }
     
     //MARK:- CollectionView Delegate And Datasource Methods
     //MARK: Datasource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return (sectionData!.shows?.count)!
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: HomeImagesCollectionViewCell
+//        print(collectionView.tag)
+        print(indexPath.row)
         if cellAlignment == .Vertical {
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.homeImageVerticalCollectionViewCell, for: indexPath) as! HomeImagesCollectionViewCell
         } else {
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.homeImageHorizontalCollectionViewCell, for: indexPath) as! HomeImagesCollectionViewCell
         }
+        cell.cellAlignment = self.cellAlignment
+        cell.setUICollectionViewCell(forRow: indexOfCell! , show: (self.sectionData?.shows![indexPath.item])!)
+
+        print("\n\nindex: \(String(describing: indexOfCell)), collecIndex:\(indexPath.item)")
         return cell
     }
     
@@ -79,5 +93,7 @@ extension HomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
         }
         return CGSize(width: height * Constants.generalHorizontalCellAspectRatio, height: height)
     }
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("Collection view at row \(collectionView.tag) selected index path \(indexPath)")
+    }
 }
