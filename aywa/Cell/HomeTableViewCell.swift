@@ -54,7 +54,7 @@ extension HomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
     
     func setCollectionView(forRow row: Int, sectionData: Home.Section.Response) {
         indexOfCell = row
-        
+        collectionView.tag = row
         self.sectionData = sectionData
         SectionTitle!.text = sectionData.name!
         self.collectionView.reloadData()
@@ -69,7 +69,6 @@ extension HomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: HomeImagesCollectionViewCell
-//        print(collectionView.tag)
         print(indexPath.row)
         if cellAlignment == .Vertical {
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.homeImageVerticalCollectionViewCell, for: indexPath) as! HomeImagesCollectionViewCell

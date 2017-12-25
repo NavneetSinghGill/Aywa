@@ -11,8 +11,7 @@
 //
 
 import UIKit
-
-
+import BPViewsSubviewsInOutAnimation
 
 protocol LoginDisplayLogic: class
 {
@@ -21,7 +20,7 @@ protocol LoginDisplayLogic: class
     
 }
 
-class LoginViewController: UIViewController, LoginDisplayLogic
+class LoginViewController: BPViewController, LoginDisplayLogic
 {
     var interactor: LoginBusinessLogic?
     var router: (NSObjectProtocol & LoginRoutingLogic & LoginDataPassing)?
