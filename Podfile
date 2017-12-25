@@ -11,4 +11,5 @@ target 'aywa' do
  pod 'NotificationBannerSwift'
  pod 'SwiftKeychainWrapper', '~> 3.0'
  pod 'SDWebImage', '~> 4.0'
+ pod 'BPViewsSubviewsInOutAnimation','~> 1.0.2'
 end
