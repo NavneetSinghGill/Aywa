@@ -11,14 +11,14 @@
 //
 
 import UIKit
-
+import BPViewsSubviewsInOutAnimation
 protocol SignupDisplayLogic: class
 {
     func displayError(response: Landing.JWTToken.Response)
     func displayHomeScreen()
 }
 
-class SignupViewController: UIViewController, SignupDisplayLogic
+class SignupViewController: BPViewController, SignupDisplayLogic
 {
     var interactor: SignupBusinessLogic?
     var router: (NSObjectProtocol & SignupRoutingLogic & SignupDataPassing)?

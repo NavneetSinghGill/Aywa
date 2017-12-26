@@ -79,6 +79,7 @@ class LoginViewController: BPViewController, LoginDisplayLogic
         
         emailTextField.text = "test_user1@gmail.com"
         passwordTextField.text = "123456"
+       
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -90,7 +91,7 @@ class LoginViewController: BPViewController, LoginDisplayLogic
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-   
+    
     //MARK: Login 
     @IBAction func loginButtonTapped(_ sender: Any) {
         doLogin()
