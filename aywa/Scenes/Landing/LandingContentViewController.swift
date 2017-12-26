@@ -12,6 +12,8 @@ let landingScreenDetailArabicLabelTag = 11
 let landingScreenDetailEnglishLabelTag = 12
 
 class LandingContentViewController: UIViewController {
+    
+    static var lastPageIndex:Int = 0
     var pageIndex: Int = 0
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var initialHeaderView: UIView!
@@ -53,11 +55,27 @@ class LandingContentViewController: UIViewController {
         super.viewWillAppear(animated)
         
         adjustLeftEnglishLabelAlignmentIPAD()
-        animateBackground()
+        
+        self.view.bringSubview(toFront: backgroundImageView)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.view.sendSubview(toBack: backgroundImageView)
+        if LandingContentViewController.lastPageIndex <= pageIndex || (LandingContentViewController.lastPageIndex == 4 && pageIndex == 0) {
+            // default forward direction
+            self.view.animateTowardsCenterFromRight()
+        }
+        else{
+            // backward direction
+            self.view.animateTowardsCenterFromLeft()
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        LandingContentViewController.lastPageIndex = pageIndex
     }
     
     override func didReceiveMemoryWarning() {
@@ -82,22 +100,15 @@ class LandingContentViewController: UIViewController {
     
     func animateBottomView() {
         if pageIndex != 4 {
-//            bottomTextView.alpha = 0
-//            UIView.animate(withDuration: 1, animations: {
-                self.bottomTextView.alpha = 1
-//            })
+            self.bottomTextView.alpha = 1
             animateBottomViewIPAD()
         }
     }
     
     func animateBottomViewIPAD() {
         if !isiPad {
-//            arabicTextLabel.alpha = 0
-//            englishTextLabel.alpha = 0
-//            UIView.animate(withDuration: 1, animations: {
-                self.arabicTextLabel?.alpha = 1
-                self.englishTextLabel?.alpha = 1
-//            })
+            self.arabicTextLabel?.alpha = 1
+            self.englishTextLabel?.alpha = 1
         } else {
             var viewToAnimate: UIView?
             if pageIndex == 0 {
@@ -111,41 +122,7 @@ class LandingContentViewController: UIViewController {
             (viewToAnimate?.viewWithTag(landingScreenDetailEnglishLabelTag) as! UILabel).text = landingScreenTextEnglish[pageIndex]
             viewToAnimate?.layoutIfNeeded()
             viewToAnimate?.isHidden = false
-            
-//            viewToAnimate?.alpha = 0
-//            UIView.animate(withDuration: 1, animations: {
-                viewToAnimate?.alpha = 1
-//            })
-        }
-    }
-    
-    func animateLogos() {
-        if !isiPad {
-            switch pageIndex {
-            case 0:
-                UIView.transition(with: upperLogoPage1, duration: 0.5, options: .transitionFlipFromRight, animations: nil, completion: nil)
-            case 1:
-                fallthrough
-            case 2:
-                fallthrough
-            case 4:
-                UIView.transition(with: upperLogo, duration: 0.5, options: .transitionFlipFromRight, animations: nil, completion: nil)
-            default:
-                break
-            }
-        } else {
-            switch pageIndex {
-            case 0:
-                UIView.transition(with: upperLogoPage1, duration: 0.5, options: .transitionFlipFromRight, animations: nil, completion: nil)
-            case 1:
-                fallthrough
-            case 2:
-                UIView.transition(with: upperLogo, duration: 0.5, options: .transitionFlipFromRight, animations: nil, completion: nil)
-            case 4:
-                UIView.transition(with: upperLogoPage5PAD, duration: 0.5, options: .transitionFlipFromRight, animations: nil, completion: nil)
-            default:
-                break
-            }
+            viewToAnimate?.alpha = 1
         }
     }
     
@@ -257,7 +234,6 @@ class LandingContentViewController: UIViewController {
                 viewToAnimate = rightBottomTextView
             }
             viewToAnimate?.alpha = 0
-            viewToAnimate?.alpha = 0
         }
         
         self.animateBottomView()
@@ -270,13 +246,13 @@ class LandingContentViewController: UIViewController {
         !isiPad ? "Binge-watch whole seasons\nof TV shows and series,\ncommercial free." : "Binge-watch whole seasons of TV\nshows and series, commercial\nfree.",
         !isiPad ? "Timeless classics. Rediscover\nthe greatest movies of all-time." : "Timeless classics.\nRediscover the greatest\nmovies of all-time.",
         !isiPad ? "Cartoons, animations,\neducational shows, &\nmore." : "Cartoons, animations,\neducational shows, & more.",
-                                           ""]
+        ""]
     
     let landingScreenTextArabic = [!isiPad ?". أحدث و أجمل الأفلام": " أحدث و أجمل الأفلام و المسلسلات.",
-                                          ".دراما لا تنتهي",
-                                          ".روائع الزمن الجميل",
-                                          ".برامج اطفال هادفة",
-                                          ""]
+                                   ".دراما لا تنتهي",
+                                   ".روائع الزمن الجميل",
+                                   ".برامج اطفال هادفة",
+                                   ""]
     
     
 }

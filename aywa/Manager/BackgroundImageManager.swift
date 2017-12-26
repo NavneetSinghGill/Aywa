@@ -26,18 +26,26 @@ class BackgroundImageManager {
     var backgroundImage: UIImage?
     var selectedImageIndex:Int = 1
     let imageIndexCount = 5
+    var timer:Timer?
     
     // MARK: - Initialization
     
     private init() {
         self.backgroundImage = UIImage(named:pageContentImage + "\(1)")
-        _ = Timer.scheduledTimer(timeInterval: 7.0, target: self, selector: #selector(BackgroundImageManager.changeImage), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 7.0, target: self, selector: #selector(BackgroundImageManager.changeImage), userInfo: nil, repeats: true)
     }
     
     // MARK: - Accessors
     
     class func shared() -> BackgroundImageManager {
         return sharedBackgroundImageManager
+    }
+    
+    // MARK: - Public
+    
+    func restartTimer(){
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(timeInterval: 7.0, target: self, selector: #selector(BackgroundImageManager.changeImage), userInfo: nil, repeats: true)
     }
     
     // MARK: - Private

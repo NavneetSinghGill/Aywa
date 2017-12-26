@@ -274,6 +274,10 @@ extension LandingViewController: UIPageViewControllerDataSource, UIPageViewContr
                         self.selectedPageIndex = index
                         self.pageControl.currentPage = self.selectedPageIndex ?? 0
                         self.setBottomViewsFor(index: self.selectedPageIndex!)
+                        
+                        if let currentVC:LandingContentViewController = pvcs.viewControllers?.last as? LandingContentViewController {
+                            currentVC.animateBackground()
+                        }
                     }
                 }
             }
@@ -290,6 +294,7 @@ extension LandingViewController: UIPageViewControllerDataSource, UIPageViewContr
                     pageControl.currentPage = selectedPageIndex ?? 0
                     
                     setBottomViewsFor(index: selectedPageIndex!)
+                    BackgroundImageManager.shared().restartTimer()
                 }
             }
         }
