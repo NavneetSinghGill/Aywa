@@ -41,6 +41,7 @@ struct Constants {
     static let kBearerkey = "Bearer "
     
     static let kAppName = "Aywa"
+    static let kChangeBackgroundImageIdentifier = "ChangeBackgroundImageIdentifier"
     
     static let generalHorizontalCellAspectRatio: CGFloat = 476/268
     static let generalVerticalCellAspectRatio: CGFloat = 220/320

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18D6EADB1FF22F8F00D6E1D3 /* BackgroundImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D6EADA1FF22F8F00D6E1D3 /* BackgroundImageManager.swift */; };
 		2356E9401FEA4AD8009B7AC8 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2356E9341FEA4423009B7AC8 /* LoginInteractor.swift */; };
 		2356E9411FEA4AD8009B7AC8 /* LoginModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2356E9351FEA4423009B7AC8 /* LoginModels.swift */; };
 		2356E9421FEA4AD8009B7AC8 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2356E9361FEA4423009B7AC8 /* LoginPresenter.swift */; };
@@ -121,6 +122,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18D6EADA1FF22F8F00D6E1D3 /* BackgroundImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImageManager.swift; sourceTree = "<group>"; };
 		1EA5F6901C24964F1FD838DC /* Pods-aywa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aywa.release.xcconfig"; path = "Pods/Target Support Files/Pods-aywa/Pods-aywa.release.xcconfig"; sourceTree = "<group>"; };
 		23025B731FF0E3AE0063FFE7 /* BPViewsSubviewsInOutAnimation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BPViewsSubviewsInOutAnimation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2356E9341FEA4423009B7AC8 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
@@ -533,6 +535,7 @@
 				48B112541FDE8275001E92FE /* AppSettingsManager.swift */,
 				48B112551FDE8275001E92FE /* BannerManager.swift */,
 				48B112561FDE8275001E92FE /* RemoteNotificationManager.swift */,
+				18D6EADA1FF22F8F00D6E1D3 /* BackgroundImageManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -721,6 +724,7 @@
 				236F94BE1FE9330700B16981 /* HomeInteractor.swift in Sources */,
 				48728D101FE3AED000780DBF /* CharacterExtensions.swift in Sources */,
 				48728D111FE3AED000780DBF /* CGColorExtensions.swift in Sources */,
+				18D6EADB1FF22F8F00D6E1D3 /* BackgroundImageManager.swift in Sources */,
 				48AAD6631FE508690097C0F3 /* SignupRouter.swift in Sources */,
 				534788E31FE7B7E00031B727 /* ShowImageTableViewCell.swift in Sources */,
 				48AAD6601FE508690097C0F3 /* SignupInteractor.swift in Sources */,

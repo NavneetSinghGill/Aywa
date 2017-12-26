@@ -129,9 +129,18 @@ class LandingViewController: UIViewController, LandingDisplayLogic, UIScrollView
     }
     
     func initialSetup() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.changeBackgroundImage(notification:)), name: Notification.Name(Constants.kChangeBackgroundImageIdentifier), object: nil)
         setupPageVC()
         loginButton.appBoldFont()
         skipButton.appBoldFont()
+        _ = BackgroundImageManager.shared()
+    }
+    
+    @objc func changeBackgroundImage(notification: Notification){
+        //Take Action on Notification
+        DispatchQueue.main.async {
+            self.selectPageAtIndex(index: BackgroundImageManager.shared().selectedImageIndex-1)
+        }
     }
     
     func displayError(response: Landing.JWTToken.Response)
@@ -249,12 +258,35 @@ extension LandingViewController: UIPageViewControllerDataSource, UIPageViewContr
         }
     }
     
+    func selectPageAtIndex(index:Int, isAnimated:Bool = false)
+    {
+        if index < viewControllerList.count{
+            if selectedPageIndex == nil {
+                selectedPageIndex = 0
+            }
+            let page = viewControllerList[index]
+            weak var pvcw = pageControlViewController
+            pageControlViewController.setViewControllers([page], direction: (selectedPageIndex! < index ? UIPageViewControllerNavigationDirection.forward : UIPageViewControllerNavigationDirection.reverse), animated: isAnimated) { _ in
+                if let pvcs = pvcw {
+                    DispatchQueue.main.async{
+                        pvcs.setViewControllers([page], direction: (self.selectedPageIndex! < index ? UIPageViewControllerNavigationDirection.forward : UIPageViewControllerNavigationDirection.reverse), animated: false, completion: nil)
+                    
+                        self.selectedPageIndex = index
+                        self.pageControl.currentPage = self.selectedPageIndex ?? 0
+                        self.setBottomViewsFor(index: self.selectedPageIndex!)
+                    }
+                }
+            }
+        }
+    }
+    
     // MARK: - UIPageVieControllerDelegate Methods
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         if (completed && finished) {
             if let currentVC:LandingContentViewController = pageViewController.viewControllers?.last as? LandingContentViewController {
                 if(selectedPageIndex != currentVC.pageIndex){
                     selectedPageIndex = currentVC.pageIndex
+                    BackgroundImageManager.shared().selectedImageIndex = self.selectedPageIndex!+1
                     pageControl.currentPage = selectedPageIndex ?? 0
                     
                     setBottomViewsFor(index: selectedPageIndex!)

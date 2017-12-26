@@ -53,6 +53,7 @@ class LandingContentViewController: UIViewController {
         super.viewWillAppear(animated)
         
         adjustLeftEnglishLabelAlignmentIPAD()
+        animateBackground()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -213,10 +214,19 @@ class LandingContentViewController: UIViewController {
         
     }
     
+    func animateBackground() {
+        self.backgroundImageView.alpha = 0
+        UIView.animate(withDuration: 0.5,
+                       delay: 0,
+                       options: .curveEaseInOut,
+                       animations: {
+                        self.backgroundImageView.alpha = 1
+        }, completion: nil)
+    }
+    
     func setup(){
         initialHeaderView.isHidden = pageIndex != 0
-        backgroundImageView.image = UIImage(named: "pageContentImage\(pageIndex+1)".adjustForDevice())
-        
+        backgroundImageView.image = UIImage(named: BackgroundImageManager.shared().pageContentImage + "\(pageIndex+1)")
         lastPageView.isHidden = pageIndex != 4
         bottomTextView.isHidden = pageIndex == 4
         

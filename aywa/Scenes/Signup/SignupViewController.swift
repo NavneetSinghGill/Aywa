@@ -40,6 +40,7 @@ class SignupViewController: BPViewController, SignupDisplayLogic
     // MARK: Setup
     
     private func initialSetup() {
+        //        NotificationCenter.default.addObserver(self, selector: #selector(self.changeBackgroundImage(notification:)), name: Notification.Name(Constants.kChangeBackgroundImageIdentifier), object: nil)
         setup()
     }
     
@@ -88,6 +89,7 @@ class SignupViewController: BPViewController, SignupDisplayLogic
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     @IBOutlet weak var ageGroupTextField: UITextField!
     @IBOutlet weak var genderTextField: UITextField!
+//    @IBOutlet weak var backgroundImageView: UIImageView
     
     @IBAction func signupButtonTapped(_ sender: UIButton) {
        doSignup()
@@ -108,5 +110,22 @@ class SignupViewController: BPViewController, SignupDisplayLogic
     {
         print("Show Home Screen!!!")
         router?.routeToTabBar(segue: nil)
+    }
+    
+    @objc func changeBackgroundImage(notification: Notification?){
+        //Take Action on Notification
+        DispatchQueue.main.async {
+//            UIView.animate(withDuration: 0.5, animations: {
+//                self.backgroundImageView.alpha = 0
+//            }, completion: { (complete) in
+//                self.backgroundImageView.image = BackgroundImageManager.shared().backgroundImage
+//                UIView.animate(withDuration: 0.5,
+//                               delay: 0,
+//                               options: .curveEaseInOut,
+//                               animations: {
+//                                self.backgroundImageView.alpha = 1
+//                }, completion: nil)
+//            })
+        }
     }
 }
