@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PKg-s6-zCe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PKg-s6-zCe">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -146,6 +146,11 @@
                                     <constraint firstAttribute="width" secondItem="F9f-T1-RwQ" secondAttribute="height" multiplier="2.9" id="PJx-8A-5Wx"/>
                                     <constraint firstAttribute="width" constant="130" id="TTl-1Z-5zy"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qGs-iY-FvG" userLabel="HeaderViewPage1">
                                 <rect key="frame" x="0.0" y="67" width="320" height="180"/>
@@ -156,6 +161,11 @@
                                             <constraint firstAttribute="width" constant="200" id="Dta-qa-BN9"/>
                                             <constraint firstAttribute="width" secondItem="REW-KG-mKq" secondAttribute="height" multiplier="2.9" id="Nwa-Fa-bbY"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arabic" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o2P-RA-otF">
                                         <rect key="frame" x="85.5" y="79" width="149" height="40"/>
@@ -166,6 +176,11 @@
                                         <fontDescription key="fontDescription" name="Helvetica-Black_cyr-Bold" family="Helvetica" pointSize="36"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcj-Ei-yXo">
                                         <rect key="frame" x="10" y="124" width="300" height="55"/>
@@ -175,6 +190,11 @@
                                         <fontDescription key="fontDescription" name="Helvetica-Black_cyr-Bold" family="Helvetica" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -193,12 +213,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="grK-r8-qFB" userLabel="BottomView1">
                                 <rect key="frame" x="0.0" y="299" width="320" height="140"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2J-uF-K9E">
-                                        <rect key="frame" x="135.5" y="60" width="49" height="23"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Black_cyr-Bold" family="Helvetica" pointSize="20"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ym7-kF-zxt">
                                         <rect key="frame" x="131" y="0.0" width="59" height="60"/>
                                         <constraints>
@@ -207,6 +221,22 @@
                                         <fontDescription key="fontDescription" name="Helvetica-Black_cyr-Bold" family="Helvetica" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2J-uF-K9E">
+                                        <rect key="frame" x="135.5" y="60" width="49" height="23"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Black_cyr-Bold" family="Helvetica" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -221,7 +251,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j0i-Al-X34" userLabel="LastPageView">
                                 <rect key="frame" x="30" y="125" width="290" height="293"/>
                                 <subviews>
-                                    <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ihh-JM-85W" userLabel="HD">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ihh-JM-85W" userLabel="HD">
                                         <rect key="frame" x="0.0" y="0.0" width="290" height="49"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HD" translatesAutoresizingMaskIntoConstraints="NO" id="WYU-8z-p4m">
@@ -247,8 +277,13 @@
                                             <constraint firstItem="ZyY-2n-aQH" firstAttribute="leading" secondItem="WYU-8z-p4m" secondAttribute="trailing" constant="10" id="NL2-Z1-k7p"/>
                                             <constraint firstItem="ZyY-2n-aQH" firstAttribute="top" secondItem="Ihh-JM-85W" secondAttribute="top" id="evv-lu-gwh"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="koC-VS-onW" userLabel="TV">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="koC-VS-onW" userLabel="TV">
                                         <rect key="frame" x="0.0" y="49" width="290" height="48.5"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TV" translatesAutoresizingMaskIntoConstraints="NO" id="6aW-go-Jza">
@@ -274,8 +309,13 @@
                                             <constraint firstItem="6aW-go-Jza" firstAttribute="leading" secondItem="koC-VS-onW" secondAttribute="leading" id="gu1-L2-bIs"/>
                                             <constraint firstItem="6aW-go-Jza" firstAttribute="centerY" secondItem="koC-VS-onW" secondAttribute="centerY" id="xYg-gf-34s"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sfT-wL-2Nk" userLabel="Video">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sfT-wL-2Nk" userLabel="Video">
                                         <rect key="frame" x="0.0" y="97.5" width="290" height="49"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="video" translatesAutoresizingMaskIntoConstraints="NO" id="IBd-Jd-XcJ">
@@ -301,8 +341,13 @@
                                             <constraint firstAttribute="trailing" secondItem="97f-Xh-BaD" secondAttribute="trailing" id="pzD-AN-KIL"/>
                                             <constraint firstItem="IBd-Jd-XcJ" firstAttribute="leading" secondItem="sfT-wL-2Nk" secondAttribute="leading" id="zeE-dz-CJ2"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3st-LH-wSv" userLabel="Dollar">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3st-LH-wSv" userLabel="Dollar">
                                         <rect key="frame" x="0.0" y="146.5" width="290" height="49"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dollar" translatesAutoresizingMaskIntoConstraints="NO" id="drK-nF-YFX">
@@ -328,8 +373,13 @@
                                             <constraint firstItem="drK-nF-YFX" firstAttribute="leading" secondItem="3st-LH-wSv" secondAttribute="leading" id="oeU-Jt-V0z"/>
                                             <constraint firstAttribute="trailing" secondItem="xv5-ME-P0g" secondAttribute="trailing" id="rPM-H0-cXu"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s1T-TX-CTc" userLabel="Globe">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s1T-TX-CTc" userLabel="Globe">
                                         <rect key="frame" x="0.0" y="195.5" width="290" height="48.5"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="globe" translatesAutoresizingMaskIntoConstraints="NO" id="B79-u9-2fj">
@@ -355,8 +405,13 @@
                                             <constraint firstItem="Ayr-Oy-TG7" firstAttribute="top" secondItem="s1T-TX-CTc" secondAttribute="top" id="d7t-1Y-IEL"/>
                                             <constraint firstAttribute="bottom" secondItem="Ayr-Oy-TG7" secondAttribute="bottom" id="rUJ-Vc-Fmp"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
+                                                <integer key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DUV-mo-mPW" userLabel="$7">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DUV-mo-mPW" userLabel="$7">
                                         <rect key="frame" x="0.0" y="243.5" width="290" height="49"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="$7" translatesAutoresizingMaskIntoConstraints="NO" id="Aqd-Jg-Mkl">
@@ -382,6 +437,11 @@
                                             <constraint firstItem="Aqd-Jg-Mkl" firstAttribute="leading" secondItem="DUV-mo-mPW" secondAttribute="leading" id="tXi-Ea-5FV"/>
                                             <constraint firstItem="Aqd-Jg-Mkl" firstAttribute="centerY" secondItem="DUV-mo-mPW" secondAttribute="centerY" id="xMR-fw-6r6"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
+                                                <integer key="value" value="7"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

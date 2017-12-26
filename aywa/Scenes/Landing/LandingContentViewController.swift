@@ -58,16 +58,6 @@ class LandingContentViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        if !didExecuteOnceInLifeTimeInDidAppear {
-            UIView.animate(withDuration: 0, delay: 1, options: .curveEaseInOut, animations: {
-            }, completion: { (complete) in
-                self.animateLogos()
-                self.animatePage5Content()
-                self.animateBottomView()
-            })
-            didExecuteOnceInLifeTimeInDidAppear = true
-        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -92,22 +82,22 @@ class LandingContentViewController: UIViewController {
     
     func animateBottomView() {
         if pageIndex != 4 {
-            bottomTextView.alpha = 0
-            UIView.animate(withDuration: 1, animations: {
+//            bottomTextView.alpha = 0
+//            UIView.animate(withDuration: 1, animations: {
                 self.bottomTextView.alpha = 1
-            })
+//            })
             animateBottomViewIPAD()
         }
     }
     
     func animateBottomViewIPAD() {
         if !isiPad {
-            arabicTextLabel.alpha = 0
-            englishTextLabel.alpha = 0
-            UIView.animate(withDuration: 1, animations: {
+//            arabicTextLabel.alpha = 0
+//            englishTextLabel.alpha = 0
+//            UIView.animate(withDuration: 1, animations: {
                 self.arabicTextLabel?.alpha = 1
                 self.englishTextLabel?.alpha = 1
-            })
+//            })
         } else {
             var viewToAnimate: UIView?
             if pageIndex == 0 {
@@ -122,10 +112,10 @@ class LandingContentViewController: UIViewController {
             viewToAnimate?.layoutIfNeeded()
             viewToAnimate?.isHidden = false
             
-            viewToAnimate?.alpha = 0
-            UIView.animate(withDuration: 1, animations: {
+//            viewToAnimate?.alpha = 0
+//            UIView.animate(withDuration: 1, animations: {
                 viewToAnimate?.alpha = 1
-            })
+//            })
         }
     }
     
@@ -269,6 +259,8 @@ class LandingContentViewController: UIViewController {
             viewToAnimate?.alpha = 0
             viewToAnimate?.alpha = 0
         }
+        
+        self.animateBottomView()
     }
     
     
