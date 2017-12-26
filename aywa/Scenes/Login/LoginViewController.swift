@@ -98,7 +98,14 @@ class LoginViewController: BPViewController, LoginDisplayLogic, UITextFieldDeleg
     @IBAction func loginButtonTapped(_ sender: Any) {
         doLogin()
     }
-    
+    //MARK: Facebook Login Button Tapped
+    @IBAction func facebookLoginButtonTapped(_ sender: Any) {
+    print("Facebook Login Button Tapped !!!")
+    }
+    //MARK: Fogot Password Button Tapped
+    @IBAction func fogotPasswordButtonTapped(_ sender: Any) {
+    print("Fogot Password Button Tapped !!!")
+    }
     func doLogin()
     {
         let request = Login.Signin.Request(email: emailTextField.text, password: passwordTextField.text, deviceIdentifier: Utils.deviceIdentifier(), deviceType: Utils.deviceType())

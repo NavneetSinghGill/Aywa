@@ -102,10 +102,14 @@ class SignupViewController: BPViewController, SignupDisplayLogic, UITextFieldDel
     @IBOutlet weak var genderTextField: UITextField!
 //    @IBOutlet weak var backgroundImageView: UIImageView
 
+    //MARK: Signup Button Tapped
     @IBAction func signupButtonTapped(_ sender: UIButton) {
         doSignup()
     }
-    
+   //MARK:Create Account With Facebook Id Button Tapped
+    @IBAction func createAccountWithFacebookIdButtonTapped(_ sender: Any) {
+        print("Create Account WithFacebook Id Button Tapped !!!")
+    }
     //MARK: - Setup Drop Down
     
     func setupDropDowns() {
@@ -117,7 +121,7 @@ class SignupViewController: BPViewController, SignupDisplayLogic, UITextFieldDel
         ageDropDown.anchorView = ageGroupTextField
         //ageDropDown.bottomOffset = CGPoint(x: 0, y: ageGroupTextField.bounds.height)
         ageDropDown.frame(forAlignmentRect: CGRect(x: self.ageGroupTextField.frame.origin.x, y: ageGroupTextField.frame.origin.y - 150, width: self.ageDropDown.frame.width, height: ageGroupTextField.bounds.height))
-        //CGRectMake(self.txt_city.frame.origin.x+5, self.viewBehindCity.frame.origin.y+21+22, self.txt_city.frame.size.width+20, self.txt_city.frame.size.height*8)
+       
         ageDropDown.dataSource = [
             "14-18",
             "19-24",
@@ -155,14 +159,22 @@ class SignupViewController: BPViewController, SignupDisplayLogic, UITextFieldDel
     }
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         if textField == ageGroupTextField{
+            emailTextField.resignFirstResponder()
+            passwordTextField.resignFirstResponder()
+            confirmPasswordTextField.resignFirstResponder()
+            ageGroupTextField.resignFirstResponder()
             ageDropDown.show()
             ageDropDown.direction = .top
-            return true
+            return false
         }
         else  if textField == genderTextField {
+            emailTextField.resignFirstResponder()
+            passwordTextField.resignFirstResponder()
+            confirmPasswordTextField.resignFirstResponder()
+            genderTextField.resignFirstResponder()
             genderDropDown.show()
             genderDropDown.direction = .bottom
-            return true
+            return false
         }
         else{
             return true
