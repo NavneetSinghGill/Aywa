@@ -299,7 +299,7 @@
             </objects>
             <point key="canvasLocation" x="941.60000000000002" y="-860.41979010494754"/>
         </scene>
-        <!--Home-->
+        <!--Home View Controller-->
         <scene sceneID="Xdl-LP-kMS">
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" id="tO5-m1-Hhp" customClass="HomeViewController" customModule="aywa" customModuleProvider="target" sceneMemberID="viewController">
@@ -356,7 +356,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="upd-Lx-RFl"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="home" id="iV5-pD-PGz"/>
+                    <tabBarItem key="tabBarItem" title="" image="home" selectedImage="selectedHome" id="iV5-pD-PGz">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="headerView" destination="kTD-ZY-lkT" id="yAf-f3-7X1"/>
                         <outlet property="tableView" destination="EjE-Ag-MbL" id="9W8-qC-mal"/>
@@ -366,7 +368,7 @@
             </objects>
             <point key="canvasLocation" x="1746" y="47"/>
         </scene>
-        <!--Caterory-->
+        <!--Category View Controller-->
         <scene sceneID="OOf-0b-QoM">
             <objects>
                 <viewController storyboardIdentifier="CategoryViewController" id="jzZ-BV-Zly" customClass="CategoryViewController" customModule="aywa" customModuleProvider="target" sceneMemberID="viewController">
@@ -376,13 +378,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="FYp-Sl-RJz"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Caterory" image="caterory" id="bPL-t0-nfX"/>
+                    <tabBarItem key="tabBarItem" title="" image="category" id="bPL-t0-nfX">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zev-Xq-iL2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1745" y="725"/>
         </scene>
-        <!--Search-->
+        <!--Search View Controller-->
         <scene sceneID="ufC-A7-bi5">
             <objects>
                 <viewController storyboardIdentifier="SearchViewController" id="pUC-Mp-p8K" customClass="SearchViewController" customModule="aywa" customModuleProvider="target" sceneMemberID="viewController">
@@ -392,13 +396,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="uoU-YX-yXN"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Search" image="search" id="gSZ-TB-nOG"/>
+                    <tabBarItem key="tabBarItem" title="" image="search" id="gSZ-TB-nOG">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8PS-b3-R0A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1745" y="1432"/>
         </scene>
-        <!--Like-->
+        <!--Like View Controller-->
         <scene sceneID="nLs-gq-IH7">
             <objects>
                 <viewController storyboardIdentifier="LikeViewController" id="LOo-8P-hgZ" customClass="LikeViewController" customModule="aywa" customModuleProvider="target" sceneMemberID="viewController">
@@ -408,13 +414,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="6FE-kR-92d"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Like" image="like" id="nSr-PG-kXW"/>
+                    <tabBarItem key="tabBarItem" title="" image="like" id="nSr-PG-kXW">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wYd-9f-bIf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1745" y="2111"/>
         </scene>
-        <!--Alert-->
+        <!--Alert View Controller-->
         <scene sceneID="gsA-QJ-Lk7">
             <objects>
                 <viewController storyboardIdentifier="AlertViewController" id="USk-Ch-u7q" customClass="AlertViewController" customModule="aywa" customModuleProvider="target" sceneMemberID="viewController">
@@ -424,7 +432,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="g60-Ux-B0w"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Alert" image="alertBell" id="p1u-zZ-zjH"/>
+                    <tabBarItem key="tabBarItem" title="" image="alertBell" id="p1u-zZ-zjH">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W1h-fH-KN5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -438,7 +448,8 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="i9L-dc-PG7">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="selectedImageTintColor" red="0.92125046249999998" green="0.13939967750000001" blue="0.1112036631" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
                         <segue destination="tO5-m1-Hhp" kind="relationship" relationship="viewControllers" id="7j1-YZ-fKh"/>
@@ -567,12 +578,13 @@
     </scenes>
     <resources>
         <image name="alertBell" width="21" height="21"/>
-        <image name="caterory" width="21" height="21"/>
-        <image name="home" width="21" height="21"/>
+        <image name="category" width="21" height="21"/>
+        <image name="home" width="30" height="30"/>
         <image name="like" width="21" height="21"/>
         <image name="menu" width="6" height="22"/>
         <image name="page1Logo" width="193" height="67"/>
         <image name="screenCast" width="35" height="28"/>
         <image name="search" width="21" height="21"/>
+        <image name="selectedHome" width="21" height="21"/>
     </resources>
 </document>

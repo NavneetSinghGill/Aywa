@@ -83,7 +83,7 @@ class HomeViewController: UIViewController, HomeDisplayLogic, UITableViewDelegat
         self.homeHeader = self.storyboard?.instantiateViewController(withIdentifier: homeSliderBannerViewController) as! HomeSliderBannerViewController
         self.homeHeader.view.bounds.size = CGSize(width: self.view.frame.size.width, height: 240)
         self.tableView.tableHeaderView = homeHeader.view
-    }
+   }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

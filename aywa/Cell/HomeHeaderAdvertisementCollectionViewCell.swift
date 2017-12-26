@@ -42,15 +42,15 @@ class HomeHeaderAdvertisementCollectionViewCell: UICollectionViewCell {
         let urlString = (arrayOfValue[indexPathValueIs]).image
         let urlStringTitleImage = (arrayOfValue[indexPathValueIs]).titleImage
 
-        if let styleTypeDetails = (arrayOfValue[indexPathValueIs]).styleType {
-            print(styleTypeDetails)
-            isVideo = true
-        }
-        else{
-            print("No styleTypeDetails")
-            isVideo = false
-
-        }
+//        if let styleTypeDetails = (arrayOfValue[indexPathValueIs]).styleType {
+//            print(styleTypeDetails)
+//            isVideo = true
+//        }
+//        else{
+//            print("No styleTypeDetails")
+//            isVideo = false
+//
+        //        } //TODO: for styleType
         
          setUpImage(bgImageName: urlString, TitleImageName: urlStringTitleImage)
       

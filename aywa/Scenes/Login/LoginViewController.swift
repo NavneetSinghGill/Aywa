@@ -20,7 +20,7 @@ protocol LoginDisplayLogic: class
     
 }
 
-class LoginViewController: BPViewController, LoginDisplayLogic
+class LoginViewController: BPViewController, LoginDisplayLogic, UITextFieldDelegate
 {
     var interactor: LoginBusinessLogic?
     var router: (NSObjectProtocol & LoginRoutingLogic & LoginDataPassing)?
@@ -77,6 +77,9 @@ class LoginViewController: BPViewController, LoginDisplayLogic
     {
         super.viewDidLoad()
         
+        self.emailTextField.delegate = self
+        self.passwordTextField.delegate = self
+        
         emailTextField.text = "test_user1@gmail.com"
         passwordTextField.text = "123456"
        
@@ -114,5 +117,39 @@ class LoginViewController: BPViewController, LoginDisplayLogic
         router?.routeToTabBar(segue: nil)
     }
     
+    //MARK:- TextField Delegate Method
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+//        if textField == txtBloodType{
+//            txtName.resignFirstResponder()
+//            txtEmail.resignFirstResponder()
+//            txtPassword.resignFirstResponder()
+//            txtMobile.resignFirstResponder()
+//            txtCity.resignFirstResponder()
+//            return false
+//        }
+//        else{
+//            return true
+//        }
+        return true
+    }
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+//        if textField == self.txtMobile{
+//            let acceptedCharsters = self.txtMobile.text
+//            let newLength: Int = (textField.text?.count ?? 0) + (string.count ) - range.length
+//            return (newLength > 10) ? false : true
+//            let cs = CharacterSet(charactersIn: acceptedCharsters!).inverted
+//            let filtered: String = string.components(separatedBy: cs).joined(separator: "")
+//            return string == filtered
+//            return true
+//        }
+//        else{
+//            return true
+//        }
+        return true
+    }
     
 }
