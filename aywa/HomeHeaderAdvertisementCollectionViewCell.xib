@@ -23,7 +23,7 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2hF-gy-hOT">
                         <rect key="frame" x="0.0" y="0.0" width="168" height="127"/>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I5n-Gu-fxM">
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I5n-Gu-fxM">
                         <rect key="frame" x="73.5" y="53.5" width="21" height="21"/>
                         <color key="backgroundColor" red="0.70588235290000001" green="0.3921568627" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -31,10 +31,10 @@
                         </constraints>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q8x-Hj-wXa" userLabel="ImageTitle">
-                        <rect key="frame" x="80" y="29" width="120" height="90"/>
+                        <rect key="frame" x="78" y="37" width="130" height="86"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="120" id="7DS-Gm-aEN"/>
-                            <constraint firstAttribute="height" constant="90" id="ZPF-jI-POd"/>
+                            <constraint firstAttribute="width" constant="130" id="7DS-Gm-aEN"/>
+                            <constraint firstAttribute="height" constant="86" id="ZPF-jI-POd"/>
                         </constraints>
                     </imageView>
                 </subviews>
@@ -42,11 +42,11 @@
             <constraints>
                 <constraint firstItem="I5n-Gu-fxM" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="3l0-Rc-Ahh"/>
                 <constraint firstAttribute="trailing" secondItem="2hF-gy-hOT" secondAttribute="trailing" id="F2U-e8-hBR"/>
-                <constraint firstItem="q8x-Hj-wXa" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="80" id="MVm-rn-DXy"/>
+                <constraint firstItem="q8x-Hj-wXa" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="78" id="MVm-rn-DXy"/>
                 <constraint firstItem="I5n-Gu-fxM" firstAttribute="width" secondItem="ZTg-uK-7eu" secondAttribute="width" multiplier="1:8" id="YAx-eu-krE"/>
                 <constraint firstItem="I5n-Gu-fxM" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="bFY-sW-9Is"/>
                 <constraint firstAttribute="bottom" secondItem="2hF-gy-hOT" secondAttribute="bottom" id="d3a-TX-SxY"/>
-                <constraint firstAttribute="bottom" secondItem="q8x-Hj-wXa" secondAttribute="bottom" constant="8" id="dhq-69-wmf"/>
+                <constraint firstAttribute="bottom" secondItem="q8x-Hj-wXa" secondAttribute="bottom" constant="4" id="dhq-69-wmf"/>
                 <constraint firstItem="2hF-gy-hOT" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="nUs-6i-fJX"/>
                 <constraint firstItem="2hF-gy-hOT" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="xp6-aN-pe4"/>
             </constraints>

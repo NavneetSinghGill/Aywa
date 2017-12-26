@@ -13,6 +13,9 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet fileprivate weak var collectionView: UICollectionView!
     @IBOutlet weak var SectionTitle: UILabel!
     
+    @IBAction func cellOptionButtonTapped(_ sender: Any) {
+        print("Cell Option Button Tapped")
+    }
     var cellAlignment: CellAlignment = .Vertical
     var homeViewController: HomeViewController?
     var sectionData : Home.Section.Response?

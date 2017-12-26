@@ -31,6 +31,7 @@ class HomeImagesCollectionViewCell: UICollectionViewCell {
     
     func setUICellImage(strImageName: String) {
         print(strImageName)
-        displayImageView.sd_setImage(with: URL(string:strImageName))//, placeholderImage: UIImage(named: "placeholder.png"))
+        //displayImageView.sd_setImage(with: URL(string:strImageName))//, placeholderImage: UIImage(named: "placeholder.png"))
+         displayImageView.sd_setImage(with: URL(string:strImageName), placeholderImage: UIImage(named: "placeholder.png"))
     }
 }

@@ -28,7 +28,7 @@
                                     <constraint firstAttribute="height" constant="35" id="Pwf-9K-iYo"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Black_cyr-Bold" family="Helvetica" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
@@ -45,7 +45,7 @@
                                     <constraint firstAttribute="height" constant="35" id="ah2-v0-J6B"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Black_cyr-Bold" family="Helvetica" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Black_cyr-Bold" family="Helvetica" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
@@ -62,7 +62,7 @@
                                     <constraint firstAttribute="height" constant="35" id="fau-BQ-Quw"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Black_cyr-Bold" family="Helvetica" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
@@ -79,7 +79,7 @@
                                     <constraint firstAttribute="height" constant="35" id="ygu-pd-OLG"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Black_cyr-Bold" family="Helvetica" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
@@ -96,7 +96,7 @@
                                     <constraint firstAttribute="height" constant="35" id="mDB-8g-X8j"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Black_cyr-Bold" family="Helvetica" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
@@ -113,7 +113,7 @@
                                     <constraint firstAttribute="height" constant="35" id="vPu-pK-wJa"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Black_cyr-Bold" family="Helvetica" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
@@ -127,7 +127,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="Xm5-a4-jof"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Black_cyr-Bold" family="Helvetica" pointSize="14"/>
                                 <state key="normal" title="Create Account">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -146,7 +146,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="JCR-8o-Edy"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Black_cyr-Bold" family="Helvetica" pointSize="14"/>
                                 <state key="normal" title="FB Create Account with Your Facebook Id">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -214,7 +214,7 @@
                                     <constraint firstAttribute="height" constant="35" id="MKf-za-7Cl"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Black_cyr-Bold" family="Helvetica" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
@@ -231,7 +231,7 @@
                                     <constraint firstAttribute="height" constant="35" id="OYa-16-pOE"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Black_cyr-Bold" family="Helvetica" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
@@ -249,7 +249,7 @@
                                     <constraint firstAttribute="width" constant="110" id="2tg-8E-LdZ"/>
                                     <constraint firstAttribute="height" constant="56" id="lVo-YV-GeQ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Black_cyr-Bold" family="Helvetica" pointSize="14"/>
                                 <state key="normal" title="LOG IN">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -268,7 +268,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="02K-SN-ydi"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Black_cyr-Bold" family="Helvetica" pointSize="14"/>
                                 <state key="normal" title="FB Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -283,7 +283,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Dqq-RB-mRl"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Black_cyr-Bold" family="Helvetica" pointSize="14"/>
                                 <state key="normal" title="Forgot Your Password?"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
@@ -377,7 +377,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="upd-Lx-RFl"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="home" selectedImage="selectedHome" id="iV5-pD-PGz">
+                    <tabBarItem key="tabBarItem" title="" image="home_icon" selectedImage="home_selected_icon" id="iV5-pD-PGz">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
                     <connections>
@@ -399,7 +399,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="FYp-Sl-RJz"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="category" id="bPL-t0-nfX">
+                    <tabBarItem key="tabBarItem" title="" image="grid" selectedImage="grid_selected" id="bPL-t0-nfX">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
                 </viewController>
@@ -417,7 +417,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="uoU-YX-yXN"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="search" id="gSZ-TB-nOG">
+                    <tabBarItem key="tabBarItem" title="" image="search" selectedImage="search_selected" id="gSZ-TB-nOG">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
                 </viewController>
@@ -435,7 +435,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="6FE-kR-92d"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="like" id="nSr-PG-kXW">
+                    <tabBarItem key="tabBarItem" title="" image="favorite" selectedImage="favorite_selected" id="nSr-PG-kXW">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
                 </viewController>
@@ -453,7 +453,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="g60-Ux-B0w"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="alertBell" id="p1u-zZ-zjH">
+                    <tabBarItem key="tabBarItem" title="" image="notification" selectedImage="notification_selected" id="p1u-zZ-zjH">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
                 </viewController>
@@ -521,42 +521,38 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="page1Logo" translatesAutoresizingMaskIntoConstraints="NO" id="aDL-Ky-af3" userLabel="ImageAywa">
-                                        <rect key="frame" x="10" y="7" width="93" height="30"/>
+                                        <rect key="frame" x="10" y="7" width="90" height="31"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="dAT-1A-HO9">
+                                            <constraint firstAttribute="height" constant="31" id="dAT-1A-HO9">
                                                 <variation key="heightClass=regular-widthClass=regular" constant="39"/>
                                             </constraint>
-                                            <constraint firstAttribute="width" constant="93" id="iDv-xT-slx">
+                                            <constraint firstAttribute="width" constant="90" id="iDv-xT-slx">
                                                 <variation key="heightClass=regular-widthClass=regular" constant="125"/>
                                             </constraint>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="31o-ME-Acq" userLabel="MenuButton">
-                                        <rect key="frame" x="339" y="7" width="30" height="30"/>
+                                        <rect key="frame" x="364" y="12" width="5" height="15"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="0tz-YS-K8s">
-                                                <variation key="heightClass=regular-widthClass=regular" constant="39"/>
-                                            </constraint>
-                                            <constraint firstAttribute="width" constant="30" id="vxN-zH-r3M">
-                                                <variation key="heightClass=regular-widthClass=regular" constant="39"/>
-                                            </constraint>
+                                            <constraint firstAttribute="height" constant="15" id="Bnj-N0-Jdh"/>
+                                            <constraint firstAttribute="width" constant="5" id="G5t-SH-4nK"/>
                                         </constraints>
-                                        <state key="normal" image="menu"/>
+                                        <state key="normal" image="options"/>
                                         <connections>
                                             <action selector="menuButtonTapped:" destination="Uq9-WU-oQ2" eventType="touchUpInside" id="l4D-E0-rOt"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FTp-ex-29k">
-                                        <rect key="frame" x="297" y="8" width="35" height="28"/>
+                                        <rect key="frame" x="322" y="8" width="28" height="23"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="35" id="Fff-Db-FCe">
+                                            <constraint firstAttribute="width" constant="28" id="Fff-Db-FCe">
                                                 <variation key="heightClass=regular-widthClass=regular" constant="45"/>
                                             </constraint>
-                                            <constraint firstAttribute="height" constant="28" id="Kst-Zo-gzh">
+                                            <constraint firstAttribute="height" constant="23" id="Kst-Zo-gzh">
                                                 <variation key="heightClass=regular-widthClass=regular" constant="36"/>
                                             </constraint>
                                         </constraints>
-                                        <state key="normal" image="screenCast">
+                                        <state key="normal" image="share">
                                             <color key="titleColor" red="0.92133051156997681" green="0.13921850919723511" blue="0.14212876558303833" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -566,13 +562,14 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="31o-ME-Acq" firstAttribute="leading" secondItem="FTp-ex-29k" secondAttribute="trailing" constant="7" id="0DA-30-Bpd"/>
                                     <constraint firstItem="aDL-Ky-af3" firstAttribute="centerY" secondItem="ZYo-g0-Bvd" secondAttribute="centerY" id="CkL-28-WLe"/>
-                                    <constraint firstItem="31o-ME-Acq" firstAttribute="centerY" secondItem="ZYo-g0-Bvd" secondAttribute="centerY" id="cFr-66-fk0"/>
-                                    <constraint firstItem="FTp-ex-29k" firstAttribute="centerY" secondItem="ZYo-g0-Bvd" secondAttribute="centerY" id="hXA-Xy-51T"/>
-                                    <constraint firstAttribute="trailing" secondItem="31o-ME-Acq" secondAttribute="trailing" constant="6" id="hhP-WC-IZ1"/>
+                                    <constraint firstItem="31o-ME-Acq" firstAttribute="leading" secondItem="FTp-ex-29k" secondAttribute="trailing" constant="14" id="avG-QH-2eR"/>
+                                    <constraint firstItem="FTp-ex-29k" firstAttribute="centerY" secondItem="ZYo-g0-Bvd" secondAttribute="centerY" constant="-2.5" id="hXA-Xy-51T"/>
+                                    <constraint firstAttribute="trailing" secondItem="31o-ME-Acq" secondAttribute="trailing" constant="6" id="kXW-VJ-RGZ"/>
                                     <constraint firstItem="aDL-Ky-af3" firstAttribute="leading" secondItem="ZYo-g0-Bvd" secondAttribute="leading" constant="10" id="kgt-NF-am2"/>
+                                    <constraint firstAttribute="bottom" secondItem="31o-ME-Acq" secondAttribute="bottom" constant="17" id="kqa-Kf-hOO"/>
                                     <constraint firstAttribute="height" constant="44" id="pAQ-vu-uQA"/>
+                                    <constraint firstItem="31o-ME-Acq" firstAttribute="top" secondItem="ZYo-g0-Bvd" secondAttribute="top" constant="12" id="xWt-aq-uYq"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -598,14 +595,18 @@
         </scene>
     </scenes>
     <resources>
-        <image name="alertBell" width="17" height="19"/>
-        <image name="category" width="21" height="21"/>
-        <image name="home" width="30" height="30"/>
-        <image name="like" width="21" height="21"/>
-        <image name="menu" width="6" height="22"/>
+        <image name="favorite" width="21" height="20"/>
+        <image name="favorite_selected" width="21" height="20"/>
+        <image name="grid" width="20" height="20"/>
+        <image name="grid_selected" width="20" height="20"/>
+        <image name="home_icon" width="22" height="20"/>
+        <image name="home_selected_icon" width="22" height="20"/>
+        <image name="notification" width="18" height="20"/>
+        <image name="notification_selected" width="18" height="20"/>
+        <image name="options" width="4" height="15"/>
         <image name="page1Logo" width="193" height="67"/>
-        <image name="screenCast" width="35" height="28"/>
-        <image name="search" width="21" height="21"/>
-        <image name="selectedHome" width="21" height="21"/>
+        <image name="search" width="19" height="20"/>
+        <image name="search_selected" width="19" height="20"/>
+        <image name="share" width="28" height="23"/>
     </resources>
 </document>
