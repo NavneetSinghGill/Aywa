@@ -12,16 +12,21 @@
 
 import UIKit
 import BPViewsSubviewsInOutAnimation
+import DropDown
+
 protocol SignupDisplayLogic: class
 {
     func displayError(response: Landing.JWTToken.Response)
     func displayHomeScreen()
 }
 
-class SignupViewController: BPViewController, SignupDisplayLogic
+class SignupViewController: BPViewController, SignupDisplayLogic, UITextFieldDelegate
 {
     var interactor: SignupBusinessLogic?
     var router: (NSObjectProtocol & SignupRoutingLogic & SignupDataPassing)?
+    // DropDowns
+    let ageDropDown = DropDown()
+    let genderDropDown = DropDown()
     
     // MARK: Object lifecycle
     
@@ -75,6 +80,12 @@ class SignupViewController: BPViewController, SignupDisplayLogic
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        self.emailTextField.delegate = self
+        self.passwordTextField.delegate = self
+        self.confirmPasswordTextField.delegate = self
+        self.ageGroupTextField.delegate = self
+        self.genderTextField.delegate = self
+        setupDropDowns()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -90,9 +101,72 @@ class SignupViewController: BPViewController, SignupDisplayLogic
     @IBOutlet weak var ageGroupTextField: UITextField!
     @IBOutlet weak var genderTextField: UITextField!
 //    @IBOutlet weak var backgroundImageView: UIImageView
-    
+
     @IBAction func signupButtonTapped(_ sender: UIButton) {
-       doSignup()
+        doSignup()
+    }
+    
+    //MARK: - Setup Drop Down
+    
+    func setupDropDowns() {
+        setupGenderDropDown()
+        setupAgeDropDown()
+    }
+    // MARK: Age Drop Down
+    func setupAgeDropDown() {
+        ageDropDown.anchorView = ageGroupTextField
+        //ageDropDown.bottomOffset = CGPoint(x: 0, y: ageGroupTextField.bounds.height)
+        ageDropDown.frame(forAlignmentRect: CGRect(x: self.ageGroupTextField.frame.origin.x, y: ageGroupTextField.frame.origin.y - 150, width: self.ageDropDown.frame.width, height: ageGroupTextField.bounds.height))
+        //CGRectMake(self.txt_city.frame.origin.x+5, self.viewBehindCity.frame.origin.y+21+22, self.txt_city.frame.size.width+20, self.txt_city.frame.size.height*8)
+        ageDropDown.dataSource = [
+            "14-18",
+            "19-24",
+            "24-35",
+            "36-44",
+            "45+"
+        ]
+        
+        // Action triggered on selection
+        ageDropDown.selectionAction = { [weak self] (index, item) in
+            //self?.amountButton.setTitle(item, for: .normal)
+            self?.ageGroupTextField.text = item
+        }
+    }
+    //MARK: Gender Drop Down
+    func setupGenderDropDown() {
+        genderDropDown.anchorView = genderTextField
+        genderDropDown.bottomOffset = CGPoint(x:0, y: genderTextField.bounds.height)
+//        genderDropDown.backgroundColor = UIColor .black
+//        genderDropDown.textColor = UIColor.white
+        genderDropDown.dataSource = [
+            "Male",
+            "Female"
+        ]
+     // Action triggered on selection
+        genderDropDown.selectionAction = {[weak self] (Index, item) in
+            self?.genderTextField.text = item
+        }
+    }
+    
+    //MARK:- TextField Delegate Method
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if textField == ageGroupTextField{
+            ageDropDown.show()
+            ageDropDown.direction = .top
+            return true
+        }
+        else  if textField == genderTextField {
+            genderDropDown.show()
+            genderDropDown.direction = .bottom
+            return true
+        }
+        else{
+            return true
+        }
     }
     
     func doSignup()

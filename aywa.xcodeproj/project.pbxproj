@@ -15,6 +15,7 @@
 		2356E9441FEA4AD8009B7AC8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2356E9381FEA4423009B7AC8 /* LoginViewController.swift */; };
 		2356E9451FEA4AD8009B7AC8 /* LoginWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2356E9391FEA4423009B7AC8 /* LoginWorker.swift */; };
 		235C87221FE2ADCF00994340 /* SecurityStorageWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235C87211FE2ADCF00994340 /* SecurityStorageWorker.swift */; };
+		236164001FF257EF003C4F7E /* FloatingHeaderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236163FF1FF257EF003C4F7E /* FloatingHeaderTextField.swift */; };
 		23682E0A1FECDF19006CF18C /* CategoryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23682E041FECDF19006CF18C /* CategoryInteractor.swift */; };
 		23682E0B1FECDF19006CF18C /* CategoryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23682E051FECDF19006CF18C /* CategoryModels.swift */; };
 		23682E0C1FECDF19006CF18C /* CategoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23682E061FECDF19006CF18C /* CategoryPresenter.swift */; };
@@ -132,6 +133,7 @@
 		2356E9381FEA4423009B7AC8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2356E9391FEA4423009B7AC8 /* LoginWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWorker.swift; sourceTree = "<group>"; };
 		235C87211FE2ADCF00994340 /* SecurityStorageWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityStorageWorker.swift; sourceTree = "<group>"; };
+		236163FF1FF257EF003C4F7E /* FloatingHeaderTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingHeaderTextField.swift; sourceTree = "<group>"; };
 		23682E041FECDF19006CF18C /* CategoryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryInteractor.swift; sourceTree = "<group>"; };
 		23682E051FECDF19006CF18C /* CategoryModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModels.swift; sourceTree = "<group>"; };
 		23682E061FECDF19006CF18C /* CategoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPresenter.swift; sourceTree = "<group>"; };
@@ -504,6 +506,7 @@
 		48B1124B1FDE8086001E92FE /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				236163FF1FF257EF003C4F7E /* FloatingHeaderTextField.swift */,
 				48B1124C1FDE8086001E92FE /* Constants.swift */,
 				48728CDE1FE3ADAC00780DBF /* Extensions */,
 				48AAD66D1FE533E80097C0F3 /* Utils.swift */,
@@ -667,6 +670,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/BPViewsSubviewsInOutAnimation/BPViewsSubviewsInOutAnimation.framework",
+				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/MarqueeLabel/MarqueeLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/NotificationBannerSwift/NotificationBannerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
@@ -680,6 +684,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BPViewsSubviewsInOutAnimation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MarqueeLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NotificationBannerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
@@ -770,6 +775,7 @@
 				2356E9431FEA4AD8009B7AC8 /* LoginRouter.swift in Sources */,
 				48728D211FE3AED000780DBF /* OptionalExtensions.swift in Sources */,
 				48728D221FE3AED000780DBF /* StringExtensions.swift in Sources */,
+				236164001FF257EF003C4F7E /* FloatingHeaderTextField.swift in Sources */,
 				23682E251FECDF91006CF18C /* LikeRouter.swift in Sources */,
 				48728D231FE3AED000780DBF /* SwifterSwift.swift in Sources */,
 				48AAD6621FE508690097C0F3 /* SignupPresenter.swift in Sources */,

@@ -12,4 +12,5 @@ target 'aywa' do
     pod 'SwiftKeychainWrapper', '~> 3.0'
     pod 'SDWebImage', '~> 4.0'
     pod 'BPViewsSubviewsInOutAnimation','~> 1.0.2'
+    pod 'DropDown'
 end
