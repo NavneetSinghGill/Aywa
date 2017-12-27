@@ -521,10 +521,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PO5-XA-jHf" userLabel="LeftBottomTextView">
-                                <rect key="frame" x="85" y="464" width="81" height="140"/>
+                                <rect key="frame" x="85" y="464" width="103" height="140"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="11" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhN-X9-XPD">
-                                        <rect key="frame" x="-40" y="37" width="161" height="60"/>
+                                        <rect key="frame" x="0.0" y="37" width="103" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="NeU-qj-gmo"/>
                                         </constraints>
@@ -538,7 +538,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="12" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mzg-k9-C0x">
-                                        <rect key="frame" x="0.0" y="102" width="81" height="38"/>
+                                        <rect key="frame" x="0.0" y="102" width="103" height="38"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Black_cyr-Bold" family="Helvetica" pointSize="33"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -558,7 +558,7 @@
                                     <constraint firstItem="mzg-k9-C0x" firstAttribute="leading" secondItem="PO5-XA-jHf" secondAttribute="leading" id="neF-Sy-iKf"/>
                                     <constraint firstItem="dhN-X9-XPD" firstAttribute="centerX" secondItem="mzg-k9-C0x" secondAttribute="centerX" id="q13-CI-foU"/>
                                     <constraint firstAttribute="bottom" secondItem="mzg-k9-C0x" secondAttribute="bottom" id="q3x-bZ-iKs"/>
-                                    <constraint firstItem="dhN-X9-XPD" firstAttribute="leading" secondItem="PO5-XA-jHf" secondAttribute="leading" constant="-40" id="z4p-eR-JAO"/>
+                                    <constraint firstItem="dhN-X9-XPD" firstAttribute="leading" secondItem="PO5-XA-jHf" secondAttribute="leading" id="z4p-eR-JAO"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gyt-FL-MXe" userLabel="RightBottomTextView">
