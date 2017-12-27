@@ -11,6 +11,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 protocol HomeDisplayLogic: class
 {

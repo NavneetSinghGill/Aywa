@@ -12,6 +12,7 @@
 
 import UIKit
 import BPViewsSubviewsInOutAnimation
+import SVProgressHUD
 
 protocol LoginDisplayLogic: class
 {
@@ -81,7 +82,7 @@ class LoginViewController: BPViewController, LoginDisplayLogic, UITextFieldDeleg
         self.passwordTextField.delegate = self
         emailTextField.text = "test_user1@gmail.com"
         passwordTextField.text = "123456"
-       
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -100,25 +101,30 @@ class LoginViewController: BPViewController, LoginDisplayLogic, UITextFieldDeleg
     }
     //MARK: Facebook Login Button Tapped
     @IBAction func facebookLoginButtonTapped(_ sender: Any) {
-    print("Facebook Login Button Tapped !!!")
+        print("Facebook Login Button Tapped !!!")
     }
     //MARK: Fogot Password Button Tapped
     @IBAction func fogotPasswordButtonTapped(_ sender: Any) {
-    print("Fogot Password Button Tapped !!!")
+        print("Fogot Password Button Tapped !!!")
     }
     func doLogin()
     {
+     SVProgressHUD.setForegroundColor(UIColor.init(red: 253.0/255.0, green: 2.0/255.0, blue: 45/255.0, alpha: 1))
+        //SVProgressHUD.show()
+        SVProgressHUD.show(withStatus: "Signin")
         let request = Login.Signin.Request(email: emailTextField.text, password: passwordTextField.text, deviceIdentifier: Utils.deviceIdentifier(), deviceType: Utils.deviceType())
         interactor?.doLogin(request: request)
     }
     
     func displayError(response: Landing.JWTToken.Response)
     {
+        SVProgressHUD.dismiss()
         print("Error occured: \(response.message!)")
     }
     
     func displayHomeScreen()
     {
+        SVProgressHUD.dismiss()
         print("Show Home Screen!!!")
         router?.routeToTabBar(segue: nil)
     }
@@ -128,6 +134,5 @@ class LoginViewController: BPViewController, LoginDisplayLogic, UITextFieldDeleg
         textField.resignFirstResponder()
         return true
     }
-   
     
 }

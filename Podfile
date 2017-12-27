@@ -13,4 +13,5 @@ target 'aywa' do
     pod 'SDWebImage', '~> 4.0'
     pod 'BPViewsSubviewsInOutAnimation'
     pod 'DropDown'
+    pod 'SVProgressHUD', :git => 'https://github.com/SVProgressHUD/SVProgressHUD.git'
 end
