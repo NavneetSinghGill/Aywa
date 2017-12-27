@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1846C6D61FF3758B006BF9FC /* BaseWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1846C6D41FF3758B006BF9FC /* BaseWorker.swift */; };
+		1846C6D71FF3758B006BF9FC /* SecurityStorageWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1846C6D51FF3758B006BF9FC /* SecurityStorageWorker.swift */; };
+		1846C6D91FF375B0006BF9FC /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1846C6D81FF375B0006BF9FC /* BaseTabBarController.swift */; };
 		18D6EADB1FF22F8F00D6E1D3 /* BackgroundImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D6EADA1FF22F8F00D6E1D3 /* BackgroundImageManager.swift */; };
 		2356E9401FEA4AD8009B7AC8 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2356E9341FEA4423009B7AC8 /* LoginInteractor.swift */; };
 		2356E9411FEA4AD8009B7AC8 /* LoginModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2356E9351FEA4423009B7AC8 /* LoginModels.swift */; };
@@ -14,7 +17,6 @@
 		2356E9431FEA4AD8009B7AC8 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2356E9371FEA4423009B7AC8 /* LoginRouter.swift */; };
 		2356E9441FEA4AD8009B7AC8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2356E9381FEA4423009B7AC8 /* LoginViewController.swift */; };
 		2356E9451FEA4AD8009B7AC8 /* LoginWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2356E9391FEA4423009B7AC8 /* LoginWorker.swift */; };
-		235C87221FE2ADCF00994340 /* SecurityStorageWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235C87211FE2ADCF00994340 /* SecurityStorageWorker.swift */; };
 		236164001FF257EF003C4F7E /* FloatingHeaderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236163FF1FF257EF003C4F7E /* FloatingHeaderTextField.swift */; };
 		23682E0A1FECDF19006CF18C /* CategoryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23682E041FECDF19006CF18C /* CategoryInteractor.swift */; };
 		23682E0B1FECDF19006CF18C /* CategoryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23682E051FECDF19006CF18C /* CategoryModels.swift */; };
@@ -104,7 +106,6 @@
 		48AAD66A1FE50B8F0097C0F3 /* Main~ipad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48AAD6531FE506390097C0F3 /* Main~ipad.storyboard */; };
 		48AAD66C1FE514950097C0F3 /* ViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AAD66B1FE514950097C0F3 /* ViewControllerExtensions.swift */; };
 		48AAD66E1FE533E80097C0F3 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AAD66D1FE533E80097C0F3 /* Utils.swift */; };
-		48AAD6701FE5380A0097C0F3 /* BaseWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AAD66F1FE5380A0097C0F3 /* BaseWorker.swift */; };
 		48B1121E1FDE5B4C001E92FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B1121D1FDE5B4C001E92FE /* AppDelegate.swift */; };
 		48B112251FDE5B4C001E92FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48B112241FDE5B4C001E92FE /* Assets.xcassets */; };
 		48B112431FDE5D39001E92FE /* LandingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B1123D1FDE5D39001E92FE /* LandingInteractor.swift */; };
@@ -123,6 +124,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1846C6D41FF3758B006BF9FC /* BaseWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWorker.swift; sourceTree = "<group>"; };
+		1846C6D51FF3758B006BF9FC /* SecurityStorageWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecurityStorageWorker.swift; sourceTree = "<group>"; };
+		1846C6D81FF375B0006BF9FC /* BaseTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		18D6EADA1FF22F8F00D6E1D3 /* BackgroundImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImageManager.swift; sourceTree = "<group>"; };
 		1EA5F6901C24964F1FD838DC /* Pods-aywa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aywa.release.xcconfig"; path = "Pods/Target Support Files/Pods-aywa/Pods-aywa.release.xcconfig"; sourceTree = "<group>"; };
 		23025B731FF0E3AE0063FFE7 /* BPViewsSubviewsInOutAnimation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BPViewsSubviewsInOutAnimation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,7 +136,6 @@
 		2356E9371FEA4423009B7AC8 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		2356E9381FEA4423009B7AC8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2356E9391FEA4423009B7AC8 /* LoginWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWorker.swift; sourceTree = "<group>"; };
-		235C87211FE2ADCF00994340 /* SecurityStorageWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityStorageWorker.swift; sourceTree = "<group>"; };
 		236163FF1FF257EF003C4F7E /* FloatingHeaderTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingHeaderTextField.swift; sourceTree = "<group>"; };
 		23682E041FECDF19006CF18C /* CategoryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryInteractor.swift; sourceTree = "<group>"; };
 		23682E051FECDF19006CF18C /* CategoryModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModels.swift; sourceTree = "<group>"; };
@@ -212,7 +215,6 @@
 		48AAD65F1FE508690097C0F3 /* SignupWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupWorker.swift; sourceTree = "<group>"; };
 		48AAD66B1FE514950097C0F3 /* ViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtensions.swift; sourceTree = "<group>"; };
 		48AAD66D1FE533E80097C0F3 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		48AAD66F1FE5380A0097C0F3 /* BaseWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWorker.swift; sourceTree = "<group>"; };
 		48B1121A1FDE5B4C001E92FE /* aywa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aywa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48B1121D1FDE5B4C001E92FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48B112241FDE5B4C001E92FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -255,6 +257,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1846C6D21FF3753C006BF9FC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1846C6D81FF375B0006BF9FC /* BaseTabBarController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1846C6D31FF37549006BF9FC /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				1846C6D41FF3758B006BF9FC /* BaseWorker.swift */,
+				1846C6D51FF3758B006BF9FC /* SecurityStorageWorker.swift */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
 		2356E9331FEA4423009B7AC8 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -460,14 +479,16 @@
 				48B112291FDE5B4C001E92FE /* Info.plist */,
 				48B1121D1FDE5B4C001E92FE /* AppDelegate.swift */,
 				48B112241FDE5B4C001E92FE /* Assets.xcassets */,
+				236F94B61FE92A4500B16981 /* Cell */,
+				1846C6D21FF3753C006BF9FC /* Controllers */,
 				48B1124B1FDE8086001E92FE /* Helpers */,
 				48B112531FDE8275001E92FE /* Manager */,
 				48B112511FDE823B001E92FE /* Models */,
 				48B112621FDE846E001E92FE /* NetworkManager */,
 				48B1124D1FDE81CC001E92FE /* Resources */,
 				48B1122F1FDE5B8F001E92FE /* Scenes */,
-				236F94B61FE92A4500B16981 /* Cell */,
 				48AAD6501FE506150097C0F3 /* StoryboardsAndXIBs */,
+				1846C6D31FF37549006BF9FC /* Workers */,
 			);
 			path = aywa;
 			sourceTree = "<group>";
@@ -479,8 +500,6 @@
 				23682E001FECDCC5006CF18C /* Search */,
 				23682E021FECDE3D006CF18C /* Like */,
 				23682E011FECDD8B006CF18C /* Alert */,
-				48AAD66F1FE5380A0097C0F3 /* BaseWorker.swift */,
-				235C87211FE2ADCF00994340 /* SecurityStorageWorker.swift */,
 				48B112301FDE5BD2001E92FE /* Landing */,
 				2356E9331FEA4423009B7AC8 /* Login */,
 				48AAD6671FE508970097C0F3 /* Signup */,
@@ -734,6 +753,7 @@
 				534788E31FE7B7E00031B727 /* ShowImageTableViewCell.swift in Sources */,
 				48AAD6601FE508690097C0F3 /* SignupInteractor.swift in Sources */,
 				48728D121FE3AED000780DBF /* CGFloatExtensions.swift in Sources */,
+				1846C6D91FF375B0006BF9FC /* BaseTabBarController.swift in Sources */,
 				23682E231FECDF91006CF18C /* LikeModels.swift in Sources */,
 				48728D131FE3AED000780DBF /* CGPointExtensions.swift in Sources */,
 				23682E2E1FECDFA6006CF18C /* AlertInteractor.swift in Sources */,
@@ -767,7 +787,6 @@
 				48728D1F1FE3AED000780DBF /* IntExtensions.swift in Sources */,
 				23682E0C1FECDF19006CF18C /* CategoryPresenter.swift in Sources */,
 				2393109B1FEA610300337C4B /* HomeSliderBannerPresenter.swift in Sources */,
-				48AAD6701FE5380A0097C0F3 /* BaseWorker.swift in Sources */,
 				236F94B01FE8DC4E00B16981 /* HomeTableViewCell.swift in Sources */,
 				23682E191FECDF6E006CF18C /* SearchRouter.swift in Sources */,
 				23682E0A1FECDF19006CF18C /* CategoryInteractor.swift in Sources */,
@@ -805,7 +824,6 @@
 				48B1124A1FDE69B1001E92FE /* LandingContentViewController.swift in Sources */,
 				483B294A1FDFBACE005F5D67 /* RealAPI.swift in Sources */,
 				48B112471FDE5D39001E92FE /* LandingViewController.swift in Sources */,
-				235C87221FE2ADCF00994340 /* SecurityStorageWorker.swift in Sources */,
 				23682E311FECDFA6006CF18C /* AlertRouter.swift in Sources */,
 				48B112481FDE5D39001E92FE /* LandingWorker.swift in Sources */,
 				2356E9401FEA4AD8009B7AC8 /* LoginInteractor.swift in Sources */,
@@ -816,11 +834,13 @@
 				48B1121E1FDE5B4C001E92FE /* AppDelegate.swift in Sources */,
 				236F94BF1FE9330700B16981 /* HomeModels.swift in Sources */,
 				236F94C21FE9330700B16981 /* HomeViewController.swift in Sources */,
+				1846C6D71FF3758B006BF9FC /* SecurityStorageWorker.swift in Sources */,
 				483B294F1FDFBAE7005F5D67 /* BannerManager.swift in Sources */,
 				483B29501FDFBAEB005F5D67 /* AppSettingsManager.swift in Sources */,
 				48AAD66C1FE514950097C0F3 /* ViewControllerExtensions.swift in Sources */,
 				483B29511FDFBAF1005F5D67 /* Constants.swift in Sources */,
 				23682E301FECDFA6006CF18C /* AlertPresenter.swift in Sources */,
+				1846C6D61FF3758B006BF9FC /* BaseWorker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
