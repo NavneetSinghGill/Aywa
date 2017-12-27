@@ -94,19 +94,22 @@ class SignupViewController: BPViewController, SignupDisplayLogic, UITextFieldDel
     }
     
     // MARK: Do signup
-    @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var confirmPasswordTextField: UITextField!
-    @IBOutlet weak var ageGroupTextField: UITextField!
-    @IBOutlet weak var genderTextField: UITextField!
-//    @IBOutlet weak var backgroundImageView: UIImageView
-
+    
+    @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var nameTextField: FloatingHeaderTextField!
+    @IBOutlet weak var emailTextField: FloatingHeaderTextField!
+    @IBOutlet weak var passwordTextField: FloatingHeaderTextField!
+    @IBOutlet weak var confirmPasswordTextField: FloatingHeaderTextField!
+    @IBOutlet weak var ageGroupTextField: FloatingHeaderTextField!
+    @IBOutlet weak var genderTextField: FloatingHeaderTextField!
+    
+    //    @IBOutlet weak var backgroundImageView: UIImageView
+    
     //MARK: Signup Button Tapped
     @IBAction func signupButtonTapped(_ sender: UIButton) {
         doSignup()
     }
-   //MARK:Create Account With Facebook Id Button Tapped
+    //MARK:Create Account With Facebook Id Button Tapped
     @IBAction func createAccountWithFacebookIdButtonTapped(_ sender: Any) {
         print("Create Account WithFacebook Id Button Tapped !!!")
     }
@@ -119,9 +122,9 @@ class SignupViewController: BPViewController, SignupDisplayLogic, UITextFieldDel
     // MARK: Age Drop Down
     func setupAgeDropDown() {
         ageDropDown.anchorView = ageGroupTextField
-        //ageDropDown.bottomOffset = CGPoint(x: 0, y: ageGroupTextField.bounds.height)
-        ageDropDown.frame(forAlignmentRect: CGRect(x: self.ageGroupTextField.frame.origin.x, y: ageGroupTextField.frame.origin.y - 150, width: self.ageDropDown.frame.width, height: ageGroupTextField.bounds.height))
-       
+        ageDropDown.direction = .top
+        ageDropDown.topOffset = CGPoint(x: 0, y: -(ageGroupTextField.bounds.height+10))
+        
         ageDropDown.dataSource = [
             "14-18",
             "19-24",
@@ -140,13 +143,13 @@ class SignupViewController: BPViewController, SignupDisplayLogic, UITextFieldDel
     func setupGenderDropDown() {
         genderDropDown.anchorView = genderTextField
         genderDropDown.bottomOffset = CGPoint(x:0, y: genderTextField.bounds.height)
-//        genderDropDown.backgroundColor = UIColor .black
-//        genderDropDown.textColor = UIColor.white
+        //        genderDropDown.backgroundColor = UIColor .black
+        //        genderDropDown.textColor = UIColor.white
         genderDropDown.dataSource = [
             "Male",
             "Female"
         ]
-     // Action triggered on selection
+        // Action triggered on selection
         genderDropDown.selectionAction = {[weak self] (Index, item) in
             self?.genderTextField.text = item
         }
@@ -159,6 +162,7 @@ class SignupViewController: BPViewController, SignupDisplayLogic, UITextFieldDel
     }
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         if textField == ageGroupTextField{
+            ageGroupTextField.isActive = true
             emailTextField.resignFirstResponder()
             passwordTextField.resignFirstResponder()
             confirmPasswordTextField.resignFirstResponder()
@@ -167,7 +171,9 @@ class SignupViewController: BPViewController, SignupDisplayLogic, UITextFieldDel
             ageDropDown.direction = .top
             return false
         }
-        else  if textField == genderTextField {
+        else if textField == genderTextField {
+            genderTextField.isActive = true
+
             emailTextField.resignFirstResponder()
             passwordTextField.resignFirstResponder()
             confirmPasswordTextField.resignFirstResponder()
@@ -201,17 +207,17 @@ class SignupViewController: BPViewController, SignupDisplayLogic, UITextFieldDel
     @objc func changeBackgroundImage(notification: Notification?){
         //Take Action on Notification
         DispatchQueue.main.async {
-//            UIView.animate(withDuration: 0.5, animations: {
-//                self.backgroundImageView.alpha = 0
-//            }, completion: { (complete) in
-//                self.backgroundImageView.image = BackgroundImageManager.shared().backgroundImage
-//                UIView.animate(withDuration: 0.5,
-//                               delay: 0,
-//                               options: .curveEaseInOut,
-//                               animations: {
-//                                self.backgroundImageView.alpha = 1
-//                }, completion: nil)
-//            })
+            //            UIView.animate(withDuration: 0.5, animations: {
+            //                self.backgroundImageView.alpha = 0
+            //            }, completion: { (complete) in
+            //                self.backgroundImageView.image = BackgroundImageManager.shared().backgroundImage
+            //                UIView.animate(withDuration: 0.5,
+            //                               delay: 0,
+            //                               options: .curveEaseInOut,
+            //                               animations: {
+            //                                self.backgroundImageView.alpha = 1
+            //                }, completion: nil)
+            //            })
         }
     }
 }

@@ -22,7 +22,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YgK-Ad-0cm">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y0s-qX-22I">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YgK-Ad-0cm" customClass="FloatingHeaderTextField" customModule="aywa" customModuleProvider="target">
                                 <rect key="frame" x="10" y="70" width="355" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="Pwf-9K-iYo"/>
@@ -39,7 +42,7 @@
                                     <outlet property="delegate" destination="wKh-GD-z1k" id="3TV-P4-Oob"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oUI-f2-LN2">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oUI-f2-LN2" customClass="FloatingHeaderTextField" customModule="aywa" customModuleProvider="target">
                                 <rect key="frame" x="10" y="143" width="355" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="ah2-v0-J6B"/>
@@ -56,7 +59,7 @@
                                     <outlet property="delegate" destination="wKh-GD-z1k" id="xxA-OG-n76"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V9u-61-zKD">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V9u-61-zKD" customClass="FloatingHeaderTextField" customModule="aywa" customModuleProvider="target">
                                 <rect key="frame" x="10" y="208" width="349" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="fau-BQ-Quw"/>
@@ -73,7 +76,7 @@
                                     <outlet property="delegate" destination="wKh-GD-z1k" id="g4B-Sg-Pj5"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j8c-uf-hT9">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j8c-uf-hT9" customClass="FloatingHeaderTextField" customModule="aywa" customModuleProvider="target">
                                 <rect key="frame" x="10" y="281" width="355" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="ygu-pd-OLG"/>
@@ -90,7 +93,7 @@
                                     <outlet property="delegate" destination="wKh-GD-z1k" id="A9a-gc-oZL"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Age Group" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7iI-om-gCw">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Age Group" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7iI-om-gCw" customClass="FloatingHeaderTextField" customModule="aywa" customModuleProvider="target">
                                 <rect key="frame" x="10" y="353" width="167.5" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="mDB-8g-X8j"/>
@@ -107,8 +110,8 @@
                                     <outlet property="delegate" destination="wKh-GD-z1k" id="rIc-NY-MpY"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gender" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dPd-CH-4BY">
-                                <rect key="frame" x="197.5" y="354" width="167.5" height="35"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Gender" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dPd-CH-4BY" customClass="FloatingHeaderTextField" customModule="aywa" customModuleProvider="target">
+                                <rect key="frame" x="197" y="354" width="167.5" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="vPu-pK-wJa"/>
                                 </constraints>
@@ -168,9 +171,13 @@
                         <constraints>
                             <constraint firstItem="O2b-a3-pNw" firstAttribute="centerX" secondItem="bGU-W0-IfO" secondAttribute="centerX" id="0QL-yE-S96"/>
                             <constraint firstItem="dqB-ep-QbX" firstAttribute="trailing" secondItem="V9u-61-zKD" secondAttribute="trailing" constant="16" id="4Kn-dp-6QZ"/>
+                            <constraint firstItem="Y0s-qX-22I" firstAttribute="top" secondItem="bGU-W0-IfO" secondAttribute="top" id="5BF-IH-mlM"/>
+                            <constraint firstItem="Y0s-qX-22I" firstAttribute="trailing" secondItem="dqB-ep-QbX" secondAttribute="trailing" id="6kt-Sh-7N4"/>
+                            <constraint firstItem="Y0s-qX-22I" firstAttribute="leading" secondItem="dqB-ep-QbX" secondAttribute="leading" id="6tS-k6-EbW"/>
                             <constraint firstItem="dqB-ep-QbX" firstAttribute="trailing" secondItem="dPd-CH-4BY" secondAttribute="trailing" constant="10" id="8Hd-Ow-9nB"/>
                             <constraint firstItem="YgK-Ad-0cm" firstAttribute="top" secondItem="dqB-ep-QbX" secondAttribute="top" constant="50" id="Cyl-E5-FlS"/>
                             <constraint firstItem="fsx-qR-Vjm" firstAttribute="top" secondItem="O2b-a3-pNw" secondAttribute="bottom" constant="15" id="IjK-Cr-Zsn"/>
+                            <constraint firstItem="Y0s-qX-22I" firstAttribute="bottom" secondItem="dqB-ep-QbX" secondAttribute="bottom" id="Iwl-6J-Ytt"/>
                             <constraint firstItem="dqB-ep-QbX" firstAttribute="trailing" secondItem="j8c-uf-hT9" secondAttribute="trailing" constant="10" id="LIx-9x-716"/>
                             <constraint firstItem="oUI-f2-LN2" firstAttribute="top" secondItem="YgK-Ad-0cm" secondAttribute="bottom" constant="38" id="MpA-up-mOa"/>
                             <constraint firstItem="dPd-CH-4BY" firstAttribute="width" secondItem="7iI-om-gCw" secondAttribute="width" id="QPy-O2-y7P"/>
@@ -194,6 +201,7 @@
                     </view>
                     <connections>
                         <outlet property="ageGroupTextField" destination="7iI-om-gCw" id="VIP-zr-mk5"/>
+                        <outlet property="backgroundImageView" destination="Y0s-qX-22I" id="cyh-QK-kZD"/>
                         <outlet property="confirmPasswordTextField" destination="j8c-uf-hT9" id="Ohy-UP-BhV"/>
                         <outlet property="emailTextField" destination="oUI-f2-LN2" id="V9u-1z-d0B"/>
                         <outlet property="genderTextField" destination="dPd-CH-4BY" id="3w9-o7-LAi"/>
@@ -213,7 +221,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JjU-hE-xME">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Ug-mS-uAs">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JjU-hE-xME" customClass="FloatingHeaderTextField" customModule="aywa" customModuleProvider="target">
                                 <rect key="frame" x="10" y="124" width="355" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="MKf-za-7Cl"/>
@@ -230,7 +241,7 @@
                                     <outlet property="delegate" destination="bFY-JS-lCR" id="pkL-AE-cFH"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Ag-4M-KRh">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Ag-4M-KRh" customClass="FloatingHeaderTextField" customModule="aywa" customModuleProvider="target">
                                 <rect key="frame" x="10" y="193" width="355" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="OYa-16-pOE"/>
@@ -309,7 +320,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="2Ug-mS-uAs" firstAttribute="top" secondItem="Kbb-st-FfZ" secondAttribute="top" id="0S7-wT-XGE"/>
+                            <constraint firstItem="2Ug-mS-uAs" firstAttribute="trailing" secondItem="w6W-Yw-94D" secondAttribute="trailing" id="0ri-xm-KqX"/>
                             <constraint firstItem="Gib-mc-Q3Q" firstAttribute="centerY" secondItem="Wup-Ie-kGM" secondAttribute="centerY" id="4fc-XH-Wz9"/>
+                            <constraint firstItem="2Ug-mS-uAs" firstAttribute="bottom" secondItem="w6W-Yw-94D" secondAttribute="bottom" id="92e-1m-IGM"/>
                             <constraint firstItem="JjU-hE-xME" firstAttribute="top" secondItem="w6W-Yw-94D" secondAttribute="top" constant="104" id="9mG-PD-i8C"/>
                             <constraint firstItem="JjU-hE-xME" firstAttribute="leading" secondItem="w6W-Yw-94D" secondAttribute="leading" constant="10" id="BIV-3z-Tmo"/>
                             <constraint firstItem="w6W-Yw-94D" firstAttribute="trailing" secondItem="3Ag-4M-KRh" secondAttribute="trailing" constant="10" id="Fd1-Dc-6Qh"/>
@@ -317,6 +331,7 @@
                                 <variation key="heightClass=regular-widthClass=regular" constant="32.5"/>
                             </constraint>
                             <constraint firstItem="w6W-Yw-94D" firstAttribute="trailing" secondItem="JjU-hE-xME" secondAttribute="trailing" constant="10" id="MEx-Uo-L1f"/>
+                            <constraint firstItem="2Ug-mS-uAs" firstAttribute="leading" secondItem="w6W-Yw-94D" secondAttribute="leading" id="Qt1-88-fN0"/>
                             <constraint firstItem="w6W-Yw-94D" firstAttribute="trailing" secondItem="252-HO-MYG" secondAttribute="trailing" constant="95" id="SdH-b3-LGo">
                                 <variation key="heightClass=regular-widthClass=regular" constant="95"/>
                             </constraint>
@@ -335,6 +350,7 @@
                         <viewLayoutGuide key="safeArea" id="w6W-Yw-94D"/>
                     </view>
                     <connections>
+                        <outlet property="backgroundImageView" destination="2Ug-mS-uAs" id="Epc-Ru-Qgg"/>
                         <outlet property="emailTextField" destination="JjU-hE-xME" id="3dO-6l-6c1"/>
                         <outlet property="passwordTextField" destination="3Ag-4M-KRh" id="aDU-a6-BUS"/>
                     </connections>

@@ -80,8 +80,8 @@ class LoginViewController: BPViewController, LoginDisplayLogic, UITextFieldDeleg
         
         self.emailTextField.delegate = self
         self.passwordTextField.delegate = self
-        emailTextField.text = "test_user1@gmail.com"
-        passwordTextField.text = "123456"
+//        emailTextField.text = "test_user1@gmail.com"
+//        passwordTextField.text = "123456"
         
     }
     
@@ -92,8 +92,9 @@ class LoginViewController: BPViewController, LoginDisplayLogic, UITextFieldDeleg
     
     // MARK: Do Login
     
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var emailTextField: FloatingHeaderTextField!
+    @IBOutlet weak var passwordTextField: FloatingHeaderTextField!
     
     //MARK: Login 
     @IBAction func loginButtonTapped(_ sender: Any) {
