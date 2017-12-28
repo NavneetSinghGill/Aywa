@@ -87,7 +87,7 @@ struct Constants {
     
     //MARK: - Login keys
     static let kUserName = "UserName"
-    
+    static let kFbToken = "Token"
     //MARK: - SliderBanner keys
     static let kClientTypeKey = "clientType"
     static let kClientTypeValue = 2 // 2 for mobile

@@ -12,6 +12,7 @@
 		1846C6D71FF3758B006BF9FC /* SecurityStorageWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1846C6D51FF3758B006BF9FC /* SecurityStorageWorker.swift */; };
 		1846C6D91FF375B0006BF9FC /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1846C6D81FF375B0006BF9FC /* BaseTabBarController.swift */; };
 		18D6EADB1FF22F8F00D6E1D3 /* BackgroundImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D6EADA1FF22F8F00D6E1D3 /* BackgroundImageManager.swift */; };
+		232792181FF5131C00A218B6 /* FacebookWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232792171FF5131C00A218B6 /* FacebookWorker.swift */; };
 		2356E9401FEA4AD8009B7AC8 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2356E9341FEA4423009B7AC8 /* LoginInteractor.swift */; };
 		2356E9411FEA4AD8009B7AC8 /* LoginModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2356E9351FEA4423009B7AC8 /* LoginModels.swift */; };
 		2356E9421FEA4AD8009B7AC8 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2356E9361FEA4423009B7AC8 /* LoginPresenter.swift */; };
@@ -132,6 +133,7 @@
 		18D6EADA1FF22F8F00D6E1D3 /* BackgroundImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImageManager.swift; sourceTree = "<group>"; };
 		1EA5F6901C24964F1FD838DC /* Pods-aywa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aywa.release.xcconfig"; path = "Pods/Target Support Files/Pods-aywa/Pods-aywa.release.xcconfig"; sourceTree = "<group>"; };
 		23025B731FF0E3AE0063FFE7 /* BPViewsSubviewsInOutAnimation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BPViewsSubviewsInOutAnimation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		232792171FF5131C00A218B6 /* FacebookWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookWorker.swift; sourceTree = "<group>"; };
 		2356E9341FEA4423009B7AC8 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 		2356E9351FEA4423009B7AC8 /* LoginModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModels.swift; sourceTree = "<group>"; };
 		2356E9361FEA4423009B7AC8 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				1846C6D41FF3758B006BF9FC /* BaseWorker.swift */,
+				232792171FF5131C00A218B6 /* FacebookWorker.swift */,
 				1846C6D51FF3758B006BF9FC /* SecurityStorageWorker.swift */,
 			);
 			path = Workers;
@@ -692,7 +695,10 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/BPViewsSubviewsInOutAnimation/BPViewsSubviewsInOutAnimation.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/MarqueeLabel/MarqueeLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/NotificationBannerSwift/NotificationBannerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
@@ -707,7 +713,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BPViewsSubviewsInOutAnimation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MarqueeLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NotificationBannerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
@@ -804,6 +813,7 @@
 				48728D231FE3AED000780DBF /* SwifterSwift.swift in Sources */,
 				48AAD6621FE508690097C0F3 /* SignupPresenter.swift in Sources */,
 				2356E9411FEA4AD8009B7AC8 /* LoginModels.swift in Sources */,
+				232792181FF5131C00A218B6 /* FacebookWorker.swift in Sources */,
 				23682E321FECDFA6006CF18C /* AlertViewController.swift in Sources */,
 				48728D3A1FE3AED000780DBF /* URLExtensions.swift in Sources */,
 				23682E0D1FECDF19006CF18C /* CategoryRouter.swift in Sources */,

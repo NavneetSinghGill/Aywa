@@ -15,6 +15,8 @@ import UIKit
 protocol LoginBusinessLogic
 {
     func doLogin(request: Login.Signin.Request)
+    func doFacebookLogin()
+    
 }
 
 protocol LoginDataStore
@@ -24,10 +26,12 @@ protocol LoginDataStore
 
 class LoginInteractor: LoginBusinessLogic, LoginDataStore
 {
+    
     var presenter: LoginPresentationLogic?
     var worker: LoginWorker?
     var securityStorageWorker = SecurityStorageWorker()
-
+    let facebookWorker = FacebookWorker()
+    
     // MARK:- Do Login
     func doLogin(request: Login.Signin.Request)
     {
@@ -78,5 +82,24 @@ class LoginInteractor: LoginBusinessLogic, LoginDataStore
         return isValid
         
         
+    }
+    //MARK: Facebook Login
+    func doFacebookLogin() {
+        worker = LoginWorker()
+        self.facebookWorker.doFacebookLogin { (token) in
+            print(token)
+            let requestFacebook = Login.Signin.FacebookLoginRequest(token: token, deviceIdentifier: Utils.deviceIdentifier(), deviceType: Utils.deviceType())
+            
+            self.worker?.facebookSignin(request: requestFacebook, success: { (response) in
+                print(response)
+                if self.securityStorageWorker.storeAccessTokenResponse(response: response) {
+                    self.presenter?.presentNextScreen()
+                }
+            }, fail: { (response) in
+                self.presenter?.presentError(response: response)
+                
+            })
+        }
+       
     }
 }

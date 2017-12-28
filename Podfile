@@ -14,4 +14,6 @@ target 'aywa' do
     pod 'BPViewsSubviewsInOutAnimation'
     pod 'DropDown'
     pod 'SVProgressHUD', :git => 'https://github.com/SVProgressHUD/SVProgressHUD.git'
+    pod 'FBSDKLoginKit'
+
 end

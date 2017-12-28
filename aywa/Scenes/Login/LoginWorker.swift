@@ -23,4 +23,13 @@ class LoginWorker: BaseWorker
             self.handleTokenResponse(success: success, fail: fail, status: status, response: response)
         }
     }
+    func facebookSignin(request:Login.Signin.FacebookLoginRequest, success:@escaping(accessTokenResponseHandler), fail:@escaping(accessTokenResponseHandler))
+    {
+        //call network etc.
+        let manager = RequestManager()
+        
+        manager.fetchJWTToken(request: request.baseRequest()) { (status, response) in
+            self.handleTokenResponse(success: success, fail: fail, status: status, response: response)
+        }
+    }
 }

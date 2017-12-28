@@ -13,6 +13,7 @@
 import UIKit
 import BPViewsSubviewsInOutAnimation
 import SVProgressHUD
+import FBSDKLoginKit
 
 protocol LoginDisplayLogic: class
 {
@@ -25,7 +26,6 @@ class LoginViewController: BPViewController, LoginDisplayLogic, UITextFieldDeleg
 {
     var interactor: LoginBusinessLogic?
     var router: (NSObjectProtocol & LoginRoutingLogic & LoginDataPassing)?
-    
     // MARK: Object lifecycle
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -99,7 +99,6 @@ class LoginViewController: BPViewController, LoginDisplayLogic, UITextFieldDeleg
     }
     
     // MARK: Do Login
-    
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var emailTextField: FloatingHeaderTextField!
     @IBOutlet weak var passwordTextField: FloatingHeaderTextField!
@@ -111,14 +110,17 @@ class LoginViewController: BPViewController, LoginDisplayLogic, UITextFieldDeleg
     //MARK: Facebook Login Button Tapped
     @IBAction func facebookLoginButtonTapped(_ sender: Any) {
         print("Facebook Login Button Tapped !!!")
+        doFacebookLoginRequest()
+        
     }
     //MARK: Fogot Password Button Tapped
     @IBAction func fogotPasswordButtonTapped(_ sender: Any) {
         print("Fogot Password Button Tapped !!!")
     }
+    
     func doLogin()
     {
-     SVProgressHUD.setForegroundColor(UIColor.init(red: 253.0/255.0, green: 2.0/255.0, blue: 45/255.0, alpha: 1))
+        SVProgressHUD.setForegroundColor(UIColor.init(red: 253.0/255.0, green: 2.0/255.0, blue: 45/255.0, alpha: 1))
         //SVProgressHUD.show()
         SVProgressHUD.show(withStatus: "Signin")
         let request = Login.Signin.Request(email: emailTextField.text, password: passwordTextField.text, deviceIdentifier: Utils.deviceIdentifier(), deviceType: Utils.deviceType())
@@ -143,7 +145,13 @@ class LoginViewController: BPViewController, LoginDisplayLogic, UITextFieldDeleg
         textField.resignFirstResponder()
         return true
     }
-    
+    //MARK: Do Facebokk login Request
+    func doFacebookLoginRequest()
+    {
+        SVProgressHUD.setForegroundColor(UIColor.init(red: 253.0/255.0, green: 2.0/255.0, blue: 45/255.0, alpha: 1))
+        SVProgressHUD.show(withStatus: "Signin")
+        interactor?.doFacebookLogin()
+    }
     @objc func changeBackgroundImage(notification: Notification?){
         //Take Action on Notification
         DispatchQueue.main.async {

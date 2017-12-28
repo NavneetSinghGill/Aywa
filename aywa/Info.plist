@@ -47,5 +47,22 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbauth2</string>
+	</array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb924171647736515</string>
+			</array>
+		</dict>
+	</array>
+	<key>FacebookAppID</key>
+	<string>924171647736515</string>
+	<key>FacebookDisplayName</key>
+	<string>Aywa</string>
 </dict>
 </plist>

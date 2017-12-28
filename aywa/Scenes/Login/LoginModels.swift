@@ -12,6 +12,7 @@
 
 import UIKit
 let loginURL = "/account/login"
+let facebookURL = "/account/login/facebook"
 
 enum Login
 {
@@ -31,6 +32,21 @@ enum Login
                 baseRequest.urlPath = loginURL
                 baseRequest.parameters[Constants.kUserName] = email
                 baseRequest.parameters[Constants.kPasswordKey] = password
+                baseRequest.parameters[Constants.deviceIdentifier] = deviceIdentifier
+                baseRequest.parameters[Constants.DeviceTypeKey] = deviceType
+                return baseRequest
+            }
+        }
+        struct FacebookLoginRequest
+        {
+            var token :String?
+            var deviceIdentifier:String?
+            var deviceType :Int?
+            
+            func baseRequest() -> BaseRequest {
+                let baseRequest = BaseRequest()
+                baseRequest.urlPath = facebookURL
+                baseRequest.parameters[Constants.kFbToken] = token
                 baseRequest.parameters[Constants.deviceIdentifier] = deviceIdentifier
                 baseRequest.parameters[Constants.DeviceTypeKey] = deviceType
                 return baseRequest
