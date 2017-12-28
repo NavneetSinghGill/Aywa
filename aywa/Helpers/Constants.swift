@@ -19,6 +19,7 @@ struct Constants {
     
     // MARK: - General Constants
     static let deviceIdentifier = "DeviceIdentifier"
+    static let kIsLoggedIn = "IsLoggedIn"
     static let DeviceInfoKey = "device_info"
     static let DeviceTypeKey = "DeviceType"
     static let EmptyString = ""

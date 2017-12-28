@@ -14,7 +14,7 @@ import UIKit
 
 typealias sliderBannerResponseHandler = (_ response:HomeSliderBanner.SliderBanner.Response) ->()
 
-class HomeSliderBannerWorker: BaseWorker
+class HomeSliderBannerWorker
 {
     func sliderBanner(request:HomeSliderBanner.SliderBanner.Request, success:@escaping(sliderBannerResponseHandler), fail:@escaping(sliderBannerResponseHandler))
     {

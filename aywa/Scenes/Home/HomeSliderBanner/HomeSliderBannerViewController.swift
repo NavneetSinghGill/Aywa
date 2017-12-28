@@ -11,6 +11,7 @@
 //
 
 import UIKit
+import DropDown
 
 protocol HomeSliderBannerDisplayLogic: class
 {
@@ -22,6 +23,9 @@ class HomeSliderBannerViewController: UIViewController, HomeSliderBannerDisplayL
 {
     var interactor: HomeSliderBannerBusinessLogic?
     var router: (NSObjectProtocol & HomeSliderBannerRoutingLogic & HomeSliderBannerDataPassing)?
+    
+    // DropDowns
+    let menuDropDown = DropDown()
     
     // MARK: Object lifecycle
     
@@ -74,6 +78,8 @@ class HomeSliderBannerViewController: UIViewController, HomeSliderBannerDisplayL
         doCallSliderBannerAPI()
         let nib = UINib(nibName: Identifiers.homeAdvertCollectionCell, bundle: Bundle.main)
         homeHeaderCollectionView.register(nib, forCellWithReuseIdentifier: Identifiers.homeAdvertCollectionCell)
+   
+        setupMenuDropDown()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -86,6 +92,7 @@ class HomeSliderBannerViewController: UIViewController, HomeSliderBannerDisplayL
     var sliderBannarArray = [HomeSliderBanner.SliderBanner.Banners]()
     
     @IBOutlet weak var homeHeaderCollectionView: UICollectionView!
+    @IBOutlet weak var menuButton: UIButton!
     
     @IBAction func tvShareButtonTapped(_ sender: Any) {
         doTVShareAction()
@@ -102,6 +109,8 @@ class HomeSliderBannerViewController: UIViewController, HomeSliderBannerDisplayL
     //MARK: Do Menu Action
     func doMenuAction() {
         print("Perform Menu Action")
+        menuDropDown.show()
+        
     }
     
     func displayError(response: HomeSliderBanner.SliderBanner.Response)
@@ -130,6 +139,22 @@ class HomeSliderBannerViewController: UIViewController, HomeSliderBannerDisplayL
     func doCallSliderBannerAPI()  {
         let request = HomeSliderBanner.SliderBanner.Request()
         interactor?.doCallSliderBannerAPI(request: request)
+    }
+    
+    // MARK: Menu Drop Down
+    func setupMenuDropDown() {
+        menuDropDown.anchorView = menuButton
+        menuDropDown.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 1.0)
+        menuDropDown.textColor = UIColor.white
+        menuDropDown.dataSource = [
+            "Logout"
+        ]
+        
+        // Action triggered on selection
+        menuDropDown.selectionAction = {(index, item) in
+            SecurityStorageWorker().updateLoggedInState(isLoggedIn: false)
+            ApplicationDelegate.setLandingAsRootViewController()
+        }
     }
 }
 

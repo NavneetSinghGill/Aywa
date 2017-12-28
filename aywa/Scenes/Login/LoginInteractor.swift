@@ -36,6 +36,7 @@ class LoginInteractor: LoginBusinessLogic, LoginDataStore
             worker?.signin(request: request, success: { (response) in
                 print(response)
                 if self.securityStorageWorker.storeAccessTokenResponse(response: response) {
+                    self.securityStorageWorker.updateLoggedInState(isLoggedIn: true)
                     self.presenter?.presentNextScreen()
                 }
             }, fail: { (response) in

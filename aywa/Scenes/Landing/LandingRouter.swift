@@ -45,9 +45,7 @@ class LandingRouter: NSObject, LandingRoutingLogic, LandingDataPassing
     }
     
     func routeToTabBar() {
-        let storyboard = UIStoryboard(name: "UniversalStoryboard", bundle: nil)
-        let destinationVC = storyboard.instantiateViewController(withIdentifier: "BaseTabBarController") as! BaseTabBarController
-        navigateToSomewhere(source: viewController!, destination: destinationVC)
+        ApplicationDelegate.setTabBarAsRootViewController()
     }
     
     // MARK: Navigation

@@ -21,6 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         setupNetworkMonitoring()
         DropDown.startListeningToKeyboard()
+        
+        if SecurityStorageWorker().isLoggedIn() {
+            setTabBarAsRootViewController()
+        }
 
         return true
     }
@@ -86,6 +90,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Unable to start notifier")
         }
         
+    }
+    
+    func setLandingAsRootViewController() {
+        let storyboardName:String = isiPad ? "Main~ipad" : "Main"
+        
+        // get your storyboard
+        let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
+        
+        // instantiate your desired ViewController
+        let destinationVC = storyboard.instantiateInitialViewController() as! UINavigationController
+        
+        // Because self.window is an optional you should check it's value first and assign your rootViewController
+        if let window = self.window {
+            window.rootViewController = destinationVC
+        }
+    }
+    
+    func setTabBarAsRootViewController() {
+        
+        // get your storyboard
+        let storyboard = UIStoryboard(name: "UniversalStoryboard", bundle: nil)
+        
+        // instantiate your desired ViewController
+        let destinationVC = storyboard.instantiateViewController(withIdentifier: "BaseTabBarController") as! BaseTabBarController
+        
+        // Because self.window is an optional you should check it's value first and assign your rootViewController
+        if let window = self.window {
+            window.rootViewController = destinationVC
+        }
     }
     
     @objc func reachabilityChanged(note: Notification) {

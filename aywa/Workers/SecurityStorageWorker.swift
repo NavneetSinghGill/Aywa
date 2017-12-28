@@ -65,4 +65,12 @@ class SecurityStorageWorker: NSObject {
         
         return storedSuccessfully
     }
+    
+    func isLoggedIn() -> Bool {
+        return UserDefaults.standard.bool(forKey: Constants.kIsLoggedIn)
+    }
+    
+    func updateLoggedInState(isLoggedIn:Bool) {
+        UserDefaults.standard.set(isLoggedIn, forKey: Constants.kIsLoggedIn)
+    }
 }

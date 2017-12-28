@@ -658,6 +658,7 @@
                     </view>
                     <connections>
                         <outlet property="homeHeaderCollectionView" destination="IvY-XT-3h4" id="7ZG-Rx-ax3"/>
+                        <outlet property="menuButton" destination="31o-ME-Acq" id="nKH-Me-vts"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pnq-va-Y7j" userLabel="First Responder" sceneMemberID="firstResponder"/>

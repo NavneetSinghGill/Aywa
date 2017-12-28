@@ -37,6 +37,7 @@ class SignupInteractor: SignupBusinessLogic, SignupDataStore
             worker?.register(request: request, success: { (response) in
                 print(response)
                 if self.securityStorageWorker.storeAccessTokenResponse(response: response) {
+                    self.securityStorageWorker.updateLoggedInState(isLoggedIn: true)
                     self.presenter?.presentNextScreen()
                 }
                 
