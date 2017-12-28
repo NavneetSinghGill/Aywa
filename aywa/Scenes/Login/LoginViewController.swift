@@ -47,6 +47,18 @@ class LoginViewController: BPViewController, LoginDisplayLogic, UITextFieldDeleg
         setup()
     }
     
+    private func initialiseView() {
+        
+        backgroundImageView.image = BackgroundImageManager.shared().backgroundImage
+        self.title = "Signin"
+        self.emailTextField.delegate = self
+        self.passwordTextField.delegate = self
+        emailTextField.text = "test_user1@gmail.com"
+        passwordTextField.text = "123456"
+        showNavigationBar()
+        updateNavigationBar()
+    }
+    
     private func setup()
     {
         let viewController = self
@@ -78,13 +90,7 @@ class LoginViewController: BPViewController, LoginDisplayLogic, UITextFieldDeleg
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        self.title = "Signin"
-        self.emailTextField.delegate = self
-        self.passwordTextField.delegate = self
-        emailTextField.text = "test_user1@gmail.com"
-        passwordTextField.text = "123456"
-        showNavigationBar()
-        updateNavigationBar()
+        initialiseView()
     }
     
     override func viewWillAppear(_ animated: Bool) {

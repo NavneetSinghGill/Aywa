@@ -51,6 +51,7 @@ class SignupViewController: BPViewController, SignupDisplayLogic, UITextFieldDel
     }
     
     private func initialiseView() {
+        backgroundImageView.image = BackgroundImageManager.shared().backgroundImage
         self.title = "Signup"
         self.navigationItem.hidesBackButton = true
         

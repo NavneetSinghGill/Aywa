@@ -14,47 +14,53 @@ import UIKit
 
 @objc protocol LandingRoutingLogic
 {
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
+    //func routeToSomewhere(segue: UIStoryboardSegue?)
+    func routeToLogin()
+    func routeToSignup()
+    func routeTabBar()
 }
 
 protocol LandingDataPassing
 {
-  var dataStore: LandingDataStore? { get }
+    var dataStore: LandingDataStore? { get }
 }
 
 class LandingRouter: NSObject, LandingRoutingLogic, LandingDataPassing
 {
-  weak var viewController: LandingViewController?
-  var dataStore: LandingDataStore?
-  
-  // MARK: Routing
-  
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
-  //{
-  //  if let segue = segue {
-  //    let destinationVC = segue.destination as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //  } else {
-  //    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-  //    let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //    navigateToSomewhere(source: viewController!, destination: destinationVC)
-  //  }
-  //}
-
-  // MARK: Navigation
-  
-  //func navigateToSomewhere(source: LandingViewController, destination: SomewhereViewController)
-  //{
-  //  source.show(destination, sender: nil)
-  //}
-  
-  // MARK: Passing data
-  
-  //func passDataToSomewhere(source: LandingDataStore, destination: inout SomewhereDataStore)
-  //{
-  //  destination.name = source.name
-  //}
+    weak var viewController: LandingViewController?
+    var dataStore: LandingDataStore?
+    
+    // MARK: Routing
+    
+    func routeToLogin() {
+        let storyboard = UIStoryboard(name: "UniversalStoryboard", bundle: nil)
+        let destinationVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        navigateToSomewhere(source: viewController!, destination: destinationVC)
+    }
+    
+    func routeToSignup() {
+        let storyboard = UIStoryboard(name: "UniversalStoryboard", bundle: nil)
+        let destinationVC = storyboard.instantiateViewController(withIdentifier: "SignupViewController") as! SignupViewController
+        navigateToSomewhere(source: viewController!, destination: destinationVC)
+    }
+    
+    func routeTabBar() {
+        let storyboard = UIStoryboard(name: "UniversalStoryboard", bundle: nil)
+        let destinationVC = storyboard.instantiateViewController(withIdentifier: "BaseTabBarController") as! BaseTabBarController
+        navigateToSomewhere(source: viewController!, destination: destinationVC)
+    }
+    
+    // MARK: Navigation
+    
+    func navigateToSomewhere(source: LandingViewController, destination: UIViewController)
+    {
+        source.navigationController?.pushViewController(destination, animated: false)
+    }
+    
+    // MARK: Passing data
+    
+    //func passDataToSomewhere(source: LandingDataStore, destination: inout SomewhereDataStore)
+    //{
+    //  destination.name = source.name
+    //}
 }

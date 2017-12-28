@@ -11,6 +11,7 @@
 //
 
 import UIKit
+import BPViewsSubviewsInOutAnimation
 
 protocol LandingDisplayLogic: class
 {
@@ -18,7 +19,7 @@ protocol LandingDisplayLogic: class
     func displayNextScreen()
 }
 
-class LandingViewController: UIViewController, LandingDisplayLogic, UIScrollViewDelegate
+class LandingViewController: BPViewController, LandingDisplayLogic, UIScrollViewDelegate
 {
     var interactor: LandingBusinessLogic?
     var router: (NSObjectProtocol & LandingRoutingLogic & LandingDataPassing)?
@@ -63,6 +64,16 @@ class LandingViewController: UIViewController, LandingDisplayLogic, UIScrollView
                 router.perform(selector, with: segue)
             }
         }
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        
+        let selector = NSSelectorFromString("routeTo\(identifier)")
+        if let router = router, router.responds(to: selector) {
+            router.perform(selector, with: nil)
+        }
+        
+        return false
     }
     
     // MARK: View lifecycle

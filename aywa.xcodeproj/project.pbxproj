@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1830A53C1FF4D0A90099D8EF /* BPViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1830A53B1FF4D0A90099D8EF /* BPViewControllerExtension.swift */; };
 		1846C6D61FF3758B006BF9FC /* BaseWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1846C6D41FF3758B006BF9FC /* BaseWorker.swift */; };
 		1846C6D71FF3758B006BF9FC /* SecurityStorageWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1846C6D51FF3758B006BF9FC /* SecurityStorageWorker.swift */; };
 		1846C6D91FF375B0006BF9FC /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1846C6D81FF375B0006BF9FC /* BaseTabBarController.swift */; };
@@ -124,6 +125,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1830A53B1FF4D0A90099D8EF /* BPViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPViewControllerExtension.swift; sourceTree = "<group>"; };
 		1846C6D41FF3758B006BF9FC /* BaseWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWorker.swift; sourceTree = "<group>"; };
 		1846C6D51FF3758B006BF9FC /* SecurityStorageWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecurityStorageWorker.swift; sourceTree = "<group>"; };
 		1846C6D81FF375B0006BF9FC /* BaseTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
@@ -407,6 +409,7 @@
 				48728CF51FE3ADAC00780DBF /* SwifterSwift.swift */,
 				48728D0D1FE3ADAC00780DBF /* URLExtensions.swift */,
 				48AAD66B1FE514950097C0F3 /* ViewControllerExtensions.swift */,
+				1830A53B1FF4D0A90099D8EF /* BPViewControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -758,6 +761,7 @@
 				1846C6D91FF375B0006BF9FC /* BaseTabBarController.swift in Sources */,
 				23682E231FECDF91006CF18C /* LikeModels.swift in Sources */,
 				48728D131FE3AED000780DBF /* CGPointExtensions.swift in Sources */,
+				1830A53C1FF4D0A90099D8EF /* BPViewControllerExtension.swift in Sources */,
 				23682E2E1FECDFA6006CF18C /* AlertInteractor.swift in Sources */,
 				48AAD6611FE508690097C0F3 /* SignupModels.swift in Sources */,
 				48728D141FE3AED000780DBF /* CGSizeExtensions.swift in Sources */,
