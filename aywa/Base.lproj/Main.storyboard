@@ -73,6 +73,7 @@
                                         </state>
                                         <connections>
                                             <action selector="browseButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OmI-zb-5om"/>
+                                            <segue destination="s4e-Qg-rXd" kind="show" identifier="TabBar" id="ZBL-yw-m7M"/>
                                         </connections>
                                     </button>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="5yQ-Lq-SGC">
@@ -119,7 +120,7 @@
                 <viewControllerPlaceholder storyboardName="UniversalStoryboard" referencedIdentifier="SignupViewController" id="Psj-Nx-siW" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uny-cD-wDJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305" y="461"/>
+            <point key="canvasLocation" x="432" y="574"/>
         </scene>
         <!--LoginViewController-->
         <scene sceneID="L6R-Po-IJL">
@@ -127,7 +128,15 @@
                 <viewControllerPlaceholder storyboardName="UniversalStoryboard" referencedIdentifier="LoginViewController" id="f65-hU-67G" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WnC-1I-fHU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="719" y="480"/>
+            <point key="canvasLocation" x="145" y="484"/>
+        </scene>
+        <!--BaseTabBarController-->
+        <scene sceneID="uzz-y9-PIn">
+            <objects>
+                <viewControllerPlaceholder storyboardName="UniversalStoryboard" referencedIdentifier="BaseTabBarController" id="s4e-Qg-rXd" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fhx-pP-B5e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="682" y="484"/>
         </scene>
         <!--Landing Content View Controller-->
         <scene sceneID="dN8-6d-f0X">

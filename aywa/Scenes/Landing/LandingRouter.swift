@@ -17,7 +17,7 @@ import UIKit
     //func routeToSomewhere(segue: UIStoryboardSegue?)
     func routeToLogin()
     func routeToSignup()
-    func routeTabBar()
+    func routeToTabBar()
 }
 
 protocol LandingDataPassing
@@ -44,7 +44,7 @@ class LandingRouter: NSObject, LandingRoutingLogic, LandingDataPassing
         navigateToSomewhere(source: viewController!, destination: destinationVC)
     }
     
-    func routeTabBar() {
+    func routeToTabBar() {
         let storyboard = UIStoryboard(name: "UniversalStoryboard", bundle: nil)
         let destinationVC = storyboard.instantiateViewController(withIdentifier: "BaseTabBarController") as! BaseTabBarController
         navigateToSomewhere(source: viewController!, destination: destinationVC)
