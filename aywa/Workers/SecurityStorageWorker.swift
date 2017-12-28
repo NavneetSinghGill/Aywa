@@ -2,7 +2,7 @@
 //  SecurityStorageWorker.swift
 //  aywa
 //
-//  Created by Bestpeers on 14/12/17.
+//  Created by Zoeb on 14/12/17.
 //  Copyright © 2017 Alpha Solutions. All rights reserved.
 //
 

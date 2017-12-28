@@ -2,7 +2,7 @@
 //  HomeTableViewCell.swift
 //  aywa
 //
-//  Created by Bestpeers on 19/12/17.
+//  Created by Zoeb on 19/12/17.
 //  Copyright © 2017 Alpha Solutions. All rights reserved.
 //
 

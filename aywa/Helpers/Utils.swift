@@ -2,7 +2,7 @@
 //  Utils.swift
 //  aywa
 //
-//  Created by Best Peers on 16/12/17.
+//  Created by Zoeb on 16/12/17.
 //  Copyright © 2017 Alpha Solutions. All rights reserved.
 //
 

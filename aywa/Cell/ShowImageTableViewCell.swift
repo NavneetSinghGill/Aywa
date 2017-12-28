@@ -2,7 +2,7 @@
 //  ShowImageTableViewCell.swift
 //  aywa
 //
-//  Created by Bestpeers on 12/18/17.
+//  Created by Zoeb on 12/18/17.
 //  Copyright © 2017 Alpha Solutions. All rights reserved.
 //
 

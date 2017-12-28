@@ -20,4 +20,31 @@ extension UIViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
+    // MARK:- Back button action
+    
+    func updateNavigationBar() {
+        self.updateNavigationBarColor()
+        self.updateBackButton()
+    }
+    
+    func updateNavigationBarColor() {
+        self.navigationController?.navigationBar.barTintColor = UIColor.init(red: 51.0/255.0, green: 51.0/255.0, blue: 51.0/255.0, alpha: 1)
+    }
+    
+    func updateBackButton() {
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        button.backgroundColor = .clear
+        button.setImage(UIImage(named: "back_arrow"), for: .normal)
+        button.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+        
+        let backBarButton = UIBarButtonItem(customView: button)
+        self.navigationItem.leftBarButtonItem = backBarButton
+    }
+    
+    @objc func backButtonTapped() {
+        if self.navigationController != nil {
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+    
 }

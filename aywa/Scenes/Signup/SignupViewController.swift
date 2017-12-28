@@ -24,6 +24,7 @@ class SignupViewController: BPViewController, SignupDisplayLogic, UITextFieldDel
 {
     var interactor: SignupBusinessLogic?
     var router: (NSObjectProtocol & SignupRoutingLogic & SignupDataPassing)?
+    var backBarButton: UIBarButtonItem!
     // DropDowns
     let ageDropDown = DropDown()
     let genderDropDown = DropDown()
@@ -45,8 +46,22 @@ class SignupViewController: BPViewController, SignupDisplayLogic, UITextFieldDel
     // MARK: Setup
     
     private func initialSetup() {
-        //        NotificationCenter.default.addObserver(self, selector: #selector(self.changeBackgroundImage(notification:)), name: Notification.Name(Constants.kChangeBackgroundImageIdentifier), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.changeBackgroundImage(notification:)), name: Notification.Name(Constants.kChangeBackgroundImageIdentifier), object: nil)
         setup()
+    }
+    
+    private func initialiseView() {
+        self.title = "Signup"
+        self.navigationItem.hidesBackButton = true
+        
+        self.emailTextField.delegate = self
+        self.passwordTextField.delegate = self
+        self.confirmPasswordTextField.delegate = self
+        self.ageGroupTextField.delegate = self
+        self.genderTextField.delegate = self
+        setupDropDowns()
+        showNavigationBar()
+        updateNavigationBar()
     }
     
     private func setup()
@@ -80,17 +95,11 @@ class SignupViewController: BPViewController, SignupDisplayLogic, UITextFieldDel
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        self.emailTextField.delegate = self
-        self.passwordTextField.delegate = self
-        self.confirmPasswordTextField.delegate = self
-        self.ageGroupTextField.delegate = self
-        self.genderTextField.delegate = self
-        setupDropDowns()
+        initialiseView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        showNavigationBar()
     }
     
     // MARK: Do signup
@@ -173,7 +182,7 @@ class SignupViewController: BPViewController, SignupDisplayLogic, UITextFieldDel
         }
         else if textField == genderTextField {
             genderTextField.isActive = true
-
+            
             emailTextField.resignFirstResponder()
             passwordTextField.resignFirstResponder()
             confirmPasswordTextField.resignFirstResponder()
@@ -207,17 +216,17 @@ class SignupViewController: BPViewController, SignupDisplayLogic, UITextFieldDel
     @objc func changeBackgroundImage(notification: Notification?){
         //Take Action on Notification
         DispatchQueue.main.async {
-            //            UIView.animate(withDuration: 0.5, animations: {
-            //                self.backgroundImageView.alpha = 0
-            //            }, completion: { (complete) in
-            //                self.backgroundImageView.image = BackgroundImageManager.shared().backgroundImage
-            //                UIView.animate(withDuration: 0.5,
-            //                               delay: 0,
-            //                               options: .curveEaseInOut,
-            //                               animations: {
-            //                                self.backgroundImageView.alpha = 1
-            //                }, completion: nil)
-            //            })
+            UIView.animate(withDuration: 0.5, animations: {
+                self.backgroundImageView.alpha = 0.7
+            }, completion: { (complete) in
+                self.backgroundImageView.image = BackgroundImageManager.shared().backgroundImage
+                UIView.animate(withDuration: 0.5,
+                               delay: 0,
+                               options: .curveEaseInOut,
+                               animations: {
+                                self.backgroundImageView.alpha = 1
+                }, completion: nil)
+            })
         }
     }
 }

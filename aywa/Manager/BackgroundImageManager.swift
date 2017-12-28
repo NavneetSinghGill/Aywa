@@ -2,7 +2,7 @@
 //  BackgroundImageManager.swift
 //  aywa
 //
-//  Created by Apple on 26/12/17.
+//  Created by Zoeb on 26/12/17.
 //  Copyright © 2017 Alpha Solutions. All rights reserved.
 //
 
