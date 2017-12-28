@@ -29,6 +29,9 @@ extension UIViewController {
     
     func updateNavigationBarColor() {
         self.navigationController?.navigationBar.barTintColor = UIColor.init(red: 51.0/255.0, green: 51.0/255.0, blue: 51.0/255.0, alpha: 1)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "Helvetica", size: 18)!]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+
     }
     
     func updateBackButton() {

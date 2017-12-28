@@ -78,17 +78,18 @@ class LoginViewController: BPViewController, LoginDisplayLogic, UITextFieldDeleg
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
+        self.title = "Signin"
         self.emailTextField.delegate = self
         self.passwordTextField.delegate = self
         emailTextField.text = "test_user1@gmail.com"
         passwordTextField.text = "123456"
-        
+        showNavigationBar()
+        updateNavigationBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        showNavigationBar()
+        
     }
     
     // MARK: Do Login
