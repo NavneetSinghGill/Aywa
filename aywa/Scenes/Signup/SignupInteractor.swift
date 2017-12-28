@@ -64,7 +64,7 @@ class SignupInteractor: SignupBusinessLogic, SignupDataStore
         {
             errorMsg = "This field is required."
         }
-        else if ((request.email!.characters.count) < 1)
+        else if ((request.email!.count) < 1)
         {
             errorMsg = "This field is required."
         }
@@ -72,11 +72,11 @@ class SignupInteractor: SignupBusinessLogic, SignupDataStore
         {
             errorMsg = "This email address is invalid."
         }
-        else if ((request.password!.characters.count) < 5)
+        else if ((request.password!.count) < 5)
         {
             errorMsg = "Password field may not be empty and must be minimum 5 length."
         }
-        else if ((request.confirmPassword!.characters.count) < 5)
+        else if ((request.confirmPassword!.count) < 5)
         {
             errorMsg = "Password is too short."
         }
@@ -115,7 +115,7 @@ class SignupInteractor: SignupBusinessLogic, SignupDataStore
             isValid = true
             
         }
-        if(!isValid && errorMsg!.characters.count > 0) {
+        if(!isValid && errorMsg!.count > 0) {
             //Utils.showAlertWith(title: "Oops!", message: errorMsg!, inController: SignupInteractor)
             print(errorMsg!)
         }

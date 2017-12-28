@@ -37,7 +37,7 @@ class Utils: NSObject {
         let numberTest = NSPredicate(format:"SELF MATCHES %@", numberRegEx)
         let specialCharacterTest = NSPredicate(format:"SELF MATCHES %@", specialRegEx)
         
-        return (password.characters.count > 5 && characterTest.evaluate(with: password) && (numberTest.evaluate(with: password) || specialCharacterTest.evaluate(with: password)))
+        return (password.count > 5 && characterTest.evaluate(with: password) && (numberTest.evaluate(with: password) || specialCharacterTest.evaluate(with: password)))
     }
     
     //MARK: - Show Alert

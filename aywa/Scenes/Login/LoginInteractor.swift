@@ -56,7 +56,7 @@ class LoginInteractor: LoginBusinessLogic, LoginDataStore
         if request.email == nil || request.password == nil {
             print("This field is required.")
         }
-        else if ((request.email!.characters.count) < 1)
+        else if ((request.email!.count) < 1)
         {
             errorMsg = "This field is required."
         }
@@ -64,7 +64,7 @@ class LoginInteractor: LoginBusinessLogic, LoginDataStore
         {
             errorMsg = "Invalid email address/password combination."
         }
-        else if ((request.password!.characters.count) < 5)
+        else if ((request.password!.count) < 5)
         {
             errorMsg = "Password is too short."
         }
@@ -72,7 +72,7 @@ class LoginInteractor: LoginBusinessLogic, LoginDataStore
         else {
             isValid = true
         }
-        if(!isValid && errorMsg!.characters.count > 0) {
+        if(!isValid && errorMsg!.count > 0) {
             print(errorMsg!)
         }
         return isValid
