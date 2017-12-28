@@ -133,7 +133,7 @@ class SignupViewController: BPViewController, SignupDisplayLogic, UITextFieldDel
         ageDropDown.anchorView = ageGroupTextField
         ageDropDown.direction = .top
         ageDropDown.topOffset = CGPoint(x: 0, y: -(ageGroupTextField.bounds.height+10))
-        ageDropDown.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.5)
+        ageDropDown.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 1.0)
         ageDropDown.textColor = UIColor.white
         ageDropDown.dataSource = [
             "14-18",
@@ -152,7 +152,7 @@ class SignupViewController: BPViewController, SignupDisplayLogic, UITextFieldDel
     func setupGenderDropDown() {
         genderDropDown.anchorView = genderTextField
         genderDropDown.bottomOffset = CGPoint(x:0, y: genderTextField.bounds.height)
-               genderDropDown.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.5)
+               genderDropDown.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 1.0)
               genderDropDown.textColor = UIColor.white
         genderDropDown.dataSource = [
             "Male",
