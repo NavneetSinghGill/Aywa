@@ -28,7 +28,7 @@ class SearchInteractor: SearchBusinessLogic, SearchDataStore
   var worker: SearchWorker?
   //var name: String = ""
   
-  // MARK: Do something
+  // MARK: Do Search
   
   func doSomething(request: Search.Something.Request)
   {

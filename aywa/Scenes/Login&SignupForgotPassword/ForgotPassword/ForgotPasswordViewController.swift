@@ -94,7 +94,7 @@ class ForgotPasswordViewController: UIViewController, ForgotPasswordDisplayLogic
         
     }
     
-    // MARK: Do something
+    // MARK: Do Reset Password
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var emailTextField: FloatingHeaderTextField!
     @IBAction func resetPasswordButtonTapped(_ sender: Any){

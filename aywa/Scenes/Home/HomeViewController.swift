@@ -73,7 +73,7 @@ class HomeViewController: UIViewController, HomeDisplayLogic, UITableViewDelegat
         self.tableView.delegate = self
         
         self.homeHeader = self.storyboard?.instantiateViewController(withIdentifier: homeSliderBannerViewController) as! HomeSliderBannerViewController
-        self.homeHeader.view.bounds.size = CGSize(width: self.view.frame.size.width, height: self.view.frame.size.width * (236/375))// TODO: Header height
+        self.homeHeader.view.bounds.size = CGSize(width: self.view.frame.size.width, height: self.view.frame.size.width * (236/self.view.frame.size.width))// TODO: Header height
         self.tableView.tableHeaderView = homeHeader.view
         self.tableView.separatorStyle = .none
         
@@ -109,7 +109,7 @@ class HomeViewController: UIViewController, HomeDisplayLogic, UITableViewDelegat
         
     }
     
-    // MARK: Do something
+    // MARK: Do Home View Controller
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headerView: UIView!

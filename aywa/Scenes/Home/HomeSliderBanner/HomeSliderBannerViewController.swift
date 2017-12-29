@@ -12,6 +12,7 @@
 
 import UIKit
 import DropDown
+import FBSDKLoginKit
 
 protocol HomeSliderBannerDisplayLogic: class
 {
@@ -87,7 +88,7 @@ class HomeSliderBannerViewController: UIViewController, HomeSliderBannerDisplayL
         
     }
     
-    // MARK: Do something
+    // MARK: Do Slide Banner
     
     var sliderBannarArray = [HomeSliderBanner.SliderBanner.Banners]()
     
@@ -152,6 +153,8 @@ class HomeSliderBannerViewController: UIViewController, HomeSliderBannerDisplayL
         
         // Action triggered on selection
         menuDropDown.selectionAction = {(index, item) in
+            let loginManager = FBSDKLoginManager()
+            loginManager.logOut() //TODO Fackbook Logout
             SecurityStorageWorker().updateLoggedInState(isLoggedIn: false)
             ApplicationDelegate.setLandingAsRootViewController()
         }

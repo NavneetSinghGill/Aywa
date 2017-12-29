@@ -72,7 +72,7 @@ class LikeViewController: UIViewController, LikeDisplayLogic
     doSomething()
   }
   
-  // MARK: Do something
+  // MARK: Do Like
   
   //@IBOutlet weak var nameTextField: UITextField!
   

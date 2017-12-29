@@ -21,7 +21,7 @@ class CategoryPresenter: CategoryPresentationLogic
 {
   weak var viewController: CategoryDisplayLogic?
   
-  // MARK: Do something
+  // MARK: Do  Category
   
   func presentSomething(response: Category.Something.Response)
   {

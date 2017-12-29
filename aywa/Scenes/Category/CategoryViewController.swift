@@ -72,7 +72,7 @@ class CategoryViewController: UIViewController, CategoryDisplayLogic
     doSomething()
   }
   
-  // MARK: Do something
+  // MARK: Do  Category
   
   //@IBOutlet weak var nameTextField: UITextField!
   

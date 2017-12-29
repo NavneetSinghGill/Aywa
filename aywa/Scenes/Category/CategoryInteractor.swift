@@ -28,7 +28,7 @@ class CategoryInteractor: CategoryBusinessLogic, CategoryDataStore
   var worker: CategoryWorker?
   //var name: String = ""
   
-  // MARK: Do something
+  // MARK: Do  Category
   
   func doSomething(request: Category.Something.Request)
   {

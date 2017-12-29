@@ -21,7 +21,7 @@ class AlertPresenter: AlertPresentationLogic
 {
   weak var viewController: AlertDisplayLogic?
   
-  // MARK: Do something
+  // MARK: Do Alert Presenter
   
   func presentSomething(response: Alert.Something.Response)
   {

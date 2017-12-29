@@ -72,7 +72,7 @@ class SearchViewController: UIViewController, SearchDisplayLogic
     doSomething()
   }
   
-  // MARK: Do something
+  // MARK: Do Search
   
   //@IBOutlet weak var nameTextField: UITextField!
   

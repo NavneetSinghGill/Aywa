@@ -21,7 +21,7 @@ class SearchPresenter: SearchPresentationLogic
 {
   weak var viewController: SearchDisplayLogic?
   
-  // MARK: Do something
+  // MARK: Do Search
   
   func presentSomething(response: Search.Something.Response)
   {

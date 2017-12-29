@@ -28,7 +28,7 @@ class LikeInteractor: LikeBusinessLogic, LikeDataStore
   var worker: LikeWorker?
   //var name: String = ""
   
-  // MARK: Do something
+  // MARK: Do Like
   
   func doSomething(request: Like.Something.Request)
   {

@@ -14,26 +14,16 @@ import UIKit
 
 protocol HomeSliderBannerPresentationLogic
 {
- // func presentSomething(response: HomeSliderBanner.Something.Response)
+    // func presentSomething(response: HomeSliderBanner.Something.Response)
     func presentError(response: HomeSliderBanner.SliderBanner.Response)
     func presentNextScreen(response: HomeSliderBanner.SliderBanner.Response)
 }
 
 class HomeSliderBannerPresenter: HomeSliderBannerPresentationLogic
 {
-  weak var viewController: HomeSliderBannerDisplayLogic?
-  
-  // MARK: Do something
-  
-//  func presentSomething(response: HomeSliderBanner.Something.Response)
-//  {
-//    let viewModel = HomeSliderBanner.Something.ViewModel()
-//    //viewController?.displaySomething(viewModel: viewModel)
-//  }
+    weak var viewController: HomeSliderBannerDisplayLogic?
     
     // MARK: Do Slider Banner
-    
-    
     func presentError(response: HomeSliderBanner.SliderBanner.Response)
     {
         viewController?.displayError(response: response)

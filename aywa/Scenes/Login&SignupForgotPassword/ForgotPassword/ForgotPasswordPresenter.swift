@@ -23,7 +23,7 @@ class ForgotPasswordPresenter: ForgotPasswordPresentationLogic
 {
   weak var viewController: ForgotPasswordDisplayLogic?
   
-  // MARK: Do something
+  // MARK: Do Forgot Password
     func presentError(response: Common.Response)
     {
         viewController?.displayError(response: response)

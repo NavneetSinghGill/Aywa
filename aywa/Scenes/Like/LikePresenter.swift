@@ -21,7 +21,7 @@ class LikePresenter: LikePresentationLogic
 {
   weak var viewController: LikeDisplayLogic?
   
-  // MARK: Do something
+  // MARK: Do Like
   
   func presentSomething(response: Like.Something.Response)
   {

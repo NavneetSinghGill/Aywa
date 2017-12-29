@@ -28,7 +28,7 @@ class AlertInteractor: AlertBusinessLogic, AlertDataStore
   var worker: AlertWorker?
   //var name: String = ""
   
-  // MARK: Do something
+  // MARK: Do Alert Interactor
   
   func doSomething(request: Alert.Something.Request)
   {

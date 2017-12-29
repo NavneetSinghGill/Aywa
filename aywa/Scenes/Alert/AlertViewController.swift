@@ -72,7 +72,7 @@ class AlertViewController: UIViewController, AlertDisplayLogic
     doSomething()
   }
   
-  // MARK: Do something
+  // MARK: Do Alert 
   
   //@IBOutlet weak var nameTextField: UITextField!
   

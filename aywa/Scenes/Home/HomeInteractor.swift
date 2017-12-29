@@ -29,16 +29,7 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore
   var worker: HomeWorker?
   //var name: String = ""
   
-  // MARK: Do something
-  
-//  func doSomething(request: Home.Something.Request)
-//  {
-//    worker = HomeWorker()
-//    worker?.doSomeWork()
-//
-//    let response = Home.Something.Response()
-//    presenter?.presentSomething(response: response)
-//  }
+  // MARK: Do Home Interactor
     
     func doSectionAPI(request: Home.Section.Request) {
         worker = HomeWorker()
