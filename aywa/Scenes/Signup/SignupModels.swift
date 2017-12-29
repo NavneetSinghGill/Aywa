@@ -58,7 +58,7 @@ enum Signup
         }
     }
   
-    struct RegisterFacebookDto {
+    struct RegisterFacebookRequest {
         var token : String?
         var email : String?
         

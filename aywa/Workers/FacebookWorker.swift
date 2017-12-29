@@ -18,7 +18,7 @@ class FacebookWorker
     let facebookReadPermissions = ["email"] //["public_profile", "email", "user_friends"]
     
     //MARK: Do Facebook Login
-    func doFacebookLogin(completionHandler: @escaping (String) -> Void )   {
+    func doFacebookLogin(completionHandler: @escaping (Dictionary< String, Any>) -> Void )   {
         let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
         
         fbLoginManager.logIn(withReadPermissions: self.facebookReadPermissions, from: UIViewController()) { (result, error) in
@@ -28,32 +28,28 @@ class FacebookWorker
                     if(fbloginresult.grantedPermissions.contains("email"))
                     {
                         let fbToken: String! = result!.token.tokenString
-                        completionHandler(fbToken)
+                         //fbLoginManager.logOut()
+                        if((FBSDKAccessToken.current()) != nil){
+                            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
+                                if (error == nil){
+                                    let dict = result as! [String : AnyObject]
+                                    let dicUserDetails: Dictionary< String, Any>!
+                                    if let email = dict["email"]! as? String{
+                                        dicUserDetails = [Constants.kFbToken: fbToken, Constants.kEmailKey: email]
+                                    }
+                                    else{
+                                        dicUserDetails = [Constants.kFbToken: fbToken]
+                                    }
+                                    print(dicUserDetails)
+                                    completionHandler(dicUserDetails)
+                                }
+                            })
+                        }
                     }
                 }
                 
             }
         }
     }
-   
-//    func getFBUserData(completionHandler: @escaping (String) -> Void ){
-//        if((FBSDKAccessToken.current()) != nil){
-//            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
-//                if (error == nil){
-//                    print(result!)
-//                    let dict = result as! [String : AnyObject]
-//                    print(self.dict)
-//                    if let FB_USER_ID = self.dict["id"]! as! String{
-//
-//                    }
-//                    }
-//
-//                     userData.objectForKey("id") as String, forKey: "faceBookID")
-//                     currentUser.setObject( userData.objectForKey("name") as String, forKey: "fullName"
-//                    // call login API for Fb user Data post on server
-//                    // [self loginTapped:self.dict];
-//                }
-//            })
-//        }
-//    }
+    
 }

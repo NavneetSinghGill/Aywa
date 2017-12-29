@@ -88,8 +88,8 @@ class LoginInteractor: LoginBusinessLogic, LoginDataStore
         worker = LoginWorker()
         self.facebookWorker.doFacebookLogin { (token) in
             print(token)
-            let requestFacebook = Login.Signin.FacebookLoginRequest(token: token, deviceIdentifier: Utils.deviceIdentifier(), deviceType: Utils.deviceType())
-            
+            let fbToken = token[Constants.kFbToken]
+            let requestFacebook = Login.Signin.FacebookLoginRequest(token: fbToken as! String, deviceIdentifier: Utils.deviceIdentifier(), deviceType: Utils.deviceType())
             self.worker?.facebookSignin(request: requestFacebook, success: { (response) in
                 print(response)
                 if self.securityStorageWorker.storeAccessTokenResponse(response: response) {

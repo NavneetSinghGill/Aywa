@@ -84,7 +84,7 @@ struct Constants {
     static let kCountryNameKey = "CountryName"
     static let kPhoneKey = "Phone"
     static let kIPAddressKey = "IPAddress"
-    
+    static let kEmailForEmptyKey = "NoData"
     //MARK: - Login keys
     static let kUserName = "UserName"
     static let kFbToken = "Token"

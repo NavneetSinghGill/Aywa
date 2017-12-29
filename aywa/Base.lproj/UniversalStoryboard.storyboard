@@ -403,7 +403,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TNc-NT-XyA">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Eamil" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J6D-tX-kPu" customClass="FloatingHeaderTextField" customModule="aywa" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J6D-tX-kPu" customClass="FloatingHeaderTextField" customModule="aywa" customModuleProvider="target">
                                 <rect key="frame" x="10" y="316" width="355" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="5DJ-s3-elB">

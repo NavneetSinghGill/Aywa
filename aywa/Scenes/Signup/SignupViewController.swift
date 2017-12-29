@@ -126,6 +126,7 @@ class SignupViewController: BPViewController, SignupDisplayLogic, UITextFieldDel
     //MARK:Create Account With Facebook Id Button Tapped
     @IBAction func createAccountWithFacebookIdButtonTapped(_ sender: Any) {
         print("Create Account WithFacebook Id Button Tapped !!!")
+        doFackbookSignup()
     }
     //MARK: - Setup Drop Down
     
@@ -201,13 +202,17 @@ class SignupViewController: BPViewController, SignupDisplayLogic, UITextFieldDel
             return true
         }
     }
-    
+    //MARK: Do Signup Request
     func doSignup()
     {
         let request = Signup.Register.Request(email: emailTextField.text, password: passwordTextField.text, confirmPassword: confirmPasswordTextField.text,  name: nameTextField.text, deviceIdentifier: Utils.deviceIdentifier(), deviceType: Utils.deviceType(), birthday: nil, ageGroup: ageGroupTextField.text, gender: genderTextField.text == SignupViewController.kMale ? "M" : genderTextField.text == SignupViewController.kFemale ? "F" : "?", country: nil, countryName: nil, phone: nil, ipAddress: nil)
         interactor?.doSignup(request: request)
     }
     
+    //MARK: Do Facebook Signup Request
+    func doFackbookSignup() {
+        interactor?.doRegisterFacebook()
+    }
     func displayError(response: Token.JWTToken.Response)
     {
         print("Error occured: \(response.message!)")

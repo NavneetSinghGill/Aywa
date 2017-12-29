@@ -28,6 +28,7 @@ class SignupInteractor: SignupBusinessLogic, SignupDataStore
     var presenter: SignupPresentationLogic?
     var worker: SignupWorker?
     var securityStorageWorker = SecurityStorageWorker()
+    var facebookWorker = FacebookWorker()
     
     // MARK: Do Signup
     
@@ -52,7 +53,7 @@ class SignupInteractor: SignupBusinessLogic, SignupDataStore
         }
         
     }
- 
+    
     // MARK:- Validation For Signup Request
     private func isDataValid(request: Signup.Register.Request) -> Bool {
         var isValid = false
@@ -86,9 +87,9 @@ class SignupInteractor: SignupBusinessLogic, SignupDataStore
         }
         else if !(request.birthday == nil )
         {
-//            if !(request.birthday == nil )
-//            {
-//                errorMsg = "Birthday field may not be empty."
+            //            if !(request.birthday == nil )
+            //            {
+            //                errorMsg = "Birthday field may not be empty."
             //            } // TODO: date formate validation
         }
         else if ((request.ageGroup!.count) < 1){
@@ -111,7 +112,7 @@ class SignupInteractor: SignupBusinessLogic, SignupDataStore
                 errorMsg = "Phone field may not be empty and Must be minimum 10 digit."
             }
         }
-         
+            
         else {
             isValid = true
             
@@ -124,21 +125,26 @@ class SignupInteractor: SignupBusinessLogic, SignupDataStore
     }
     //MARK: Do Register Facebook
     func doRegisterFacebook() {
-        worker = SignupWorker()
-//        self.facebookWorker.doFacebookLogin { (token) in
-//            print(token)
-//            let requestFacebook = Login.Signin.FacebookLoginRequest(token: token, deviceIdentifier: Utils.deviceIdentifier(), deviceType: Utils.deviceType())
-//
-//            self.worker?.facebookSignin(request: requestFacebook, success: { (response) in
-//                print(response)
-//                if self.securityStorageWorker.storeAccessTokenResponse(response: response) {
-//                    self.presenter?.presentNextScreen()
-//                }
-//            }, fail: { (response) in
-//                self.presenter?.presentError(response: response)
-//
-//            })
-//        }
+        var requestForFacebook: Signup.Register.RegisterFacebookRequest!
         
+        worker = SignupWorker()
+        self.facebookWorker.doFacebookLogin { (token) in
+            print(token.count)
+            let fbToken = token[Constants.kFbToken]
+            if token.count > 1{
+                requestForFacebook = Signup.Register.RegisterFacebookRequest(token: fbToken! as! String, email: token[Constants.kEmailKey] as! String, deviceIdentifier: Utils.deviceIdentifier(), deviceType: Utils.deviceType())
+            }
+            else{
+                requestForFacebook = Signup.Register.RegisterFacebookRequest(token: fbToken! as! String, email: "", deviceIdentifier: Utils.deviceIdentifier(), deviceType: Utils.deviceType())
+            }
+            self.worker?.registerFacebook(request: requestForFacebook, success: { (response) in
+                print(response)
+                if self.securityStorageWorker.storeAccessTokenResponse(response: response){
+                    self.presenter?.presentNextScreen()
+                }
+            }, fail: { ( response) in
+                self.presenter?.presentError(response: response)
+            })
+        }
     }
 }

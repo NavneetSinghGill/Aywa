@@ -14,11 +14,19 @@ import UIKit
 
 class SignupWorker:BaseWorker
 {
-    func register(request:Signup.Register.Request, success:@escaping(accessTokenResponseHandler), fail:@escaping(accessTokenResponseHandler))
-{
+    func register(request:Signup.Register.Request, success:@escaping(accessTokenResponseHandler), fail:@escaping(accessTokenResponseHandler)){
         //call network etc.
         let manager = RequestManager()
         
+        manager.fetchJWTToken(request: request.baseRequest()) { (status, response) in
+            self.handleTokenResponse(success: success, fail: fail, status: status, response: response)
+        }
+    }
+    //MARK: Facebook Signup worker
+    func registerFacebook(request:Signup.Register.RegisterFacebookRequest,  success:@escaping(accessTokenResponseHandler), fail:@escaping(accessTokenResponseHandler))
+      {
+        //call network etc.
+        let manager = RequestManager()
         manager.fetchJWTToken(request: request.baseRequest()) { (status, response) in
             self.handleTokenResponse(success: success, fail: fail, status: status, response: response)
         }

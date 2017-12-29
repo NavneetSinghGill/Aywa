@@ -147,8 +147,8 @@ class LoginViewController: BPViewController, LoginDisplayLogic, UITextFieldDeleg
     //MARK: Do Facebokk login Request
     func doFacebookLoginRequest()
     {
-        SVProgressHUD.setForegroundColor(UIColor.init(red: 253.0/255.0, green: 2.0/255.0, blue: 45/255.0, alpha: 1))
-        SVProgressHUD.show(withStatus: "Signin")
+//        SVProgressHUD.setForegroundColor(UIColor.init(red: 253.0/255.0, green: 2.0/255.0, blue: 45/255.0, alpha: 1))
+//        SVProgressHUD.show(withStatus: "Signin")
         interactor?.doFacebookLogin()
     }
     @objc func changeBackgroundImage(notification: Notification?){
