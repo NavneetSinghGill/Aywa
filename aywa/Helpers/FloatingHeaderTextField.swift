@@ -2,7 +2,7 @@
 //  FloatingHeaderTextField.swift
 //  ViewAnimation
 //
-//  Created by Zoeb on 12/25/17.
+//  Created by Navneet on 12/25/17.
 //  Copyright © 2017 Navneet. All rights reserved.
 //
 
@@ -51,17 +51,27 @@ class FloatingHeaderTextField: UITextField {
         setup()
     }
     
-    func setup() {
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        refreshUnderLineLayerFrame()
+    }
+    
+    func refreshUnderLineLayerFrame() {
         
         let path = UIBezierPath()
         path.move(to: CGPoint(x: 0, y: bounds.size.height))
         path.addLine(to: CGPoint(x: bounds.size.width, y: bounds.size.height))
         
+        underLineLayer.path = path.cgPath
+    }
+    
+    func setup() {
         leftViewMode = .always
         leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 20))
         
         underLineLayer = CAShapeLayer()
-        underLineLayer.path = path.cgPath
+        refreshUnderLineLayerFrame()
         self.layer.addSublayer(underLineLayer)
         
         placeholderLabel = UILabel()

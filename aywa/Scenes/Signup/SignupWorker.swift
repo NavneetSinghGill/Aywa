@@ -15,7 +15,7 @@ import UIKit
 class SignupWorker:BaseWorker
 {
     func register(request:Signup.Register.Request, success:@escaping(accessTokenResponseHandler), fail:@escaping(accessTokenResponseHandler))
-    {
+{
         //call network etc.
         let manager = RequestManager()
         

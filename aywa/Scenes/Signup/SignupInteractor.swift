@@ -15,6 +15,7 @@ import UIKit
 protocol SignupBusinessLogic
 {
     func doSignup(request: Signup.Register.Request)
+    func doRegisterFacebook()
 }
 
 protocol SignupDataStore
@@ -120,5 +121,24 @@ class SignupInteractor: SignupBusinessLogic, SignupDataStore
             print(errorMsg!)
         }
         return isValid
+    }
+    //MARK: Do Register Facebook
+    func doRegisterFacebook() {
+        worker = SignupWorker()
+//        self.facebookWorker.doFacebookLogin { (token) in
+//            print(token)
+//            let requestFacebook = Login.Signin.FacebookLoginRequest(token: token, deviceIdentifier: Utils.deviceIdentifier(), deviceType: Utils.deviceType())
+//
+//            self.worker?.facebookSignin(request: requestFacebook, success: { (response) in
+//                print(response)
+//                if self.securityStorageWorker.storeAccessTokenResponse(response: response) {
+//                    self.presenter?.presentNextScreen()
+//                }
+//            }, fail: { (response) in
+//                self.presenter?.presentError(response: response)
+//
+//            })
+//        }
+        
     }
 }

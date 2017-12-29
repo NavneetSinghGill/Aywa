@@ -13,6 +13,7 @@
 import UIKit
 
 let registrationURL = "/registration"
+let registerFacebookURL = "/registration/facebook"
 
 enum Signup
 {
@@ -53,6 +54,24 @@ enum Signup
             baseRequest.parameters[Constants.kCountryNameKey] = countryName
             baseRequest.parameters[Constants.kPhoneKey] = phone
             baseRequest.parameters[Constants.kIPAddressKey] = ipAddress //TODO: need R&D on this
+            return baseRequest
+        }
+    }
+  
+    struct RegisterFacebookDto {
+        var token : String?
+        var email : String?
+        
+        var deviceIdentifier:String?
+        var deviceType :Int?
+        
+        func baseRequest() -> BaseRequest {
+            let baseRequest = BaseRequest()
+            baseRequest.urlPath = registerFacebookURL
+            baseRequest.parameters[Constants.kFbToken] = token
+            baseRequest.parameters[Constants.kEmailKey] = email
+            baseRequest.parameters[Constants.deviceIdentifier] = deviceIdentifier
+            baseRequest.parameters[Constants.DeviceTypeKey] = deviceType
             return baseRequest
         }
     }

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8P3-nz-1eY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8P3-nz-1eY">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -347,6 +347,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="fogotPasswordButtonTapped:" destination="bFY-JS-lCR" eventType="touchUpInside" id="wOj-oa-rAT"/>
+                                    <segue destination="HFx-4m-C2T" kind="show" id="ddu-Hi-Gje"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -389,7 +390,84 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rop-4i-iHd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="941.60000000000002" y="-860.41979010494754"/>
+            <point key="canvasLocation" x="49" y="-661"/>
+        </scene>
+        <!--Forgot Password View Controller-->
+        <scene sceneID="GVR-XC-xEc">
+            <objects>
+                <viewController storyboardIdentifier="ForgotPasswordViewController" id="HFx-4m-C2T" customClass="ForgotPasswordViewController" customModule="aywa" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VHb-We-ftQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TNc-NT-XyA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Eamil" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J6D-tX-kPu" customClass="FloatingHeaderTextField" customModule="aywa" customModuleProvider="target">
+                                <rect key="frame" x="10" y="316" width="355" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="5DJ-s3-elB">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="45"/>
+                                    </constraint>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="inActiveColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="TNc-NT-XyA" id="JtV-bO-5xa"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9r0-bq-goT">
+                                <rect key="frame" x="107" y="376" width="160" height="45"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="0S7-R7-GrY"/>
+                                    <constraint firstAttribute="width" constant="160" id="1lM-mv-wkp">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="220"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
+                                <state key="normal" title="Reset Password">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="resetPasswordButtonTapped:" destination="HFx-4m-C2T" eventType="touchUpInside" id="Tg2-7k-PsW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="J6D-tX-kPu" firstAttribute="centerY" secondItem="VHb-We-ftQ" secondAttribute="centerY" id="4et-bi-FV9"/>
+                            <constraint firstItem="9r0-bq-goT" firstAttribute="top" secondItem="J6D-tX-kPu" secondAttribute="bottom" constant="25" id="Mch-aY-C1s"/>
+                            <constraint firstItem="J6D-tX-kPu" firstAttribute="centerX" secondItem="VHb-We-ftQ" secondAttribute="centerX" id="NZy-CL-oUm"/>
+                            <constraint firstItem="4sq-t3-LHZ" firstAttribute="trailing" secondItem="J6D-tX-kPu" secondAttribute="trailing" constant="10" id="Qlh-KP-YEK"/>
+                            <constraint firstItem="TNc-NT-XyA" firstAttribute="trailing" secondItem="4sq-t3-LHZ" secondAttribute="trailing" id="bAb-Xm-MMj"/>
+                            <constraint firstItem="TNc-NT-XyA" firstAttribute="bottom" secondItem="4sq-t3-LHZ" secondAttribute="bottom" id="eZb-Ht-jac"/>
+                            <constraint firstItem="J6D-tX-kPu" firstAttribute="leading" secondItem="4sq-t3-LHZ" secondAttribute="leading" constant="10" id="uGD-jY-bcU"/>
+                            <constraint firstItem="9r0-bq-goT" firstAttribute="centerX" secondItem="VHb-We-ftQ" secondAttribute="centerX" id="v48-Mc-eFR"/>
+                            <constraint firstItem="TNc-NT-XyA" firstAttribute="leading" secondItem="4sq-t3-LHZ" secondAttribute="leading" id="vKQ-ed-6RQ"/>
+                            <constraint firstItem="TNc-NT-XyA" firstAttribute="top" secondItem="VHb-We-ftQ" secondAttribute="top" id="z8Q-OK-tsX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4sq-t3-LHZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="TNc-NT-XyA" id="mZg-49-BTE"/>
+                        <outlet property="emailTextField" destination="J6D-tX-kPu" id="MmV-cq-t63"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ikT-Z3-ldT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="914.39999999999998" y="-661.61919040479768"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="Xdl-LP-kMS">
@@ -602,10 +680,10 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="31o-ME-Acq" userLabel="MenuButton">
-                                        <rect key="frame" x="364" y="12" width="5" height="15"/>
+                                        <rect key="frame" x="339" y="7.5" width="30" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="15" id="Bnj-N0-Jdh"/>
-                                            <constraint firstAttribute="width" constant="5" id="G5t-SH-4nK"/>
+                                            <constraint firstAttribute="width" constant="30" id="mT8-wr-rzY"/>
+                                            <constraint firstAttribute="height" constant="30" id="wVi-6x-BVM"/>
                                         </constraints>
                                         <state key="normal" image="options"/>
                                         <connections>
@@ -613,14 +691,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FTp-ex-29k">
-                                        <rect key="frame" x="322" y="8" width="28" height="23"/>
+                                        <rect key="frame" x="304" y="7.5" width="30" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="28" id="Fff-Db-FCe">
-                                                <variation key="heightClass=regular-widthClass=regular" constant="45"/>
-                                            </constraint>
-                                            <constraint firstAttribute="height" constant="23" id="Kst-Zo-gzh">
-                                                <variation key="heightClass=regular-widthClass=regular" constant="36"/>
-                                            </constraint>
+                                            <constraint firstAttribute="height" constant="30" id="8wT-3j-uud"/>
+                                            <constraint firstAttribute="width" constant="30" id="Npl-Kb-zi1"/>
                                         </constraints>
                                         <state key="normal" image="share">
                                             <color key="titleColor" red="0.92133051156997681" green="0.13921850919723511" blue="0.14212876558303833" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -633,14 +707,12 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="aDL-Ky-af3" firstAttribute="centerY" secondItem="ZYo-g0-Bvd" secondAttribute="centerY" id="CkL-28-WLe"/>
-                                    <constraint firstItem="31o-ME-Acq" firstAttribute="leading" secondItem="FTp-ex-29k" secondAttribute="trailing" constant="14" id="avG-QH-2eR"/>
-                                    <constraint firstItem="FTp-ex-29k" firstAttribute="centerY" secondItem="ZYo-g0-Bvd" secondAttribute="centerY" constant="-2.5" id="hXA-Xy-51T"/>
-                                    <constraint firstAttribute="trailing" secondItem="31o-ME-Acq" secondAttribute="trailing" constant="6" id="kXW-VJ-RGZ"/>
+                                    <constraint firstItem="31o-ME-Acq" firstAttribute="leading" secondItem="FTp-ex-29k" secondAttribute="trailing" constant="5" id="I0G-UT-XX3"/>
+                                    <constraint firstAttribute="trailing" secondItem="31o-ME-Acq" secondAttribute="trailing" constant="6" id="SMA-MH-ptZ"/>
+                                    <constraint firstItem="FTp-ex-29k" firstAttribute="centerY" secondItem="31o-ME-Acq" secondAttribute="centerY" id="ep1-zr-6Ev"/>
                                     <constraint firstItem="aDL-Ky-af3" firstAttribute="leading" secondItem="ZYo-g0-Bvd" secondAttribute="leading" constant="10" id="kgt-NF-am2"/>
-                                    <constraint firstAttribute="bottom" secondItem="31o-ME-Acq" secondAttribute="bottom" constant="17" id="kqa-Kf-hOO"/>
-                                    <constraint firstItem="FTp-ex-29k" firstAttribute="top" secondItem="ZYo-g0-Bvd" secondAttribute="top" constant="8" id="lao-Ok-0qj"/>
                                     <constraint firstAttribute="height" constant="44" id="pAQ-vu-uQA"/>
-                                    <constraint firstItem="31o-ME-Acq" firstAttribute="top" secondItem="ZYo-g0-Bvd" secondAttribute="top" constant="12" id="xWt-aq-uYq"/>
+                                    <constraint firstItem="31o-ME-Acq" firstAttribute="centerY" secondItem="aDL-Ky-af3" secondAttribute="centerY" id="qH4-w4-m7A"/>
                                 </constraints>
                             </view>
                         </subviews>

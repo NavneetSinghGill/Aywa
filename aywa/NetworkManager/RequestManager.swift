@@ -51,4 +51,16 @@ class RequestManager: NSObject {
             BannerManager.showFailureBanner(subtitle: Constants.kNoNetworkMessage)
         }
     }
+    
+    //MARK:- Fetch Section
+    
+    func performPostAPI(request:BaseRequest, completion:@escaping CompletionHandler){
+        if ApplicationDelegate.isNetworkAvailable{
+            RealAPI().postObject(request:request, genericResponse: Common.Response.self, completion:completion)
+        }
+        else{
+            completion(false, Constants.kNoNetworkMessage)
+            BannerManager.showFailureBanner(subtitle: Constants.kNoNetworkMessage)
+        }
+    }
 }

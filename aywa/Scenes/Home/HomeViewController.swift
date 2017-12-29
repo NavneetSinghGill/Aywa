@@ -26,6 +26,14 @@ class HomeViewController: UIViewController, HomeDisplayLogic, UITableViewDelegat
     var router: (NSObjectProtocol & HomeRoutingLogic & HomeDataPassing)?
     let homeSliderBannerViewController  = "HomeSliderBannerViewController"
     
+    var homeHeader = HomeSliderBannerViewController()
+    
+    var storedOffsets = [Int: CGFloat]()
+    let verticalCellHeight: CGFloat = 235
+    let horizontalCellHeight: CGFloat = 175
+    public var sectionArray = [Home.Section.Response]()
+    var sectionDictionary = [String:Home.Section.Response]()
+    
     // MARK: Object lifecycle
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -55,7 +63,26 @@ class HomeViewController: UIViewController, HomeDisplayLogic, UITableViewDelegat
         router.viewController = viewController
         router.dataStore = interactor
     }
-    
+    //MARK: Initial Setup
+    private func initialiseView() {
+        
+        let searchNIB = UINib(nibName: Identifiers.homeTableCell, bundle: nil)
+        tableView.register(searchNIB, forCellReuseIdentifier: Identifiers.homeTableCell)
+        
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+        
+        self.homeHeader = self.storyboard?.instantiateViewController(withIdentifier: homeSliderBannerViewController) as! HomeSliderBannerViewController
+        self.homeHeader.view.bounds.size = CGSize(width: self.view.frame.size.width, height: self.view.frame.size.width * (236/375))// TODO: Header height
+        self.tableView.tableHeaderView = homeHeader.view
+        self.tableView.separatorStyle = .none
+        
+        self.navigationItem.hidesBackButton = true
+        self.navigationController?.isNavigationBarHidden = true
+        //  UIApplication.shared.statusBarStyle = .lightContent
+        // Call section API
+        doSectionAPI()
+    }
     // MARK: Routing
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
@@ -74,39 +101,19 @@ class HomeViewController: UIViewController, HomeDisplayLogic, UITableViewDelegat
     {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-       
-        let searchNIB = UINib(nibName: Identifiers.homeTableCell, bundle: nil)
-        tableView.register(searchNIB, forCellReuseIdentifier: Identifiers.homeTableCell)
-        
-        self.tableView.dataSource = self
-        self.tableView.delegate = self
-        
-        self.homeHeader = self.storyboard?.instantiateViewController(withIdentifier: homeSliderBannerViewController) as! HomeSliderBannerViewController
-        self.homeHeader.view.bounds.size = CGSize(width: self.view.frame.size.width, height: 240)
-        self.tableView.tableHeaderView = homeHeader.view
-       }
+        initialiseView()
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        // showNavigationBar()
-        self.navigationItem.hidesBackButton = true
-        self.navigationController?.isNavigationBarHidden = true
-        //  UIApplication.shared.statusBarStyle = .lightContent
-        // Call section API
-           doSectionAPI()
+        
     }
     
     // MARK: Do something
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headerView: UIView!
-    var homeHeader = HomeSliderBannerViewController()
     
-    var storedOffsets = [Int: CGFloat]()
-    let verticalCellHeight: CGFloat = 235
-    let horizontalCellHeight: CGFloat = 175
-    public var sectionArray = [Home.Section.Response]()
-    var sectionDictionary = [String:Home.Section.Response]()
     
     //MARK:- TableView Delegate And Datasource Methods
     //MARK: Datasource
@@ -124,7 +131,7 @@ class HomeViewController: UIViewController, HomeDisplayLogic, UITableViewDelegat
             cell.cellAlignment = .Vertical
         }
         cell.setCollectionView(forRow: indexPath.row, sectionData: self.sectionArray[indexPath.row])
-         //cell.setCollectionView(forRow: indexPath.row)
+        //cell.setCollectionView(forRow: indexPath.row)
         return cell
     }
     
@@ -137,16 +144,16 @@ class HomeViewController: UIViewController, HomeDisplayLogic, UITableViewDelegat
     //MARK:- Show Response
     func displayError(response: Home.Section.Response)
     {
+        SVProgressHUD.dismiss()
         print("Error occured: \(response)")
     }
     
-    func displayHomeScreen(response: [Home.Section.Response])
-    {
+    func displayHomeScreen(response: [Home.Section.Response]){
+        SVProgressHUD.dismiss()
         print("Show Home Section Data!!!")
         sectionArray = response
         self.tableView.reloadData()
         print(response)
-      
     }
     
     //MARK: For StatusBarStyle
@@ -156,6 +163,7 @@ class HomeViewController: UIViewController, HomeDisplayLogic, UITableViewDelegat
     
     //MARK: For Call Section API
     func doSectionAPI()  {
+        SVProgressHUD.show()
         let request = Home.Section.Request()
         interactor?.doSectionAPI(request: request)
     }
