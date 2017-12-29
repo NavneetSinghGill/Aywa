@@ -14,7 +14,7 @@ import UIKit
 
 protocol SignupPresentationLogic
 {
-    func presentError(response: Landing.JWTToken.Response)
+    func presentError(response: Token.JWTToken.Response)
     func presentNextScreen()
 }
 
@@ -24,7 +24,7 @@ class SignupPresenter: SignupPresentationLogic
   
   // MARK: Do Signup
     
-    func presentError(response: Landing.JWTToken.Response)
+    func presentError(response: Token.JWTToken.Response)
     {
         viewController?.displayError(response: response)
     }

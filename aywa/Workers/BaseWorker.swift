@@ -13,13 +13,13 @@ class BaseWorker {
     public func handleTokenResponse(success:@escaping(accessTokenResponseHandler), fail:@escaping(accessTokenResponseHandler), status: Bool, response: Any?) {
         var message:String = Constants.kErrorMessage
         if status {
-            if let result = response as? Landing.JWTToken.Response {
+            if let result = response as? Token.JWTToken.Response {
                 success(result)
                 return
             }
         }
         else {
-            if let result = response as? Landing.JWTToken.Response {
+            if let result = response as? Token.JWTToken.Response {
                 fail(result)
                 return
             }
@@ -30,6 +30,6 @@ class BaseWorker {
                 }
             }
         }
-        fail(Landing.JWTToken.Response(message:message)!)
+        fail(Token.JWTToken.Response(message:message)!)
     }
 }

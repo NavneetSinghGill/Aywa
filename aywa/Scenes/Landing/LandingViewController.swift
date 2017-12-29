@@ -13,16 +13,9 @@
 import UIKit
 import BPViewsSubviewsInOutAnimation
 
-protocol LandingDisplayLogic: class
+class LandingViewController: BPViewController, UIScrollViewDelegate
 {
-    func displayError(response: Landing.JWTToken.Response)
-    func displayNextScreen()
-}
-
-class LandingViewController: BPViewController, LandingDisplayLogic, UIScrollViewDelegate
-{
-    var interactor: LandingBusinessLogic?
-    var router: (NSObjectProtocol & LandingRoutingLogic & LandingDataPassing)?
+    var router: (NSObjectProtocol & LandingRoutingLogic)?
     
     // MARK: Object lifecycle
     
@@ -43,15 +36,9 @@ class LandingViewController: BPViewController, LandingDisplayLogic, UIScrollView
     private func setup()
     {
         let viewController = self
-        let interactor = LandingInteractor()
-        let presenter = LandingPresenter()
         let router = LandingRouter()
-        viewController.interactor = interactor
         viewController.router = router
-        interactor.presenter = presenter
-        presenter.viewController = viewController
         router.viewController = viewController
-        router.dataStore = interactor
     }
     
     // MARK: Routing
@@ -118,8 +105,10 @@ class LandingViewController: BPViewController, LandingDisplayLogic, UIScrollView
     
     func fetchToken()
     {
-        let request = Landing.JWTToken.Request()
-        interactor?.fetchToken(request: request)
+        // fetch token from Token Manager
+        TokenManager.shared().fetchToken { (status, response) in
+            print("Status:\(status) \nResponse:\(response ?? "NIL")")
+        }
     }
     
     // MARK: - Private Methods
@@ -152,16 +141,6 @@ class LandingViewController: BPViewController, LandingDisplayLogic, UIScrollView
         DispatchQueue.main.async {
             self.selectPageAtIndex(index: BackgroundImageManager.shared().selectedImageIndex-1)
         }
-    }
-    
-    func displayError(response: Landing.JWTToken.Response)
-    {
-        print("Error occured: \(response)")
-    }
-    
-    func displayNextScreen()
-    {
-        print("Show Next Screen!!!")
     }
     
     // MARK: Page controller methods

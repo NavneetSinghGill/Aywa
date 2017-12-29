@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         DropDown.startListeningToKeyboard()
         
         if SecurityStorageWorker().isLoggedIn() {
-            setTabBarAsRootViewController()
+            setSplashAsRootViewController()
         }
         // init FB SDK
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
@@ -109,6 +109,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // instantiate your desired ViewController
         let destinationVC = storyboard.instantiateInitialViewController() as! UINavigationController
+        
+        // Because self.window is an optional you should check it's value first and assign your rootViewController
+        if let window = self.window {
+            window.rootViewController = destinationVC
+        }
+    }
+    
+    func setSplashAsRootViewController() {
+        
+        // get your storyboard
+        let storyboard = UIStoryboard(name: "UniversalStoryboard", bundle: nil)
+        
+        // instantiate your desired ViewController
+        let destinationVC = storyboard.instantiateViewController(withIdentifier: "SplashViewController") as! SplashViewController
         
         // Because self.window is an optional you should check it's value first and assign your rootViewController
         if let window = self.window {

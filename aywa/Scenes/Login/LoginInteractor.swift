@@ -49,7 +49,7 @@ class LoginInteractor: LoginBusinessLogic, LoginDataStore
         }
         
         else{
-            return (presenter?.presentError(response: Landing.JWTToken.Response(message: "Fields may not be empty.")!))!
+            return (presenter?.presentError(response: Token.JWTToken.Response(message: "Fields may not be empty.")!))!
         }
 
     }

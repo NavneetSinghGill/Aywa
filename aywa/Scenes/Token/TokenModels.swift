@@ -1,5 +1,5 @@
 //
-//  LandingModels.swift
+//  TokenModels.swift
 //  aywa
 //
 //  Created by Zoeb on 11/12/17.
@@ -19,7 +19,7 @@ let tokenURL = "/token"
 let tokenRefreshURL = "/token/refresh"
 let secret = "Secret"
 
-enum Landing {
+enum Token {
     // MARK: Use cases
     
     enum JWTToken
@@ -128,3 +128,4 @@ enum Landing {
         }
     }
 }
+

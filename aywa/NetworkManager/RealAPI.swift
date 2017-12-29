@@ -172,8 +172,9 @@ class RealAPI: NSObject {
             return true
         }
         else if statusCode != nil && statusCode == Constants.ResponseStatusForbidden && isForbiddenRetry == true {
-            //TODO: logout on token invalid
-//            ApplicationDelegate.performLogout()
+            // logout on token invalid
+            SecurityStorageWorker().updateLoggedInState(isLoggedIn: false)
+            ApplicationDelegate.setLandingAsRootViewController()
         }
         return false
     }

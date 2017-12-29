@@ -20,15 +20,9 @@ import UIKit
     func routeToTabBar()
 }
 
-protocol LandingDataPassing
-{
-    var dataStore: LandingDataStore? { get }
-}
-
-class LandingRouter: NSObject, LandingRoutingLogic, LandingDataPassing
+class LandingRouter: NSObject, LandingRoutingLogic
 {
     weak var viewController: LandingViewController?
-    var dataStore: LandingDataStore?
     
     // MARK: Routing
     

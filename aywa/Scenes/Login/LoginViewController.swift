@@ -17,7 +17,7 @@ import FBSDKLoginKit
 
 protocol LoginDisplayLogic: class
 {
-    func displayError(response: Landing.JWTToken.Response)
+    func displayError(response: Token.JWTToken.Response)
     func displayHomeScreen()
     
 }
@@ -127,7 +127,7 @@ class LoginViewController: BPViewController, LoginDisplayLogic, UITextFieldDeleg
         interactor?.doLogin(request: request)
     }
     
-    func displayError(response: Landing.JWTToken.Response)
+    func displayError(response: Token.JWTToken.Response)
     {
         SVProgressHUD.dismiss()
         print("Error occured: \(response.message!)")

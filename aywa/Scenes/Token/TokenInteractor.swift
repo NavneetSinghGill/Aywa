@@ -1,5 +1,5 @@
 //
-//  LandingInteractor.swift
+//  TokenInteractor.swift
 //  aywa
 //
 //  Created by Zoeb on 11/12/17.
@@ -12,25 +12,25 @@
 
 import UIKit
 
-protocol LandingBusinessLogic
+protocol TokenBusinessLogic
 {
-    func fetchToken(request: Landing.JWTToken.Request)
+    func fetchToken(request: Token.JWTToken.Request)
 }
 
-protocol LandingDataStore
+protocol TokenDataStore
 {
     //var name: String { get set }
 }
 
-class LandingInteractor: LandingBusinessLogic, LandingDataStore
+class TokenInteractor: TokenBusinessLogic, TokenDataStore
 {
-    var presenter: LandingPresentationLogic?
-    var worker: LandingWorker?
+    var presenter: TokenPresentationLogic?
+    var worker: TokenWorker?
     var securityStorageWorker = SecurityStorageWorker()
     
     // MARK: Fetch JWT Token
     
-    func fetchToken(request: Landing.JWTToken.Request) {
+    func fetchToken(request: Token.JWTToken.Request) {
         
         var fetchTokenAPI = true
         
@@ -47,10 +47,10 @@ class LandingInteractor: LandingBusinessLogic, LandingDataStore
                 // Access token is expired, check if refresh token is valid
                 if let refreshTokenLife = UserDefaults.standard.object(forKey: Constants.kRefreshTokenLifeKey) as? Date {
                     if refreshTokenLife.isInFuture {
-                       // Refresh token is valid, fetch it from keychain
+                        // Refresh token is valid, fetch it from keychain
                         if let refreshToken = securityStorageWorker.getKeychainValue(key: Constants.kRefreshTokenKey) {
                             // Fetch refresh token APi api/token/refresh
-                            worker = LandingWorker()
+                            worker = TokenWorker()
                             worker?.fetchRefreshToken(refreshToken: refreshToken, success: { (response) in
                                 print(response)
                                 if self.securityStorageWorker.storeAccessTokenResponse(response: response) {
@@ -60,7 +60,7 @@ class LandingInteractor: LandingBusinessLogic, LandingDataStore
                                 
                             }, fail: { (response) in
                                 //TODO: show login screen
-//                                self.presenter?.presentError(response: response)
+                                //                                self.presenter?.presentError(response: response)
                                 
                                 // for now I am calling in a fresh way with assumption that we are calling it first time
                                 self.fetchJWTTokenAPI(request: request)
@@ -83,8 +83,8 @@ class LandingInteractor: LandingBusinessLogic, LandingDataStore
         }
     }
     
-    func fetchJWTTokenAPI(request: Landing.JWTToken.Request) {
-        worker = LandingWorker()
+    func fetchJWTTokenAPI(request: Token.JWTToken.Request) {
+        worker = TokenWorker()
         worker?.fetchJWTToken(request: request, success: { (response) in
             print(response)
             if self.securityStorageWorker.storeAccessTokenResponse(response: response) {
@@ -97,3 +97,4 @@ class LandingInteractor: LandingBusinessLogic, LandingDataStore
         })
     }
 }
+

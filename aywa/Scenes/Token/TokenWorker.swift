@@ -1,5 +1,5 @@
 //
-//  LandingWorker.swift
+//  TokenWorker.swift
 //  aywa
 //
 //  Created by Zoeb on 11/12/17.
@@ -12,12 +12,12 @@
 
 import UIKit
 
-typealias accessTokenResponseHandler = (_ response:Landing.JWTToken.Response) ->()
+typealias accessTokenResponseHandler = (_ response:Token.JWTToken.Response) ->()
 
 
-class LandingWorker:BaseWorker
+class TokenWorker:BaseWorker
 {
-    func fetchJWTToken(request:Landing.JWTToken.Request, success:@escaping(accessTokenResponseHandler), fail:@escaping(accessTokenResponseHandler))
+    func fetchJWTToken(request:Token.JWTToken.Request, success:@escaping(accessTokenResponseHandler), fail:@escaping(accessTokenResponseHandler))
     {
         //call network etc.
         let manager = RequestManager()
@@ -32,8 +32,9 @@ class LandingWorker:BaseWorker
         //call network etc.
         let manager = RequestManager()
         
-        manager.fetchRefreshToken(request: Landing.JWTToken.RefreshRequest().baseRequest(refreshToken: refreshToken)) { (status, response) in
+        manager.fetchRefreshToken(request: Token.JWTToken.RefreshRequest().baseRequest(refreshToken: refreshToken)) { (status, response) in
             self.handleTokenResponse(success: success, fail: fail, status: status, response: response)
         }
     }
 }
+

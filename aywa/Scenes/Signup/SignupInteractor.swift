@@ -47,7 +47,7 @@ class SignupInteractor: SignupBusinessLogic, SignupDataStore
             })
         }
         else{
-            return (presenter?.presentError(response: Landing.JWTToken.Response(message: "This field is required.")!))!
+            return (presenter?.presentError(response: Token.JWTToken.Response(message: "This field is required.")!))!
         }
         
     }

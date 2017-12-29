@@ -32,7 +32,7 @@ class SecurityStorageWorker: NSObject {
         }
     }
     
-    public func storeAccessTokenResponse(response:Landing.JWTToken.Response) -> Bool {
+    public func storeAccessTokenResponse(response:Token.JWTToken.Response) -> Bool {
         var storedSuccessfully = false
         if let tokenResponseModel = response.viewModel {
             storedSuccessfully = storeResponse(accessTokenOptional:tokenResponseModel.accessToken, refreshTokenOptional: tokenResponseModel.refreshToken, expiresInOptional:tokenResponseModel.expiresIn, refreshLifeOptional:tokenResponseModel.refreshLife)
@@ -72,5 +72,15 @@ class SecurityStorageWorker: NSObject {
     
     func updateLoggedInState(isLoggedIn:Bool) {
         UserDefaults.standard.set(isLoggedIn, forKey: Constants.kIsLoggedIn)
+        
+        if(!isLoggedIn) {
+            _ = KeychainWrapper.standard.removeAllKeys()
+            
+            print(Array(UserDefaults.standard.dictionaryRepresentation().keys).count)
+            let domain = Bundle.main.bundleIdentifier!
+            UserDefaults.standard.removePersistentDomain(forName: domain)
+            UserDefaults.standard.synchronize()
+            print(Array(UserDefaults.standard.dictionaryRepresentation().keys).count)
+        }
     }
 }

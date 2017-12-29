@@ -16,12 +16,16 @@ import DropDown
 
 protocol SignupDisplayLogic: class
 {
-    func displayError(response: Landing.JWTToken.Response)
+    func displayError(response: Token.JWTToken.Response)
     func displayHomeScreen()
 }
 
 class SignupViewController: BPViewController, SignupDisplayLogic, UITextFieldDelegate
 {
+    static let kMale = "Male"
+    static let kFemale = "Female"
+    static let kOther = "Other"
+    
     var interactor: SignupBusinessLogic?
     var router: (NSObjectProtocol & SignupRoutingLogic & SignupDataPassing)?
     var backBarButton: UIBarButtonItem!
@@ -156,9 +160,9 @@ class SignupViewController: BPViewController, SignupDisplayLogic, UITextFieldDel
                genderDropDown.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 1.0)
               genderDropDown.textColor = UIColor.white
         genderDropDown.dataSource = [
-            "Male",
-            "Female",
-            "Other"
+            SignupViewController.kMale,
+            SignupViewController.kFemale,
+            SignupViewController.kOther
         ]
         // Action triggered on selection
         genderDropDown.selectionAction = {[weak self] (Index, item) in
@@ -200,11 +204,11 @@ class SignupViewController: BPViewController, SignupDisplayLogic, UITextFieldDel
     
     func doSignup()
     {
-        let request = Signup.Register.Request(email: emailTextField.text, password: passwordTextField.text, confirmPassword: confirmPasswordTextField.text,  name: nameTextField.text, deviceIdentifier: Utils.deviceIdentifier(), deviceType: Utils.deviceType(), birthday: nil, ageGroup: ageGroupTextField.text, gender: genderTextField.text, country: nil, countryName: nil, phone: nil, ipAddress: nil)
+        let request = Signup.Register.Request(email: emailTextField.text, password: passwordTextField.text, confirmPassword: confirmPasswordTextField.text,  name: nameTextField.text, deviceIdentifier: Utils.deviceIdentifier(), deviceType: Utils.deviceType(), birthday: nil, ageGroup: ageGroupTextField.text, gender: genderTextField.text == SignupViewController.kMale ? "M" : genderTextField.text == SignupViewController.kFemale ? "F" : "?", country: nil, countryName: nil, phone: nil, ipAddress: nil)
         interactor?.doSignup(request: request)
     }
     
-    func displayError(response: Landing.JWTToken.Response)
+    func displayError(response: Token.JWTToken.Response)
     {
         print("Error occured: \(response.message!)")
     }
