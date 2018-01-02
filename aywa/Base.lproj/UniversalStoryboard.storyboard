@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8P3-nz-1eY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8P3-nz-1eY">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -564,16 +564,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FYp-Sl-RJz"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="browse" selectedImage="browse_selected" id="bPL-t0-nfX">
-                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="GJ3-Yx-YUi"/>
                     <connections>
                         <outlet property="tableView" destination="hwz-Wn-Q5u" id="yVh-RK-9dN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zev-Xq-iL2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1744.8" y="724.58770614692662"/>
+            <point key="canvasLocation" x="2646" y="817"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="ufC-A7-bi5">
@@ -591,7 +589,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8PS-b3-R0A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1745" y="1432"/>
+            <point key="canvasLocation" x="2084" y="1431.6341829085459"/>
         </scene>
         <!--Like View Controller-->
         <scene sceneID="nLs-gq-IH7">
@@ -641,7 +639,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="tO5-m1-Hhp" kind="relationship" relationship="viewControllers" id="7j1-YZ-fKh"/>
-                        <segue destination="jzZ-BV-Zly" kind="relationship" relationship="viewControllers" id="CgO-Fs-G5d"/>
+                        <segue destination="xkJ-fg-KbB" kind="relationship" relationship="viewControllers" id="CgO-Fs-G5d"/>
                         <segue destination="pUC-Mp-p8K" kind="relationship" relationship="viewControllers" id="csi-dz-umf"/>
                         <segue destination="LOo-8P-hgZ" kind="relationship" relationship="viewControllers" id="rlf-bq-exg"/>
                         <segue destination="USk-Ch-u7q" kind="relationship" relationship="viewControllers" id="VKd-x1-mA2"/>
@@ -781,6 +779,27 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kbh-bq-Hna" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-991" y="386"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jmp-Gm-bdV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xkJ-fg-KbB" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="browse" selectedImage="browse_selected" id="bPL-t0-nfX">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qRh-uH-PzY">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jzZ-BV-Zly" kind="relationship" relationship="rootViewController" id="SiL-o5-fc8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CxR-He-zOs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1744" y="810.49475262368821"/>
         </scene>
     </scenes>
     <resources>

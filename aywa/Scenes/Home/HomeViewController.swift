@@ -64,8 +64,7 @@ class HomeViewController: UIViewController, HomeDisplayLogic, UITableViewDelegat
         router.dataStore = interactor
     }
     //MARK: Initial Setup
-    private func initialiseView() {
-        
+    private func initialiseView() {        
         let searchNIB = UINib(nibName: Identifiers.homeTableCell, bundle: nil)
         tableView.register(searchNIB, forCellReuseIdentifier: Identifiers.homeTableCell)
         
@@ -103,16 +102,10 @@ class HomeViewController: UIViewController, HomeDisplayLogic, UITableViewDelegat
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        // Hide the navigation bar on the this view controller
-          self.navigationController?.isNavigationBarHidden = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
-        // Show the navigation bar on other view controllers
-           self.navigationController?.isNavigationBarHidden = false
 
     }
     // MARK: Do Home View Controller

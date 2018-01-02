@@ -56,9 +56,7 @@ class BrowseViewController: UIViewController, BrowseDisplayLogic
     
     //MARK: Initial Setup
     private func initialiseView() {
-      //  self.navigationController?.isNavigationBarHidden = true
         navigationBarWithLeftSideTitle(isTitle: true, titleName: "Browse")
-//        showNavigationBar()
 //        updateNavigationBar()
         let browseNIB = UINib(nibName: Identifiers.browseTableViewCell, bundle: nil)
         tableView.register(browseNIB, forCellReuseIdentifier: Identifiers.browseTableViewCell)

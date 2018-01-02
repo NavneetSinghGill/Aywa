@@ -31,9 +31,7 @@ class SignupRouter: NSObject, SignupRoutingLogic, SignupDataPassing
   
     func routeToTabBar(segue: UIStoryboardSegue?)
     {
-        let storyboard = viewController?.storyboard
-        let destinationVC = storyboard?.instantiateInitialViewController() as! UITabBarController
-        navigateToSomewhere(source: viewController!, destination: destinationVC)
+        ApplicationDelegate.setTabBarAsRootViewController()
     }
     
     // MARK: Navigation
