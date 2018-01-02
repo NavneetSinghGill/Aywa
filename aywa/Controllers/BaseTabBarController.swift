@@ -39,4 +39,13 @@ class BaseTabBarController: UITabBarController {
         tabBar.selectionIndicatorImage = selectionImage
     }
     
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        let indexOfTab = tabBar.items?.index(of: item)
+        print("pressed tabBar: \(String(describing: indexOfTab))")
+        if indexOfTab == 0 {
+            self.navigationController?.isNavigationBarHidden = true
+        }else{
+            self.navigationController?.isNavigationBarHidden = false
+        }
+    }
 }

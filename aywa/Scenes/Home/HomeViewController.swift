@@ -78,7 +78,6 @@ class HomeViewController: UIViewController, HomeDisplayLogic, UITableViewDelegat
         self.tableView.separatorStyle = .none
         
         self.navigationItem.hidesBackButton = true
-        self.navigationController?.isNavigationBarHidden = true
         //  UIApplication.shared.statusBarStyle = .lightContent
         // Call section API
         doSectionAPI()
@@ -96,19 +95,26 @@ class HomeViewController: UIViewController, HomeDisplayLogic, UITableViewDelegat
     }
     
     // MARK: View lifecycle
-    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         initialiseView()
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        // Hide the navigation bar on the this view controller
+          self.navigationController?.isNavigationBarHidden = true
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // Show the navigation bar on other view controllers
+           self.navigationController?.isNavigationBarHidden = false
+
+    }
     // MARK: Do Home View Controller
     
     @IBOutlet weak var tableView: UITableView!

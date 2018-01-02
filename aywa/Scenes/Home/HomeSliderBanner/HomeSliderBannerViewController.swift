@@ -57,7 +57,14 @@ class HomeSliderBannerViewController: UIViewController, HomeSliderBannerDisplayL
         router.viewController = viewController
         router.dataStore = interactor
     }
-    
+    //MARK: Initial Setup
+    private func initialiseView() {
+        // Call Slider Banner API
+        doCallSliderBannerAPI()
+        let nib = UINib(nibName: Identifiers.homeAdvertCollectionCell, bundle: Bundle.main)
+        homeHeaderCollectionView.register(nib, forCellWithReuseIdentifier: Identifiers.homeAdvertCollectionCell)
+        setupMenuDropDown()
+    }
     // MARK: Routing
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
@@ -71,21 +78,10 @@ class HomeSliderBannerViewController: UIViewController, HomeSliderBannerDisplayL
     }
     
     // MARK: View lifecycle
-    
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        // Call Slider Banner API
-        doCallSliderBannerAPI()
-        let nib = UINib(nibName: Identifiers.homeAdvertCollectionCell, bundle: Bundle.main)
-        homeHeaderCollectionView.register(nib, forCellWithReuseIdentifier: Identifiers.homeAdvertCollectionCell)
-   
-        setupMenuDropDown()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
+        initialiseView()
     }
     
     // MARK: Do Slide Banner

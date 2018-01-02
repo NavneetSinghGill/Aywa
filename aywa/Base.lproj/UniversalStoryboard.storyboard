@@ -538,23 +538,42 @@
             </objects>
             <point key="canvasLocation" x="1746" y="47"/>
         </scene>
-        <!--Category View Controller-->
+        <!--Browse View Controller-->
         <scene sceneID="OOf-0b-QoM">
             <objects>
-                <viewController storyboardIdentifier="CategoryViewController" id="jzZ-BV-Zly" customClass="CategoryViewController" customModule="aywa" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BrowseViewController" id="jzZ-BV-Zly" customClass="BrowseViewController" customModule="aywa" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O08-zy-Ja8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hwz-Wn-Q5u">
+                                <rect key="frame" x="0.0" y="100" width="375" height="518"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="O08-zy-Ja8" id="bXO-1z-Oxz"/>
+                                    <outlet property="delegate" destination="O08-zy-Ja8" id="Hgy-PY-AN3"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hwz-Wn-Q5u" firstAttribute="top" secondItem="O08-zy-Ja8" secondAttribute="top" constant="100" id="Xhk-Yh-0ep"/>
+                            <constraint firstItem="hwz-Wn-Q5u" firstAttribute="trailing" secondItem="FYp-Sl-RJz" secondAttribute="trailing" id="lFo-Xh-r9L"/>
+                            <constraint firstItem="hwz-Wn-Q5u" firstAttribute="bottom" secondItem="FYp-Sl-RJz" secondAttribute="bottom" id="oh3-Ra-RIi"/>
+                            <constraint firstItem="hwz-Wn-Q5u" firstAttribute="leading" secondItem="FYp-Sl-RJz" secondAttribute="leading" id="qLA-x4-JMS"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="FYp-Sl-RJz"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="grid" selectedImage="grid_selected" id="bPL-t0-nfX">
+                    <tabBarItem key="tabBarItem" title="" image="browse" selectedImage="browse_selected" id="bPL-t0-nfX">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="tableView" destination="hwz-Wn-Q5u" id="yVh-RK-9dN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zev-Xq-iL2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1745" y="725"/>
+            <point key="canvasLocation" x="1744.8" y="724.58770614692662"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="ufC-A7-bi5">
@@ -765,10 +784,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="browse" width="20" height="20"/>
+        <image name="browse_selected" width="20" height="20"/>
         <image name="favorite" width="21" height="20"/>
         <image name="favorite_selected" width="21" height="20"/>
-        <image name="grid" width="20" height="20"/>
-        <image name="grid_selected" width="20" height="20"/>
         <image name="home_icon" width="22" height="20"/>
         <image name="home_selected_icon" width="22" height="20"/>
         <image name="notification" width="18" height="20"/>

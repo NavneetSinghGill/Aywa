@@ -106,8 +106,11 @@ struct Identifiers {
     static let homeAdvertCollectionCell = "HomeHeaderAdvertisementCollectionViewCell"
     static let homeImageVerticalCollectionViewCell = "HomeImageVerticalCollectionViewCell"
     static let homeImageHorizontalCollectionViewCell = "HomeImageHorizontalCollectionViewCell"
-    // TableView
+    // Home TableView
     static let homeTableCell = "HomeTableViewCell"
+    // Browse TableView
+    static let browseTableViewCell = "BrowseTableViewCell"
+    //
 }
 
 enum CellAlignment {

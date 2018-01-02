@@ -31,7 +31,7 @@ extension UIViewController {
         self.navigationController?.navigationBar.barTintColor = UIColor.init(red: 51.0/255.0, green: 51.0/255.0, blue: 51.0/255.0, alpha: 1)
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "Helvetica", size: 18)!]
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
-
+        
     }
     
     func updateBackButton() {
@@ -46,9 +46,48 @@ extension UIViewController {
     
     @objc func backButtonTapped() {
         if self.navigationController != nil {
-            
             self.navigationController?.popViewController(animated: true)
         }
     }
+    // MARK: NavigationBar with left side title
+    func navigationBarWithLeftSideTitle(isTitle: Bool, titleName: String) {
+        self.updateNavigationBarColor()
+        updateBackButtonWithTitle(isLeftTitle: isTitle, leftSideTitle: titleName)
+        
+    }
+    func updateBackButtonWithTitle(isLeftTitle: Bool, leftSideTitle: String){
+        if isLeftTitle {
+            let longTitleLabel = UILabel()
+            longTitleLabel.text = leftSideTitle
+            longTitleLabel.textColor = UIColor.white
+            longTitleLabel.font = UIFont(name: "Helvetica", size: 18)
+            let leftItem = UIBarButtonItem(customView: longTitleLabel)
+            longTitleLabel.sizeToFit()
+            self.navigationItem.leftBarButtonItem = leftItem
+            let menuImage    = UIImage(named: "options")!
+            let shareTVImage  = UIImage(named: "share")!
+
+            let menuButton = UIBarButtonItem(image: menuImage, style: .plain, target: self, action: #selector (didTapMenuButton))
+            let shareButton = UIBarButtonItem(image: shareTVImage, style: .plain, target: self, action: #selector (didTapShareButton))
+            navigationItem.rightBarButtonItems = [menuButton, shareButton]
+        }
+        else{
+            let button = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+            button.backgroundColor = .clear
+            button.setImage(UIImage(named: "backButton"), for: .normal)
+            button.setTitle(leftSideTitle, for: .normal)
+            button.titleLabel?.font = UIFont(name: "Helvetica", size: 18)!
+            button.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+            let backBarButton = UIBarButtonItem(customView: button)
+            self.navigationItem.leftBarButtonItem = backBarButton
+        }
+    }
     
+   @objc func didTapMenuButton(){
+        print("Menu Button Tapped")
+    }
+    
+   @objc func didTapShareButton(){
+        print("Share TV Button Tapped")
+    }
 }
