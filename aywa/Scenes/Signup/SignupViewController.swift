@@ -55,10 +55,10 @@ class SignupViewController: BPViewController, SignupDisplayLogic, UITextFieldDel
     }
     
     private func initialiseView() {
+       
         backgroundImageView.image = BackgroundImageManager.shared().backgroundImage
-        self.title = "Signup"
         self.navigationItem.hidesBackButton = true
-        
+       
         self.emailTextField.delegate = self
         self.passwordTextField.delegate = self
         self.confirmPasswordTextField.delegate = self
@@ -66,7 +66,8 @@ class SignupViewController: BPViewController, SignupDisplayLogic, UITextFieldDel
         self.genderTextField.delegate = self
         setupDropDowns()
         showNavigationBar()
-        updateNavigationBar()
+        //updateNavigationBar()
+        navigationBarWithLeftSideTitle(isTitle: false, titleName: "Sign up")
     }
     
     private func setup()

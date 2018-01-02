@@ -11,7 +11,7 @@ import Reachability
 import DropDown
 import FBSDKCoreKit
 import FBSDKLoginKit
-
+import IQKeyboardManagerSwift
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         setupNetworkMonitoring()
         DropDown.startListeningToKeyboard()
+        IQKeyboardManager.sharedManager().enable = true
         
         if SecurityStorageWorker().isLoggedIn() {
             setSplashAsRootViewController()

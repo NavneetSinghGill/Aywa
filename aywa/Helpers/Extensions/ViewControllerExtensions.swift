@@ -57,13 +57,22 @@ extension UIViewController {
     }
     func updateBackButtonWithTitle(isLeftTitle: Bool, leftSideTitle: String){
         if isLeftTitle {
-            let longTitleLabel = UILabel()
-            longTitleLabel.text = leftSideTitle
-            longTitleLabel.textColor = UIColor.white
-            longTitleLabel.font = UIFont(name: "Helvetica", size: 18)
-            let leftItem = UIBarButtonItem(customView: longTitleLabel)
-            longTitleLabel.sizeToFit()
-            self.navigationItem.leftBarButtonItem = leftItem
+//            let longTitleLabel = UILabel()
+//            longTitleLabel.text = leftSideTitle
+//            longTitleLabel.textColor = UIColor.white
+//            longTitleLabel.font = UIFont(name: "Helvetica", size: 18)
+//            let leftItem = UIBarButtonItem(customView: longTitleLabel)
+//            longTitleLabel.sizeToFit()
+//            self.navigationItem.leftBarButtonItem = leftItem
+           
+            self.navigationController?.navigationItem.hidesBackButton = true
+            let button = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+            button.backgroundColor = .clear
+            button.setTitle(leftSideTitle, for: .normal)
+            button.titleLabel?.font = UIFont(name: "Helvetica", size: 18)!
+            let backBarButton = UIBarButtonItem(customView: button)
+            self.navigationItem.leftBarButtonItem = backBarButton
+            
             let menuImage    = UIImage(named: "options")!
             let shareTVImage  = UIImage(named: "share")!
 

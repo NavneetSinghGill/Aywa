@@ -15,6 +15,7 @@ PODS:
     - Bolts (~> 1.7)
   - FBSDKLoginKit (4.29.0):
     - FBSDKCoreKit
+  - IQKeyboardManagerSwift (5.0.0)
   - MarqueeLabel/Swift (3.1.3)
   - NotificationBannerSwift (1.5.1):
     - MarqueeLabel/Swift
@@ -33,6 +34,7 @@ DEPENDENCIES:
   - BPViewsSubviewsInOutAnimation
   - DropDown
   - FBSDKLoginKit
+  - IQKeyboardManagerSwift (= 5.0.0)
   - NotificationBannerSwift
   - ReachabilitySwift
   - SDWebImage (~> 4.0)
@@ -56,6 +58,7 @@ SPEC CHECKSUMS:
   DropDown: 75562633a203f57a917021b4edb96c76f293b0ec
   FBSDKCoreKit: 6f139173dc63a1deaff4430a55f2fe5bb222d2af
   FBSDKLoginKit: 56a057ca6822535ea0faa25f57a7c41edb697fd4
+  IQKeyboardManagerSwift: 3f340202ebe1a7076279b9b9b3c817243ddb3aab
   MarqueeLabel: baa5753dcbd36dca080e1f5c589a665aa5c906f1
   NotificationBannerSwift: 666e6c392238561c17a52db4c50e6f00d9942e0d
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
@@ -65,6 +68,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 59b2d3dabacbd051576d21d32293ca7228dc18b0
   SwiftKeychainWrapper: 38952a3636320ae61bad3513cadd870929de7a4a
 
-PODFILE CHECKSUM: 4ddbf994cb6ecc3738ecec0459bc77c3e8aa544a
+PODFILE CHECKSUM: 03250a5a891139c2fa206448d45a401c23802fad
 
 COCOAPODS: 1.3.1

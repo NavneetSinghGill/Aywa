@@ -22,7 +22,7 @@ class BrowseViewController: UIViewController, BrowseDisplayLogic
     var interactor: BrowseBusinessLogic?
     var router: (NSObjectProtocol & BrowseRoutingLogic & BrowseDataPassing)?
     let cellHeight: CGFloat = 70
-     let browseArray = ["Movies", "TV Shows", "Networks", "Kids", "Classics", "More"]
+    let browseArray = ["Movies", "TV Shows", "Networks", "Kids", "Classics", "More"]
     private let browseReuseIdentifier = "BrowseTableViewCell"
     // MARK: Object lifecycle
     
@@ -57,7 +57,6 @@ class BrowseViewController: UIViewController, BrowseDisplayLogic
     //MARK: Initial Setup
     private func initialiseView() {
         navigationBarWithLeftSideTitle(isTitle: true, titleName: "Browse")
-//        updateNavigationBar()
         let browseNIB = UINib(nibName: Identifiers.browseTableViewCell, bundle: nil)
         tableView.register(browseNIB, forCellReuseIdentifier: Identifiers.browseTableViewCell)
         self.tableView.separatorStyle = .none
@@ -110,15 +109,15 @@ extension BrowseViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return self.browseArray.count
     }
-   
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: BrowseTableViewCell = tableView.dequeueReusableCell(withIdentifier: Identifiers.browseTableViewCell, for: indexPath) as! BrowseTableViewCell
         cell.setUIForBrowse(indexPathValueIs: indexPath.row, arrayOfValue: self.browseArray)
         return cell
     }
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return cellHeight
-//    }
+    //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    //        return cellHeight
+    //    }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Selected Browse is: \(self.browseArray[indexPath.row])")
     }

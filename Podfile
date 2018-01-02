@@ -15,5 +15,5 @@ target 'aywa' do
     pod 'DropDown'
     pod 'SVProgressHUD', :git => 'https://github.com/SVProgressHUD/SVProgressHUD.git'
     pod 'FBSDKLoginKit'
-
+    pod 'IQKeyboardManagerSwift', '5.0.0'
 end
