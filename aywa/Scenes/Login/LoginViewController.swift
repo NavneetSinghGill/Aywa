@@ -56,7 +56,7 @@ class LoginViewController: BPViewController, LoginDisplayLogic, UITextFieldDeleg
         passwordTextField.text = "123456"
         showNavigationBar()
         //updateNavigationBar()
-        navigationBarWithLeftSideTitle(isTitle: false, titleName: "Sign in")
+        navigationBarWithLeftSideTitle(isTitle: false, titleName: " Sign in")
     }
     
     private func setup()

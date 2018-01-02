@@ -51,10 +51,9 @@ class ForgotPasswordViewController: UIViewController, ForgotPasswordDisplayLogic
     private func initialiseView() {
         
         backgroundImageView.image = BackgroundImageManager.shared().backgroundImage
-        self.title = "Forgot Password"
         self.emailTextField.delegate = self
         showNavigationBar()
-        updateNavigationBar()
+        navigationBarWithLeftSideTitle(isTitle: false, titleName: " Reset password")
     }
     
     // MARK: Setup

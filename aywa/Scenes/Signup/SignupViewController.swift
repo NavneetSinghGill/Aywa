@@ -67,7 +67,7 @@ class SignupViewController: BPViewController, SignupDisplayLogic, UITextFieldDel
         setupDropDowns()
         showNavigationBar()
         //updateNavigationBar()
-        navigationBarWithLeftSideTitle(isTitle: false, titleName: "Sign up")
+        navigationBarWithLeftSideTitle(isTitle: false, titleName: " Sign up")
     }
     
     private func setup()

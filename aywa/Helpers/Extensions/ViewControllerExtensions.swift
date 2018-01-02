@@ -12,7 +12,6 @@ extension UIViewController {
     func hideNavigationBar(){
         // Hide the navigation bar on the this view controller
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        
     }
     
     func showNavigationBar() {
@@ -31,7 +30,6 @@ extension UIViewController {
         self.navigationController?.navigationBar.barTintColor = UIColor.init(red: 51.0/255.0, green: 51.0/255.0, blue: 51.0/255.0, alpha: 1)
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "Helvetica", size: 18)!]
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
-        
     }
     
     func updateBackButton() {
@@ -57,14 +55,6 @@ extension UIViewController {
     }
     func updateBackButtonWithTitle(isLeftTitle: Bool, leftSideTitle: String){
         if isLeftTitle {
-//            let longTitleLabel = UILabel()
-//            longTitleLabel.text = leftSideTitle
-//            longTitleLabel.textColor = UIColor.white
-//            longTitleLabel.font = UIFont(name: "Helvetica", size: 18)
-//            let leftItem = UIBarButtonItem(customView: longTitleLabel)
-//            longTitleLabel.sizeToFit()
-//            self.navigationItem.leftBarButtonItem = leftItem
-           
             self.navigationController?.navigationItem.hidesBackButton = true
             let button = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
             button.backgroundColor = .clear
@@ -75,9 +65,11 @@ extension UIViewController {
             
             let menuImage    = UIImage(named: "options")!
             let shareTVImage  = UIImage(named: "share")!
-
+            
             let menuButton = UIBarButtonItem(image: menuImage, style: .plain, target: self, action: #selector (didTapMenuButton))
             let shareButton = UIBarButtonItem(image: shareTVImage, style: .plain, target: self, action: #selector (didTapShareButton))
+            menuButton.tintColor = UIColor.white
+            shareButton.tintColor = UIColor.white
             navigationItem.rightBarButtonItems = [menuButton, shareButton]
         }
         else{
@@ -92,11 +84,11 @@ extension UIViewController {
         }
     }
     
-   @objc func didTapMenuButton(){
+    @objc func didTapMenuButton(){
         print("Menu Button Tapped")
     }
     
-   @objc func didTapShareButton(){
+    @objc func didTapShareButton(){
         print("Share TV Button Tapped")
     }
 }
