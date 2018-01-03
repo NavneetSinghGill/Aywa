@@ -55,19 +55,19 @@ class SignupViewController: BPViewController, SignupDisplayLogic, UITextFieldDel
     }
     
     private func initialiseView() {
-       
+        
         backgroundImageView.image = BackgroundImageManager.shared().backgroundImage
         self.navigationItem.hidesBackButton = true
-       
+        
         self.emailTextField.delegate = self
         self.passwordTextField.delegate = self
-        self.confirmPasswordTextField.delegate = self
+        //self.confirmPasswordTextField.delegate = self
         self.ageGroupTextField.delegate = self
         self.genderTextField.delegate = self
         setupDropDowns()
         showNavigationBar()
         //updateNavigationBar()
-        navigationBarWithLeftSideTitle(isTitle: false, titleName: " Sign up")
+        navigationBarWithLeftSideTitle(isTitle: false, titleName: "  Sign up")
     }
     
     private func setup()
@@ -114,12 +114,14 @@ class SignupViewController: BPViewController, SignupDisplayLogic, UITextFieldDel
     @IBOutlet weak var nameTextField: FloatingHeaderTextField!
     @IBOutlet weak var emailTextField: FloatingHeaderTextField!
     @IBOutlet weak var passwordTextField: FloatingHeaderTextField!
-    @IBOutlet weak var confirmPasswordTextField: FloatingHeaderTextField!
+    // @IBOutlet weak var confirmPasswordTextField: FloatingHeaderTextField!
     @IBOutlet weak var ageGroupTextField: FloatingHeaderTextField!
     @IBOutlet weak var genderTextField: FloatingHeaderTextField!
     
-    //    @IBOutlet weak var backgroundImageView: UIImageView
-    
+    // MARK: Have Account Button Tapped
+    @IBAction func haveAccountButtonTapped(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
     //MARK: Signup Button Tapped
     @IBAction func signupButtonTapped(_ sender: UIButton) {
         doSignup()
@@ -159,8 +161,8 @@ class SignupViewController: BPViewController, SignupDisplayLogic, UITextFieldDel
     func setupGenderDropDown() {
         genderDropDown.anchorView = genderTextField
         genderDropDown.bottomOffset = CGPoint(x:0, y: genderTextField.bounds.height)
-               genderDropDown.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 1.0)
-              genderDropDown.textColor = UIColor.white
+        genderDropDown.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 1.0)
+        genderDropDown.textColor = UIColor.white
         genderDropDown.dataSource = [
             SignupViewController.kMale,
             SignupViewController.kFemale,
@@ -182,7 +184,7 @@ class SignupViewController: BPViewController, SignupDisplayLogic, UITextFieldDel
             ageGroupTextField.isActive = true
             emailTextField.resignFirstResponder()
             passwordTextField.resignFirstResponder()
-            confirmPasswordTextField.resignFirstResponder()
+            //confirmPasswordTextField.resignFirstResponder()
             ageGroupTextField.resignFirstResponder()
             ageDropDown.show()
             ageDropDown.direction = .top
@@ -193,7 +195,7 @@ class SignupViewController: BPViewController, SignupDisplayLogic, UITextFieldDel
             
             emailTextField.resignFirstResponder()
             passwordTextField.resignFirstResponder()
-            confirmPasswordTextField.resignFirstResponder()
+            //confirmPasswordTextField.resignFirstResponder()
             genderTextField.resignFirstResponder()
             genderDropDown.show()
             genderDropDown.direction = .bottom
@@ -206,7 +208,7 @@ class SignupViewController: BPViewController, SignupDisplayLogic, UITextFieldDel
     //MARK: Do Signup Request
     func doSignup()
     {
-        let request = Signup.Register.Request(email: emailTextField.text, password: passwordTextField.text, confirmPassword: confirmPasswordTextField.text,  name: nameTextField.text, deviceIdentifier: Utils.deviceIdentifier(), deviceType: Utils.deviceType(), birthday: nil, ageGroup: ageGroupTextField.text, gender: genderTextField.text == SignupViewController.kMale ? "M" : genderTextField.text == SignupViewController.kFemale ? "F" : "?", country: nil, countryName: nil, phone: nil, ipAddress: nil)
+        let request = Signup.Register.Request(email: emailTextField.text, password: passwordTextField.text, name: nameTextField.text, deviceIdentifier: Utils.deviceIdentifier(), deviceType: Utils.deviceType(), birthday: nil, ageGroup: ageGroupTextField.text, gender: genderTextField.text == SignupViewController.kMale ? "M" : genderTextField.text == SignupViewController.kFemale ? "F" : "?", country: nil, countryName: nil, phone: nil, ipAddress: nil)
         interactor?.doSignup(request: request)
     }
     

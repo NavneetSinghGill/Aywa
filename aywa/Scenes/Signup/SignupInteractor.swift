@@ -78,13 +78,14 @@ class SignupInteractor: SignupBusinessLogic, SignupDataStore
         {
             errorMsg = "Password field may not be empty and must be minimum 5 length."
         }
-        else if ((request.confirmPassword!.count) < 5)
+      /*  else if ((request.confirmPassword!.count) < 5)
         {
             errorMsg = "Password is too short."
         }
         else if !( request.password! .isEqual(request.confirmPassword!) ) {
             errorMsg = "Confirm Password and Password field  not match."
         }
+             */ // TODO: for confirm Password remove on ui
         else if !(request.birthday == nil )
         {
             //            if !(request.birthday == nil )

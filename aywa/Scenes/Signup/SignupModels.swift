@@ -25,7 +25,7 @@ enum Signup
     {
         var email :String?
         var password :String?
-        var confirmPassword :String?
+        //var confirmPassword :String?
         var name :String?
         var deviceIdentifier:String?
         var deviceType :Int?
@@ -43,7 +43,7 @@ enum Signup
             baseRequest.urlPath = registrationURL
             baseRequest.parameters[Constants.kEmailKey] = email
             baseRequest.parameters[Constants.kPasswordKey] = password
-            baseRequest.parameters[Constants.kConfirmPassword] = confirmPassword
+            //baseRequest.parameters[Constants.kConfirmPassword] = confirmPassword
             baseRequest.parameters[Constants.kNameKey] = name
             baseRequest.parameters[Constants.deviceIdentifier] = deviceIdentifier
             baseRequest.parameters[Constants.DeviceTypeKey] = deviceType

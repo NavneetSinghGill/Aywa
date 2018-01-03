@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8P3-nz-1eY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8P3-nz-1eY">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,9 +26,10 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YgK-Ad-0cm" customClass="FloatingHeaderTextField" customModule="aywa" customModuleProvider="target">
-                                <rect key="frame" x="10" y="70" width="355" height="35"/>
+                                <rect key="frame" x="28" y="80" width="320" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="Pwf-9K-iYo"/>
+                                    <constraint firstAttribute="height" constant="35" id="4jM-LT-mkk"/>
+                                    <constraint firstAttribute="width" constant="320" id="Lz9-a1-UB0"/>
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
@@ -46,10 +47,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oUI-f2-LN2" customClass="FloatingHeaderTextField" customModule="aywa" customModuleProvider="target">
-                                <rect key="frame" x="10" y="143" width="355" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="ah2-v0-J6B"/>
-                                </constraints>
+                                <rect key="frame" x="28" y="155" width="320" height="35"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
@@ -65,11 +63,57 @@
                                     <outlet property="delegate" destination="wKh-GD-z1k" id="xxA-OG-n76"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V9u-61-zKD" customClass="FloatingHeaderTextField" customModule="aywa" customModuleProvider="target">
-                                <rect key="frame" x="10" y="208" width="349" height="35"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Age Group" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7iI-om-gCw" customClass="FloatingHeaderTextField" customModule="aywa" customModuleProvider="target">
+                                <rect key="frame" x="28" y="305" width="147" height="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="inActiveColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="wKh-GD-z1k" id="rIc-NY-MpY"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Gender" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dPd-CH-4BY" customClass="FloatingHeaderTextField" customModule="aywa" customModuleProvider="target">
+                                <rect key="frame" x="201.5" y="305" width="146.5" height="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="inActiveColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O2b-a3-pNw">
+                                <rect key="frame" x="70" y="380" width="234" height="43"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="fau-BQ-Quw"/>
+                                    <constraint firstAttribute="width" constant="234" id="CSl-yg-wwJ"/>
+                                    <constraint firstAttribute="height" constant="43" id="GIS-bR-iMq"/>
                                 </constraints>
+                                <state key="normal" backgroundImage="create_account_button">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="signupButtonTapped:" destination="wKh-GD-z1k" eventType="touchUpInside" id="jcX-1S-3Eo"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V9u-61-zKD" customClass="FloatingHeaderTextField" customModule="aywa" customModuleProvider="target">
+                                <rect key="frame" x="28" y="230" width="320" height="35"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
@@ -85,102 +129,46 @@
                                     <outlet property="delegate" destination="wKh-GD-z1k" id="g4B-Sg-Pj5"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j8c-uf-hT9" customClass="FloatingHeaderTextField" customModule="aywa" customModuleProvider="target">
-                                <rect key="frame" x="10" y="281" width="355" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FGw-fa-Q8R">
+                                <rect key="frame" x="71" y="441" width="234" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="ygu-pd-OLG"/>
-                                </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
-                                        <integer key="value" value="4"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="inActiveColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outlet property="delegate" destination="wKh-GD-z1k" id="A9a-gc-oZL"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Age Group" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7iI-om-gCw" customClass="FloatingHeaderTextField" customModule="aywa" customModuleProvider="target">
-                                <rect key="frame" x="10" y="353" width="167.5" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="mDB-8g-X8j"/>
-                                </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="inActiveColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outlet property="delegate" destination="wKh-GD-z1k" id="rIc-NY-MpY"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Gender" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dPd-CH-4BY" customClass="FloatingHeaderTextField" customModule="aywa" customModuleProvider="target">
-                                <rect key="frame" x="197" y="354" width="167.5" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="vPu-pK-wJa"/>
-                                </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
-                                        <integer key="value" value="6"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="inActiveColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O2b-a3-pNw">
-                                <rect key="frame" x="86" y="414" width="203" height="45"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="203" id="0Nq-vl-ITw">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="250"/>
-                                    </constraint>
-                                    <constraint firstAttribute="height" constant="45" id="PDm-4B-sLT"/>
+                                    <constraint firstAttribute="height" constant="35" id="gvC-9W-xYJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
-                                <state key="normal" title="Create Account">
+                                <state key="normal" title="Have an account? Sign in">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
                                         <integer key="value" value="7"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="signupButtonTapped:" destination="wKh-GD-z1k" eventType="touchUpInside" id="jcX-1S-3Eo"/>
+                                    <action selector="haveAccountButtonTapped:" destination="wKh-GD-z1k" eventType="touchUpInside" id="Iiu-gr-f76"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fsx-qR-Vjm">
-                                <rect key="frame" x="25" y="474" width="325" height="45"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lineWithOR" translatesAutoresizingMaskIntoConstraints="NO" id="Kko-aq-Q1X">
+                                <rect key="frame" x="82" y="491" width="211" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="JCR-8o-Edy"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="hZ0-nb-PwN"/>
+                                    <constraint firstAttribute="height" constant="20" id="A4g-y6-TFg"/>
+                                    <constraint firstAttribute="width" constant="211" id="Yzg-eu-DDn"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
-                                <state key="normal" title="FB Create Account with Your Facebook Id">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
                                         <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fsx-qR-Vjm">
+                                <rect key="frame" x="82" y="546" width="211" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="4jj-qU-5nD"/>
+                                    <constraint firstAttribute="width" constant="211" id="jR9-GL-N8g"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="fbSignup_button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
+                                        <integer key="value" value="9"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -190,40 +178,45 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="O2b-a3-pNw" firstAttribute="centerX" secondItem="bGU-W0-IfO" secondAttribute="centerX" id="0QL-yE-S96"/>
+                            <constraint firstItem="V9u-61-zKD" firstAttribute="height" secondItem="YgK-Ad-0cm" secondAttribute="height" id="0DV-cu-sZV"/>
                             <constraint firstItem="Y0s-qX-22I" firstAttribute="top" secondItem="bGU-W0-IfO" secondAttribute="top" constant="20" id="13D-hN-UT1"/>
-                            <constraint firstItem="dqB-ep-QbX" firstAttribute="trailing" secondItem="V9u-61-zKD" secondAttribute="trailing" constant="16" id="4Kn-dp-6QZ"/>
+                            <constraint firstItem="7iI-om-gCw" firstAttribute="centerY" secondItem="dPd-CH-4BY" secondAttribute="centerY" id="2Dd-Ge-m1z"/>
+                            <constraint firstItem="Kko-aq-Q1X" firstAttribute="centerX" secondItem="bGU-W0-IfO" secondAttribute="centerX" id="338-D0-DlX"/>
+                            <constraint firstItem="dPd-CH-4BY" firstAttribute="trailing" secondItem="V9u-61-zKD" secondAttribute="trailing" id="670-Zf-OfB"/>
                             <constraint firstItem="Y0s-qX-22I" firstAttribute="trailing" secondItem="dqB-ep-QbX" secondAttribute="trailing" id="6kt-Sh-7N4"/>
                             <constraint firstItem="Y0s-qX-22I" firstAttribute="leading" secondItem="dqB-ep-QbX" secondAttribute="leading" id="6tS-k6-EbW"/>
-                            <constraint firstItem="dqB-ep-QbX" firstAttribute="trailing" secondItem="dPd-CH-4BY" secondAttribute="trailing" constant="10" id="8Hd-Ow-9nB"/>
-                            <constraint firstItem="YgK-Ad-0cm" firstAttribute="top" secondItem="dqB-ep-QbX" secondAttribute="top" constant="50" id="Cyl-E5-FlS"/>
-                            <constraint firstItem="fsx-qR-Vjm" firstAttribute="top" secondItem="O2b-a3-pNw" secondAttribute="bottom" constant="15" id="IjK-Cr-Zsn"/>
+                            <constraint firstItem="7iI-om-gCw" firstAttribute="height" secondItem="V9u-61-zKD" secondAttribute="height" id="7Hf-uy-7bz"/>
+                            <constraint firstItem="oUI-f2-LN2" firstAttribute="leading" secondItem="YgK-Ad-0cm" secondAttribute="leading" id="7yI-Ub-vnH"/>
+                            <constraint firstItem="O2b-a3-pNw" firstAttribute="centerX" secondItem="bGU-W0-IfO" secondAttribute="centerX" id="B5E-rC-cKS"/>
+                            <constraint firstItem="7iI-om-gCw" firstAttribute="top" secondItem="V9u-61-zKD" secondAttribute="bottom" constant="40" id="CxM-dD-ygG"/>
+                            <constraint firstItem="V9u-61-zKD" firstAttribute="trailing" secondItem="YgK-Ad-0cm" secondAttribute="trailing" id="D8W-h3-3Fb"/>
+                            <constraint firstItem="V9u-61-zKD" firstAttribute="top" secondItem="oUI-f2-LN2" secondAttribute="bottom" constant="40" id="FZo-be-M1F"/>
                             <constraint firstItem="Y0s-qX-22I" firstAttribute="bottom" secondItem="dqB-ep-QbX" secondAttribute="bottom" id="Iwl-6J-Ytt"/>
-                            <constraint firstItem="dqB-ep-QbX" firstAttribute="trailing" secondItem="j8c-uf-hT9" secondAttribute="trailing" constant="10" id="LIx-9x-716"/>
-                            <constraint firstItem="oUI-f2-LN2" firstAttribute="top" secondItem="YgK-Ad-0cm" secondAttribute="bottom" constant="38" id="MpA-up-mOa"/>
-                            <constraint firstItem="dPd-CH-4BY" firstAttribute="width" secondItem="7iI-om-gCw" secondAttribute="width" id="QPy-O2-y7P"/>
-                            <constraint firstItem="dPd-CH-4BY" firstAttribute="leading" secondItem="7iI-om-gCw" secondAttribute="trailing" constant="20" id="QdQ-zg-uYc"/>
-                            <constraint firstItem="7iI-om-gCw" firstAttribute="leading" secondItem="dqB-ep-QbX" secondAttribute="leading" constant="10" id="STQ-uO-gkd"/>
-                            <constraint firstItem="fsx-qR-Vjm" firstAttribute="leading" secondItem="dqB-ep-QbX" secondAttribute="leading" constant="25" id="XML-gH-NwB"/>
-                            <constraint firstItem="dqB-ep-QbX" firstAttribute="trailing" secondItem="fsx-qR-Vjm" secondAttribute="trailing" constant="25" id="ec8-nf-4MV"/>
-                            <constraint firstItem="j8c-uf-hT9" firstAttribute="leading" secondItem="dqB-ep-QbX" secondAttribute="leading" constant="10" id="fPp-v0-Edf"/>
-                            <constraint firstItem="YgK-Ad-0cm" firstAttribute="leading" secondItem="dqB-ep-QbX" secondAttribute="leading" constant="10" id="grA-Wh-Uhp"/>
-                            <constraint firstItem="V9u-61-zKD" firstAttribute="leading" secondItem="dqB-ep-QbX" secondAttribute="leading" constant="10" id="j6z-A7-NjT"/>
-                            <constraint firstItem="V9u-61-zKD" firstAttribute="top" secondItem="oUI-f2-LN2" secondAttribute="bottom" constant="30" id="jZN-Ei-RC3"/>
-                            <constraint firstItem="O2b-a3-pNw" firstAttribute="top" secondItem="dPd-CH-4BY" secondAttribute="bottom" constant="25" id="o3Y-La-pfi"/>
-                            <constraint firstItem="dqB-ep-QbX" firstAttribute="trailing" secondItem="YgK-Ad-0cm" secondAttribute="trailing" constant="10" id="pqU-Fg-miu"/>
-                            <constraint firstItem="7iI-om-gCw" firstAttribute="top" secondItem="j8c-uf-hT9" secondAttribute="bottom" constant="37" id="sx7-br-0Jw"/>
-                            <constraint firstItem="dPd-CH-4BY" firstAttribute="top" secondItem="j8c-uf-hT9" secondAttribute="bottom" constant="38" id="tn1-T2-cGA"/>
-                            <constraint firstItem="dqB-ep-QbX" firstAttribute="trailing" secondItem="oUI-f2-LN2" secondAttribute="trailing" constant="10" id="xmm-XM-0g9"/>
-                            <constraint firstItem="j8c-uf-hT9" firstAttribute="top" secondItem="V9u-61-zKD" secondAttribute="bottom" constant="38" id="yIO-3A-jI9"/>
-                            <constraint firstItem="oUI-f2-LN2" firstAttribute="leading" secondItem="dqB-ep-QbX" secondAttribute="leading" constant="10" id="yok-W0-MTH"/>
+                            <constraint firstItem="V9u-61-zKD" firstAttribute="leading" secondItem="YgK-Ad-0cm" secondAttribute="leading" id="K3J-ar-E3b"/>
+                            <constraint firstItem="FGw-fa-Q8R" firstAttribute="centerX" secondItem="bGU-W0-IfO" secondAttribute="centerX" id="Ou3-qp-8Qp"/>
+                            <constraint firstItem="dPd-CH-4BY" firstAttribute="height" secondItem="7iI-om-gCw" secondAttribute="height" id="UlI-6D-WOC"/>
+                            <constraint firstItem="V9u-61-zKD" firstAttribute="width" secondItem="YgK-Ad-0cm" secondAttribute="width" id="WYf-Ul-Pah"/>
+                            <constraint firstItem="O2b-a3-pNw" firstAttribute="top" secondItem="7iI-om-gCw" secondAttribute="bottom" constant="40" id="XNN-dy-moC"/>
+                            <constraint firstItem="oUI-f2-LN2" firstAttribute="trailing" secondItem="YgK-Ad-0cm" secondAttribute="trailing" id="a7r-1F-QY6"/>
+                            <constraint firstItem="oUI-f2-LN2" firstAttribute="width" secondItem="YgK-Ad-0cm" secondAttribute="width" id="aB0-1O-pu8"/>
+                            <constraint firstItem="fsx-qR-Vjm" firstAttribute="centerX" secondItem="bGU-W0-IfO" secondAttribute="centerX" id="akC-Dp-deX"/>
+                            <constraint firstItem="dPd-CH-4BY" firstAttribute="width" secondItem="7iI-om-gCw" secondAttribute="width" id="bfF-Eh-l1T"/>
+                            <constraint firstItem="oUI-f2-LN2" firstAttribute="top" secondItem="YgK-Ad-0cm" secondAttribute="bottom" constant="40" id="boZ-Bf-aTt"/>
+                            <constraint firstItem="FGw-fa-Q8R" firstAttribute="top" secondItem="O2b-a3-pNw" secondAttribute="bottom" constant="18" id="ctk-8e-Bwi"/>
+                            <constraint firstItem="YgK-Ad-0cm" firstAttribute="top" secondItem="dqB-ep-QbX" secondAttribute="top" constant="60" id="fOH-2z-sDz"/>
+                            <constraint firstItem="FGw-fa-Q8R" firstAttribute="width" secondItem="O2b-a3-pNw" secondAttribute="width" id="frI-Zx-6YN"/>
+                            <constraint firstItem="Kko-aq-Q1X" firstAttribute="top" secondItem="FGw-fa-Q8R" secondAttribute="bottom" constant="15" id="hmF-wM-Gwi"/>
+                            <constraint firstItem="fsx-qR-Vjm" firstAttribute="top" secondItem="Kko-aq-Q1X" secondAttribute="bottom" constant="35" id="jE4-gg-Zua"/>
+                            <constraint firstItem="oUI-f2-LN2" firstAttribute="height" secondItem="YgK-Ad-0cm" secondAttribute="height" id="jJb-ux-RRM"/>
+                            <constraint firstItem="7iI-om-gCw" firstAttribute="leading" secondItem="V9u-61-zKD" secondAttribute="leading" id="rs1-rZ-XvB"/>
+                            <constraint firstItem="dPd-CH-4BY" firstAttribute="leading" secondItem="7iI-om-gCw" secondAttribute="trailing" constant="26.5" id="uxI-l8-NPU"/>
+                            <constraint firstItem="YgK-Ad-0cm" firstAttribute="centerX" secondItem="bGU-W0-IfO" secondAttribute="centerX" id="yxx-Ik-j3S"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dqB-ep-QbX"/>
                     </view>
                     <connections>
                         <outlet property="ageGroupTextField" destination="7iI-om-gCw" id="VIP-zr-mk5"/>
                         <outlet property="backgroundImageView" destination="Y0s-qX-22I" id="cyh-QK-kZD"/>
-                        <outlet property="confirmPasswordTextField" destination="j8c-uf-hT9" id="Ohy-UP-BhV"/>
                         <outlet property="emailTextField" destination="oUI-f2-LN2" id="V9u-1z-d0B"/>
                         <outlet property="genderTextField" destination="dPd-CH-4BY" id="3w9-o7-LAi"/>
                         <outlet property="nameTextField" destination="YgK-Ad-0cm" id="CBr-Jr-IC5"/>
@@ -245,17 +238,57 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Ug-mS-uAs">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JjU-hE-xME" customClass="FloatingHeaderTextField" customModule="aywa" customModuleProvider="target">
-                                <rect key="frame" x="10" y="124" width="355" height="35"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in to your Aywa account" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f6d-lA-vYZ">
+                                <rect key="frame" x="40" y="55" width="295" height="103.5"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="45"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P2g-5h-enA" userLabel="FbButton">
+                                <rect key="frame" x="72" y="198" width="232" height="43"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="MKf-za-7Cl"/>
+                                    <constraint firstAttribute="width" constant="232" id="8d2-mE-Ngb"/>
+                                    <constraint firstAttribute="height" constant="43" id="TT7-7p-SW5"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="facebookLogin"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="facebookLoginButtonTapped:" destination="bFY-JS-lCR" eventType="touchUpInside" id="tXk-eu-ERT"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lineWithOR" translatesAutoresizingMaskIntoConstraints="NO" id="Sm9-sb-zoY">
+                                <rect key="frame" x="82" y="261" width="211" height="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="211" id="V34-2t-Dfn"/>
+                                    <constraint firstAttribute="height" constant="14" id="awx-Ky-cPa"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JjU-hE-xME" customClass="FloatingHeaderTextField" customModule="aywa" customModuleProvider="target">
+                                <rect key="frame" x="27" y="325" width="320" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="8xq-1z-cKF"/>
+                                    <constraint firstAttribute="height" constant="35" id="pGu-HY-fU5"/>
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
-                                        <integer key="value" value="1"/>
+                                        <integer key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="inActiveColor">
                                         <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -266,16 +299,17 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Ag-4M-KRh" customClass="FloatingHeaderTextField" customModule="aywa" customModuleProvider="target">
-                                <rect key="frame" x="10" y="193" width="355" height="35"/>
+                                <rect key="frame" x="27.5" y="400.5" width="320" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="OYa-16-pOE"/>
+                                    <constraint firstAttribute="width" constant="320" id="0jn-40-FvN"/>
+                                    <constraint firstAttribute="height" constant="35" id="xwg-zc-162"/>
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
-                                        <integer key="value" value="2"/>
+                                        <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="inActiveColor">
                                         <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -285,64 +319,35 @@
                                     <outlet property="delegate" destination="bFY-JS-lCR" id="nrW-0x-seX"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wup-Ie-kGM">
-                                <rect key="frame" x="32" y="516" width="110" height="45"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2YZ-aJ-ptY" userLabel="SigninButton">
+                                <rect key="frame" x="72" y="480.5" width="232" height="43"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="110" id="2tg-8E-LdZ">
-                                        <variation key="heightClass=compact-widthClass=compact" constant="110"/>
-                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
-                                    </constraint>
-                                    <constraint firstAttribute="height" constant="45" id="lVo-YV-GeQ"/>
+                                    <constraint firstAttribute="height" constant="43" id="2Th-o5-kLZ"/>
+                                    <constraint firstAttribute="width" constant="232" id="rZJ-D7-y4U"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
-                                <state key="normal" title="LOG IN">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <state key="normal" backgroundImage="signinButton"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
-                                        <integer key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="3"/>
+                                        <integer key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="loginButtonTapped:" destination="bFY-JS-lCR" eventType="touchUpInside" id="ryB-be-kkH"/>
+                                    <action selector="loginButtonTapped:" destination="bFY-JS-lCR" eventType="touchUpInside" id="PCA-2m-W4h"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="252-HO-MYG">
-                                <rect key="frame" x="95" y="602" width="185" height="45"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gib-mc-Q3Q">
+                                <rect key="frame" x="72" y="568.5" width="232" height="43"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="02K-SN-ydi"/>
+                                    <constraint firstAttribute="height" constant="43" id="5oK-DR-SyG"/>
+                                    <constraint firstAttribute="width" constant="232" id="e1U-MU-FCD"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
-                                <state key="normal" title="FB Login">
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
+                                <state key="normal" title="Forgot password?">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="facebookLoginButtonTapped:" destination="bFY-JS-lCR" eventType="touchUpInside" id="v8o-aw-3nM"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gib-mc-Q3Q">
-                                <rect key="frame" x="157" y="516" width="203" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="bk6-AR-Pon"/>
-                                    <constraint firstAttribute="height" constant="45" id="cFq-Rj-hta"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
-                                <state key="normal" title="Forgot Your Password?">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
-                                        <integer key="value" value="4"/>
+                                        <integer key="value" value="7"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -354,31 +359,26 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="2Ug-mS-uAs" firstAttribute="trailing" secondItem="w6W-Yw-94D" secondAttribute="trailing" id="0ri-xm-KqX"/>
-                            <constraint firstItem="Gib-mc-Q3Q" firstAttribute="centerY" secondItem="Wup-Ie-kGM" secondAttribute="centerY" id="4fc-XH-Wz9"/>
+                            <constraint firstItem="Gib-mc-Q3Q" firstAttribute="leading" secondItem="w6W-Yw-94D" secondAttribute="leading" constant="72" id="2iJ-Aa-jIP"/>
+                            <constraint firstItem="w6W-Yw-94D" firstAttribute="trailing" secondItem="Gib-mc-Q3Q" secondAttribute="trailing" constant="71" id="5B0-yy-1mE"/>
+                            <constraint firstItem="JjU-hE-xME" firstAttribute="centerX" secondItem="Kbb-st-FfZ" secondAttribute="centerX" id="7ac-Fy-2j2"/>
+                            <constraint firstItem="2YZ-aJ-ptY" firstAttribute="top" secondItem="3Ag-4M-KRh" secondAttribute="bottom" constant="45" id="7z0-B4-xzI"/>
                             <constraint firstItem="2Ug-mS-uAs" firstAttribute="bottom" secondItem="w6W-Yw-94D" secondAttribute="bottom" id="92e-1m-IGM"/>
-                            <constraint firstItem="JjU-hE-xME" firstAttribute="top" secondItem="w6W-Yw-94D" secondAttribute="top" constant="104" id="9mG-PD-i8C"/>
-                            <constraint firstItem="JjU-hE-xME" firstAttribute="leading" secondItem="w6W-Yw-94D" secondAttribute="leading" constant="10" id="BIV-3z-Tmo"/>
                             <constraint firstItem="2Ug-mS-uAs" firstAttribute="top" secondItem="Kbb-st-FfZ" secondAttribute="top" constant="20" id="C4c-oE-hdP"/>
-                            <constraint firstItem="w6W-Yw-94D" firstAttribute="trailing" secondItem="3Ag-4M-KRh" secondAttribute="trailing" constant="10" id="Fd1-Dc-6Qh"/>
-                            <constraint firstItem="Wup-Ie-kGM" firstAttribute="leading" secondItem="w6W-Yw-94D" secondAttribute="leading" constant="32.5" id="Icb-i9-gy1">
-                                <variation key="heightClass=regular-widthClass=regular" constant="32.5"/>
-                            </constraint>
-                            <constraint firstItem="w6W-Yw-94D" firstAttribute="trailing" secondItem="JjU-hE-xME" secondAttribute="trailing" constant="10" id="MEx-Uo-L1f"/>
+                            <constraint firstItem="JjU-hE-xME" firstAttribute="top" secondItem="Sm9-sb-zoY" secondAttribute="bottom" constant="50" id="Dlk-rT-hGc"/>
+                            <constraint firstItem="3Ag-4M-KRh" firstAttribute="top" secondItem="JjU-hE-xME" secondAttribute="bottom" constant="40" id="Fce-vG-9lW"/>
+                            <constraint firstItem="2YZ-aJ-ptY" firstAttribute="leading" secondItem="w6W-Yw-94D" secondAttribute="leading" constant="72" id="G2B-56-Con"/>
+                            <constraint firstItem="P2g-5h-enA" firstAttribute="centerX" secondItem="Kbb-st-FfZ" secondAttribute="centerX" id="JCT-c8-CkT"/>
+                            <constraint firstItem="w6W-Yw-94D" firstAttribute="trailing" secondItem="2YZ-aJ-ptY" secondAttribute="trailing" constant="71" id="KvV-u9-TOd"/>
+                            <constraint firstItem="3Ag-4M-KRh" firstAttribute="centerX" secondItem="Kbb-st-FfZ" secondAttribute="centerX" id="MUG-MN-efE"/>
                             <constraint firstItem="2Ug-mS-uAs" firstAttribute="leading" secondItem="w6W-Yw-94D" secondAttribute="leading" id="Qt1-88-fN0"/>
-                            <constraint firstItem="w6W-Yw-94D" firstAttribute="trailing" secondItem="252-HO-MYG" secondAttribute="trailing" constant="95" id="SdH-b3-LGo">
-                                <variation key="heightClass=regular-widthClass=regular" constant="95"/>
-                            </constraint>
-                            <constraint firstItem="3Ag-4M-KRh" firstAttribute="leading" secondItem="w6W-Yw-94D" secondAttribute="leading" constant="10" id="Sod-ZV-Ong"/>
-                            <constraint firstItem="252-HO-MYG" firstAttribute="leading" secondItem="w6W-Yw-94D" secondAttribute="leading" constant="95" id="T8a-XN-gDX">
-                                <variation key="heightClass=regular-widthClass=regular" constant="95"/>
-                            </constraint>
-                            <constraint firstItem="w6W-Yw-94D" firstAttribute="trailing" secondItem="Gib-mc-Q3Q" secondAttribute="trailing" constant="15" id="b8g-Eq-5bt"/>
-                            <constraint firstItem="Gib-mc-Q3Q" firstAttribute="leading" secondItem="Wup-Ie-kGM" secondAttribute="trailing" constant="15" id="i56-eN-J34"/>
-                            <constraint firstItem="w6W-Yw-94D" firstAttribute="bottom" secondItem="252-HO-MYG" secondAttribute="bottom" constant="20" id="jgh-wb-jCl"/>
-                            <constraint firstItem="3Ag-4M-KRh" firstAttribute="top" secondItem="JjU-hE-xME" secondAttribute="bottom" constant="34" id="lu0-Tm-2C2"/>
-                            <constraint firstItem="252-HO-MYG" firstAttribute="top" secondItem="Wup-Ie-kGM" secondAttribute="bottom" constant="41" id="mJa-0s-EZO">
-                                <variation key="heightClass=regular-widthClass=regular" constant="41"/>
-                            </constraint>
+                            <constraint firstItem="Sm9-sb-zoY" firstAttribute="top" secondItem="P2g-5h-enA" secondAttribute="bottom" constant="20" id="Vrz-0Q-lMr"/>
+                            <constraint firstItem="w6W-Yw-94D" firstAttribute="trailing" secondItem="f6d-lA-vYZ" secondAttribute="trailing" constant="40" id="XW5-G6-Ghq"/>
+                            <constraint firstItem="Sm9-sb-zoY" firstAttribute="centerX" secondItem="Kbb-st-FfZ" secondAttribute="centerX" id="Zn7-HC-hH6"/>
+                            <constraint firstItem="f6d-lA-vYZ" firstAttribute="leading" secondItem="w6W-Yw-94D" secondAttribute="leading" constant="40" id="a6k-LV-IRr"/>
+                            <constraint firstItem="P2g-5h-enA" firstAttribute="top" secondItem="f6d-lA-vYZ" secondAttribute="bottom" constant="40" id="kbi-hP-elP"/>
+                            <constraint firstItem="f6d-lA-vYZ" firstAttribute="top" secondItem="w6W-Yw-94D" secondAttribute="top" constant="35" id="nrh-YZ-mGc"/>
+                            <constraint firstItem="Gib-mc-Q3Q" firstAttribute="top" secondItem="2YZ-aJ-ptY" secondAttribute="bottom" constant="45" id="tyO-Yl-hMX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="w6W-Yw-94D"/>
                     </view>
@@ -390,7 +390,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rop-4i-iHd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="49" y="-661"/>
+            <point key="canvasLocation" x="48.799999999999997" y="-661.61919040479768"/>
         </scene>
         <!--Forgot Password View Controller-->
         <scene sceneID="GVR-XC-xEc">
@@ -805,10 +805,14 @@
     <resources>
         <image name="browse" width="20" height="20"/>
         <image name="browse_selected" width="20" height="20"/>
+        <image name="create_account_button" width="117" height="21"/>
+        <image name="facebookLogin" width="116" height="21"/>
         <image name="favorite" width="21" height="20"/>
         <image name="favorite_selected" width="21" height="20"/>
+        <image name="fbSignup_button" width="116" height="21"/>
         <image name="home_icon" width="22" height="20"/>
         <image name="home_selected_icon" width="22" height="20"/>
+        <image name="lineWithOR" width="105" height="7"/>
         <image name="notification" width="18" height="20"/>
         <image name="notification_selected" width="18" height="20"/>
         <image name="options" width="4" height="15"/>
@@ -817,5 +821,6 @@
         <image name="search" width="19" height="20"/>
         <image name="search_selected" width="19" height="20"/>
         <image name="share" width="28" height="23"/>
+        <image name="signinButton" width="117" height="21"/>
     </resources>
 </document>
