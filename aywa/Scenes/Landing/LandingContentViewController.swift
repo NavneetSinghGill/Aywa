@@ -242,10 +242,10 @@ class LandingContentViewController: UIViewController {
     
     
     let landingScreenTextEnglish = [
-        !isiPad ? "Watch top movies and\nlatest hits, anywhere,\nanytime." : "Watch top movies and latest hits,\nanywhere, anytime.",
-        !isiPad ? "Binge-watch whole seasons\nof TV shows and series,\ncommercial free." : "Binge-watch whole seasons of TV\nshows and series, commercial\nfree.",
-        !isiPad ? "Timeless classics. Rediscover\nthe greatest movies of all-time." : "Timeless classics.\nRediscover the greatest\nmovies of all-time.",
-        !isiPad ? "Cartoons, animations,\neducational shows, &\nmore." : "Cartoons, animations,\neducational shows, & more.",
+        !isiPad ? "Watch top movies and latest \nhits, anywhere, anytime." : "Watch top movies and latest hits,\nanywhere, anytime.",
+        !isiPad ? "Binge-watch whole seasons of TV \nshows and series, commercial free." : "Binge-watch whole seasons of TV \nshows and series, commercial free.",
+        !isiPad ? "Timeless classics. Rediscover\nthe greatest movies of all-time." : "Timeless classics. Rediscover \nthe greatest movies of all-time.",
+        !isiPad ? "Cartoons, animations, \neducational shows, &more." : "Cartoons, animations, educational \nshows, & more.",
         ""]
     
     let landingScreenTextArabic = [!isiPad ?". أحدث و أجمل الأفلام": " أحدث و أجمل الأفلام و المسلسلات.",

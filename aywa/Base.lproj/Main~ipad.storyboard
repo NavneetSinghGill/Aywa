@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n11-xz-Yg3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n11-xz-Yg3">
     <device id="ipad10_5" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,6 +12,7 @@
     </dependencies>
     <customFonts key="customFonts">
         <array key="Helvetica.ttc">
+            <string>Helvetica</string>
             <string>Helvetica-Black_cyr-Bold</string>
         </array>
     </customFonts>
@@ -31,14 +32,14 @@
                                         <rect key="frame" x="224" y="0.0" width="664" height="55"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eP5-cc-eEX">
-                                                <rect key="frame" x="0.0" y="0.0" width="208" height="55"/>
+                                                <rect key="frame" x="-83" y="0.0" width="291" height="55"/>
                                                 <color key="backgroundColor" red="0.089934997260570526" green="0.32714879512786865" blue="0.91655665636062622" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="55" id="8b4-F7-2Ot"/>
-                                                    <constraint firstAttribute="width" constant="208" id="M8Y-RA-ouO"/>
+                                                    <constraint firstAttribute="width" constant="291" id="M8Y-RA-ouO"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Helvetica-Black_cyr-Bold" family="Helvetica" pointSize="23"/>
-                                                <state key="normal" title="Sign Up">
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="23"/>
+                                                <state key="normal" title="Join to Start Watching">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
@@ -48,7 +49,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Psh-Qg-jIb">
                                                 <rect key="frame" x="228" y="0.0" width="208" height="55"/>
-                                                <fontDescription key="fontDescription" name="Helvetica-Black_cyr-Bold" family="Helvetica" pointSize="23"/>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="23"/>
                                                 <state key="normal" title="Sign In">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -59,7 +60,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYA-6g-97i">
                                                 <rect key="frame" x="456" y="0.0" width="208" height="55"/>
-                                                <fontDescription key="fontDescription" name="Helvetica-Black_cyr-Bold" family="Helvetica" pointSize="23"/>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="23"/>
                                                 <state key="normal" title="Browse">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -74,15 +75,15 @@
                                             <constraint firstItem="Psh-Qg-jIb" firstAttribute="height" secondItem="eP5-cc-eEX" secondAttribute="height" id="HB6-iP-d5Y"/>
                                             <constraint firstItem="cYA-6g-97i" firstAttribute="centerY" secondItem="eP5-cc-eEX" secondAttribute="centerY" id="NhN-Pr-KaQ"/>
                                             <constraint firstItem="Psh-Qg-jIb" firstAttribute="leading" secondItem="eP5-cc-eEX" secondAttribute="trailing" constant="20" id="P4J-2t-aaR"/>
-                                            <constraint firstItem="cYA-6g-97i" firstAttribute="width" secondItem="eP5-cc-eEX" secondAttribute="width" id="Pm4-sm-tZt"/>
+                                            <constraint firstItem="cYA-6g-97i" firstAttribute="width" secondItem="eP5-cc-eEX" secondAttribute="width" constant="-83" id="Pm4-sm-tZt"/>
                                             <constraint firstItem="cYA-6g-97i" firstAttribute="leading" secondItem="Psh-Qg-jIb" secondAttribute="trailing" constant="20" id="Rgt-S4-Fjv"/>
                                             <constraint firstItem="cYA-6g-97i" firstAttribute="height" secondItem="eP5-cc-eEX" secondAttribute="height" id="SHa-Ce-TEc"/>
                                             <constraint firstItem="eP5-cc-eEX" firstAttribute="top" secondItem="Ch6-RQ-mCJ" secondAttribute="top" id="cTF-1z-ZhD"/>
                                             <constraint firstAttribute="bottom" secondItem="eP5-cc-eEX" secondAttribute="bottom" id="drY-u1-g2P"/>
                                             <constraint firstItem="Psh-Qg-jIb" firstAttribute="centerY" secondItem="eP5-cc-eEX" secondAttribute="centerY" id="erF-Rp-KjG"/>
                                             <constraint firstAttribute="trailing" secondItem="cYA-6g-97i" secondAttribute="trailing" id="gha-yr-eFC"/>
-                                            <constraint firstItem="eP5-cc-eEX" firstAttribute="leading" secondItem="Ch6-RQ-mCJ" secondAttribute="leading" id="lNH-d6-lu8"/>
-                                            <constraint firstItem="Psh-Qg-jIb" firstAttribute="width" secondItem="eP5-cc-eEX" secondAttribute="width" id="yGr-CG-Qcn"/>
+                                            <constraint firstItem="eP5-cc-eEX" firstAttribute="leading" secondItem="Ch6-RQ-mCJ" secondAttribute="leading" constant="-83" id="lNH-d6-lu8"/>
+                                            <constraint firstItem="Psh-Qg-jIb" firstAttribute="width" secondItem="eP5-cc-eEX" secondAttribute="width" constant="-83" id="yGr-CG-Qcn"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -97,13 +98,13 @@
                                 <rect key="frame" x="85" y="607" width="264" height="227"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M5G-at-qdw">
-                                        <rect key="frame" x="0.0" y="0.0" width="264" height="55"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="282" height="55"/>
                                         <color key="backgroundColor" red="0.089934997259999996" green="0.3271487951" blue="0.91655665639999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="Mya-od-GVi"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Helvetica-Black_cyr-Bold" family="Helvetica" pointSize="24"/>
-                                        <state key="normal" title="Sign Up">
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="24"/>
+                                        <state key="normal" title="Join to Start Watching">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -112,8 +113,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTY-bh-yWf">
-                                        <rect key="frame" x="0.0" y="75" width="264" height="55"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Black_cyr-Bold" family="Helvetica" pointSize="24"/>
+                                        <rect key="frame" x="0.0" y="75" width="282" height="55"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="24"/>
                                         <state key="normal" title="Sign In">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -124,7 +125,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y8V-TU-Cdv">
                                         <rect key="frame" x="0.0" y="150" width="264" height="55"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Black_cyr-Bold" family="Helvetica" pointSize="24"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="24"/>
                                         <state key="normal" title="Browse">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -143,9 +144,9 @@
                                     <constraint firstItem="y8V-TU-Cdv" firstAttribute="height" secondItem="M5G-at-qdw" secondAttribute="height" id="hlt-cx-fey"/>
                                     <constraint firstItem="eTY-bh-yWf" firstAttribute="top" secondItem="M5G-at-qdw" secondAttribute="bottom" constant="20" id="hpI-ey-lne"/>
                                     <constraint firstItem="M5G-at-qdw" firstAttribute="top" secondItem="UEL-ze-tPS" secondAttribute="top" id="kRp-UN-DdW"/>
-                                    <constraint firstAttribute="trailing" secondItem="eTY-bh-yWf" secondAttribute="trailing" id="nEx-xz-slD"/>
+                                    <constraint firstAttribute="trailing" secondItem="eTY-bh-yWf" secondAttribute="trailing" constant="-18" id="nEx-xz-slD"/>
                                     <constraint firstItem="y8V-TU-Cdv" firstAttribute="leading" secondItem="UEL-ze-tPS" secondAttribute="leading" id="rXv-cK-jdr"/>
-                                    <constraint firstAttribute="trailing" secondItem="M5G-at-qdw" secondAttribute="trailing" id="rgT-Qm-6Je"/>
+                                    <constraint firstAttribute="trailing" secondItem="M5G-at-qdw" secondAttribute="trailing" constant="-18" id="rgT-Qm-6Je"/>
                                     <constraint firstAttribute="width" constant="264" id="sZK-TQ-VNL"/>
                                     <constraint firstItem="eTY-bh-yWf" firstAttribute="height" secondItem="M5G-at-qdw" secondAttribute="height" id="wol-ti-IBr"/>
                                     <constraint firstItem="M5G-at-qdw" firstAttribute="leading" secondItem="UEL-ze-tPS" secondAttribute="leading" id="z5L-E4-EIb"/>
@@ -500,7 +501,7 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="12" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2J-uF-K9E">
                                         <rect key="frame" x="0.0" y="102.5" width="942" height="37"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Black_cyr-Bold" family="Helvetica" pointSize="32"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="32"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -541,7 +542,7 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="12" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mzg-k9-C0x">
                                         <rect key="frame" x="0.0" y="102" width="103" height="38"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Black_cyr-Bold" family="Helvetica" pointSize="33"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="33"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -579,7 +580,7 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="12" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ThN-ia-xvN">
                                         <rect key="frame" x="0.0" y="60.5" width="105.5" height="38"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Black_cyr-Bold" family="Helvetica" pointSize="33"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="33"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>

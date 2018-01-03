@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupNetworkMonitoring()
         DropDown.startListeningToKeyboard()
         IQKeyboardManager.sharedManager().enable = true
-        
+        IQKeyboardManager.sharedManager().enableAutoToolbar = false
         if SecurityStorageWorker().isLoggedIn() {
             setSplashAsRootViewController()
         }
