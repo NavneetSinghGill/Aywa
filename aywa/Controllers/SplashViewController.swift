@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class SplashViewController: UIViewController {
     
@@ -36,12 +37,13 @@ class SplashViewController: UIViewController {
     // MARK: - Private Methods
     
     func initialSetup() {
-        
         // fetch token from Token Manager
+        SVProgressHUD.show()
         TokenManager.shared().fetchToken { (status, response) in
             print("Status:\(status) \nResponse:\(response ?? "NIL")")
             
             DispatchQueue.main.async {
+                SVProgressHUD.dismiss()
                 if status {
                     ApplicationDelegate.setTabBarAsRootViewController()
                 }
@@ -51,4 +53,5 @@ class SplashViewController: UIViewController {
             }
         }
     }
+   
 }
