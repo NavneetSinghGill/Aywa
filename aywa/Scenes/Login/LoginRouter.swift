@@ -15,6 +15,7 @@ import UIKit
 @objc protocol LoginRoutingLogic
 {
     func routeToTabBar(segue: UIStoryboardSegue?)
+    func routeToForgotPassword()
 }
 
 protocol LoginDataPassing
@@ -29,6 +30,12 @@ class LoginRouter: NSObject, LoginRoutingLogic, LoginDataPassing
     
     // MARK: Routing
     
+    func routeToForgotPassword() {
+        let storyboard = UIStoryboard(name: "UniversalStoryboard", bundle: nil)
+        let destinationVC = storyboard.instantiateViewController(withIdentifier: "ForgotPasswordViewController") as! ForgotPasswordViewController
+        navigateToSomewhere(source: viewController!, destination: destinationVC)
+    }
+    
     func routeToTabBar(segue: UIStoryboardSegue?)
     {
         ApplicationDelegate.setTabBarAsRootViewController()
@@ -36,8 +43,8 @@ class LoginRouter: NSObject, LoginRoutingLogic, LoginDataPassing
     
     // MARK: Navigation
     
-    func navigateToSomewhere(source: LoginViewController, destination: UITabBarController)
+    func navigateToSomewhere(source: LoginViewController, destination: UIViewController)
     {
-        source.show(destination, sender: nil)
+        source.bpPush(viewController: destination)
     }
 }

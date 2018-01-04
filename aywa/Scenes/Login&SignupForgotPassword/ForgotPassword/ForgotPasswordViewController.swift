@@ -11,6 +11,7 @@
 //
 
 import UIKit
+import BPViewsSubviewsInOutAnimation
 
 protocol ForgotPasswordDisplayLogic: class
 {
@@ -21,7 +22,7 @@ protocol ForgotPasswordDisplayLogic: class
     func displayForgotPasswordResponse()
 }
 
-class ForgotPasswordViewController: UIViewController, ForgotPasswordDisplayLogic,UITextFieldDelegate
+class ForgotPasswordViewController: BPViewController, ForgotPasswordDisplayLogic,UITextFieldDelegate
 {
     var interactor: ForgotPasswordBusinessLogic?
     var router: (NSObjectProtocol & ForgotPasswordRoutingLogic & ForgotPasswordDataPassing)?
@@ -50,7 +51,7 @@ class ForgotPasswordViewController: UIViewController, ForgotPasswordDisplayLogic
     
     private func initialiseView() {
         
-        backgroundImageView.image = BackgroundImageManager.shared().backgroundImage
+        backgroundImageView.image = BackgroundImageManager.shared().getBackgroundImage()
         self.emailTextField.delegate = self
         showNavigationBar()
         navigationBarWithLeftSideTitle(isTitle: false, titleName: " Reset password")
@@ -117,17 +118,11 @@ class ForgotPasswordViewController: UIViewController, ForgotPasswordDisplayLogic
     @objc func changeBackgroundImage(notification: Notification?){
         //Take Action on Notification
         DispatchQueue.main.async {
-            UIView.animate(withDuration: 0.5, animations: {
-                self.backgroundImageView.alpha = 0.7
-            }, completion: { (complete) in
-                self.backgroundImageView.image = BackgroundImageManager.shared().backgroundImage
-                UIView.animate(withDuration: 0.5,
-                               delay: 0,
-                               options: .curveEaseInOut,
-                               animations: {
-                                self.backgroundImageView.alpha = 1
-                }, completion: nil)
-            })
+            UIView.transition(with: self.backgroundImageView,
+                              duration:3,
+                              options: .transitionCrossDissolve,
+                              animations: { self.backgroundImageView.image = BackgroundImageManager.shared().getBackgroundImage() },
+                              completion: nil)
         }
     }
 }

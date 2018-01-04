@@ -14,7 +14,6 @@ import UIKit
 
 @objc protocol LandingRoutingLogic
 {
-    //func routeToSomewhere(segue: UIStoryboardSegue?)
     func routeToLogin()
     func routeToSignup()
     func routeToTabBar()

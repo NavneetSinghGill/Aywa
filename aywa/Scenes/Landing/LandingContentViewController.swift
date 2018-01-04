@@ -57,6 +57,7 @@ class LandingContentViewController: UIViewController {
         adjustLeftEnglishLabelAlignmentIPAD()
         
         self.view.bringSubview(toFront: backgroundImageView)
+        animateBackground()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -182,13 +183,20 @@ class LandingContentViewController: UIViewController {
     }
     
     func animateBackground() {
-        self.backgroundImageView.alpha = 0
-        UIView.animate(withDuration: 0.5,
-                       delay: 0,
-                       options: .curveEaseInOut,
-                       animations: {
-                        self.backgroundImageView.alpha = 1
-        }, completion: nil)
+        self.backgroundImageView.image = BackgroundImageManager.shared().backgroundImage
+        DispatchQueue.main.async {
+            let currentImageName = BackgroundImageManager.shared().pageContentImage + "\(self.pageIndex+1)"
+            
+            UIView.transition(with: self.backgroundImageView,
+                              duration:3,
+                              options: .transitionCrossDissolve,
+                              animations: {
+                                self.backgroundImageView.image = UIImage(named: currentImageName)
+                                BackgroundImageManager.shared().backgroundImage = UIImage(named: currentImageName)
+                                
+            },
+                              completion: nil)
+        }
     }
     
     func setup(){

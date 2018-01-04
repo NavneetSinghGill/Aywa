@@ -266,7 +266,7 @@ extension LandingViewController: UIPageViewControllerDataSource, UIPageViewContr
                         self.setBottomViewsFor(index: self.selectedPageIndex!)
                         
                         if let currentVC:LandingContentViewController = pvcs.viewControllers?.last as? LandingContentViewController {
-                            currentVC.animateBackground()
+//                            currentVC.animateBackground()
                         }
                     }
                 }

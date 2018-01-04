@@ -26,12 +26,12 @@ class BackgroundImageManager {
     var backgroundImage: UIImage?
     var selectedImageIndex:Int = 1
     let imageIndexCount = 5
+    let imageAywaKidsIndex = 4
     var timer:Timer?
     
     // MARK: - Initialization
     
     private init() {
-        self.backgroundImage = UIImage(named:pageContentImage + "\(1)")
         timer = Timer.scheduledTimer(timeInterval: 7.0, target: self, selector: #selector(BackgroundImageManager.changeImage), userInfo: nil, repeats: true)
     }
     
@@ -59,7 +59,13 @@ class BackgroundImageManager {
             selectedImageIndex = selectedImageIndex + 1
         }
         
-        backgroundImage = UIImage(named:pageContentImage + "\(selectedImageIndex)")
         NotificationCenter.default.post(name: Notification.Name(Constants.kChangeBackgroundImageIdentifier), object: nil, userInfo: nil)
+    }
+    
+    func getBackgroundImage() -> UIImage? {
+        if selectedImageIndex == imageAywaKidsIndex  {
+            selectedImageIndex = imageIndexCount
+        }
+        return UIImage(named:pageContentImage + "\(selectedImageIndex)")
     }
 }

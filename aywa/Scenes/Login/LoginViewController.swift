@@ -49,7 +49,7 @@ class LoginViewController: BPViewController, LoginDisplayLogic, UITextFieldDeleg
     
     private func initialiseView() {
         
-        backgroundImageView.image = BackgroundImageManager.shared().backgroundImage
+        backgroundImageView.image = BackgroundImageManager.shared().getBackgroundImage()
         self.emailTextField.delegate = self
         self.passwordTextField.delegate = self
         emailTextField.text = "test_user1@gmail.com"
@@ -83,6 +83,16 @@ class LoginViewController: BPViewController, LoginDisplayLogic, UITextFieldDeleg
                 router.perform(selector, with: segue)
             }
         }
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        
+        let selector = NSSelectorFromString("routeTo\(identifier)")
+        if let router = router, router.responds(to: selector) {
+            router.perform(selector, with: nil)
+        }
+        
+        return false
     }
     
     // MARK: View lifecycle
@@ -158,17 +168,11 @@ class LoginViewController: BPViewController, LoginDisplayLogic, UITextFieldDeleg
     @objc func changeBackgroundImage(notification: Notification?){
         //Take Action on Notification
         DispatchQueue.main.async {
-            UIView.animate(withDuration: 0.5, animations: {
-                self.backgroundImageView.alpha = 0.7
-            }, completion: { (complete) in
-                self.backgroundImageView.image = BackgroundImageManager.shared().backgroundImage
-                UIView.animate(withDuration: 0.5,
-                               delay: 0,
-                               options: .curveEaseInOut,
-                               animations: {
-                                self.backgroundImageView.alpha = 1
-                }, completion: nil)
-            })
+            UIView.transition(with: self.backgroundImageView,
+                              duration:3,
+                              options: .transitionCrossDissolve,
+                              animations: { self.backgroundImageView.image = BackgroundImageManager.shared().getBackgroundImage() },
+                              completion: nil)
         }
     }
 }
