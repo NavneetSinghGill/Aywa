@@ -154,7 +154,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Network not reachable")
             self.isNetworkAvailable = false
             
-        }
+        } 
     }
     
     
