@@ -9,7 +9,7 @@ PODS:
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
-  - BPViewsSubviewsInOutAnimation (1.1.0)
+  - BPViewsSubviewsInOutAnimation (1.2.0)
   - DropDown (2.0.2)
   - FBSDKCoreKit (4.29.0):
     - Bolts (~> 1.7)
@@ -54,7 +54,7 @@ SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   AlamofireObjectMapper: 5fafc816351cbbc0d486611aaeba7461c0cbad49
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
-  BPViewsSubviewsInOutAnimation: 5adb1e9a6179dc5524397d21bba1240b50d6c8f9
+  BPViewsSubviewsInOutAnimation: 6c8bbe7538e201238f4515759046087e0bf1ac59
   DropDown: 75562633a203f57a917021b4edb96c76f293b0ec
   FBSDKCoreKit: 6f139173dc63a1deaff4430a55f2fe5bb222d2af
   FBSDKLoginKit: 56a057ca6822535ea0faa25f57a7c41edb697fd4
