@@ -65,11 +65,11 @@ class LandingContentViewController: UIViewController {
         self.view.sendSubview(toBack: backgroundImageView)
         if LandingContentViewController.lastPageIndex <= pageIndex || (LandingContentViewController.lastPageIndex == 4 && pageIndex == 0) {
             // default forward direction
-            self.view.animateTowardsCenterFromRight()
+            self.view.animateToCenterFromRight()
         }
         else{
             // backward direction
-            self.view.animateTowardsCenterFromLeft()
+            self.view.animateToCenterFromLeft()
         }
     }
     

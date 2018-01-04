@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8P3-nz-1eY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8P3-nz-1eY">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -95,7 +95,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O2b-a3-pNw">
-                                <rect key="frame" x="70" y="380" width="234" height="43"/>
+                                <rect key="frame" x="70.5" y="380" width="234" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="234" id="CSl-yg-wwJ"/>
                                     <constraint firstAttribute="height" constant="43" id="GIS-bR-iMq"/>
@@ -130,7 +130,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FGw-fa-Q8R">
-                                <rect key="frame" x="71" y="441" width="234" height="35"/>
+                                <rect key="frame" x="70.5" y="441" width="234" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="gvC-9W-xYJ"/>
                                 </constraints>
@@ -237,161 +237,231 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Ug-mS-uAs">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lug-JT-5K4">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in to your Aywa account" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f6d-lA-vYZ">
-                                <rect key="frame" x="40" y="55" width="295" height="103.5"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="45"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
-                                        <integer key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P2g-5h-enA" userLabel="FbButton">
-                                <rect key="frame" x="72" y="198" width="232" height="43"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="232" id="8d2-mE-Ngb"/>
-                                    <constraint firstAttribute="height" constant="43" id="TT7-7p-SW5"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="facebookLogin"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
-                                        <integer key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="facebookLoginButtonTapped:" destination="bFY-JS-lCR" eventType="touchUpInside" id="tXk-eu-ERT"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lineWithOR" translatesAutoresizingMaskIntoConstraints="NO" id="Sm9-sb-zoY">
-                                <rect key="frame" x="82" y="261" width="211" height="14"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="211" id="V34-2t-Dfn"/>
-                                    <constraint firstAttribute="height" constant="14" id="awx-Ky-cPa"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
-                                        <integer key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient" translatesAutoresizingMaskIntoConstraints="NO" id="Wjc-wa-Z1i">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JjU-hE-xME" customClass="FloatingHeaderTextField" customModule="aywa" customModuleProvider="target">
-                                <rect key="frame" x="27" y="325" width="320" height="35"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DfV-gJ-QTQ">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kI7-ht-Bgb" userLabel="ContainerView">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="589"/>
+                                        <subviews>
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wSg-kf-UlN">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="589"/>
+                                            </scrollView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in to your Aywa account" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ALF-cg-kiY">
+                                                <rect key="frame" x="50.5" y="35" width="275" height="97"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="275" id="dv7-CF-Npb"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="42"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BB4-Su-oSF" userLabel="FbButton">
+                                                <rect key="frame" x="71.5" y="172" width="232" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="PVG-Jp-D0i"/>
+                                                    <constraint firstAttribute="width" constant="232" id="YHH-Fv-hGv"/>
+                                                </constraints>
+                                                <state key="normal" image="facebookLogin"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
+                                                        <integer key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="facebookLoginButtonTapped:" destination="bFY-JS-lCR" eventType="touchUpInside" id="1Dg-H0-46X"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bug-Pq-5sG" userLabel="ORView">
+                                                <rect key="frame" x="82" y="238" width="211.5" height="14"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CQ3-0l-Aja" userLabel="LeftLineView">
+                                                        <rect key="frame" x="0.0" y="6.5" width="81" height="1"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="aQv-EB-eAh"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5hR-rE-reA">
+                                                        <rect key="frame" x="93" y="0.0" width="25.5" height="14"/>
+                                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7qm-zg-zXB" userLabel="RightLineView">
+                                                        <rect key="frame" x="131" y="6" width="80.5" height="1"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="seD-ep-mQT"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="CQ3-0l-Aja" firstAttribute="centerY" secondItem="7qm-zg-zXB" secondAttribute="centerY" id="MJJ-Yk-Jdz"/>
+                                                    <constraint firstItem="CQ3-0l-Aja" firstAttribute="centerY" secondItem="bug-Pq-5sG" secondAttribute="centerY" id="V7J-or-v15"/>
+                                                    <constraint firstItem="5hR-rE-reA" firstAttribute="leading" secondItem="CQ3-0l-Aja" secondAttribute="trailing" constant="12" id="eDw-YX-amO"/>
+                                                    <constraint firstAttribute="height" constant="14" id="h3I-Kb-1Ab"/>
+                                                    <constraint firstAttribute="bottom" secondItem="5hR-rE-reA" secondAttribute="bottom" id="hAB-bo-7ou"/>
+                                                    <constraint firstItem="5hR-rE-reA" firstAttribute="top" secondItem="bug-Pq-5sG" secondAttribute="top" id="hte-sb-fMm"/>
+                                                    <constraint firstItem="CQ3-0l-Aja" firstAttribute="leading" secondItem="bug-Pq-5sG" secondAttribute="leading" id="iMT-Mc-5ya"/>
+                                                    <constraint firstItem="5hR-rE-reA" firstAttribute="centerX" secondItem="bug-Pq-5sG" secondAttribute="centerX" id="lDI-Ac-b7e"/>
+                                                    <constraint firstItem="7qm-zg-zXB" firstAttribute="width" secondItem="CQ3-0l-Aja" secondAttribute="width" id="qGl-CV-W9j"/>
+                                                    <constraint firstAttribute="width" constant="211" id="tUw-Qr-ldh"/>
+                                                    <constraint firstAttribute="trailing" secondItem="7qm-zg-zXB" secondAttribute="trailing" id="ufZ-Ag-U5H"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
+                                                        <integer key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="VbZ-bT-B6D" customClass="FloatingHeaderTextField" customModule="aywa" customModuleProvider="target">
+                                                <rect key="frame" x="25" y="309" width="325" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="qPU-U4-uRx"/>
+                                                </constraints>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
+                                                        <integer key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="inActiveColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="delegate" destination="bFY-JS-lCR" id="81U-GK-8gC"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7V3-r9-XFM" customClass="FloatingHeaderTextField" customModule="aywa" customModuleProvider="target">
+                                                <rect key="frame" x="25" y="378" width="325" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="2TX-Re-sBw"/>
+                                                </constraints>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="inActiveColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="delegate" destination="bFY-JS-lCR" id="bSR-LD-EM8"/>
+                                                </connections>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b7B-W1-rSJ" userLabel="SigninButton">
+                                                <rect key="frame" x="69.5" y="467" width="236" height="44"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="236" id="H3X-M9-iau"/>
+                                                    <constraint firstAttribute="height" constant="44" id="HMa-PL-Wuy"/>
+                                                </constraints>
+                                                <state key="normal" image="signinButton" backgroundImage="button:b7B-W1-rSJ:backgroundImage">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
+                                                        <integer key="value" value="6"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="loginButtonTapped:" destination="bFY-JS-lCR" eventType="touchUpInside" id="jKI-Of-pvD"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XPe-w3-jIb">
+                                                <rect key="frame" x="115.5" y="546" width="145" height="43"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="43" id="WBe-6o-LgM"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
+                                                <state key="normal" title="Forgot password?">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
+                                                        <integer key="value" value="7"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="fogotPasswordButtonTapped:" destination="bFY-JS-lCR" eventType="touchUpInside" id="Bnc-el-OZ4"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="kSP-fQ-23x" firstAttribute="trailing" secondItem="VbZ-bT-B6D" secondAttribute="trailing" constant="25" id="1Ex-e4-HBl"/>
+                                            <constraint firstItem="kSP-fQ-23x" firstAttribute="bottom" secondItem="XPe-w3-jIb" secondAttribute="bottom" id="6tg-CD-q4p"/>
+                                            <constraint firstItem="b7B-W1-rSJ" firstAttribute="top" secondItem="7V3-r9-XFM" secondAttribute="bottom" constant="54" id="Biy-Ol-5V2"/>
+                                            <constraint firstItem="kSP-fQ-23x" firstAttribute="bottom" secondItem="wSg-kf-UlN" secondAttribute="bottom" id="Dco-ss-ret"/>
+                                            <constraint firstItem="7V3-r9-XFM" firstAttribute="leading" secondItem="VbZ-bT-B6D" secondAttribute="leading" id="OIX-vV-bb3"/>
+                                            <constraint firstItem="ALF-cg-kiY" firstAttribute="top" secondItem="kSP-fQ-23x" secondAttribute="top" constant="35" id="QFN-Fm-8yK"/>
+                                            <constraint firstItem="VbZ-bT-B6D" firstAttribute="top" secondItem="bug-Pq-5sG" secondAttribute="bottom" constant="57" id="U1y-7L-SyQ"/>
+                                            <constraint firstItem="kSP-fQ-23x" firstAttribute="trailing" secondItem="wSg-kf-UlN" secondAttribute="trailing" id="XED-vA-h41"/>
+                                            <constraint firstItem="wSg-kf-UlN" firstAttribute="top" secondItem="kSP-fQ-23x" secondAttribute="top" id="b62-x2-SFi"/>
+                                            <constraint firstItem="XPe-w3-jIb" firstAttribute="top" secondItem="b7B-W1-rSJ" secondAttribute="bottom" constant="35" id="bMw-wL-hCa"/>
+                                            <constraint firstItem="BB4-Su-oSF" firstAttribute="top" secondItem="ALF-cg-kiY" secondAttribute="bottom" constant="40" id="bn0-5b-WEO"/>
+                                            <constraint firstItem="b7B-W1-rSJ" firstAttribute="centerX" secondItem="kI7-ht-Bgb" secondAttribute="centerX" id="dI3-0B-ahd"/>
+                                            <constraint firstItem="ALF-cg-kiY" firstAttribute="centerX" secondItem="kI7-ht-Bgb" secondAttribute="centerX" id="exQ-eu-3qH"/>
+                                            <constraint firstItem="bug-Pq-5sG" firstAttribute="top" secondItem="BB4-Su-oSF" secondAttribute="bottom" constant="22" id="fVl-hj-O4S"/>
+                                            <constraint firstItem="bug-Pq-5sG" firstAttribute="centerX" secondItem="kI7-ht-Bgb" secondAttribute="centerX" id="j7G-i3-4nX"/>
+                                            <constraint firstItem="wSg-kf-UlN" firstAttribute="leading" secondItem="kSP-fQ-23x" secondAttribute="leading" id="jac-sJ-FtO"/>
+                                            <constraint firstItem="XPe-w3-jIb" firstAttribute="centerX" secondItem="kI7-ht-Bgb" secondAttribute="centerX" id="lwk-gD-KwE"/>
+                                            <constraint firstItem="BB4-Su-oSF" firstAttribute="centerX" secondItem="kI7-ht-Bgb" secondAttribute="centerX" id="t0y-Cb-jNs"/>
+                                            <constraint firstItem="7V3-r9-XFM" firstAttribute="trailing" secondItem="VbZ-bT-B6D" secondAttribute="trailing" id="uei-KO-cg5"/>
+                                            <constraint firstItem="7V3-r9-XFM" firstAttribute="top" secondItem="VbZ-bT-B6D" secondAttribute="bottom" constant="34" id="vpd-IS-z9e"/>
+                                            <constraint firstItem="VbZ-bT-B6D" firstAttribute="leading" secondItem="kSP-fQ-23x" secondAttribute="leading" constant="25" id="zM9-CV-Qvo"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="safeArea" id="kSP-fQ-23x"/>
+                                    </view>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="8xq-1z-cKF"/>
-                                    <constraint firstAttribute="height" constant="35" id="pGu-HY-fU5"/>
+                                    <constraint firstItem="kI7-ht-Bgb" firstAttribute="centerX" secondItem="DfV-gJ-QTQ" secondAttribute="centerX" id="6HD-Ic-Vaj"/>
+                                    <constraint firstItem="kI7-ht-Bgb" firstAttribute="top" secondItem="DfV-gJ-QTQ" secondAttribute="top" id="6P2-fU-krI"/>
+                                    <constraint firstAttribute="trailing" secondItem="kI7-ht-Bgb" secondAttribute="trailing" id="tne-jc-arq"/>
+                                    <constraint firstItem="kI7-ht-Bgb" firstAttribute="leading" secondItem="DfV-gJ-QTQ" secondAttribute="leading" id="uA8-qA-G7g"/>
+                                    <constraint firstAttribute="bottom" secondItem="kI7-ht-Bgb" secondAttribute="bottom" id="xhs-nn-IxM"/>
                                 </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
-                                        <integer key="value" value="4"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="inActiveColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outlet property="delegate" destination="bFY-JS-lCR" id="pkL-AE-cFH"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Ag-4M-KRh" customClass="FloatingHeaderTextField" customModule="aywa" customModuleProvider="target">
-                                <rect key="frame" x="27.5" y="400.5" width="320" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="0jn-40-FvN"/>
-                                    <constraint firstAttribute="height" constant="35" id="xwg-zc-162"/>
-                                </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="inActiveColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outlet property="delegate" destination="bFY-JS-lCR" id="nrW-0x-seX"/>
-                                </connections>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2YZ-aJ-ptY" userLabel="SigninButton">
-                                <rect key="frame" x="72" y="480.5" width="232" height="43"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="43" id="2Th-o5-kLZ"/>
-                                    <constraint firstAttribute="width" constant="232" id="rZJ-D7-y4U"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="signinButton"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
-                                        <integer key="value" value="6"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="loginButtonTapped:" destination="bFY-JS-lCR" eventType="touchUpInside" id="PCA-2m-W4h"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gib-mc-Q3Q">
-                                <rect key="frame" x="72" y="568.5" width="232" height="43"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="43" id="5oK-DR-SyG"/>
-                                    <constraint firstAttribute="width" constant="232" id="e1U-MU-FCD"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
-                                <state key="normal" title="Forgot password?">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
-                                        <integer key="value" value="7"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="fogotPasswordButtonTapped:" destination="bFY-JS-lCR" eventType="touchUpInside" id="wOj-oa-rAT"/>
-                                    <segue destination="HFx-4m-C2T" kind="show" identifier="ForgotPassword" id="ddu-Hi-Gje"/>
-                                </connections>
-                            </button>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="2Ug-mS-uAs" firstAttribute="trailing" secondItem="w6W-Yw-94D" secondAttribute="trailing" id="0ri-xm-KqX"/>
-                            <constraint firstItem="Gib-mc-Q3Q" firstAttribute="leading" secondItem="w6W-Yw-94D" secondAttribute="leading" constant="72" id="2iJ-Aa-jIP"/>
-                            <constraint firstItem="w6W-Yw-94D" firstAttribute="trailing" secondItem="3Ag-4M-KRh" secondAttribute="trailing" constant="27.5" id="44T-QE-wJk"/>
-                            <constraint firstItem="w6W-Yw-94D" firstAttribute="trailing" secondItem="Gib-mc-Q3Q" secondAttribute="trailing" constant="71" id="5B0-yy-1mE"/>
-                            <constraint firstItem="JjU-hE-xME" firstAttribute="centerX" secondItem="Kbb-st-FfZ" secondAttribute="centerX" id="7ac-Fy-2j2"/>
-                            <constraint firstItem="2YZ-aJ-ptY" firstAttribute="top" secondItem="3Ag-4M-KRh" secondAttribute="bottom" constant="45" id="7z0-B4-xzI"/>
-                            <constraint firstItem="2Ug-mS-uAs" firstAttribute="bottom" secondItem="w6W-Yw-94D" secondAttribute="bottom" id="92e-1m-IGM"/>
-                            <constraint firstItem="w6W-Yw-94D" firstAttribute="trailing" secondItem="JjU-hE-xME" secondAttribute="trailing" constant="27.5" id="ARg-ky-6Fo"/>
-                            <constraint firstItem="2Ug-mS-uAs" firstAttribute="top" secondItem="Kbb-st-FfZ" secondAttribute="top" constant="20" id="C4c-oE-hdP"/>
-                            <constraint firstItem="JjU-hE-xME" firstAttribute="top" secondItem="Sm9-sb-zoY" secondAttribute="bottom" constant="50" id="Dlk-rT-hGc"/>
-                            <constraint firstItem="3Ag-4M-KRh" firstAttribute="top" secondItem="JjU-hE-xME" secondAttribute="bottom" constant="40" id="Fce-vG-9lW"/>
-                            <constraint firstItem="2YZ-aJ-ptY" firstAttribute="leading" secondItem="w6W-Yw-94D" secondAttribute="leading" constant="72" id="G2B-56-Con"/>
-                            <constraint firstItem="P2g-5h-enA" firstAttribute="centerX" secondItem="Kbb-st-FfZ" secondAttribute="centerX" id="JCT-c8-CkT"/>
-                            <constraint firstItem="w6W-Yw-94D" firstAttribute="trailing" secondItem="2YZ-aJ-ptY" secondAttribute="trailing" constant="71" id="KvV-u9-TOd"/>
-                            <constraint firstItem="3Ag-4M-KRh" firstAttribute="centerX" secondItem="Kbb-st-FfZ" secondAttribute="centerX" id="MUG-MN-efE"/>
-                            <constraint firstItem="JjU-hE-xME" firstAttribute="leading" secondItem="w6W-Yw-94D" secondAttribute="leading" constant="27.5" id="MYZ-UJ-aNJ"/>
-                            <constraint firstItem="2Ug-mS-uAs" firstAttribute="leading" secondItem="w6W-Yw-94D" secondAttribute="leading" id="Qt1-88-fN0"/>
-                            <constraint firstItem="3Ag-4M-KRh" firstAttribute="leading" secondItem="w6W-Yw-94D" secondAttribute="leading" constant="27.5" id="Sk9-lp-XkR"/>
-                            <constraint firstItem="Sm9-sb-zoY" firstAttribute="top" secondItem="P2g-5h-enA" secondAttribute="bottom" constant="20" id="Vrz-0Q-lMr"/>
-                            <constraint firstItem="w6W-Yw-94D" firstAttribute="trailing" secondItem="f6d-lA-vYZ" secondAttribute="trailing" constant="40" id="XW5-G6-Ghq"/>
-                            <constraint firstItem="Sm9-sb-zoY" firstAttribute="centerX" secondItem="Kbb-st-FfZ" secondAttribute="centerX" id="Zn7-HC-hH6"/>
-                            <constraint firstItem="f6d-lA-vYZ" firstAttribute="leading" secondItem="w6W-Yw-94D" secondAttribute="leading" constant="40" id="a6k-LV-IRr"/>
-                            <constraint firstItem="P2g-5h-enA" firstAttribute="top" secondItem="f6d-lA-vYZ" secondAttribute="bottom" constant="40" id="kbi-hP-elP"/>
-                            <constraint firstItem="f6d-lA-vYZ" firstAttribute="top" secondItem="w6W-Yw-94D" secondAttribute="top" constant="35" id="nrh-YZ-mGc"/>
-                            <constraint firstItem="Gib-mc-Q3Q" firstAttribute="top" secondItem="2YZ-aJ-ptY" secondAttribute="bottom" constant="45" id="tyO-Yl-hMX"/>
+                            <constraint firstItem="Wjc-wa-Z1i" firstAttribute="top" secondItem="Kbb-st-FfZ" secondAttribute="top" constant="20" id="1pc-oe-xQG"/>
+                            <constraint firstItem="lug-JT-5K4" firstAttribute="top" secondItem="Kbb-st-FfZ" secondAttribute="top" constant="20" id="6Xt-5O-aa7"/>
+                            <constraint firstItem="w6W-Yw-94D" firstAttribute="bottom" secondItem="Wjc-wa-Z1i" secondAttribute="bottom" id="Lgm-tP-2Wi"/>
+                            <constraint firstItem="DfV-gJ-QTQ" firstAttribute="leading" secondItem="w6W-Yw-94D" secondAttribute="leading" id="V8d-xk-xJx"/>
+                            <constraint firstItem="w6W-Yw-94D" firstAttribute="trailing" secondItem="DfV-gJ-QTQ" secondAttribute="trailing" id="ZAP-z3-nTn"/>
+                            <constraint firstItem="DfV-gJ-QTQ" firstAttribute="top" secondItem="w6W-Yw-94D" secondAttribute="top" id="dS1-hX-gPx"/>
+                            <constraint firstItem="w6W-Yw-94D" firstAttribute="trailing" secondItem="Wjc-wa-Z1i" secondAttribute="trailing" id="hgV-m4-416"/>
+                            <constraint firstItem="Wjc-wa-Z1i" firstAttribute="leading" secondItem="w6W-Yw-94D" secondAttribute="leading" id="lej-iP-Unb"/>
+                            <constraint firstItem="w6W-Yw-94D" firstAttribute="bottom" secondItem="DfV-gJ-QTQ" secondAttribute="bottom" id="nsy-91-qqL"/>
+                            <constraint firstItem="lug-JT-5K4" firstAttribute="leading" secondItem="w6W-Yw-94D" secondAttribute="leading" id="q4y-Z0-oUC"/>
+                            <constraint firstItem="w6W-Yw-94D" firstAttribute="bottom" secondItem="lug-JT-5K4" secondAttribute="bottom" id="qyD-OE-Txc"/>
+                            <constraint firstItem="lug-JT-5K4" firstAttribute="trailing" secondItem="w6W-Yw-94D" secondAttribute="trailing" id="sJr-9t-SoK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="w6W-Yw-94D"/>
                     </view>
                     <connections>
-                        <outlet property="backgroundImageView" destination="2Ug-mS-uAs" id="Epc-Ru-Qgg"/>
-                        <outlet property="emailTextField" destination="JjU-hE-xME" id="3dO-6l-6c1"/>
-                        <outlet property="passwordTextField" destination="3Ag-4M-KRh" id="aDU-a6-BUS"/>
+                        <outlet property="backgroundImageView" destination="lug-JT-5K4" id="E7T-aW-R4L"/>
+                        <outlet property="emailTextField" destination="VbZ-bT-B6D" id="d86-3v-eyD"/>
+                        <outlet property="passwordTextField" destination="7V3-r9-XFM" id="Bam-WP-aO6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rop-4i-iHd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -836,11 +906,305 @@
         <image name="bg_splash" width="375" height="667"/>
         <image name="browse" width="20" height="20"/>
         <image name="browse_selected" width="20" height="20"/>
+        <image name="button:b7B-W1-rSJ:backgroundImage" width="117" height="21">
+            <mutableData key="keyedArchiveRepresentation">
+YnBsaXN0MDDUAQIDBAUGVVZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QEgcI
+ExQZHh8jJCsuMTtDR0tPUlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdz
+Vk5TUmVwc1dOU0NvbG9ygAKAERIgwAAAgAOAC1l7MTE3LCAyMX3SFQoWGFpOUy5vYmplY3RzoReABIAK
+0hUKGh2iGxyABYAGgAkQANIgCiEiXxAUTlNUSUZGUmVwcmVzZW50YXRpb26AB4AITxEvGk1NACoAACZs
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+9fX1//v7+/////////////7+/v/+/v7/////////////////////////////////////////////////
+/////////////////////////////////v7+//7+/v/+/v7/////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////8vLy/9aWlr/Tk5O/1FRUf+kpKT/
+/////8TExP9zc3P/9/f3////////////////////////////////////////////////////////////
+////////////////4ODg/2NjY//W1tb/////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////9vb2/0hISP9xcXH/z8/P/5CQkP80NDT/09PT/+Dg4P+urq7/
++/v7///////q6ur/4eHh//r6+v/y8vL//v7+//Ly8v/5+fn/5ubm/+Tk5P//////////////////////
+7e3t/6Ojo//p6en/+fn5//X19f/x8fH/3d3d//r6+v//////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////8vLy/zk5Of9qamr/09PT//Hx8f/W1tb/8PDw/76+vv9jY2P/+/v7/7e3t/8+Pj7/
+TExM/2lpaf9lZWX/+fn5/3BwcP9qamr/W1tb/zk5Of+UlJT/////////////////3Nzc/1BQUP/a2tr/
+sbGx/1tbW/9sbGz/PDw8/2BgYP/w8PD/////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+/////7i4uP9ISEj/OTk5/0BAQP97e3v/9fX1/6+vr/9ERET/7+/v/0tLS/9ycnL/5eXl/3BwcP9DQ0P/
++fn5/1ZWVv9bW1v/6+vr/29vb/9NTU3//Pz8////////////1dXV/y4uLv/R0dH/paWl/zIyMv/X19f/
+tra2/ysrK//Q0ND/////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////9/f3/9/f3//y8vL/
+39/f/6Wlpf8vLy//kpKS/7e3t/9ISEj/4ODg/zMzM/+xsbH//////7CwsP9ISEj/+fn5/1ZWVv99fX3/
+/////5OTk/9OTk7/+/v7////////////1tbW/zExMf/T09P/o6Oj/05OTv//////1tbW/zAwMP/Nzc3/
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////7Ozs/0VFRf98fHz/39/f/8/Pz/86Ojr/
+mZmZ/7a2tv9DQ0P/8fHx/1NTU/9aWlr/yMjI/2BgYP9HR0f/+fn5/1JSUv95eXn//////4+Pj/9MTEz/
++/v7////////////1dXV/y0tLf/R0dH/oKCg/0tLS///////09PT/ywsLP/Ly8v/////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////7e3t/9PT0//TU1N/0lJSf90dHT/9/f3/8HBwf9oaGj/
++/v7/9TU1P9bW1v/YWFh/3Jycv9NTU3/9/f3/3Z2dv+Wlpb//////6ampv9wcHD/+/v7////////////
+3d3d/1ZWVv/b29v/tbW1/29vb///////3Nzc/1VVVf/W1tb/////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+///////////////////////////5+fn/6enp/+3t7f////////////v7+//39/f//v7+/6SkpP+Xl5f/
+1NTU/29vb/9TU1P//Pz8//n5+f/6+vr///////v7+//5+fn//////////////////Pz8//f39//8/Pz/
++/v7//n5+f///////v7+//f39//8/Pz/////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////7W1tf9aWlr/XFxc/2FhYf/Kysr/
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////9/f3////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////ABABAAADAAAAAQB1
+AAABAQADAAAAAQAVAAABAgADAAAABAAAJzIBAwADAAAAAQABAAABBgADAAAAAQACAAABCgADAAAAAQAB
+AAABEQAEAAAAAQAAAAgBEgADAAAAAQABAAABFQADAAAAAQAEAAABFgADAAAAAQAVAAABFwAEAAAAAQAA
+JmQBHAADAAAAAQABAAABKAADAAAAAQACAAABUgADAAAAAQABAAABUwADAAAABAAAJzqHcwAHAAAH2AAA
+J0IAAAAAAAgACAAIAAgAAQABAAEAAQAAB9hhcHBsAiAAAG1udHJSR0IgWFlaIAfZAAIAGQALABoAC2Fj
+c3BBUFBMAAAAAGFwcGwAAAAAAAAAAAAAAAAAAAAAAAD21gABAAAAANMtYXBwbAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC2Rlc2MAAAEIAAAAb2RzY20AAAF4AAAFnGNw
+cnQAAAcUAAAAOHd0cHQAAAdMAAAAFHJYWVoAAAdgAAAAFGdYWVoAAAd0AAAAFGJYWVoAAAeIAAAAFHJU
+UkMAAAecAAAADmNoYWQAAAesAAAALGJUUkMAAAecAAAADmdUUkMAAAecAAAADmRlc2MAAAAAAAAAFEdl
+bmVyaWMgUkdCIFByb2ZpbGUAAAAAAAAAAAAAABRHZW5lcmljIFJHQiBQcm9maWxlAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABtbHVjAAAAAAAAAB8AAAAMc2tTSwAA
+ACgAAAGEZGFESwAAAC4AAAGsY2FFUwAAACQAAAHadmlWTgAAACQAAAH+cHRCUgAAACYAAAIidWtVQQAA
+ACoAAAJIZnJGVQAAACgAAAJyaHVIVQAAACgAAAKaemhUVwAAABYAAALCbmJOTwAAACYAAALYY3NDWgAA
+ACIAAAL+aGVJTAAAAB4AAAMgaXRJVAAAACgAAAM+cm9STwAAACQAAANmZGVERQAAACwAAAOKa29LUgAA
+ABYAAAO2c3ZTRQAAACYAAALYemhDTgAAABYAAAPMamFKUAAAABoAAAPiZWxHUgAAACIAAAP8cHRQTwAA
+ACYAAAQebmxOTAAAACgAAAREZXNFUwAAACYAAAQedGhUSAAAACQAAARsdHJUUgAAACIAAASQZmlGSQAA
+ACgAAASyaHJIUgAAACgAAATacGxQTAAAACwAAAUCcnVSVQAAACIAAAUuYXJFRwAAACYAAAVQZW5VUwAA
+ACYAAAV2AFYBYQBlAG8AYgBlAGMAbgD9ACAAUgBHAEIAIABwAHIAbwBmAGkAbABHAGUAbgBlAHIAZQBs
+ACAAUgBHAEIALQBiAGUAcwBrAHIAaQB2AGUAbABzAGUAUABlAHIAZgBpAGwAIABSAEcAQgAgAGcAZQBu
+AOgAcgBpAGMAQx6lAHUAIABoAOwAbgBoACAAUgBHAEIAIABDAGgAdQBuAGcAUABlAHIAZgBpAGwAIABS
+AEcAQgAgAEcAZQBuAOkAcgBpAGMAbwQXBDAEMwQwBDsETAQ9BDgEOQAgBD8EQAQ+BEQEMAQ5BDsAIABS
+AEcAQgBQAHIAbwBmAGkAbAAgAGcA6QBuAOkAcgBpAHEAdQBlACAAUgBWAEIAwQBsAHQAYQBsAOEAbgBv
+AHMAIABSAEcAQgAgAHAAcgBvAGYAaQBskBp1KAAgAFIARwBCACCCcl9pY8+P8ABHAGUAbgBlAHIAaQBz
+AGsAIABSAEcAQgAtAHAAcgBvAGYAaQBsAE8AYgBlAGMAbgD9ACAAUgBHAEIAIABwAHIAbwBmAGkAbAXk
+BegF1QXkBdkF3AAgAFIARwBCACAF2wXcBdwF2QBQAHIAbwBmAGkAbABvACAAUgBHAEIAIABnAGUAbgBl
+AHIAaQBjAG8AUAByAG8AZgBpAGwAIABSAEcAQgAgAGcAZQBuAGUAcgBpAGMAQQBsAGwAZwBlAG0AZQBp
+AG4AZQBzACAAUgBHAEIALQBQAHIAbwBmAGkAbMd8vBgAIABSAEcAQgAg1QS4XNMMx3xmbpAaACAAUgBH
+AEIAIGPPj/Blh072TgCCLAAgAFIARwBCACAw1zDtMNUwoTCkMOsDkwO1A70DuQO6A8wAIAPAA8EDvwPG
+A68DuwAgAFIARwBCAFAAZQByAGYAaQBsACAAUgBHAEIAIABnAGUAbgDpAHIAaQBjAG8AQQBsAGcAZQBt
+AGUAZQBuACAAUgBHAEIALQBwAHIAbwBmAGkAZQBsDkIOGw4jDkQOHw4lDkwAIABSAEcAQgAgDhcOMQ5I
+DicORA4bAEcAZQBuAGUAbAAgAFIARwBCACAAUAByAG8AZgBpAGwAaQBZAGwAZQBpAG4AZQBuACAAUgBH
+AEIALQBwAHIAbwBmAGkAaQBsAGkARwBlAG4AZQByAGkBDQBrAGkAIABSAEcAQgAgAHAAcgBvAGYAaQBs
+AFUAbgBpAHcAZQByAHMAYQBsAG4AeQAgAHAAcgBvAGYAaQBsACAAUgBHAEIEHgQxBEkEOAQ5ACAEPwRA
+BD4ERAQ4BDsETAAgAFIARwBCBkUGRAZBACAGKgY5BjEGSgZBACAAUgBHAEIAIAYnBkQGOQYnBkUARwBl
+AG4AZQByAGkAYwAgAFIARwBCACAAUAByAG8AZgBpAGwAZXRleHQAAAAAQ29weXJpZ2h0IDIwMDcgQXBw
+bGUgSW5jLiwgYWxsIHJpZ2h0cyByZXNlcnZlZC4AWFlaIAAAAAAAAPNSAAEAAAABFs9YWVogAAAAAAAA
+dE0AAD3uAAAD0FhZWiAAAAAAAABadQAArHMAABc0WFlaIAAAAAAAACgaAAAVnwAAuDZjdXJ2AAAAAAAA
+AAEBzQAAc2YzMgAAAAAAAQxCAAAF3v//8yYAAAeSAAD9kf//+6L///2jAAAD3AAAwGzSJSYnKFokY2xh
+c3NuYW1lWCRjbGFzc2VzXxAQTlNCaXRtYXBJbWFnZVJlcKMnKSpaTlNJbWFnZVJlcFhOU09iamVjdNIl
+JiwtV05TQXJyYXmiLCrSJSYvMF5OU011dGFibGVBcnJheaMvLCrVMjM0NQo2Nzg5OldOU1doaXRlXE5T
+Q29tcG9uZW50c1xOU0NvbG9yU3BhY2VfEBJOU0N1c3RvbUNvbG9yU3BhY2VEMCAwAEMwIDAQA4AMgBDU
+PD0+Cj9AQUJUTlNJRFVOU0lDQ1dOU01vZGVsEAmADRAAgA/SRApFRldOUy5kYXRhTxERaAAAEWhhcHBs
+AgAAAG1udHJHUkFZWFlaIAfcAAgAFwAPAC4AD2Fjc3BBUFBMAAAAAG5vbmUAAAAAAAAAAAAAAAAAAAAA
+AAD21gABAAAAANMtYXBwbAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAABWRlc2MAAADAAAAAeWRzY20AAAE8AAAH6GNwcnQAAAkkAAAAI3d0cHQAAAlIAAAAFGtUUkMAAAlc
+AAAIDGRlc2MAAAAAAAAAH0dlbmVyaWMgR3JheSBHYW1tYSAyLjIgUHJvZmlsZQAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAABtbHVjAAAAAAAAAB8AAAAMc2tTSwAAAC4AAAGEZGFESwAAADgAAAGyY2FFUwAAADgAAAHq
+dmlWTgAAAEAAAAIicHRCUgAAAEoAAAJidWtVQQAAACwAAAKsZnJGVQAAAD4AAALYaHVIVQAAADQAAAMW
+emhUVwAAAB4AAANKbmJOTwAAADoAAANoY3NDWgAAACgAAAOiaGVJTAAAACQAAAPKaXRJVAAAAE4AAAPu
+cm9STwAAACoAAAQ8ZGVERQAAAE4AAARma29LUgAAACIAAAS0c3ZTRQAAADgAAAGyemhDTgAAAB4AAATW
+amFKUAAAACYAAAT0ZWxHUgAAACoAAAUacHRQTwAAAFIAAAVEbmxOTAAAAEAAAAWWZXNFUwAAAEwAAAXW
+dGhUSAAAADIAAAYidHJUUgAAACQAAAZUZmlGSQAAAEYAAAZ4aHJIUgAAAD4AAAa+cGxQTAAAAEoAAAb8
+cnVSVQAAADoAAAdGZW5VUwAAADwAAAeAYXJFRwAAACwAAAe8AFYBYQBlAG8AYgBlAGMAbgDhACAAcwBp
+AHYA4QAgAGcAYQBtAGEAIAAyACwAMgBHAGUAbgBlAHIAaQBzAGsAIABnAHIA5QAgADIALAAyACAAZwBh
+AG0AbQBhAHAAcgBvAGYAaQBsAEcAYQBtAG0AYQAgAGQAZQAgAGcAcgBpAHMAbwBzACAAZwBlAG4A6ABy
+AGkAYwBhACAAMgAuADIAQx6lAHUAIABoAOwAbgBoACAATQDgAHUAIAB4AOEAbQAgAEMAaAB1AG4AZwAg
+AEcAYQBtAG0AYQAgADIALgAyAFAAZQByAGYAaQBsACAARwBlAG4A6QByAGkAYwBvACAAZABhACAARwBh
+AG0AYQAgAGQAZQAgAEMAaQBuAHoAYQBzACAAMgAsADIEFwQwBDMEMAQ7BEwEPQQwACAARwByAGEAeQAt
+BDMEMAQ8BDAAIAAyAC4AMgBQAHIAbwBmAGkAbAAgAGcA6QBuAOkAcgBpAHEAdQBlACAAZwByAGkAcwAg
+AGcAYQBtAG0AYQAgADIALAAyAMEAbAB0AGEAbADhAG4AbwBzACAAcwB6APwAcgBrAGUAIABnAGEAbQBt
+AGEAIAAyAC4AMpAadShwcJaOUUlepgAgADIALgAyACCCcl9pY8+P8ABHAGUAbgBlAHIAaQBzAGsAIABn
+AHIA5QAgAGcAYQBtAG0AYQAgADIALAAyAC0AcAByAG8AZgBpAGwATwBiAGUAYwBuAOEAIAFhAGUAZADh
+ACAAZwBhAG0AYQAgADIALgAyBdIF0AXeBdQAIAXQBeQF1QXoACAF2wXcBdwF2QAgADIALgAyAFAAcgBv
+AGYAaQBsAG8AIABnAHIAaQBnAGkAbwAgAGcAZQBuAGUAcgBpAGMAbwAgAGQAZQBsAGwAYQAgAGcAYQBt
+AG0AYQAgADIALAAyAEcAYQBtAGEAIABnAHIAaQAgAGcAZQBuAGUAcgBpAGMBAwAgADIALAAyAEEAbABs
+AGcAZQBtAGUAaQBuAGUAcwAgAEcAcgBhAHUAcwB0AHUAZgBlAG4ALQBQAHIAbwBmAGkAbAAgAEcAYQBt
+AG0AYQAgADIALAAyx3y8GAAg1ozAyQAgrBC5yAAgADIALgAyACDVBLhc0wzHfGZukBpwcF6mfPtlcAAg
+ADIALgAyACBjz4/wZYdO9k4AgiwwsDDsMKQwrDDzMN4AIAAyAC4AMgAgMNcw7TDVMKEwpDDrA5MDtQO9
+A7kDugPMACADkwO6A8EDuQAgA5MDrAO8A7wDsQAgADIALgAyAFAAZQByAGYAaQBsACAAZwBlAG4A6QBy
+AGkAYwBvACAAZABlACAAYwBpAG4AegBlAG4AdABvAHMAIABkAGEAIABHAGEAbQBtAGEAIAAyACwAMgBB
+AGwAZwBlAG0AZQBlAG4AIABnAHIAaQBqAHMAIABnAGEAbQBtAGEAIAAyACwAMgAtAHAAcgBvAGYAaQBl
+AGwAUABlAHIAZgBpAGwAIABnAGUAbgDpAHIAaQBjAG8AIABkAGUAIABnAGEAbQBtAGEAIABkAGUAIABn
+AHIAaQBzAGUAcwAgADIALAAyDiMOMQ4HDioONQ5BDgEOIQ4hDjIOQA4BDiMOIg5MDhcOMQ5IDicORA4b
+ACAAMgAuADIARwBlAG4AZQBsACAARwByAGkAIABHAGEAbQBhACAAMgAsADIAWQBsAGUAaQBuAGUAbgAg
+AGgAYQByAG0AYQBhAG4AIABnAGEAbQBtAGEAIAAyACwAMgAgAC0AcAByAG8AZgBpAGkAbABpAEcAZQBu
+AGUAcgBpAQ0AawBpACAARwByAGEAeQAgAEcAYQBtAG0AYQAgADIALgAyACAAcAByAG8AZgBpAGwAVQBu
+AGkAdwBlAHIAcwBhAGwAbgB5ACAAcAByAG8AZgBpAGwAIABzAHoAYQByAG8BWwBjAGkAIABnAGEAbQBt
+AGEAIAAyACwAMgQeBDEESQQwBE8AIARBBDUEQAQwBE8AIAQzBDAEPAQ8BDAAIAAyACwAMgAtBD8EQAQ+
+BEQEOAQ7BEwARwBlAG4AZQByAGkAYwAgAEcAcgBhAHkAIABHAGEAbQBtAGEAIAAyAC4AMgAgAFAAcgBv
+AGYAaQBsAGUGOgYnBkUGJwAgADIALgAyACAGRAZIBkYAIAYxBkUGJwYvBkoAIAY5BicGRXRleHQAAAAA
+Q29weXJpZ2h0IEFwcGxlIEluYy4sIDIwMTIAAFhZWiAAAAAAAADzUQABAAAAARbMY3VydgAAAAAAAAQA
+AAAABQAKAA8AFAAZAB4AIwAoAC0AMgA3ADsAQABFAEoATwBUAFkAXgBjAGgAbQByAHcAfACBAIYAiwCQ
+AJUAmgCfAKQAqQCuALIAtwC8AMEAxgDLANAA1QDbAOAA5QDrAPAA9gD7AQEBBwENARMBGQEfASUBKwEy
+ATgBPgFFAUwBUgFZAWABZwFuAXUBfAGDAYsBkgGaAaEBqQGxAbkBwQHJAdEB2QHhAekB8gH6AgMCDAIU
+Ah0CJgIvAjgCQQJLAlQCXQJnAnECegKEAo4CmAKiAqwCtgLBAssC1QLgAusC9QMAAwsDFgMhAy0DOAND
+A08DWgNmA3IDfgOKA5YDogOuA7oDxwPTA+AD7AP5BAYEEwQgBC0EOwRIBFUEYwRxBH4EjASaBKgEtgTE
+BNME4QTwBP4FDQUcBSsFOgVJBVgFZwV3BYYFlgWmBbUFxQXVBeUF9gYGBhYGJwY3BkgGWQZqBnsGjAad
+Bq8GwAbRBuMG9QcHBxkHKwc9B08HYQd0B4YHmQesB78H0gflB/gICwgfCDIIRghaCG4IggiWCKoIvgjS
+COcI+wkQCSUJOglPCWQJeQmPCaQJugnPCeUJ+woRCicKPQpUCmoKgQqYCq4KxQrcCvMLCwsiCzkLUQtp
+C4ALmAuwC8gL4Qv5DBIMKgxDDFwMdQyODKcMwAzZDPMNDQ0mDUANWg10DY4NqQ3DDd4N+A4TDi4OSQ5k
+Dn8Omw62DtIO7g8JDyUPQQ9eD3oPlg+zD88P7BAJECYQQxBhEH4QmxC5ENcQ9RETETERTxFtEYwRqhHJ
+EegSBxImEkUSZBKEEqMSwxLjEwMTIxNDE2MTgxOkE8UT5RQGFCcUSRRqFIsUrRTOFPAVEhU0FVYVeBWb
+Fb0V4BYDFiYWSRZsFo8WshbWFvoXHRdBF2UXiReuF9IX9xgbGEAYZRiKGK8Y1Rj6GSAZRRlrGZEZtxnd
+GgQaKhpRGncanhrFGuwbFBs7G2MbihuyG9ocAhwqHFIcexyjHMwc9R0eHUcdcB2ZHcMd7B4WHkAeah6U
+Hr4e6R8THz4faR+UH78f6iAVIEEgbCCYIMQg8CEcIUghdSGhIc4h+yInIlUigiKvIt0jCiM4I2YjlCPC
+I/AkHyRNJHwkqyTaJQklOCVoJZclxyX3JicmVyaHJrcm6CcYJ0kneierJ9woDSg/KHEooijUKQYpOClr
+KZ0p0CoCKjUqaCqbKs8rAis2K2krnSvRLAUsOSxuLKIs1y0MLUEtdi2rLeEuFi5MLoIuty7uLyQvWi+R
+L8cv/jA1MGwwpDDbMRIxSjGCMbox8jIqMmMymzLUMw0zRjN/M7gz8TQrNGU0njTYNRM1TTWHNcI1/TY3
+NnI2rjbpNyQ3YDecN9c4FDhQOIw4yDkFOUI5fzm8Ofk6Njp0OrI67zstO2s7qjvoPCc8ZTykPOM9Ij1h
+PaE94D4gPmA+oD7gPyE/YT+iP+JAI0BkQKZA50EpQWpBrEHuQjBCckK1QvdDOkN9Q8BEA0RHRIpEzkUS
+RVVFmkXeRiJGZ0arRvBHNUd7R8BIBUhLSJFI10kdSWNJqUnwSjdKfUrESwxLU0uaS+JMKkxyTLpNAk1K
+TZNN3E4lTm5Ot08AT0lPk0/dUCdQcVC7UQZRUFGbUeZSMVJ8UsdTE1NfU6pT9lRCVI9U21UoVXVVwlYP
+VlxWqVb3V0RXklfgWC9YfVjLWRpZaVm4WgdaVlqmWvVbRVuVW+VcNVyGXNZdJ114XcleGl5sXr1fD19h
+X7NgBWBXYKpg/GFPYaJh9WJJYpxi8GNDY5dj62RAZJRk6WU9ZZJl52Y9ZpJm6Gc9Z5Nn6Wg/aJZo7GlD
+aZpp8WpIap9q92tPa6dr/2xXbK9tCG1gbbluEm5rbsRvHm94b9FwK3CGcOBxOnGVcfByS3KmcwFzXXO4
+dBR0cHTMdSh1hXXhdj52m3b4d1Z3s3gReG54zHkqeYl553pGeqV7BHtje8J8IXyBfOF9QX2hfgF+Yn7C
+fyN/hH/lgEeAqIEKgWuBzYIwgpKC9INXg7qEHYSAhOOFR4Wrhg6GcobXhzuHn4gEiGmIzokziZmJ/opk
+isqLMIuWi/yMY4zKjTGNmI3/jmaOzo82j56QBpBukNaRP5GokhGSepLjk02TtpQglIqU9JVflcmWNJaf
+lwqXdZfgmEyYuJkkmZCZ/JpomtWbQpuvnByciZz3nWSd0p5Anq6fHZ+Ln/qgaaDYoUehtqImopajBqN2
+o+akVqTHpTilqaYapoum/adup+CoUqjEqTepqaocqo+rAqt1q+msXKzQrUStuK4trqGvFq+LsACwdbDq
+sWCx1rJLssKzOLOutCW0nLUTtYq2AbZ5tvC3aLfguFm40blKucK6O7q1uy67p7whvJu9Fb2Pvgq+hL7/
+v3q/9cBwwOzBZ8Hjwl/C28NYw9TEUcTOxUvFyMZGxsPHQce/yD3IvMk6ybnKOMq3yzbLtsw1zLXNNc21
+zjbOts83z7jQOdC60TzRvtI/0sHTRNPG1EnUy9VO1dHWVdbY11zX4Nhk2OjZbNnx2nba+9uA3AXcit0Q
+3ZbeHN6i3ynfr+A24L3hROHM4lPi2+Nj4+vkc+T85YTmDeaW5x/nqegy6LzpRunQ6lvq5etw6/vshu0R
+7ZzuKO6070DvzPBY8OXxcvH/8ozzGfOn9DT0wvVQ9d72bfb794r4Gfio+Tj5x/pX+uf7d/wH/Jj9Kf26
+/kv+3P9t//+ADtIlJkhJXU5TTXV0YWJsZURhdGGjSEoqVk5TRGF0YdIlJkxNXE5TQ29sb3JTcGFjZaJO
+KlxOU0NvbG9yU3BhY2XSJSZQUVdOU0NvbG9yolAq0iUmU1RXTlNJbWFnZaJTKl8QD05TS2V5ZWRBcmNo
+aXZlctFXWFRyb290gAEACAARABoAIwAtADIANwBMAFIAXQBkAGsAeAB/AIcAiQCLAJAAkgCUAJ4AowCu
+ALAAsgC0ALkAvAC+AMAAwgDEAMkA4ADiAOQwAjAHMBIwGzAuMDIwPTBGMEswUzBWMFswajBuMHkwgTCO
+MJswsDC1MLkwuzC9ML8wyDDNMNMw2zDdMN8w4TDjMOgw8EJcQl5CY0JxQnVCfEKBQo5CkUKeQqNCq0Ku
+QrNCu0K+QtBC00LYAAAAAAAAAgEAAAAAAAAAWQAAAAAAAAAAAAAAAAAAQto
+</mutableData>
+        </image>
         <image name="create_account_button" width="117" height="21"/>
-        <image name="facebookLogin" width="116" height="21"/>
+        <image name="facebookLogin" width="234" height="44"/>
         <image name="favorite" width="21" height="20"/>
         <image name="favorite_selected" width="21" height="20"/>
         <image name="fbSignup_button" width="116" height="21"/>
+        <image name="gradient" width="1440" height="2560"/>
         <image name="home_icon" width="22" height="20"/>
         <image name="home_selected_icon" width="22" height="20"/>
         <image name="lineWithOR" width="105" height="7"/>
@@ -852,6 +1216,6 @@
         <image name="search" width="19" height="20"/>
         <image name="search_selected" width="19" height="20"/>
         <image name="share" width="28" height="23"/>
-        <image name="signinButton" width="117" height="21"/>
+        <image name="signinButton" width="236" height="45"/>
     </resources>
 </document>
