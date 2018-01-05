@@ -38,7 +38,7 @@ class HomeSliderBannerInteractor: HomeSliderBannerBusinessLogic, HomeSliderBanne
         worker?.sliderBanner(request: request, success: { (response) in
             print(response)
             self.presenter?.presentNextScreen(response:response)
-
+            
         }, fail: { (response) in
             self.presenter?.presentError(response: response)
         })

@@ -96,9 +96,13 @@ struct Constants {
     //MARK: - Section Keys
     static let kMenuSectionsOnlyKey = "MenuSectionsOnly"
     static let kMenuSectionsOnlyValue = "false"
+    static let kMenuSectionsTrueValue = "true"
+
     static let kShowTypeKey = "ShowType"
-    static let kIncludeShowsKey = "IncludeShows"
+    static let kIncludeShowsKey = "IncludeShows" 
     static let kIncludeShowsValue = "true"
+    //MARK: Catalogs Key
+    static let kIdKey = "id"
 }
 
 struct Identifiers {

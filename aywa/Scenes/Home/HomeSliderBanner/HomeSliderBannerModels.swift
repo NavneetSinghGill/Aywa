@@ -39,7 +39,6 @@ enum HomeSliderBanner
             private struct SerializationKeys {
                 static let banners = "Banners"
                 static let message = "Message"
-                
             }
             
             // MARK: Properties

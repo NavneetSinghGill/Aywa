@@ -47,11 +47,11 @@ class LoginInteractor: LoginBusinessLogic, LoginDataStore
                 self.presenter?.presentError(response: response)
             })
         }
-        
+            
         else{
             return (presenter?.presentError(response: Token.JWTToken.Response(message: "Fields may not be empty.")!))!
         }
-
+        
     }
     //MARK:- Validation For Login Request
     func isLoginValidation(request:Login.Signin.Request ) -> Bool {
@@ -100,6 +100,6 @@ class LoginInteractor: LoginBusinessLogic, LoginDataStore
                 
             })
         }
-       
+        
     }
 }

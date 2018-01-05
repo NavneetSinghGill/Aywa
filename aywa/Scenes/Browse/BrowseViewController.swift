@@ -11,10 +11,15 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 protocol BrowseDisplayLogic: class
 {
-    func displaySomething(viewModel: Browse.Something.ViewModel)
+    func displayBrowseCatalogError(response: Browse.Catalogs.Response)
+    func displayBrowserCatalogsResponse(response: Browse.Catalogs.Response)
+    // For Section
+    func displayHomeSectionError(response: Home.Section.Response)
+    func displayHomeSectionResponse(response: [Home.Section.Response])
 }
 
 class BrowseViewController: UIViewController, BrowseDisplayLogic
@@ -22,7 +27,28 @@ class BrowseViewController: UIViewController, BrowseDisplayLogic
     var interactor: BrowseBusinessLogic?
     var router: (NSObjectProtocol & BrowseRoutingLogic & BrowseDataPassing)?
     let cellHeight: CGFloat = 70
-    let browseArray = ["Movies", "TV Shows", "Networks", "Kids", "Classics", "More"]
+    
+    static let movies = "Movies"
+    static let tvShows = "TV Shows"
+    static let networks = "Networks"
+    static let genres = "Genres"
+    
+    var browseArray = [movies, tvShows, networks]
+    
+    // Section 1 For Movies, TV Shows and Networks
+    let sectionFirstArray = [movies, tvShows, networks]
+    // Section 2 for Catalogs
+    var sectionSecondArray = [String]()
+    // Section 3 For Recently Add and New Releases
+    var sectionThridArray = [String]()
+    // Section 4 For Genres
+    var sectionfourthArray = [genres]
+    
+    var browseSectionsItemsArray = [Array<Any>]()
+    
+    var browseSectionArray = [Home.Section.Response]()
+    var browseDictionary: Dictionary =  [String : Any]()
+    
     private let browseReuseIdentifier = "BrowseTableViewCell"
     // MARK: Object lifecycle
     
@@ -62,6 +88,7 @@ class BrowseViewController: UIViewController, BrowseDisplayLogic
         self.tableView.separatorStyle = .none
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.tableView.separatorStyle = .none
     }
     
     // MARK: Routing
@@ -81,45 +108,100 @@ class BrowseViewController: UIViewController, BrowseDisplayLogic
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        //doSomething()
+        doCatalogsRequest()
+        doBrowseSectionRequest()
         initialiseView()
     }
     
     // MARK: Do Browse
-    
     @IBOutlet weak var tableView: UITableView!
     
-    func doSomething()
-    {
-        let request = Browse.Something.Request()
-        interactor?.doSomething(request: request)
+    //MARK: Do Catalogs request
+    func doCatalogsRequest(){
+        SVProgressHUD.show()
+        let request = Browse.Catalogs.Request()
+        interactor?.doCatalogs(request: request)
     }
     
-    func displaySomething(viewModel: Browse.Something.ViewModel)
-    {
-        //nameTextField.text = viewModel.name
+    // Get Catalogs Response handle Protocal methods
+    func displayBrowseCatalogError(response: Browse.Catalogs.Response){
+        SVProgressHUD.dismiss()
+        print("Show Catalogs Error Response!!!:\(String(describing: response)) ")
+    }
+    func displayBrowserCatalogsResponse(response: Browse.Catalogs.Response){
+        SVProgressHUD.dismiss()
+        for indexValue in 0..<(response.catalogs?.count ?? 0 ) {
+            let nameString = response.catalogs![indexValue].name
+            //browseArray.append(nameString!)
+            sectionSecondArray.append(nameString!)
+        }
+        //print("Catalog List :\(browseArray)")
+        browseSectionsItemsArray.append(sectionFirstArray)
+        browseSectionsItemsArray.append(sectionSecondArray)
+        print("Catalog List :\(sectionSecondArray)")
+        
+    }
+    
+    // For Section API Request and Get Response
+    func doBrowseSectionRequest()  {
+         SVProgressHUD.show()
+        let request = Home.Section.RequestForBrowseSection()
+        interactor?.doSection(request: request)
+    }
+    func displayHomeSectionError(response: Home.Section.Response){
+        SVProgressHUD.dismiss()
+        print("Get Home Section Error Response !!! \(response)")
+    }
+    func displayHomeSectionResponse(response: [Home.Section.Response]){
+        SVProgressHUD.dismiss()
+        print("Get Home Section Success Response !!! \(response)")
+        print(response.count)
+        
+        browseSectionArray = response
+        print(browseSectionArray.count)
+        for indexValue in 0..<(browseSectionArray.count) {
+            if indexValue == 0 || indexValue == 5{
+                let nameString = browseSectionArray[indexValue].name
+                // browseArray.append(nameString!)
+                sectionThridArray.append(nameString!)
+            }
+        }
+        //browseArray.append(BrowseViewController.genres)
+        // print("Section List :\(browseArray)")
+        print("Section List :\(sectionThridArray)")
+       
+        browseSectionsItemsArray.append(sectionThridArray)
+        browseSectionsItemsArray.append(sectionfourthArray)
+        self.tableView.reloadData()
     }
 }
 
 extension BrowseViewController: UITableViewDataSource, UITableViewDelegate {
     
     //MARK: Table View Data Source and Delegate Methods
+    
     // Data Source
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return self.browseArray.count
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return self.browseSectionsItemsArray.count
     }
-    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        return (self.browseSectionsItemsArray[section] as AnyObject).count
+        //return self.browseArray.count
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: BrowseTableViewCell = tableView.dequeueReusableCell(withIdentifier: Identifiers.browseTableViewCell, for: indexPath) as! BrowseTableViewCell
-        cell.setUIForBrowse(indexPathValueIs: indexPath.row, arrayOfValue: self.browseArray)
+        let lablestring = self.browseSectionsItemsArray[indexPath.section] [indexPath.row]
+        cell.browseTitleLable.text = lablestring as? String
+        //cell.setUIForBrowse(indexPathValueIs: indexPath.row, arrayOfValue: self.browseArray)
         return cell
     }
-    //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    //        return cellHeight
-    //    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return cellHeight
+    }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Selected Browse is: \(self.browseArray[indexPath.row])")
+       // print("Selected Browse is: \(self.browseArray[indexPath.row])")
+        print("Selected Browse is: \(self.browseSectionsItemsArray[indexPath.section] [indexPath.row])")
     }
 }
 

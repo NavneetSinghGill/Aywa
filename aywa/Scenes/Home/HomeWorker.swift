@@ -25,7 +25,16 @@ class HomeWorker
 
         }
     }
-    
+    // Browse Section
+    func homeBrowseSection(request:Home.Section.RequestForBrowseSection, success:@escaping(homeSectionSuccessResponseHandler), fail:@escaping(homeSectionFailureResponseHandler))
+    {
+        //call network etc.
+        let manager = RequestManager()
+        manager.fetchSection(request: request.baseRequest()) { (status, response) in
+            self.handleSectionResponse(success: success, fail: fail, status: status, response: response)
+            
+        }
+    }
     func handleSectionResponse(success:@escaping(homeSectionSuccessResponseHandler), fail:@escaping(homeSectionFailureResponseHandler), status: Bool, response: Any?) {
         var message:String = Constants.kErrorMessage
         if status {

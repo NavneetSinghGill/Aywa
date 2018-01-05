@@ -14,28 +14,40 @@ import UIKit
 
 protocol BrowseBusinessLogic
 {
-  func doSomething(request: Browse.Something.Request)
+    func doCatalogs(request: Browse.Catalogs.Request)
+    func doSection(request: Home.Section.RequestForBrowseSection) 
 }
 
 protocol BrowseDataStore
 {
-  //var name: String { get set }
 }
 
 class BrowseInteractor: BrowseBusinessLogic, BrowseDataStore
 {
-  var presenter: BrowsePresentationLogic?
-  var worker: BrowseWorker?
-  //var name: String = ""
-  
-  // MARK: Do Browse DataStore
-  
-  func doSomething(request: Browse.Something.Request)
-  {
-    worker = BrowseWorker()
-    worker?.doSomeWork()
-    
-    let response = Browse.Something.Response()
-    presenter?.presentSomething(response: response)
-  }
+    var presenter: BrowsePresentationLogic?
+    var worker: BrowseWorker?
+    var workerSection: HomeWorker?
+    // MARK: Do Browse Interactor
+    func doCatalogs(request: Browse.Catalogs.Request)
+    {
+        worker = BrowseWorker()
+        worker?.browserCatelogs(request: request, success: { (response) in
+            // print("Catalogs Response:\(response)")
+            self.presenter?.presentScreenData(response: response)
+            
+        }, fail: { (response) in
+            self.presenter?.presentError(response: response)
+        })
+    }
+    // MARK: Do Browse Section
+    func doSection(request: Home.Section.RequestForBrowseSection) {
+        workerSection = HomeWorker()
+        workerSection?.homeBrowseSection(request: request, success: { (response) in
+            print(response)
+            self.presenter?.presentForSectionScreenData(response: response)
+        }, fail: { (response) in
+            self.presenter?.presentForSectionError(response: response)
+        })
+    }
 }
+

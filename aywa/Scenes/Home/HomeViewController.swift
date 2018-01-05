@@ -130,7 +130,6 @@ class HomeViewController: UIViewController, HomeDisplayLogic, UITableViewDelegat
             cell.cellAlignment = .Vertical
         }
         cell.setCollectionView(forRow: indexPath.row, sectionData: self.sectionArray[indexPath.row])
-        //cell.setCollectionView(forRow: indexPath.row)
         return cell
     }
     
@@ -149,7 +148,7 @@ class HomeViewController: UIViewController, HomeDisplayLogic, UITableViewDelegat
     
     func displayHomeScreen(response: [Home.Section.Response]){
         SVProgressHUD.dismiss()
-        print("Show Home Section Data!!!")
+        print("Show Home Section Data!!!: \(response)")
         sectionArray = response
         self.tableView.reloadData()
         print(response)

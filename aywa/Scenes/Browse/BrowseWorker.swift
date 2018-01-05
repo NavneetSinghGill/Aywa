@@ -12,9 +12,42 @@
 
 import UIKit
 
+typealias browserCatelogsSuccessResponseHandler = (_ response:Browse.Catalogs.Response) ->()
+typealias browserCatelogsFailureResponseHandler = (_ response:Browse.Catalogs.Response) ->()
+
 class BrowseWorker
 {
-  func doSomeWork()
-  {
-  }
+    func browserCatelogs(request:Browse.Catalogs.Request, success:@escaping(browserCatelogsSuccessResponseHandler), fail:@escaping(browserCatelogsFailureResponseHandler))
+    {
+        //call network etc.
+        let manager = RequestManager()
+        manager.fetchCatalogs(request: request.baseRequest()) { (status, response) in
+         self.handleCatalogResponse(success: success, fail: fail, status: status, response: response)
+        }
+        
+    }
+    // Handle Catalog Response
+    func handleCatalogResponse(success:@escaping(browserCatelogsSuccessResponseHandler), fail:@escaping(browserCatelogsFailureResponseHandler) , status: Bool, response: Any?) {
+        var message:String = Constants.kErrorMessage
+        if status {
+            if let result = response as? Browse.Catalogs.Response {
+                success(result)
+                return
+            }
+        }
+        else {
+            if let result = response as? Browse.Catalogs.Response {
+                fail(result)
+                return
+            }
+            else
+            {
+                if let result = response as? String {
+                    message = result
+                }
+            }
+        }
+        fail(Browse.Catalogs.Response(message: message)!)
+    }
+    
 }

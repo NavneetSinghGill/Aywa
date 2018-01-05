@@ -27,7 +27,6 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore
     
   var presenter: HomePresentationLogic?
   var worker: HomeWorker?
-  //var name: String = ""
   
   // MARK: Do Home Interactor
     

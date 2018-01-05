@@ -11,21 +11,122 @@
 //
 
 import UIKit
+import ObjectMapper
+let catalogsURL = "/catalogs"
 
 enum Browse
 {
-  // MARK: Use cases
-  
-  enum Something
-  {
-    struct Request
+    // MARK: Use cases
+    
+    enum Catalogs
     {
+        struct Request
+        {
+            func baseRequest() -> BaseRequest {
+                let baseRequest = BaseRequest()
+                baseRequest.urlPath = catalogsURL
+                return baseRequest
+            }
+        }
+        struct Response: Mappable {
+            
+            // MARK: Declaration for string constants to be used to decode and also serialize.
+            private struct SerializationKeys {
+                static let catalogs = "Catalogs"
+                static let message = "Message"
+            }
+            
+            // MARK: Properties
+            public var catalogs: [Catalogs]?
+            public var message: String?
+            // MARK: ObjectMapper Initializers
+            /// Map a JSON object to this class using ObjectMapper.
+            ///
+            /// - parameter map: A mapping from ObjectMapper.
+            public init?(map: Map){
+                
+            }
+            public init?(message: String){
+                self.message = message
+            }
+            /// Map a JSON object to this class using ObjectMapper.
+            ///
+            /// - parameter map: A mapping from ObjectMapper.
+            public mutating func mapping(map: Map) {
+                catalogs <- map[SerializationKeys.catalogs]
+                message <- map[SerializationKeys.message]
+            }
+            
+            /// Generates description of the object in the form of a NSDictionary.
+            ///
+            /// - returns: A Key value pair containing all valid values in the object.
+            public func dictionaryRepresentation() -> [String: Any] {
+                var dictionary: [String: Any] = [:]
+                if let value = catalogs { dictionary[SerializationKeys.catalogs] = value.map { $0.dictionaryRepresentation() } }
+                if let value = message { dictionary[SerializationKeys.message] = value }
+                return dictionary
+                
+            }
+            
+        }
+        struct Catalogs: Mappable {
+            
+            // MARK: Declaration for string constants to be used to decode and also serialize.
+            private struct SerializationKeys {
+                static let urlId = "UrlId"
+                static let urlIdArabic = "UrlIdArabic"
+                static let catalogUrl = "CatalogUrl"
+                static let theme = "Theme"
+                static let name = "Name"
+                static let id = "Id"
+            }
+            
+            // MARK: Properties
+            public var urlId: String?
+            public var urlIdArabic: String?
+            public var catalogUrl: String?
+            public var theme: String?
+            public var name: String?
+            public var id: Int?
+            
+            // MARK: ObjectMapper Initializers
+            /// Map a JSON object to this class using ObjectMapper.
+            ///
+            /// - parameter map: A mapping from ObjectMapper.
+            public init?(map: Map){
+                
+            }
+            
+            /// Map a JSON object to this class using ObjectMapper.
+            ///
+            /// - parameter map: A mapping from ObjectMapper.
+            public mutating func mapping(map: Map) {
+                urlId <- map[SerializationKeys.urlId]
+                urlIdArabic <- map[SerializationKeys.urlIdArabic]
+                catalogUrl <- map[SerializationKeys.catalogUrl]
+                theme <- map[SerializationKeys.theme]
+                name <- map[SerializationKeys.name]
+                id <- map[SerializationKeys.id]
+            }
+            
+            /// Generates description of the object in the form of a NSDictionary.
+            ///
+            /// - returns: A Key value pair containing all valid values in the object.
+            public func dictionaryRepresentation() -> [String: Any] {
+                var dictionary: [String: Any] = [:]
+                if let value = urlId { dictionary[SerializationKeys.urlId] = value }
+                if let value = urlIdArabic { dictionary[SerializationKeys.urlIdArabic] = value }
+                if let value = catalogUrl { dictionary[SerializationKeys.catalogUrl] = value }
+                if let value = theme { dictionary[SerializationKeys.theme] = value }
+                if let value = name { dictionary[SerializationKeys.name] = value }
+                if let value = id { dictionary[SerializationKeys.id] = value }
+                return dictionary
+            }
+            
+        }
+        
+        struct ViewModel
+        {
+        }
     }
-    struct Response
-    {
-    }
-    struct ViewModel
-    {
-    }
-  }
 }

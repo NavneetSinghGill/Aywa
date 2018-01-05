@@ -33,6 +33,21 @@ enum Home
                 return baseRequest
             }
         }
+        // Request For Browse For sections
+        
+        struct RequestForBrowseSection
+        {
+            func baseRequest() -> BaseRequest {
+                let baseRequest = BaseRequest()
+                baseRequest.urlPath = sectionURL
+               // baseRequest.parameters[Constants.kMenuSectionsOnlyKey] = Constants.kMenuSectionsTrueValue
+                baseRequest.parameters[Constants.kMenuSectionsOnlyKey] = Constants.kMenuSectionsTrueValue
+                baseRequest.parameters[Constants.kIncludeShowsKey] = Constants.kMenuSectionsTrueValue
+                baseRequest.parameters[BaseRequest.hasArrayResponse] = true
+                return baseRequest
+            }
+        }
+        
         struct Response: Mappable {
             
             // MARK: Declaration for string constants to be used to decode and also serialize.

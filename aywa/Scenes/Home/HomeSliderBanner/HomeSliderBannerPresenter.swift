@@ -14,7 +14,6 @@ import UIKit
 
 protocol HomeSliderBannerPresentationLogic
 {
-    // func presentSomething(response: HomeSliderBanner.Something.Response)
     func presentError(response: HomeSliderBanner.SliderBanner.Response)
     func presentNextScreen(response: HomeSliderBanner.SliderBanner.Response)
 }

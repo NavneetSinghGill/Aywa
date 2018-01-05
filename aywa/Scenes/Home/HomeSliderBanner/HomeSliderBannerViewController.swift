@@ -123,9 +123,7 @@ class HomeSliderBannerViewController: UIViewController, HomeSliderBannerDisplayL
         //        sliderBannarArray = sliderBannarArray.sorted{ ($0 as! HomeSliderBanner.SliderBanner.Banners).displayOrder! < ($1 as! HomeSliderBanner.SliderBanner.Banners).displayOrder! }
         
         sliderBannarArray = sliderBannarArray.sorted{ ($0 ).displayOrder! < ($1 ).displayOrder! }
-        
         print(sliderBannarArray)
-        
         print(sliderBannarArray.count)
         print(response.banners![0].titleImage ?? String() )
         self.homeHeaderCollectionView.reloadData()
