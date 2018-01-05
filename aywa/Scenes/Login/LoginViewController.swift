@@ -106,6 +106,7 @@ class LoginViewController: BPViewController, LoginDisplayLogic, UITextFieldDeleg
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        animateBackground()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -116,6 +117,7 @@ class LoginViewController: BPViewController, LoginDisplayLogic, UITextFieldDeleg
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var emailTextField: FloatingHeaderTextField!
     @IBOutlet weak var passwordTextField: FloatingHeaderTextField!
+    @IBOutlet weak var gradientImageView: UIImageView!
     
     //MARK: Login 
     @IBAction func loginButtonTapped(_ sender: Any) {
@@ -165,13 +167,40 @@ class LoginViewController: BPViewController, LoginDisplayLogic, UITextFieldDeleg
 //        SVProgressHUD.show(withStatus: "Signin")
         interactor?.doFacebookLogin()
     }
+    
+    //MARK: - Private methods
+    
+    func animateBackground() {
+        self.gradientImageView.image = BackgroundImageManager.shared().gradientImage
+        
+        DispatchQueue.main.async {
+            let currentGradientImageName = "signInGradient"
+            let newGradientImage = UIImage(named: currentGradientImageName)
+            
+            UIView.transition(with: self.gradientImageView,
+                              duration:1,
+                              options: .transitionCrossDissolve,
+                              animations: {
+                                
+                                self.gradientImageView.image = newGradientImage
+                                BackgroundImageManager.shared().gradientImage = newGradientImage
+                                
+            },
+                              completion: nil)
+        }
+    }
+    
     @objc func changeBackgroundImage(notification: Notification?){
         //Take Action on Notification
+        let currentBackgroudImage = BackgroundImageManager.shared().getBackgroundImage()
         DispatchQueue.main.async {
             UIView.transition(with: self.backgroundImageView,
-                              duration:3,
+                              duration:1,
                               options: .transitionCrossDissolve,
-                              animations: { self.backgroundImageView.image = BackgroundImageManager.shared().getBackgroundImage() },
+                              animations: {
+                                self.backgroundImageView.image = currentBackgroudImage
+                                BackgroundImageManager.shared().backgroundImage = currentBackgroudImage
+            },
                               completion: nil)
         }
     }

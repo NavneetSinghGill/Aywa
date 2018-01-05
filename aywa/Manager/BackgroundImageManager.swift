@@ -24,6 +24,7 @@ class BackgroundImageManager {
     
     let pageContentImage = "pageContentImage"
     var backgroundImage: UIImage?
+    var gradientImage: UIImage?
     var selectedImageIndex:Int = 1
     let imageIndexCount = 5
     let imageAywaKidsIndex = 4

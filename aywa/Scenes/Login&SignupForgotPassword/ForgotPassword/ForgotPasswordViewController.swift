@@ -94,9 +94,18 @@ class ForgotPasswordViewController: BPViewController, ForgotPasswordDisplayLogic
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        animateBackground()
+    }
+    
     // MARK: Do Reset Password
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var emailTextField: FloatingHeaderTextField!
+    @IBOutlet weak var gradientImageView: UIImageView!
+    
+    
     @IBAction func resetPasswordButtonTapped(_ sender: Any){
         doResetPassword()
     }
@@ -115,13 +124,39 @@ class ForgotPasswordViewController: BPViewController, ForgotPasswordDisplayLogic
         print("Get ForgotPassword data !!!!!!")
     }
     
+    //MARK: - Private methods
+    
+    func animateBackground() {
+        self.gradientImageView.image = BackgroundImageManager.shared().gradientImage
+        
+        DispatchQueue.main.async {
+            let currentGradientImageName = "signInGradient"
+            let newGradientImage = UIImage(named: currentGradientImageName)
+            
+            UIView.transition(with: self.gradientImageView,
+                              duration:1,
+                              options: .transitionCrossDissolve,
+                              animations: {
+                                
+                                self.gradientImageView.image = newGradientImage
+                                BackgroundImageManager.shared().gradientImage = newGradientImage
+                                
+            },
+                              completion: nil)
+        }
+    }
+    
     @objc func changeBackgroundImage(notification: Notification?){
         //Take Action on Notification
+        let currentBackgroudImage = BackgroundImageManager.shared().getBackgroundImage()
         DispatchQueue.main.async {
             UIView.transition(with: self.backgroundImageView,
-                              duration:3,
+                              duration:1,
                               options: .transitionCrossDissolve,
-                              animations: { self.backgroundImageView.image = BackgroundImageManager.shared().getBackgroundImage() },
+                              animations: {
+                                self.backgroundImageView.image = currentBackgroudImage
+                                BackgroundImageManager.shared().backgroundImage = currentBackgroudImage
+            },
                               completion: nil)
         }
     }

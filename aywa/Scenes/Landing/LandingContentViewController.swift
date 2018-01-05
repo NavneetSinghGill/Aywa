@@ -16,6 +16,7 @@ class LandingContentViewController: UIViewController {
     static var lastPageIndex:Int = 0
     var pageIndex: Int = 0
     @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var gradientImageView: UIImageView!
     @IBOutlet weak var initialHeaderView: UIView!
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var upperLogo: UIImageView!
@@ -57,11 +58,13 @@ class LandingContentViewController: UIViewController {
         adjustLeftEnglishLabelAlignmentIPAD()
         
         self.view.bringSubview(toFront: backgroundImageView)
+        self.view.bringSubview(toFront: gradientImageView)
         animateBackground()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.view.sendSubview(toBack: gradientImageView)
         self.view.sendSubview(toBack: backgroundImageView)
         if LandingContentViewController.lastPageIndex <= pageIndex || (LandingContentViewController.lastPageIndex == 4 && pageIndex == 0) {
             // default forward direction
@@ -184,15 +187,31 @@ class LandingContentViewController: UIViewController {
     
     func animateBackground() {
         self.backgroundImageView.image = BackgroundImageManager.shared().backgroundImage
+        self.gradientImageView.image = BackgroundImageManager.shared().gradientImage
+        
         DispatchQueue.main.async {
             let currentImageName = BackgroundImageManager.shared().pageContentImage + "\(self.pageIndex+1)"
+            let currentGradientImageName = "landingGradient\(self.pageIndex+1)"
+            let newBackgroundImage = UIImage(named: currentImageName)
+            let newGradientImage = UIImage(named: currentGradientImageName)
             
             UIView.transition(with: self.backgroundImageView,
-                              duration:3,
+                              duration:1,
                               options: .transitionCrossDissolve,
                               animations: {
-                                self.backgroundImageView.image = UIImage(named: currentImageName)
-                                BackgroundImageManager.shared().backgroundImage = UIImage(named: currentImageName)
+                                self.backgroundImageView.image = newBackgroundImage
+                                BackgroundImageManager.shared().backgroundImage = newBackgroundImage
+                                
+            },
+                              completion: nil)
+            
+            UIView.transition(with: self.gradientImageView,
+                              duration:1,
+                              options: .transitionCrossDissolve,
+                              animations: {
+                                
+                                self.gradientImageView.image = newGradientImage
+                                BackgroundImageManager.shared().gradientImage = newGradientImage
                                 
             },
                               completion: nil)
@@ -202,6 +221,7 @@ class LandingContentViewController: UIViewController {
     func setup(){
         initialHeaderView.isHidden = pageIndex != 0
         backgroundImageView.image = UIImage(named: BackgroundImageManager.shared().pageContentImage + "\(pageIndex+1)")
+        self.gradientImageView.image = UIImage(named: "landingGradient\(pageIndex+1)")
         lastPageView.isHidden = pageIndex != 4
         bottomTextView.isHidden = pageIndex == 4
         

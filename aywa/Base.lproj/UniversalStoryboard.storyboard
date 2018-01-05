@@ -25,6 +25,9 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y0s-qX-22I">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient" translatesAutoresizingMaskIntoConstraints="NO" id="Tmd-qe-QYH">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YgK-Ad-0cm" customClass="FloatingHeaderTextField" customModule="aywa" customModuleProvider="target">
                                 <rect key="frame" x="28" y="80" width="320" height="35"/>
                                 <constraints>
@@ -182,11 +185,14 @@
                             <constraint firstItem="Y0s-qX-22I" firstAttribute="top" secondItem="bGU-W0-IfO" secondAttribute="top" constant="20" id="13D-hN-UT1"/>
                             <constraint firstItem="7iI-om-gCw" firstAttribute="centerY" secondItem="dPd-CH-4BY" secondAttribute="centerY" id="2Dd-Ge-m1z"/>
                             <constraint firstItem="Kko-aq-Q1X" firstAttribute="centerX" secondItem="bGU-W0-IfO" secondAttribute="centerX" id="338-D0-DlX"/>
+                            <constraint firstItem="Tmd-qe-QYH" firstAttribute="leading" secondItem="bGU-W0-IfO" secondAttribute="leading" id="3Kn-En-Dui"/>
+                            <constraint firstItem="Tmd-qe-QYH" firstAttribute="top" secondItem="bGU-W0-IfO" secondAttribute="top" id="3Ue-Vc-SDo"/>
                             <constraint firstItem="dPd-CH-4BY" firstAttribute="trailing" secondItem="V9u-61-zKD" secondAttribute="trailing" id="670-Zf-OfB"/>
                             <constraint firstItem="Y0s-qX-22I" firstAttribute="trailing" secondItem="dqB-ep-QbX" secondAttribute="trailing" id="6kt-Sh-7N4"/>
                             <constraint firstItem="Y0s-qX-22I" firstAttribute="leading" secondItem="dqB-ep-QbX" secondAttribute="leading" id="6tS-k6-EbW"/>
                             <constraint firstItem="7iI-om-gCw" firstAttribute="height" secondItem="V9u-61-zKD" secondAttribute="height" id="7Hf-uy-7bz"/>
                             <constraint firstItem="oUI-f2-LN2" firstAttribute="leading" secondItem="YgK-Ad-0cm" secondAttribute="leading" id="7yI-Ub-vnH"/>
+                            <constraint firstAttribute="bottom" secondItem="Tmd-qe-QYH" secondAttribute="bottom" id="A1N-uR-EQg"/>
                             <constraint firstItem="O2b-a3-pNw" firstAttribute="centerX" secondItem="bGU-W0-IfO" secondAttribute="centerX" id="B5E-rC-cKS"/>
                             <constraint firstItem="7iI-om-gCw" firstAttribute="top" secondItem="V9u-61-zKD" secondAttribute="bottom" constant="40" id="CxM-dD-ygG"/>
                             <constraint firstItem="V9u-61-zKD" firstAttribute="trailing" secondItem="YgK-Ad-0cm" secondAttribute="trailing" id="D8W-h3-3Fb"/>
@@ -209,6 +215,7 @@
                             <constraint firstItem="Kko-aq-Q1X" firstAttribute="top" secondItem="FGw-fa-Q8R" secondAttribute="bottom" constant="15" id="hmF-wM-Gwi"/>
                             <constraint firstItem="fsx-qR-Vjm" firstAttribute="top" secondItem="Kko-aq-Q1X" secondAttribute="bottom" constant="35" id="jE4-gg-Zua"/>
                             <constraint firstItem="oUI-f2-LN2" firstAttribute="height" secondItem="YgK-Ad-0cm" secondAttribute="height" id="jJb-ux-RRM"/>
+                            <constraint firstAttribute="trailing" secondItem="Tmd-qe-QYH" secondAttribute="trailing" id="puU-8k-gwO"/>
                             <constraint firstItem="7iI-om-gCw" firstAttribute="leading" secondItem="V9u-61-zKD" secondAttribute="leading" id="rs1-rZ-XvB"/>
                             <constraint firstItem="YgK-Ad-0cm" firstAttribute="leading" secondItem="dqB-ep-QbX" secondAttribute="leading" constant="28" id="tPq-QM-Rdb"/>
                             <constraint firstItem="dPd-CH-4BY" firstAttribute="leading" secondItem="7iI-om-gCw" secondAttribute="trailing" constant="26.5" id="uxI-l8-NPU"/>
@@ -221,6 +228,7 @@
                         <outlet property="backgroundImageView" destination="Y0s-qX-22I" id="cyh-QK-kZD"/>
                         <outlet property="emailTextField" destination="oUI-f2-LN2" id="V9u-1z-d0B"/>
                         <outlet property="genderTextField" destination="dPd-CH-4BY" id="3w9-o7-LAi"/>
+                        <outlet property="gradientImageView" destination="Tmd-qe-QYH" id="Gev-cG-mnr"/>
                         <outlet property="nameTextField" destination="YgK-Ad-0cm" id="CBr-Jr-IC5"/>
                         <outlet property="passwordTextField" destination="V9u-61-zKD" id="OGm-1U-R9B"/>
                     </connections>
@@ -402,6 +410,7 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="fogotPasswordButtonTapped:" destination="bFY-JS-lCR" eventType="touchUpInside" id="Bnc-el-OZ4"/>
+                                                    <segue destination="HFx-4m-C2T" kind="show" identifier="ForgotPassword" id="68Z-Xb-KKe"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -461,6 +470,7 @@
                     <connections>
                         <outlet property="backgroundImageView" destination="lug-JT-5K4" id="E7T-aW-R4L"/>
                         <outlet property="emailTextField" destination="VbZ-bT-B6D" id="d86-3v-eyD"/>
+                        <outlet property="gradientImageView" destination="Wjc-wa-Z1i" id="sqU-pd-gxo"/>
                         <outlet property="passwordTextField" destination="7V3-r9-XFM" id="Bam-WP-aO6"/>
                     </connections>
                 </viewController>
@@ -478,6 +488,9 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TNc-NT-XyA">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient" translatesAutoresizingMaskIntoConstraints="NO" id="6dh-WC-rC9">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J6D-tX-kPu" customClass="FloatingHeaderTextField" customModule="aywa" customModuleProvider="target">
                                 <rect key="frame" x="10" y="316" width="355" height="35"/>
@@ -527,13 +540,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="6dh-WC-rC9" firstAttribute="top" secondItem="VHb-We-ftQ" secondAttribute="top" id="4AJ-c4-YJt"/>
                             <constraint firstItem="J6D-tX-kPu" firstAttribute="centerY" secondItem="VHb-We-ftQ" secondAttribute="centerY" id="4et-bi-FV9"/>
                             <constraint firstItem="4sq-t3-LHZ" firstAttribute="trailing" secondItem="9r0-bq-goT" secondAttribute="trailing" constant="82" id="6gE-uy-xCU"/>
+                            <constraint firstAttribute="bottom" secondItem="6dh-WC-rC9" secondAttribute="bottom" id="GmO-XS-Dtg"/>
                             <constraint firstItem="J6D-tX-kPu" firstAttribute="centerX" secondItem="VHb-We-ftQ" secondAttribute="centerX" id="NZy-CL-oUm"/>
                             <constraint firstItem="4sq-t3-LHZ" firstAttribute="trailing" secondItem="J6D-tX-kPu" secondAttribute="trailing" constant="10" id="Qlh-KP-YEK"/>
+                            <constraint firstItem="6dh-WC-rC9" firstAttribute="leading" secondItem="VHb-We-ftQ" secondAttribute="leading" id="SIO-Jg-QLx"/>
                             <constraint firstItem="TNc-NT-XyA" firstAttribute="trailing" secondItem="4sq-t3-LHZ" secondAttribute="trailing" id="bAb-Xm-MMj"/>
                             <constraint firstItem="TNc-NT-XyA" firstAttribute="bottom" secondItem="4sq-t3-LHZ" secondAttribute="bottom" id="eZb-Ht-jac"/>
                             <constraint firstItem="9r0-bq-goT" firstAttribute="centerX" secondItem="VHb-We-ftQ" secondAttribute="centerX" id="fE2-Ld-Rbn"/>
+                            <constraint firstAttribute="trailing" secondItem="6dh-WC-rC9" secondAttribute="trailing" id="fo3-He-hSm"/>
                             <constraint firstItem="9r0-bq-goT" firstAttribute="top" secondItem="J6D-tX-kPu" secondAttribute="bottom" constant="40" id="hXl-XS-mxC"/>
                             <constraint firstItem="9r0-bq-goT" firstAttribute="leading" secondItem="4sq-t3-LHZ" secondAttribute="leading" constant="82" id="j7L-M0-Hcn"/>
                             <constraint firstItem="J6D-tX-kPu" firstAttribute="leading" secondItem="4sq-t3-LHZ" secondAttribute="leading" constant="10" id="uGD-jY-bcU"/>
@@ -545,6 +562,7 @@
                     <connections>
                         <outlet property="backgroundImageView" destination="TNc-NT-XyA" id="mZg-49-BTE"/>
                         <outlet property="emailTextField" destination="J6D-tX-kPu" id="MmV-cq-t63"/>
+                        <outlet property="gradientImageView" destination="6dh-WC-rC9" id="PuD-bx-gPy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ikT-Z3-ldT" userLabel="First Responder" sceneMemberID="firstResponder"/>

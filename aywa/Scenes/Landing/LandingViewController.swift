@@ -73,7 +73,15 @@ class LandingViewController: BPViewController, UIScrollViewDelegate
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.changeBackgroundImage(notification:)), name: Notification.Name(Constants.kChangeBackgroundImageIdentifier), object: nil)
         hideNavigationBar()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self, name: Notification.Name(Constants.kChangeBackgroundImageIdentifier), object: nil)
     }
     
     // MARK: - IBOutlet
@@ -129,7 +137,6 @@ class LandingViewController: BPViewController, UIScrollViewDelegate
     }
     
     func initialSetup() {
-        NotificationCenter.default.addObserver(self, selector: #selector(self.changeBackgroundImage(notification:)), name: Notification.Name(Constants.kChangeBackgroundImageIdentifier), object: nil)
         setupPageVC()
         loginButton.appBoldFont()
         skipButton.appBoldFont()

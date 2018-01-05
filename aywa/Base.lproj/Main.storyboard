@@ -150,6 +150,9 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pageContentImage1" translatesAutoresizingMaskIntoConstraints="NO" id="ZRM-MQ-sJt">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LBt-4y-xaY" userLabel="Gradient">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="page2Logo" translatesAutoresizingMaskIntoConstraints="NO" id="F9f-T1-RwQ">
                                 <rect key="frame" x="20" y="40" width="130" height="45"/>
                                 <constraints>
@@ -485,7 +488,9 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="LBt-4y-xaY" firstAttribute="top" secondItem="0Xi-KU-1IS" secondAttribute="top" id="EsQ-wQ-QvH"/>
                             <constraint firstItem="F9f-T1-RwQ" firstAttribute="leading" secondItem="gvZ-cT-fPw" secondAttribute="leading" constant="20" id="JE4-fU-Nig"/>
+                            <constraint firstAttribute="bottom" secondItem="LBt-4y-xaY" secondAttribute="bottom" id="KZa-4P-alO"/>
                             <constraint firstItem="gvZ-cT-fPw" firstAttribute="bottom" secondItem="j0i-Al-X34" secondAttribute="bottom" constant="150" id="OuY-PJ-e2x"/>
                             <constraint firstItem="qGs-iY-FvG" firstAttribute="leading" secondItem="gvZ-cT-fPw" secondAttribute="leading" id="RLR-MG-zAD"/>
                             <constraint firstItem="qGs-iY-FvG" firstAttribute="top" secondItem="gvZ-cT-fPw" secondAttribute="top" constant="47" id="Rxt-t7-lY2"/>
@@ -498,9 +503,11 @@
                             <constraint firstItem="ZRM-MQ-sJt" firstAttribute="top" secondItem="gvZ-cT-fPw" secondAttribute="top" id="d50-ag-fcB"/>
                             <constraint firstItem="gvZ-cT-fPw" firstAttribute="trailing" secondItem="j0i-Al-X34" secondAttribute="trailing" id="fuV-k3-mKS"/>
                             <constraint firstItem="grK-r8-qFB" firstAttribute="trailing" secondItem="gvZ-cT-fPw" secondAttribute="trailing" id="iig-kS-1AL"/>
+                            <constraint firstItem="LBt-4y-xaY" firstAttribute="leading" secondItem="0Xi-KU-1IS" secondAttribute="leading" id="oVG-BP-kUv"/>
                             <constraint firstItem="gvZ-cT-fPw" firstAttribute="trailing" secondItem="ZRM-MQ-sJt" secondAttribute="trailing" id="owN-1t-QkE"/>
                             <constraint firstItem="ZRM-MQ-sJt" firstAttribute="leading" secondItem="gvZ-cT-fPw" secondAttribute="leading" id="qMk-RB-W2X"/>
                             <constraint firstItem="j0i-Al-X34" firstAttribute="leading" secondItem="0Xi-KU-1IS" secondAttribute="leading" constant="30" id="qXE-V3-vjF"/>
+                            <constraint firstAttribute="trailing" secondItem="LBt-4y-xaY" secondAttribute="trailing" id="tGs-b2-T2g"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gvZ-cT-fPw"/>
                     </view>
@@ -512,6 +519,7 @@
                         <outlet property="dollarView" destination="3st-LH-wSv" id="y4F-yE-f1M"/>
                         <outlet property="englishTextLabel" destination="d2J-uF-K9E" id="nyI-Zi-3nS"/>
                         <outlet property="globeView" destination="s1T-TX-CTc" id="srz-l2-wgq"/>
+                        <outlet property="gradientImageView" destination="LBt-4y-xaY" id="NIT-PW-BQd"/>
                         <outlet property="hdView" destination="Ihh-JM-85W" id="Zqh-h6-9vF"/>
                         <outlet property="initialHeaderView" destination="qGs-iY-FvG" id="ALk-kA-6MO"/>
                         <outlet property="lastPageDollarLabel" destination="xv5-ME-P0g" id="1cE-Eb-5XK"/>
@@ -557,7 +565,7 @@
         <image name="globe" width="42" height="42"/>
         <image name="page1Logo" width="193" height="67"/>
         <image name="page2Logo" width="135" height="47"/>
-        <image name="pageContentImage1" width="375" height="667"/>
+        <image name="pageContentImage1" width="375" height="666"/>
         <image name="video" width="42" height="39"/>
     </resources>
 </document>
