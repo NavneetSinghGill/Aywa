@@ -50,8 +50,8 @@ class BrowseViewController: UIViewController, BrowseDisplayLogic
     var browseDictionary: Dictionary =  [String : Any]()
     
     private let browseReuseIdentifier = "BrowseTableViewCell"
-    // MARK: Object lifecycle
     
+    // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
     {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -135,16 +135,14 @@ class BrowseViewController: UIViewController, BrowseDisplayLogic
             //browseArray.append(nameString!)
             sectionSecondArray.append(nameString!)
         }
-        //print("Catalog List :\(browseArray)")
         browseSectionsItemsArray.append(sectionFirstArray)
         browseSectionsItemsArray.append(sectionSecondArray)
         print("Catalog List :\(sectionSecondArray)")
-        
     }
     
     // For Section API Request and Get Response
     func doBrowseSectionRequest()  {
-         SVProgressHUD.show()
+        SVProgressHUD.show()
         let request = Home.Section.RequestForBrowseSection()
         interactor?.doSection(request: request)
     }
@@ -166,10 +164,9 @@ class BrowseViewController: UIViewController, BrowseDisplayLogic
                 sectionThridArray.append(nameString!)
             }
         }
-        //browseArray.append(BrowseViewController.genres)
         // print("Section List :\(browseArray)")
         print("Section List :\(sectionThridArray)")
-       
+        
         browseSectionsItemsArray.append(sectionThridArray)
         browseSectionsItemsArray.append(sectionfourthArray)
         self.tableView.reloadData()
@@ -200,7 +197,7 @@ extension BrowseViewController: UITableViewDataSource, UITableViewDelegate {
         return cellHeight
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       // print("Selected Browse is: \(self.browseArray[indexPath.row])")
+        // print("Selected Browse is: \(self.browseArray[indexPath.row])")
         print("Selected Browse is: \(self.browseSectionsItemsArray[indexPath.section] [indexPath.row])")
     }
 }
