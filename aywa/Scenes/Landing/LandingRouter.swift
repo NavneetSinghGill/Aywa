@@ -26,14 +26,12 @@ class LandingRouter: NSObject, LandingRoutingLogic
     // MARK: Routing
     
     func routeToLogin() {
-        let storyboard = UIStoryboard(name: "UniversalStoryboard", bundle: nil)
-        let destinationVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        let destinationVC = LoginViewController.create(of: .UniversalStoryboard)
         navigateToSomewhere(source: viewController!, destination: destinationVC)
     }
     
     func routeToSignup() {
-        let storyboard = UIStoryboard(name: "UniversalStoryboard", bundle: nil)
-        let destinationVC = storyboard.instantiateViewController(withIdentifier: "SignupViewController") as! SignupViewController
+        let destinationVC = SignupViewController.create(of: .UniversalStoryboard)
         navigateToSomewhere(source: viewController!, destination: destinationVC)
     }
     

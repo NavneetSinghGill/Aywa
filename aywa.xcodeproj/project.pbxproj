@@ -12,6 +12,10 @@
 		1846C6D71FF3758B006BF9FC /* SecurityStorageWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1846C6D51FF3758B006BF9FC /* SecurityStorageWorker.swift */; };
 		1846C6D91FF375B0006BF9FC /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1846C6D81FF375B0006BF9FC /* BaseTabBarController.swift */; };
 		18D6EADB1FF22F8F00D6E1D3 /* BackgroundImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D6EADA1FF22F8F00D6E1D3 /* BackgroundImageManager.swift */; };
+		18E48BB120034F0000A3711E /* StoryboardIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48BAF20034F0000A3711E /* StoryboardIdentifiable.swift */; };
+		18E48BB220034F0000A3711E /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48BB020034F0000A3711E /* StoryboardInstantiable.swift */; };
+		18E48BB520034F2100A3711E /* UIStoryboard+Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48BB320034F2000A3711E /* UIStoryboard+Storyboards.swift */; };
+		18E48BB620034F2100A3711E /* UIViewController+StoryboardIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48BB420034F2100A3711E /* UIViewController+StoryboardIdentifier.swift */; };
 		18EE12521FF5FEAF00E72BD6 /* TokenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EE124C1FF5FEAF00E72BD6 /* TokenInteractor.swift */; };
 		18EE12531FF5FEAF00E72BD6 /* TokenModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EE124D1FF5FEAF00E72BD6 /* TokenModels.swift */; };
 		18EE12541FF5FEAF00E72BD6 /* TokenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EE124E1FF5FEAF00E72BD6 /* TokenPresenter.swift */; };
@@ -139,6 +143,10 @@
 		1846C6D51FF3758B006BF9FC /* SecurityStorageWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecurityStorageWorker.swift; sourceTree = "<group>"; };
 		1846C6D81FF375B0006BF9FC /* BaseTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		18D6EADA1FF22F8F00D6E1D3 /* BackgroundImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImageManager.swift; sourceTree = "<group>"; };
+		18E48BAF20034F0000A3711E /* StoryboardIdentifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardIdentifiable.swift; sourceTree = "<group>"; };
+		18E48BB020034F0000A3711E /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
+		18E48BB320034F2000A3711E /* UIStoryboard+Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Storyboards.swift"; sourceTree = "<group>"; };
+		18E48BB420034F2100A3711E /* UIViewController+StoryboardIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+StoryboardIdentifier.swift"; sourceTree = "<group>"; };
 		18EE124C1FF5FEAF00E72BD6 /* TokenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenInteractor.swift; sourceTree = "<group>"; };
 		18EE124D1FF5FEAF00E72BD6 /* TokenModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenModels.swift; sourceTree = "<group>"; };
 		18EE124E1FF5FEAF00E72BD6 /* TokenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenPresenter.swift; sourceTree = "<group>"; };
@@ -296,6 +304,15 @@
 			path = Workers;
 			sourceTree = "<group>";
 		};
+		18E48BAE20034F0000A3711E /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				18E48BAF20034F0000A3711E /* StoryboardIdentifiable.swift */,
+				18E48BB020034F0000A3711E /* StoryboardInstantiable.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		18EE124B1FF5FCAA00E72BD6 /* Token */ = {
 			isa = PBXGroup;
 			children = (
@@ -445,6 +462,8 @@
 		48728CDE1FE3ADAC00780DBF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				18E48BB320034F2000A3711E /* UIStoryboard+Storyboards.swift */,
+				18E48BB420034F2100A3711E /* UIViewController+StoryboardIdentifier.swift */,
 				4880E4621FDEAB4400467054 /* GenericExtensions.swift */,
 				48728CDF1FE3ADAC00780DBF /* ArrayExtensions.swift */,
 				48728CE01FE3ADAC00780DBF /* BoolExtensions.swift */,
@@ -580,6 +599,7 @@
 			children = (
 				18EE125B1FF6481100E72BD6 /* FloatingHeaderTextField.swift */,
 				48B1124C1FDE8086001E92FE /* Constants.swift */,
+				18E48BAE20034F0000A3711E /* Protocol */,
 				48728CDE1FE3ADAC00780DBF /* Extensions */,
 				48AAD66D1FE533E80097C0F3 /* Utils.swift */,
 			);
@@ -804,6 +824,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18E48BB120034F0000A3711E /* StoryboardIdentifiable.swift in Sources */,
 				2393109D1FEA610300337C4B /* HomeSliderBannerViewController.swift in Sources */,
 				48728D0E1FE3AED000780DBF /* ArrayExtensions.swift in Sources */,
 				23FD2E721FF64184001ACF1F /* CommonResponse.swift in Sources */,
@@ -862,6 +883,7 @@
 				2356E9431FEA4AD8009B7AC8 /* LoginRouter.swift in Sources */,
 				48728D211FE3AED000780DBF /* OptionalExtensions.swift in Sources */,
 				23682E251FECDF91006CF18C /* LikeRouter.swift in Sources */,
+				18E48BB520034F2100A3711E /* UIStoryboard+Storyboards.swift in Sources */,
 				48728D231FE3AED000780DBF /* SwifterSwift.swift in Sources */,
 				48AAD6621FE508690097C0F3 /* SignupPresenter.swift in Sources */,
 				238BCFC71FFB4F7500D4A0D6 /* BrowseRouter.swift in Sources */,
@@ -906,6 +928,7 @@
 				48B1121E1FDE5B4C001E92FE /* AppDelegate.swift in Sources */,
 				236F94BF1FE9330700B16981 /* HomeModels.swift in Sources */,
 				236F94C21FE9330700B16981 /* HomeViewController.swift in Sources */,
+				18E48BB620034F2100A3711E /* UIViewController+StoryboardIdentifier.swift in Sources */,
 				1846C6D71FF3758B006BF9FC /* SecurityStorageWorker.swift in Sources */,
 				483B294F1FDFBAE7005F5D67 /* BannerManager.swift in Sources */,
 				483B29501FDFBAEB005F5D67 /* AppSettingsManager.swift in Sources */,
@@ -913,6 +936,7 @@
 				48AAD66C1FE514950097C0F3 /* ViewControllerExtensions.swift in Sources */,
 				483B29511FDFBAF1005F5D67 /* Constants.swift in Sources */,
 				23682E301FECDFA6006CF18C /* AlertPresenter.swift in Sources */,
+				18E48BB220034F0000A3711E /* StoryboardInstantiable.swift in Sources */,
 				1846C6D61FF3758B006BF9FC /* BaseWorker.swift in Sources */,
 				18EE12571FF5FEAF00E72BD6 /* TokenWorker.swift in Sources */,
 			);

@@ -147,6 +147,8 @@ class ForgotPasswordViewController: BPViewController, ForgotPasswordDisplayLogic
     }
     
     @objc func changeBackgroundImage(notification: Notification?){
+        if self.backgroundImageView == nil { return }
+        
         //Take Action on Notification
         let currentBackgroudImage = BackgroundImageManager.shared().getBackgroundImage()
         DispatchQueue.main.async {

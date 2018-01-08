@@ -31,8 +31,7 @@ class LoginRouter: NSObject, LoginRoutingLogic, LoginDataPassing
     // MARK: Routing
     
     func routeToForgotPassword() {
-        let storyboard = UIStoryboard(name: "UniversalStoryboard", bundle: nil)
-        let destinationVC = storyboard.instantiateViewController(withIdentifier: "ForgotPasswordViewController") as! ForgotPasswordViewController
+        let destinationVC = ForgotPasswordViewController.create(of: .UniversalStoryboard)
         navigateToSomewhere(source: viewController!, destination: destinationVC)
     }
     

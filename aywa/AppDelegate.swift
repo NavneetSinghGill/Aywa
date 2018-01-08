@@ -103,10 +103,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func setLandingAsRootViewController() {
-        let storyboardName:String = isiPad ? "Main~ipad" : "Main"
         
         // get your storyboard
-        let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
+        let storyboard = UIStoryboard(storyboard: .Main)
         
         // instantiate your desired ViewController
         let destinationVC = storyboard.instantiateInitialViewController() as! UINavigationController
@@ -119,11 +118,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func setSplashAsRootViewController() {
         
-        // get your storyboard
-        let storyboard = UIStoryboard(name: "UniversalStoryboard", bundle: nil)
-        
         // instantiate your desired ViewController
-        let destinationVC = storyboard.instantiateViewController(withIdentifier: "SplashViewController") as! SplashViewController
+        let destinationVC = SplashViewController.create(of: .UniversalStoryboard)
         
         // Because self.window is an optional you should check it's value first and assign your rootViewController
         if let window = self.window {
@@ -133,11 +129,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func setTabBarAsRootViewController() {
         
-        // get your storyboard
-        let storyboard = UIStoryboard(name: "UniversalStoryboard", bundle: nil)
-        
         // instantiate your desired ViewController
-        let destinationVC = storyboard.instantiateViewController(withIdentifier: "BaseTabBarController") as! BaseTabBarController
+        let destinationVC = BaseTabBarController.create(of: .UniversalStoryboard)
         
         // Because self.window is an optional you should check it's value first and assign your rootViewController
         if let window = self.window {
