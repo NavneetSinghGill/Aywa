@@ -89,7 +89,6 @@
 		483B29531FDFBB23005F5D67 /* Localizable.strings in Sources */ = {isa = PBXBuildFile; fileRef = 48B112501FDE81CC001E92FE /* Localizable.strings */; };
 		48728D0E1FE3AED000780DBF /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48728CDF1FE3ADAC00780DBF /* ArrayExtensions.swift */; };
 		48728D0F1FE3AED000780DBF /* BoolExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48728CE01FE3ADAC00780DBF /* BoolExtensions.swift */; };
-		48728D101FE3AED000780DBF /* CharacterExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48728CE11FE3ADAC00780DBF /* CharacterExtensions.swift */; };
 		48728D111FE3AED000780DBF /* CGColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48728CE31FE3ADAC00780DBF /* CGColorExtensions.swift */; };
 		48728D121FE3AED000780DBF /* CGFloatExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48728CE41FE3ADAC00780DBF /* CGFloatExtensions.swift */; };
 		48728D131FE3AED000780DBF /* CGPointExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48728CE51FE3ADAC00780DBF /* CGPointExtensions.swift */; };
@@ -104,10 +103,8 @@
 		48728D1C1FE3AED000780DBF /* DictionaryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48728CEE1FE3ADAC00780DBF /* DictionaryExtensions.swift */; };
 		48728D1D1FE3AED000780DBF /* DoubleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48728CEF1FE3ADAC00780DBF /* DoubleExtensions.swift */; };
 		48728D1E1FE3AED000780DBF /* FloatExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48728CF01FE3ADAC00780DBF /* FloatExtensions.swift */; };
-		48728D1F1FE3AED000780DBF /* IntExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48728CF11FE3ADAC00780DBF /* IntExtensions.swift */; };
 		48728D201FE3AED000780DBF /* LocaleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48728CF21FE3ADAC00780DBF /* LocaleExtensions.swift */; };
 		48728D211FE3AED000780DBF /* OptionalExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48728CF31FE3ADAC00780DBF /* OptionalExtensions.swift */; };
-		48728D221FE3AED000780DBF /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48728CF41FE3ADAC00780DBF /* StringExtensions.swift */; };
 		48728D231FE3AED000780DBF /* SwifterSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48728CF51FE3ADAC00780DBF /* SwifterSwift.swift */; };
 		48728D3A1FE3AED000780DBF /* URLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48728D0D1FE3ADAC00780DBF /* URLExtensions.swift */; };
 		4880E4631FDEAB4400467054 /* GenericExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4880E4621FDEAB4400467054 /* GenericExtensions.swift */; };
@@ -211,7 +208,6 @@
 		427E8D1FCB73A698E054AFAA /* Pods-aywa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aywa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-aywa/Pods-aywa.debug.xcconfig"; sourceTree = "<group>"; };
 		48728CDF1FE3ADAC00780DBF /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		48728CE01FE3ADAC00780DBF /* BoolExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolExtensions.swift; sourceTree = "<group>"; };
-		48728CE11FE3ADAC00780DBF /* CharacterExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterExtensions.swift; sourceTree = "<group>"; };
 		48728CE31FE3ADAC00780DBF /* CGColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGColorExtensions.swift; sourceTree = "<group>"; };
 		48728CE41FE3ADAC00780DBF /* CGFloatExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloatExtensions.swift; sourceTree = "<group>"; };
 		48728CE51FE3ADAC00780DBF /* CGPointExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPointExtensions.swift; sourceTree = "<group>"; };
@@ -226,10 +222,8 @@
 		48728CEE1FE3ADAC00780DBF /* DictionaryExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtensions.swift; sourceTree = "<group>"; };
 		48728CEF1FE3ADAC00780DBF /* DoubleExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtensions.swift; sourceTree = "<group>"; };
 		48728CF01FE3ADAC00780DBF /* FloatExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatExtensions.swift; sourceTree = "<group>"; };
-		48728CF11FE3ADAC00780DBF /* IntExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtensions.swift; sourceTree = "<group>"; };
 		48728CF21FE3ADAC00780DBF /* LocaleExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleExtensions.swift; sourceTree = "<group>"; };
 		48728CF31FE3ADAC00780DBF /* OptionalExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalExtensions.swift; sourceTree = "<group>"; };
-		48728CF41FE3ADAC00780DBF /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		48728CF51FE3ADAC00780DBF /* SwifterSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwifterSwift.swift; sourceTree = "<group>"; };
 		48728D0D1FE3ADAC00780DBF /* URLExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtensions.swift; sourceTree = "<group>"; };
 		4880E4621FDEAB4400467054 /* GenericExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericExtensions.swift; sourceTree = "<group>"; };
@@ -454,7 +448,6 @@
 				4880E4621FDEAB4400467054 /* GenericExtensions.swift */,
 				48728CDF1FE3ADAC00780DBF /* ArrayExtensions.swift */,
 				48728CE01FE3ADAC00780DBF /* BoolExtensions.swift */,
-				48728CE11FE3ADAC00780DBF /* CharacterExtensions.swift */,
 				48728CE21FE3ADAC00780DBF /* Cocoa */,
 				48728CEB1FE3ADAC00780DBF /* CollectionExtensions.swift */,
 				48728CEC1FE3ADAC00780DBF /* DataExtensions.swift */,
@@ -462,10 +455,8 @@
 				48728CEE1FE3ADAC00780DBF /* DictionaryExtensions.swift */,
 				48728CEF1FE3ADAC00780DBF /* DoubleExtensions.swift */,
 				48728CF01FE3ADAC00780DBF /* FloatExtensions.swift */,
-				48728CF11FE3ADAC00780DBF /* IntExtensions.swift */,
 				48728CF21FE3ADAC00780DBF /* LocaleExtensions.swift */,
 				48728CF31FE3ADAC00780DBF /* OptionalExtensions.swift */,
-				48728CF41FE3ADAC00780DBF /* StringExtensions.swift */,
 				48728CF51FE3ADAC00780DBF /* SwifterSwift.swift */,
 				48728D0D1FE3ADAC00780DBF /* URLExtensions.swift */,
 				48AAD66B1FE514950097C0F3 /* ViewControllerExtensions.swift */,
@@ -823,7 +814,6 @@
 				236F94C01FE9330700B16981 /* HomePresenter.swift in Sources */,
 				2393109A1FEA610300337C4B /* HomeSliderBannerModels.swift in Sources */,
 				236F94BE1FE9330700B16981 /* HomeInteractor.swift in Sources */,
-				48728D101FE3AED000780DBF /* CharacterExtensions.swift in Sources */,
 				48728D111FE3AED000780DBF /* CGColorExtensions.swift in Sources */,
 				18D6EADB1FF22F8F00D6E1D3 /* BackgroundImageManager.swift in Sources */,
 				48AAD6631FE508690097C0F3 /* SignupRouter.swift in Sources */,
@@ -863,7 +853,6 @@
 				48728D1D1FE3AED000780DBF /* DoubleExtensions.swift in Sources */,
 				48728D1E1FE3AED000780DBF /* FloatExtensions.swift in Sources */,
 				2356E9441FEA4AD8009B7AC8 /* LoginViewController.swift in Sources */,
-				48728D1F1FE3AED000780DBF /* IntExtensions.swift in Sources */,
 				236B6F681FF60C480050B40E /* ForgotPasswordRouter.swift in Sources */,
 				2393109B1FEA610300337C4B /* HomeSliderBannerPresenter.swift in Sources */,
 				236F94B01FE8DC4E00B16981 /* HomeTableViewCell.swift in Sources */,
@@ -872,7 +861,6 @@
 				48728D201FE3AED000780DBF /* LocaleExtensions.swift in Sources */,
 				2356E9431FEA4AD8009B7AC8 /* LoginRouter.swift in Sources */,
 				48728D211FE3AED000780DBF /* OptionalExtensions.swift in Sources */,
-				48728D221FE3AED000780DBF /* StringExtensions.swift in Sources */,
 				23682E251FECDF91006CF18C /* LikeRouter.swift in Sources */,
 				48728D231FE3AED000780DBF /* SwifterSwift.swift in Sources */,
 				48AAD6621FE508690097C0F3 /* SignupPresenter.swift in Sources */,

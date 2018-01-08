@@ -109,7 +109,7 @@ class FloatingHeaderTextField: UITextField {
     }
     
     @objc func textFieldDidEndEditing() {
-        let isNotEmpty = text?.characters.isEmpty ?? true
+        let isNotEmpty = text?.isEmpty ?? true
         
         if isNotEmpty {
             

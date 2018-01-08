@@ -133,10 +133,10 @@ class SignupInteractor: SignupBusinessLogic, SignupDataStore
             print(token.count)
             let fbToken = token[Constants.kFbToken]
             if token.count > 1{
-                requestForFacebook = Signup.Register.RegisterFacebookRequest(token: fbToken! as! String, email: token[Constants.kEmailKey] as! String, deviceIdentifier: Utils.deviceIdentifier(), deviceType: Utils.deviceType())
+                requestForFacebook = Signup.Register.RegisterFacebookRequest(token: fbToken! as? String, email: token[Constants.kEmailKey] as? String, deviceIdentifier: Utils.deviceIdentifier(), deviceType: Utils.deviceType())
             }
             else{
-                requestForFacebook = Signup.Register.RegisterFacebookRequest(token: fbToken! as! String, email: "", deviceIdentifier: Utils.deviceIdentifier(), deviceType: Utils.deviceType())
+                requestForFacebook = Signup.Register.RegisterFacebookRequest(token: fbToken! as? String, email: "", deviceIdentifier: Utils.deviceIdentifier(), deviceType: Utils.deviceType())
             }
             self.worker?.registerFacebook(request: requestForFacebook, success: { (response) in
                 print(response)
