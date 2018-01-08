@@ -68,7 +68,7 @@ class FloatingHeaderTextField: UITextField {
     
     func setup() {
         leftViewMode = .always
-        leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 20))
+        leftView = UIView(frame: CGRect(x: 0, y: 0, width: 2, height: 20))
         
         underLineLayer = CAShapeLayer()
         refreshUnderLineLayerFrame()
@@ -125,7 +125,7 @@ class FloatingHeaderTextField: UITextField {
         placeholderLabel.textColor = inActiveColor
         
         self.placeholderLabel.transform = CGAffineTransform.identity
-        self.placeholderLabel.frame = CGRect(x: 13, y: 0, width: self.bounds.width - 10, height: self.bounds.height)
+        self.placeholderLabel.frame = CGRect(x: 0, y: 0, width: self.bounds.width - 10, height: self.bounds.height)
     }
     
     func setActiveState() {
@@ -133,9 +133,9 @@ class FloatingHeaderTextField: UITextField {
         underLineLayer.strokeColor = activeColor.cgColor
         placeholderLabel.textColor = activeColor
         
-        self.placeholderLabel.frame = CGRect(x: 13, y: -20, width: self.bounds.size.width - 20, height: 44)
+        self.placeholderLabel.frame = CGRect(x: 0, y: -25, width: self.bounds.size.width - 20, height: 44)
         self.placeholderLabel.transform = CGAffineTransform(scaleX: self.placeholderFontScale, y: self.placeholderFontScale)
-        self.placeholderLabel.frame.origin = CGPoint(x: 13, y: self.placeholderLabel.frame.origin.y)
+        self.placeholderLabel.frame.origin = CGPoint(x: 0, y: self.placeholderLabel.frame.origin.y)
     }
     
     func setInActiveStateIfShould() {
