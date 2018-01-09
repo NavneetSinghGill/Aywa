@@ -56,8 +56,8 @@ class HomeHeaderAdvertisementCollectionViewCell: UICollectionViewCell {
       
     }
     func setUpImage(bgImageName: String?, TitleImageName: String? ) {
-            advertImageView.sd_setImage(with: URL(string:bgImageName!), placeholderImage: UIImage(named: "placeholder.png"))
-            titleImageView.sd_setImage(with: URL(string:TitleImageName!), placeholderImage: UIImage(named: "placeholder.png"))
+            advertImageView.sd_setImage(with: URL(string:bgImageName!), placeholderImage: UIImage(named: "placeholderHomeAdvert"))
+            titleImageView.sd_setImage(with: URL(string:TitleImageName!))
 
     }
     

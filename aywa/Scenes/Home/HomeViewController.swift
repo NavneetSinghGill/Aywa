@@ -29,8 +29,8 @@ class HomeViewController: UIViewController, HomeDisplayLogic, UITableViewDelegat
     var homeHeader = HomeSliderBannerViewController()
     
     var storedOffsets = [Int: CGFloat]()
-    let verticalCellHeight: CGFloat = 235
-    let horizontalCellHeight: CGFloat = 175
+    let verticalCellHeight: CGFloat = 235 + 40
+    let horizontalCellHeight: CGFloat = 175 + 40
     public var sectionArray = [Home.Section.Response]()
     var sectionDictionary = [String:Home.Section.Response]()
     

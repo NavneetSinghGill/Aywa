@@ -88,7 +88,7 @@ extension HomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
     //MARK: Delegate
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let height = self.contentView.frame.size.height
+        let height = self.collectionView.frame.size.height
         
         if cellAlignment == .Vertical {
             return CGSize(width: height * Constants.generalVerticalCellAspectRatio, height: height)
