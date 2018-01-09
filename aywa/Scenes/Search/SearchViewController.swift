@@ -62,10 +62,9 @@ class SearchViewController: UIViewController, SearchDisplayLogic, UISearchResult
     }
     //MARK: Initial Setup
     private func initialiseView() {
-        
         // Do any additional setup after loading the view.
-        
-        updateNavigationBarColor()
+        //navigationBarWithLeftSideTitle(isTitle: true, titleName: "Search")
+        self.updateNavigationBarColor()
         configureSearchController()
         
         let searchNIB = UINib(nibName: Identifiers.homeTableCell, bundle: nil)
@@ -104,6 +103,7 @@ class SearchViewController: UIViewController, SearchDisplayLogic, UISearchResult
             self.tableView.isHidden = false
             self.defaultLabelForEmptyTableView.isHidden = true
         }
+        
     }
     
     // MARK: Do Search
@@ -129,7 +129,7 @@ class SearchViewController: UIViewController, SearchDisplayLogic, UISearchResult
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).font = UIFont(name: "Helvetica", size: 18)
         navigationItem.searchController = searchController
         //navigationItem.titleView = searchController.searchBar
-       // self.navigationController?.navigationItem.titleView = searchController.searchBar
+        // self.navigationController?.navigationItem.titleView = searchController.searchBar
     }
     
 }
