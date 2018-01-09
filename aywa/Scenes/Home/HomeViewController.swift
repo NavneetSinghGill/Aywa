@@ -149,7 +149,7 @@ class HomeViewController: UIViewController, HomeDisplayLogic, UITableViewDelegat
     func displayHomeScreen(response: [Home.Section.Response]){
         SVProgressHUD.dismiss()
         print("Show Home Section Data!!!: \(response)")
-        sectionArray = response
+        self.sectionArray = response
         self.tableView.reloadData()
         print(response)
     }

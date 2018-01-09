@@ -91,4 +91,29 @@ extension UIViewController {
     @objc func didTapShareButton(){
         print("Share TV Button Tapped")
     }
+    
+//    // MARK: Search bar
+//    func configureSearchController() {
+//        /*
+//         let searchController = UISearchController(searchResultsController: nil)
+//         //searchController.searchBar.placeholder = "shows or stars"
+//         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).attributedPlaceholder =  NSAttributedString(string: "shows or stars", attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
+//         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSAttributedStringKey.foregroundColor.rawValue: UIColor.white]
+//         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).font = UIFont(name: "Helvetica", size: 18)
+//         searchController.searchBar.tintColor = UIColor.white
+//         navigationItem.hidesSearchBarWhenScrolling = false
+//         navigationItem.searchController = searchController
+//         */
+//        let searchController = UISearchController(searchResultsController: nil)
+//        definesPresentationContext = true
+//        searchController.searchBar.tintColor = UIColor.white
+//        searchController.searchBar.barTintColor = UIColor.white
+//        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).attributedPlaceholder =  NSAttributedString(string: "shows or stars", attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
+//        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSAttributedStringKey.foregroundColor.rawValue: UIColor.white]
+//        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).font = UIFont(name: "Helvetica", size: 18)
+//        navigationItem.searchController = searchController
+//        
+//        //self.navigationController?.navigationItem.titleView = searchController.searchBar
+//    }
+    
 }

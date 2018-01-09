@@ -51,7 +51,9 @@ class MyListViewController: UIViewController, MyListDisplayLogic
     router.viewController = viewController
     router.dataStore = interactor
   }
-  
+   private func initialiseView() {
+    navigationBarWithLeftSideTitle(isTitle: false, titleName: "My List")
+    }
   // MARK: Routing
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?)

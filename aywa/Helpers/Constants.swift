@@ -114,7 +114,10 @@ struct Identifiers {
     static let homeTableCell = "HomeTableViewCell"
     // Browse TableView
     static let browseTableViewCell = "BrowseTableViewCell"
-    //
+    
+    //Storyboard Identifiers
+    //MyListViewController
+    static let sIdMyListViewController = "MyListViewController"
 }
 
 enum CellAlignment {
