@@ -50,7 +50,7 @@ extension UIViewController {
     // MARK: NavigationBar with left side title
     func navigationBarWithLeftSideTitle(isTitle: Bool, titleName: String) {
         self.updateNavigationBarColor()
-        updateBackButtonWithTitle(isLeftTitle: isTitle, leftSideTitle: titleName)
+       // updateBackButtonWithTitle(isLeftTitle: isTitle, leftSideTitle: titleName)
         
     }
     func updateBackButtonWithTitle(isLeftTitle: Bool, leftSideTitle: String){
