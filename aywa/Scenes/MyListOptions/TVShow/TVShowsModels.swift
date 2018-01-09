@@ -1,5 +1,5 @@
 //
-//  TVWorker.swift
+//  TVShowsModels.swift
 //  aywa
 //
 //  Created by Bestpeers on 09/01/18.
@@ -12,9 +12,20 @@
 
 import UIKit
 
-class TVWorker
+enum TVShows
 {
-  func doSomeWork()
+  // MARK: Use cases
+  
+  enum Something
   {
+    struct Request
+    {
+    }
+    struct Response
+    {
+    }
+    struct ViewModel
+    {
+    }
   }
 }

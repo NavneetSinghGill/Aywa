@@ -1,5 +1,5 @@
 //
-//  TVInteractor.swift
+//  NetworksInteractor.swift
 //  aywa
 //
 //  Created by Bestpeers on 09/01/18.
@@ -12,30 +12,30 @@
 
 import UIKit
 
-protocol TVBusinessLogic
+protocol NetworksBusinessLogic
 {
-  func doSomething(request: TV.Something.Request)
+  func doSomething(request: Networks.Something.Request)
 }
 
-protocol TVDataStore
+protocol NetworksDataStore
 {
   //var name: String { get set }
 }
 
-class TVInteractor: TVBusinessLogic, TVDataStore
+class NetworksInteractor: NetworksBusinessLogic, NetworksDataStore
 {
-  var presenter: TVPresentationLogic?
-  var worker: TVWorker?
+  var presenter: NetworksPresentationLogic?
+  var worker: NetworksWorker?
   //var name: String = ""
   
   // MARK: Do something
   
-  func doSomething(request: TV.Something.Request)
+  func doSomething(request: Networks.Something.Request)
   {
-    worker = TVWorker()
+    worker = NetworksWorker()
     worker?.doSomeWork()
     
-    let response = TV.Something.Response()
+    let response = Networks.Something.Response()
     presenter?.presentSomething(response: response)
   }
 }

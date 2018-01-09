@@ -1,5 +1,5 @@
 //
-//  TVViewController.swift
+//  TVShowsViewController.swift
 //  aywa
 //
 //  Created by Bestpeers on 09/01/18.
@@ -12,15 +12,15 @@
 
 import UIKit
 
-protocol TVDisplayLogic: class
+protocol TVShowsDisplayLogic: class
 {
-  func displaySomething(viewModel: TV.Something.ViewModel)
+  func displaySomething(viewModel: TVShows.Something.ViewModel)
 }
 
-class TVViewController: UIViewController, TVDisplayLogic
+class TVShowsViewController: UIViewController, TVShowsDisplayLogic
 {
-  var interactor: TVBusinessLogic?
-  var router: (NSObjectProtocol & TVRoutingLogic & TVDataPassing)?
+  var interactor: TVShowsBusinessLogic?
+  var router: (NSObjectProtocol & TVShowsRoutingLogic & TVShowsDataPassing)?
 
   // MARK: Object lifecycle
   
@@ -41,9 +41,9 @@ class TVViewController: UIViewController, TVDisplayLogic
   private func setup()
   {
     let viewController = self
-    let interactor = TVInteractor()
-    let presenter = TVPresenter()
-    let router = TVRouter()
+    let interactor = TVShowsInteractor()
+    let presenter = TVShowsPresenter()
+    let router = TVShowsRouter()
     viewController.interactor = interactor
     viewController.router = router
     interactor.presenter = presenter
@@ -51,10 +51,7 @@ class TVViewController: UIViewController, TVDisplayLogic
     router.viewController = viewController
     router.dataStore = interactor
   }
-    //MARK: Initial Setup
-    private func initialiseView() {
-        navigationBarWithLeftSideTitle(isTitle: true, titleName: "TV")
-    }
+  
   // MARK: Routing
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?)
@@ -72,9 +69,8 @@ class TVViewController: UIViewController, TVDisplayLogic
   override func viewDidLoad()
   {
     super.viewDidLoad()
-   initialiseView()
-    
-    }
+    doSomething()
+  }
   
   // MARK: Do something
   
@@ -82,11 +78,11 @@ class TVViewController: UIViewController, TVDisplayLogic
   
   func doSomething()
   {
-    let request = TV.Something.Request()
+    let request = TVShows.Something.Request()
     interactor?.doSomething(request: request)
   }
   
-  func displaySomething(viewModel: TV.Something.ViewModel)
+  func displaySomething(viewModel: TVShows.Something.ViewModel)
   {
     //nameTextField.text = viewModel.name
   }

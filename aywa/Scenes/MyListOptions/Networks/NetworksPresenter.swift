@@ -1,5 +1,5 @@
 //
-//  TVPresenter.swift
+//  NetworksPresenter.swift
 //  aywa
 //
 //  Created by Bestpeers on 09/01/18.
@@ -12,20 +12,20 @@
 
 import UIKit
 
-protocol TVPresentationLogic
+protocol NetworksPresentationLogic
 {
-  func presentSomething(response: TV.Something.Response)
+  func presentSomething(response: Networks.Something.Response)
 }
 
-class TVPresenter: TVPresentationLogic
+class NetworksPresenter: NetworksPresentationLogic
 {
-  weak var viewController: TVDisplayLogic?
+  weak var viewController: NetworksDisplayLogic?
   
   // MARK: Do something
   
-  func presentSomething(response: TV.Something.Response)
+  func presentSomething(response: Networks.Something.Response)
   {
-    let viewModel = TV.Something.ViewModel()
+    let viewModel = Networks.Something.ViewModel()
     viewController?.displaySomething(viewModel: viewModel)
   }
 }

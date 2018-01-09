@@ -1,5 +1,5 @@
 //
-//  TVRouter.swift
+//  TVShowsRouter.swift
 //  aywa
 //
 //  Created by Bestpeers on 09/01/18.
@@ -12,20 +12,20 @@
 
 import UIKit
 
-@objc protocol TVRoutingLogic
+@objc protocol TVShowsRoutingLogic
 {
   //func routeToSomewhere(segue: UIStoryboardSegue?)
 }
 
-protocol TVDataPassing
+protocol TVShowsDataPassing
 {
-  var dataStore: TVDataStore? { get }
+  var dataStore: TVShowsDataStore? { get }
 }
 
-class TVRouter: NSObject, TVRoutingLogic, TVDataPassing
+class TVShowsRouter: NSObject, TVShowsRoutingLogic, TVShowsDataPassing
 {
-  weak var viewController: TVViewController?
-  var dataStore: TVDataStore?
+  weak var viewController: TVShowsViewController?
+  var dataStore: TVShowsDataStore?
   
   // MARK: Routing
   
@@ -46,14 +46,14 @@ class TVRouter: NSObject, TVRoutingLogic, TVDataPassing
 
   // MARK: Navigation
   
-  //func navigateToSomewhere(source: TVViewController, destination: SomewhereViewController)
+  //func navigateToSomewhere(source: TVShowsViewController, destination: SomewhereViewController)
   //{
   //  source.show(destination, sender: nil)
   //}
   
   // MARK: Passing data
   
-  //func passDataToSomewhere(source: TVDataStore, destination: inout SomewhereDataStore)
+  //func passDataToSomewhere(source: TVShowsDataStore, destination: inout SomewhereDataStore)
   //{
   //  destination.name = source.name
   //}

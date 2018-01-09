@@ -1,5 +1,5 @@
 //
-//  TVModels.swift
+//  NetworksModels.swift
 //  aywa
 //
 //  Created by Bestpeers on 09/01/18.
@@ -12,7 +12,7 @@
 
 import UIKit
 
-enum TV
+enum Networks
 {
   // MARK: Use cases
   
