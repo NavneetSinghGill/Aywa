@@ -843,10 +843,10 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="45"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SnT-Ig-Uez">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                         <subviews>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uo5-uN-rj7" userLabel="moviesButton">
-                                                <rect key="frame" x="0.0" y="0.0" width="125" height="45"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="125" height="50"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="21"/>
                                                 <state key="normal" title="Movies">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -859,10 +859,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bJ1-zw-E0w" userLabel="tvButton">
-                                                <rect key="frame" x="125" y="0.0" width="125" height="45"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="45" id="jhc-Ft-3ne"/>
-                                                </constraints>
+                                                <rect key="frame" x="125" y="0.0" width="125" height="50"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="21"/>
                                                 <state key="normal" title="Shows">
                                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -875,11 +872,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lWb-ze-LVT" userLabel="NetworksButton">
-                                                <rect key="frame" x="250" y="0.0" width="125" height="45"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="45" id="HI6-Sm-5uc"/>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="u0I-ug-tJz"/>
-                                                </constraints>
+                                                <rect key="frame" x="250" y="0.0" width="125" height="50"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="21"/>
                                                 <state key="normal" title="Networks">
                                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -892,7 +885,7 @@
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5CZ-0o-71D" userLabel="View Line">
-                                                <rect key="frame" x="0.0" y="42" width="125" height="3"/>
+                                                <rect key="frame" x="0.0" y="47" width="125" height="3"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="3" id="pqW-BU-2XK"/>
@@ -901,24 +894,20 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="lWb-ze-LVT" firstAttribute="width" secondItem="bJ1-zw-E0w" secondAttribute="width" id="0EY-15-pav"/>
-                                            <constraint firstAttribute="bottom" secondItem="lWb-ze-LVT" secondAttribute="bottom" id="26A-ln-M6S"/>
                                             <constraint firstItem="bJ1-zw-E0w" firstAttribute="leading" secondItem="uo5-uN-rj7" secondAttribute="trailing" id="3AY-MS-0P6"/>
-                                            <constraint firstItem="lWb-ze-LVT" firstAttribute="top" secondItem="SnT-Ig-Uez" secondAttribute="top" id="4Ai-1z-hdx"/>
                                             <constraint firstItem="bJ1-zw-E0w" firstAttribute="width" secondItem="uo5-uN-rj7" secondAttribute="width" id="4xO-S9-GkW"/>
                                             <constraint firstItem="lWb-ze-LVT" firstAttribute="top" secondItem="SnT-Ig-Uez" secondAttribute="top" id="9AG-3K-8Sz"/>
-                                            <constraint firstAttribute="trailing" secondItem="lWb-ze-LVT" secondAttribute="trailing" id="A3Z-FG-d7I"/>
                                             <constraint firstItem="uo5-uN-rj7" firstAttribute="leading" secondItem="SnT-Ig-Uez" secondAttribute="leading" id="B2P-Nq-hxx"/>
                                             <constraint firstItem="bJ1-zw-E0w" firstAttribute="top" secondItem="SnT-Ig-Uez" secondAttribute="top" id="L6k-XM-Mmh"/>
                                             <constraint firstAttribute="trailing" secondItem="lWb-ze-LVT" secondAttribute="trailing" id="LXN-fM-WRF"/>
                                             <constraint firstItem="5CZ-0o-71D" firstAttribute="leading" secondItem="SnT-Ig-Uez" secondAttribute="leading" id="LnZ-OO-2Fs"/>
-                                            <constraint firstItem="bJ1-zw-E0w" firstAttribute="height" secondItem="uo5-uN-rj7" secondAttribute="height" id="QVf-FJ-Jfx"/>
                                             <constraint firstItem="5CZ-0o-71D" firstAttribute="width" secondItem="uo5-uN-rj7" secondAttribute="width" id="T9D-12-IzV"/>
                                             <constraint firstItem="lWb-ze-LVT" firstAttribute="leading" secondItem="bJ1-zw-E0w" secondAttribute="trailing" id="VQo-B3-E7j"/>
                                             <constraint firstAttribute="bottom" secondItem="uo5-uN-rj7" secondAttribute="bottom" id="Vcu-jn-aXe"/>
                                             <constraint firstAttribute="bottom" secondItem="bJ1-zw-E0w" secondAttribute="bottom" id="a05-9j-bg6"/>
-                                            <constraint firstAttribute="height" constant="45" id="eFs-kd-gc2"/>
+                                            <constraint firstAttribute="height" constant="50" id="eFs-kd-gc2"/>
                                             <constraint firstItem="uo5-uN-rj7" firstAttribute="top" secondItem="SnT-Ig-Uez" secondAttribute="top" id="fNu-nT-ota"/>
+                                            <constraint firstItem="lWb-ze-LVT" firstAttribute="width" secondItem="uo5-uN-rj7" secondAttribute="width" id="gYK-LB-ZZF"/>
                                             <constraint firstAttribute="bottom" secondItem="5CZ-0o-71D" secondAttribute="bottom" id="kTb-aD-bR7"/>
                                             <constraint firstAttribute="bottom" secondItem="lWb-ze-LVT" secondAttribute="bottom" id="vha-rY-seE"/>
                                         </constraints>
@@ -1041,16 +1030,16 @@ EHJpZ2h0Q29uc3RhbnRWaWV3A
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use the         button to add movies, shows or networks to your favorite list." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s12-PF-oEU">
-                                <rect key="frame" x="35" y="123" width="305" height="80.5"/>
+                                <rect key="frame" x="42.5" y="118" width="290" height="80.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="305" id="toQ-J4-enc"/>
+                                    <constraint firstAttribute="width" constant="290" id="toQ-J4-enc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2j6-Un-2tS" userLabel="addButton">
-                                <rect key="frame" x="128" y="123" width="35" height="32"/>
+                                <rect key="frame" x="135.5" y="118" width="35" height="32"/>
                                 <state key="normal" image="addButton"/>
                                 <connections>
                                     <action selector="addButtonTapped:" destination="CNG-fY-Nwl" eventType="touchUpInside" id="chg-E8-z6J"/>
@@ -1066,7 +1055,7 @@ EHJpZ2h0Q29uc3RhbnRWaWV3A
                             <constraint firstItem="RVv-eK-mNh" firstAttribute="trailing" secondItem="s2t-zU-qWj" secondAttribute="trailing" id="akF-lr-8Nv"/>
                             <constraint firstItem="s2t-zU-qWj" firstAttribute="top" secondItem="aT1-Xc-yUR" secondAttribute="top" id="gb9-9z-EJX"/>
                             <constraint firstItem="RVv-eK-mNh" firstAttribute="bottom" secondItem="s2t-zU-qWj" secondAttribute="bottom" id="jv3-48-rgD"/>
-                            <constraint firstItem="s12-PF-oEU" firstAttribute="top" secondItem="RVv-eK-mNh" secondAttribute="top" constant="103" id="o92-iM-NsW"/>
+                            <constraint firstItem="s12-PF-oEU" firstAttribute="top" secondItem="RVv-eK-mNh" secondAttribute="top" constant="98" id="o92-iM-NsW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RVv-eK-mNh"/>
                     </view>

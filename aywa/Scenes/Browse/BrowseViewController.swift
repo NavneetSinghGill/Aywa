@@ -36,21 +36,22 @@ class BrowseViewController: UIViewController, BrowseDisplayLogic
     static let displayOrderOne: Int = 1
     static let displayOrderSix: Int = 6
     
-    var browseArray = [movies, tvShows, networks]
+    //var browseArray = [movies, tvShows, networks]
     
-    /*
-     // Section 1 For Movies, TV Shows and Networks
-     let sectionFirstArray = [movies, tvShows, networks]
-     // Section 2 for Catalogs
-     var sectionSecondArray = [String]()
-     // Section 3 For Recently Add and New Releases
-     var sectionThridArray = [String]()
-     // Section 4 For Genres
-     var sectionfourthArray = [genres]
-     var browseSectionsItemsArray = [Array<Any>]()
-     var browseSectionArray = [Home.Section.Response]()
-     var browseDictionary: Dictionary =  [String : Any]()
-     */
+    
+    // Section 1 For Movies, TV Shows and Networks
+    let sectionFirstArray = [movies, tvShows, networks]
+    // Section 2 for Catalogs
+    var sectionSecondArray = [String]()
+    // Section 3 For Recently Add and New Releases
+    var sectionThridArray = [String]()
+    // Section 4 For Genres
+    var sectionfourthArray = [genres]
+    var browseSectionsItemsArray = [Array<Any>]()
+    
+    var browseSectionArray = [Home.Section.Response]()
+    var browseDictionary: Dictionary =  [String : Any]()
+    
     private let browseReuseIdentifier = "BrowseTableViewCell"
     
     // MARK: Object lifecycle
@@ -91,6 +92,9 @@ class BrowseViewController: UIViewController, BrowseDisplayLogic
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.backgroundColor = UIColor.clear
+        
+        browseSectionsItemsArray.append(sectionFirstArray)
+        
         doCatalogsRequest()
         doBrowseSectionRequest()
     }
@@ -134,11 +138,10 @@ class BrowseViewController: UIViewController, BrowseDisplayLogic
         SVProgressHUD.dismiss()
         for indexValue in 0..<(response.catalogs?.count ?? 0 ) {
             let nameString = response.catalogs![indexValue].name
-            browseArray.append(nameString!)
-            //sectionSecondArray.append(nameString!)
+            //browseArray.append(nameString!)
+            sectionSecondArray.append(nameString!)
         }
-        //        browseSectionsItemsArray.append(sectionFirstArray)
-        //        browseSectionsItemsArray.append(sectionSecondArray)
+        browseSectionsItemsArray.append(sectionSecondArray)
         //        print("Catalog List :\(sectionSecondArray)")
         // browseArray = browseArray.sorted(by: <) //TODO: Sorting
         self.tableView.reloadData()
@@ -159,30 +162,30 @@ class BrowseViewController: UIViewController, BrowseDisplayLogic
         print("Get Home Section Success Response !!! \(response)")
         print(response.count)
         
-        for intIndex in 0..<(response.count) {
-            print(response[intIndex].displayOrder!)
-            if response[intIndex].displayOrder == BrowseViewController.displayOrderOne || response[intIndex].displayOrder == BrowseViewController.displayOrderSix {
-                browseArray.append(response[intIndex].name!)
+        /*
+         //        for intIndex in 0..<(response.count) {
+         //            print(response[intIndex].displayOrder!)
+         //            if response[intIndex].displayOrder == BrowseViewController.displayOrderOne || response[intIndex].displayOrder == BrowseViewController.displayOrderSix {
+         //                browseArray.append(response[intIndex].name!)
+         //            }
+         //        }
+         //        browseArray.append(BrowseViewController.genres)
+         //browseArray = browseArray.sorted(by: <) //TODO: Sorting
+         */
+        
+        //  For Section than use
+        //print(browseSectionArray.count)
+        for indexValue in 0..<(response.count) {
+            if indexValue == 0 || indexValue == 5{
+                let nameString = response[indexValue].name
+                sectionThridArray.append(nameString!)
             }
         }
-        browseArray.append(BrowseViewController.genres)
-        //browseArray = browseArray.sorted(by: <) //TODO: Sorting
+        //print("Section List :\(sectionThridArray)")
+        print("Section List :\(sectionThridArray)")
+        browseSectionsItemsArray.append(sectionThridArray)
+        browseSectionsItemsArray.append(sectionfourthArray)
         
-        /*
-         // TODO: For Section than use
-         //print(browseSectionArray.count) //browseSectionArray.count)
-         for indexValue in 0..<(response) { //browseSectionArray.count)
-         if indexValue == 0 || indexValue == 5{
-         let nameString = response[indexValue].name //browseSectionArray.count)
-         // browseArray.append(nameString!)
-         sectionThridArray.append(nameString!)
-         }
-         }
-         print("Section List :\(browseArray)")
-         print("Section List :\(sectionThridArray)")
-         
-         browseSectionsItemsArray.append(sectionThridArray)
-         browseSectionsItemsArray.append(sectionfourthArray)*/
         self.tableView.reloadData()
     }
 }
@@ -192,28 +195,29 @@ extension BrowseViewController: UITableViewDataSource, UITableViewDelegate {
     //MARK: Table View Data Source and Delegate Methods
     // Data Source
     
-    //    func numberOfSections(in tableView: UITableView) -> Int {
-    //        return self.browseSectionsItemsArray.count
-    //    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return self.browseSectionsItemsArray.count
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        //return (self.browseSectionsItemsArray[section] as AnyObject).count
-        return self.browseArray.count
+        return (self.browseSectionsItemsArray[section] as AnyObject).count
+        ///return self.browseArray.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: BrowseTableViewCell = tableView.dequeueReusableCell(withIdentifier: Identifiers.browseTableViewCell, for: indexPath) as! BrowseTableViewCell
-        //        let lablestring = self.browseSectionsItemsArray[indexPath.section] [indexPath.row]
-        //        cell.browseTitleLable.text = lablestring as? String
-        cell.setUIForBrowse(indexPathValueIs: indexPath.row, arrayOfValue: self.browseArray)
+        let lablestring = self.browseSectionsItemsArray[indexPath.section] [indexPath.row]
+        cell.browseTitleLable.text = lablestring as? String
+        //cell.setUIForBrowse(indexPathValueIs: indexPath.row, arrayOfValue: self.browseArray)
         cell.backgroundColor = UIColor.clear
         return cell
     }
+    // Delegate Methods
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return cellHeight
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Selected Browse is: \(self.browseArray[indexPath.row])")
-        //print("Selected Browse is: \(self.browseSectionsItemsArray[indexPath.section] [indexPath.row])")
+        //print("Selected Browse is: \(self.browseArray[indexPath.row])")
+        print("Selected Browse is: \(self.browseSectionsItemsArray[indexPath.section] [indexPath.row])")
     }
 }
 
