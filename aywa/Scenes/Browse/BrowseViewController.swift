@@ -26,7 +26,7 @@ class BrowseViewController: UIViewController, BrowseDisplayLogic
 {
     var interactor: BrowseBusinessLogic?
     var router: (NSObjectProtocol & BrowseRoutingLogic & BrowseDataPassing)?
-    let cellHeight: CGFloat = 70
+    let cellHeight: CGFloat = isiPad ? 88*1.3 : 88
     
     static let movies = "Movies"
     static let tvShows = "TV Shows"
@@ -93,7 +93,7 @@ class BrowseViewController: UIViewController, BrowseDisplayLogic
         self.tableView.dataSource = self
         self.tableView.backgroundColor = UIColor.clear
         
-        browseSectionsItemsArray.append(sectionFirstArray)
+        refreshSectionsItemsArray()
         
         doCatalogsRequest()
         doBrowseSectionRequest()
@@ -141,7 +141,7 @@ class BrowseViewController: UIViewController, BrowseDisplayLogic
             //browseArray.append(nameString!)
             sectionSecondArray.append(nameString!)
         }
-        browseSectionsItemsArray.append(sectionSecondArray)
+        refreshSectionsItemsArray()
         //        print("Catalog List :\(sectionSecondArray)")
         // browseArray = browseArray.sorted(by: <) //TODO: Sorting
         self.tableView.reloadData()
@@ -183,10 +183,17 @@ class BrowseViewController: UIViewController, BrowseDisplayLogic
         }
         //print("Section List :\(sectionThridArray)")
         print("Section List :\(sectionThridArray)")
-        browseSectionsItemsArray.append(sectionThridArray)
-        browseSectionsItemsArray.append(sectionfourthArray)
+        refreshSectionsItemsArray()
         
         self.tableView.reloadData()
+    }
+    
+    func refreshSectionsItemsArray() {
+        browseSectionsItemsArray.removeAll()
+        browseSectionsItemsArray.append(sectionFirstArray)
+        browseSectionsItemsArray.append(sectionSecondArray)
+        browseSectionsItemsArray.append(sectionThridArray)
+        browseSectionsItemsArray.append(sectionfourthArray)
     }
 }
 

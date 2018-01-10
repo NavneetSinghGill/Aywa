@@ -83,6 +83,8 @@ class MoviesViewController: UIViewController, MoviesDisplayLogic
   // MARK: Do Movies ViewController
   
     @IBOutlet weak var collectionView: UICollectionView!
+    let numberOfCollectionViewCellsInSingleLine:CGFloat = isiPad ? 3 : 2
+    let collectionViewCellSpacing:CGFloat = 6 // Used in cell size calculation
   
     func doSomething()
   {
@@ -129,7 +131,7 @@ extension MoviesViewController : UICollectionViewDelegate, UICollectionViewDataS
     //MARK: Delegate
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = (self.collectionView.frame.size.width - 6)/2
+        let width = (self.collectionView.frame.size.width - (self.numberOfCollectionViewCellsInSingleLine - 1) * self.collectionViewCellSpacing) / self.numberOfCollectionViewCellsInSingleLine
         
         return CGSize(width: width, height: width/Constants.generalVerticalCellAspectRatio)
     }
