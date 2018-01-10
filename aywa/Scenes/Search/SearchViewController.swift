@@ -143,6 +143,9 @@ class SearchViewController: UIViewController, SearchDisplayLogic, UISearchBarDel
         self.tableView.reloadData()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        searchBar.resignFirstResponder()
+    }
 }
 extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     
