@@ -22,6 +22,8 @@ class MoviesViewController: UIViewController, MoviesDisplayLogic
   var interactor: MoviesBusinessLogic?
   var router: (NSObjectProtocol & MoviesRoutingLogic & MoviesDataPassing)?
 
+     var indexOfCell: Int?
+    
   // MARK: Object lifecycle
   
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -52,7 +54,11 @@ class MoviesViewController: UIViewController, MoviesDisplayLogic
     router.dataStore = interactor
   }
     func initialiseView() {
-        navigationBarWithLeftSideTitle(isTitle: true, titleName: "Movies")
+        // Initialization code
+        let nib = UINib(nibName: Identifiers.homeImageVerticalCollectionViewCell, bundle: Bundle.main)
+        collectionView.register(nib, forCellWithReuseIdentifier: Identifiers.homeImageVerticalCollectionViewCell)
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
     }
   // MARK: Routing
   
@@ -74,11 +80,11 @@ class MoviesViewController: UIViewController, MoviesDisplayLogic
     initialiseView()
   }
   
-  // MARK: Do something
+  // MARK: Do Movies ViewController
   
-  //@IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var collectionView: UICollectionView!
   
-  func doSomething()
+    func doSomething()
   {
     let request = Movies.Something.Request()
     interactor?.doSomething(request: request)
@@ -88,4 +94,46 @@ class MoviesViewController: UIViewController, MoviesDisplayLogic
   {
     //nameTextField.text = viewModel.name
   }
+}
+
+extension MoviesViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    var collectionViewOffset: CGFloat {
+        set { collectionView.contentOffset.x = newValue }
+        get { return collectionView.contentOffset.x }
+    }
+    
+    func setCollectionView(forRow row: Int, sectionData: Home.Section.Response) {
+        indexOfCell = row
+        collectionView.tag = row
+        self.collectionView.reloadData()
+    }
+    
+    //MARK:- CollectionView Delegate And Datasource Methods
+    //MARK: Datasource
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return  10 //(sectionData!.shows?.count)!
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: HomeImagesCollectionViewCell
+        print(indexPath.row)
+        cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.homeImageVerticalCollectionViewCell, for: indexPath) as! HomeImagesCollectionViewCell
+        cell.cellAlignment = .Vertical
+       // cell.setUICollectionViewCell(forRow: indexOfCell! , show: (self.sectionData?.shows![indexPath.item])!)
+        cell.contentView.layer.borderWidth = 1 
+       return cell
+    }
+    
+    //MARK: Delegate
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = (self.collectionView.frame.size.width - 6)/2
+        
+        return CGSize(width: width, height: width/Constants.generalVerticalCellAspectRatio)
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("Collection view at row \(collectionView.tag) selected index path \(indexPath)")
+    }
 }

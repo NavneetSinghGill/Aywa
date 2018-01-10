@@ -90,6 +90,7 @@ class BrowseViewController: UIViewController, BrowseDisplayLogic
         self.tableView.separatorStyle = .none
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.tableView.backgroundColor = UIColor.clear
         doCatalogsRequest()
         doBrowseSectionRequest()
     }
@@ -204,6 +205,7 @@ extension BrowseViewController: UITableViewDataSource, UITableViewDelegate {
         //        let lablestring = self.browseSectionsItemsArray[indexPath.section] [indexPath.row]
         //        cell.browseTitleLable.text = lablestring as? String
         cell.setUIForBrowse(indexPathValueIs: indexPath.row, arrayOfValue: self.browseArray)
+        cell.backgroundColor = UIColor.clear
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

@@ -17,6 +17,7 @@ class HomeTableViewCell: UITableViewCell {
         print("Cell Option Button Tapped")
     }
     var cellAlignment: CellAlignment = .Vertical
+    
     var homeViewController: HomeViewController?
     var sectionData : Home.Section.Response?
     

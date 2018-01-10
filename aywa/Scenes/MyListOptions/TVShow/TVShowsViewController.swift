@@ -21,7 +21,9 @@ class TVShowsViewController: UIViewController, TVShowsDisplayLogic
 {
   var interactor: TVShowsBusinessLogic?
   var router: (NSObjectProtocol & TVShowsRoutingLogic & TVShowsDataPassing)?
-
+ 
+    var indexOfCell: Int?
+    
   // MARK: Object lifecycle
   
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -51,6 +53,13 @@ class TVShowsViewController: UIViewController, TVShowsDisplayLogic
     router.viewController = viewController
     router.dataStore = interactor
   }
+    func initialiseView() {
+        // Initialization code
+        let nib = UINib(nibName: Identifiers.homeImageHorizontalCollectionViewCell, bundle: Bundle.main)
+        collectionView.register(nib, forCellWithReuseIdentifier: Identifiers.homeImageHorizontalCollectionViewCell)
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
+    }
   
   // MARK: Routing
   
@@ -69,13 +78,13 @@ class TVShowsViewController: UIViewController, TVShowsDisplayLogic
   override func viewDidLoad()
   {
     super.viewDidLoad()
-    doSomething()
+    initialiseView()
   }
   
-  // MARK: Do something
+  // MARK: Do TV Show Controller
   
-  //@IBOutlet weak var nameTextField: UITextField!
-  
+    @IBOutlet weak var collectionView: UICollectionView!
+    
   func doSomething()
   {
     let request = TVShows.Something.Request()
@@ -87,3 +96,46 @@ class TVShowsViewController: UIViewController, TVShowsDisplayLogic
     //nameTextField.text = viewModel.name
   }
 }
+
+extension TVShowsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    var collectionViewOffset: CGFloat {
+        set { collectionView.contentOffset.x = newValue }
+        get { return collectionView.contentOffset.x }
+    }
+    
+    func setCollectionView(forRow row: Int, sectionData: Home.Section.Response) {
+        indexOfCell = row
+        collectionView.tag = row
+        self.collectionView.reloadData()
+    }
+    
+    //MARK:- CollectionView Delegate And Datasource Methods
+    //MARK: Datasource
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return  10 //(sectionData!.shows?.count)!
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: HomeImagesCollectionViewCell
+        print(indexPath.row)
+        cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.homeImageHorizontalCollectionViewCell, for: indexPath) as! HomeImagesCollectionViewCell
+        cell.cellAlignment = .Horizontal
+        // cell.setUICollectionViewCell(forRow: indexOfCell! , show: (self.sectionData?.shows![indexPath.item])!)
+        cell.contentView.layer.borderWidth = 1
+        return cell
+    }
+    
+    //MARK: Delegate
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = self.collectionView.frame.size.width
+        
+        return CGSize(width: width, height: width/Constants.generalHorizontalCellAspectRatio)
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("Collection view at row \(collectionView.tag) selected index path \(indexPath)")
+    }
+}
+

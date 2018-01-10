@@ -89,9 +89,9 @@ class MyListViewController: UIViewController, UIScrollViewDelegate, UIPageViewCo
         // get storyboard
         let storyboard = UIStoryboard(name: "UniversalStoryboard", bundle: nil)
         // instantiate  desired ViewController
-        let destinationTabMovieViewController = storyboard.instantiateViewController(withIdentifier: "MoviesViewController") as! MoviesViewController
-        let destinationTabTVViewController = storyboard.instantiateViewController(withIdentifier: "TVShowsViewController") as! TVShowsViewController
-         let destinationTabNetworksViewController = storyboard.instantiateViewController(withIdentifier: "NetworksViewController") as! NetworksViewController
+        let destinationTabMovieViewController = storyboard.instantiateViewController(withIdentifier: Identifiers.sIdMoviesViewController) as! MoviesViewController
+        let destinationTabTVViewController = storyboard.instantiateViewController(withIdentifier: Identifiers.sIdTVShowsViewController) as! TVShowsViewController
+         let destinationTabNetworksViewController = storyboard.instantiateViewController(withIdentifier: Identifiers.sIdNetworksViewController) as! NetworksViewController
         
         arrVC = [destinationTabMovieViewController, destinationTabTVViewController, destinationTabNetworksViewController]
         

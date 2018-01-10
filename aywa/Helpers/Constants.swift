@@ -97,7 +97,7 @@ struct Constants {
     static let kMenuSectionsOnlyKey = "MenuSectionsOnly"
     static let kMenuSectionsOnlyValue = "false"
     static let kMenuSectionsTrueValue = "true"
-
+    
     static let kShowTypeKey = "ShowType"
     static let kIncludeShowsKey = "IncludeShows" 
     static let kIncludeShowsValue = "true"
@@ -118,6 +118,9 @@ struct Identifiers {
     //Storyboard Identifiers
     //MyListViewController
     static let sIdMyListViewController = "MyListViewController"
+    static let sIdMoviesViewController = "MoviesViewController"
+    static let sIdTVShowsViewController = "TVShowsViewController"
+    static let sIdNetworksViewController = "NetworksViewController"
 }
 
 enum CellAlignment {

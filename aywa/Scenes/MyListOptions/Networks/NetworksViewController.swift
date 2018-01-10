@@ -69,14 +69,14 @@ class NetworksViewController: UIViewController, NetworksDisplayLogic
   override func viewDidLoad()
   {
     super.viewDidLoad()
-    doSomething()
   }
   
-  // MARK: Do something
+  // MARK: Do Network ViewController
   
-  //@IBOutlet weak var nameTextField: UITextField!
+    @IBAction func addButtonTapped(_ sender: Any) {
+    }
   
-  func doSomething()
+    func doSomething()
   {
     let request = Networks.Something.Request()
     interactor?.doSomething(request: request)
