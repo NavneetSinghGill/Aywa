@@ -176,7 +176,7 @@ class BrowseViewController: UIViewController, BrowseDisplayLogic
         //  For Section than use
         //print(browseSectionArray.count)
         for indexValue in 0..<(response.count) {
-            if indexValue == 0 || indexValue == 5{
+            if response[indexValue].displayOrder == BrowseViewController.displayOrderOne || response[indexValue].displayOrder == BrowseViewController.displayOrderSix {
                 let nameString = response[indexValue].name
                 sectionThridArray.append(nameString!)
             }
