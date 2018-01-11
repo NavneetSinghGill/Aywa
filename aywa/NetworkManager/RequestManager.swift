@@ -73,4 +73,14 @@ class RequestManager: NSObject {
             BannerManager.showFailureBanner(subtitle: Constants.kNoNetworkMessage)
         }
     }
+    
+    //MARK:- fetch Movies
+    func fetchMovies(request: BaseRequest, completion:@escaping CompletionHandler)  {
+        if ApplicationDelegate.isNetworkAvailable {
+            RealAPI().getObject(request: request, genericResponse: Movies.MyListMovies.Response.self, completion: completion)
+        }else{
+            completion(false, Constants.kNoNetworkMessage)
+            BannerManager.showFailureBanner(subtitle: Constants.kNoNetworkMessage)
+        }
+    }
 }

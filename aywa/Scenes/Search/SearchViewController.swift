@@ -129,7 +129,8 @@ class SearchViewController: UIViewController, SearchDisplayLogic, UISearchBarDel
         searchBar.setTextFieldColor(color: UIColor.clear)
         searchBar.setPlaceholderTextColor(color: .white)
         searchBar.setMagnifyingGlassColorTo(color: .white)
-        searchBar.tintColor = UIColor.white
+        searchBar.setTextFieldClearButtonColor(color: .white)
+        
         //searchBar.hideorShowLeftSearchIcon(isShow: false)
     }
     

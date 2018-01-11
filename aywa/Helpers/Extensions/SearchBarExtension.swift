@@ -62,4 +62,16 @@ extension UISearchBar {
             }
         }
     }
+    func setTextFieldClearButtonColor(color: UIColor) {
+        if let textField = getSearchBarTextField(), let clearButton = textField.value(forKey: "clearButton") as? UIButton {
+            // Create a template copy of the original button image
+            let templateImage =  clearButton.imageView?.image?.withRenderingMode(.alwaysTemplate)
+            // Set the template image copy as the button image
+            clearButton.setImage(templateImage, for: .normal)
+            // Finally, set the image color
+            clearButton.tintColor = .red
+        }
+        
+    }
+        
 }

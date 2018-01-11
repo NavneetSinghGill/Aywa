@@ -494,9 +494,9 @@
 		2396EDC02004A9B5008CB272 /* MyListOptions */ = {
 			isa = PBXGroup;
 			children = (
-				2396EDDB2004F0EE008CB272 /* Networks */,
-				2396EDCE2004AA09008CB272 /* TVShow */,
 				2396EDCD2004A9FA008CB272 /* Movies */,
+				2396EDCE2004AA09008CB272 /* TVShow */,
+				2396EDDB2004F0EE008CB272 /* Networks */,
 			);
 			path = MyListOptions;
 			sourceTree = "<group>";

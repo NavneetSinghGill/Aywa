@@ -17,6 +17,7 @@ class HomeImagesCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    // Set Cell UI For Home Section
     func setUICollectionViewCell(forRow row: Int, show: Home.Section.Shows) {
         
         var setURLImageSting: String!
@@ -28,7 +29,19 @@ class HomeImagesCollectionViewCell: UICollectionViewCell {
         }
         self.setUICellImage(strImageName: setURLImageSting)
     }
+    // Set Cell UI For Movies
     
+    func setUIMoviesCollectionViewCell(forRow row: Int, show: Movies.MyListMovies.Response) {
+        
+        var setURLImageSting: String!
+        if self.cellAlignment == .Vertical {
+            setURLImageSting = show.image2x2
+        }
+        else{
+            setURLImageSting = show.image1x2
+        }
+        self.setUICellImage(strImageName: setURLImageSting)
+    }
     func setUICellImage(strImageName: String) {
         print(strImageName)
         //displayImageView.sd_setImage(with: URL(string:strImageName))//, placeholderImage: UIImage(named: "placeholder.png"))

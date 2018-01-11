@@ -103,6 +103,9 @@ struct Constants {
     static let kIncludeShowsValue = "true"
     //MARK: Catalogs Key
     static let kIdKey = "id"
+    // MARK:- MyList Movies
+    static let kShowTypesKey = "ShowTypes"
+    
 }
 
 struct Identifiers {
@@ -128,3 +131,10 @@ enum CellAlignment {
     case Horizontal
 }
 
+// For Show Type
+
+enum ShowTypes:Int{
+    case ONE = 1
+    case TWO = 2
+    case THREE = 3
+}

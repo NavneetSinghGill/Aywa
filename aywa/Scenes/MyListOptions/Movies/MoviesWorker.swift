@@ -12,9 +12,41 @@
 
 import UIKit
 
+typealias moviesSuccessResponseHandler = (_ response: [Movies.MyListMovies.Response]) ->()
+typealias moviesFailureResponseHandler = (_ response: Movies.MyListMovies.Response) ->()
 class MoviesWorker
 {
-  func doSomeWork()
-  {
-  }
+    func doMoviesWork(request:Movies.MyListMovies.Request, success:@escaping(moviesSuccessResponseHandler), fail:@escaping(moviesFailureResponseHandler))
+    {
+        //call network for movies etc.
+        let manager = RequestManager()
+        manager.fetchMovies(request: request.baseRequest()) { (status, response) in
+            self.handleMoviesResponse(success: success, fail: fail, status: status, response: response)
+        }
+    }
+    
+    // Handle Movies Response
+    
+    func handleMoviesResponse(success:@escaping(moviesSuccessResponseHandler), fail:@escaping(moviesFailureResponseHandler), status: Bool, response: Any?) {
+        var message:String = Constants.kErrorMessage
+        if status {
+            if let result = response as? [Movies.MyListMovies.Response] {
+                success(result)
+                return
+            }
+        }
+        else {
+            if let result = response as? Movies.MyListMovies.Response {
+                fail(result)
+                return
+            }
+            else
+            {
+                if let result = response as? String {
+                    message = result
+                }
+            }
+        }
+        fail(Movies.MyListMovies.Response(message: message)!)
+    }
 }

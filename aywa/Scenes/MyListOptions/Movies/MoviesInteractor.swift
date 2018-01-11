@@ -14,28 +14,28 @@ import UIKit
 
 protocol MoviesBusinessLogic
 {
-  func doSomething(request: Movies.Something.Request)
+    func doMovies(request: Movies.MyListMovies.Request)
 }
 
 protocol MoviesDataStore
 {
-  //var name: String { get set }
+    //var name: String { get set }
 }
 
 class MoviesInteractor: MoviesBusinessLogic, MoviesDataStore
 {
-  var presenter: MoviesPresentationLogic?
-  var worker: MoviesWorker?
-  //var name: String = ""
-  
-  // MARK: Do something
-  
-  func doSomething(request: Movies.Something.Request)
-  {
-    worker = MoviesWorker()
-    worker?.doSomeWork()
+    var presenter: MoviesPresentationLogic?
+    var worker: MoviesWorker?
     
-    let response = Movies.Something.Response()
-    presenter?.presentSomething(response: response)
-  }
+    // MARK:- Do Movies Interactor
+    func doMovies(request: Movies.MyListMovies.Request)
+    {
+        worker = MoviesWorker()
+        worker?.doMoviesWork(request: request, success: { (response) in
+            print(response)
+            self.presenter?.presentResponse(response: response)
+        }, fail: { (response) in
+            self.presenter?.presentError(response: response)
+        })
+    }
 }

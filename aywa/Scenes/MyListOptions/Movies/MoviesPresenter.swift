@@ -14,18 +14,20 @@ import UIKit
 
 protocol MoviesPresentationLogic
 {
-  func presentSomething(response: Movies.Something.Response)
+    func presentError(response:  Movies.MyListMovies.Response)
+    func presentResponse(response:  [Movies.MyListMovies.Response])
 }
 
 class MoviesPresenter: MoviesPresentationLogic
 {
   weak var viewController: MoviesDisplayLogic?
   
-  // MARK: Do something
+  // MARK: Do  Handle Response For Movies
   
-  func presentSomething(response: Movies.Something.Response)
-  {
-    let viewModel = Movies.Something.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
-  }
+    func presentError(response:  Movies.MyListMovies.Response){
+        viewController?.displayMyListMoviesError(response: response)
+    }
+    func presentResponse(response:  [Movies.MyListMovies.Response]){
+        viewController?.displayMyListMoviesResponse(response: response)
+    }
 }

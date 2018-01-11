@@ -11,91 +11,120 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 protocol MoviesDisplayLogic: class
 {
-  func displaySomething(viewModel: Movies.Something.ViewModel)
+    func displayMyListMoviesError(response: Movies.MyListMovies.Response)
+    func displayMyListMoviesResponse(response: [Movies.MyListMovies.Response])
 }
 
 class MoviesViewController: UIViewController, MoviesDisplayLogic
 {
-  var interactor: MoviesBusinessLogic?
-  var router: (NSObjectProtocol & MoviesRoutingLogic & MoviesDataPassing)?
-
-     var indexOfCell: Int?
+    var interactor: MoviesBusinessLogic?
+    var router: (NSObjectProtocol & MoviesRoutingLogic & MoviesDataPassing)?
+    let numberOfCollectionViewCellsInSingleLine:CGFloat = isiPad ? 3 : 2
+    let collectionViewCellSpacing:CGFloat = 6 // Used in cell size calculation
+    var indexOfCell: Int?
+    var moviesArray = [Movies.MyListMovies.Response]()
+    // MARK: Object lifecycle
     
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = MoviesInteractor()
-    let presenter = MoviesPresenter()
-    let router = MoviesRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    // MARK: Setup
+    
+    private func setup()
+    {
+        let viewController = self
+        let interactor = MoviesInteractor()
+        let presenter = MoviesPresenter()
+        let router = MoviesRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
     func initialiseView() {
         // Initialization code
         let nib = UINib(nibName: Identifiers.homeImageVerticalCollectionViewCell, bundle: Bundle.main)
         collectionView.register(nib, forCellWithReuseIdentifier: Identifiers.homeImageVerticalCollectionViewCell)
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
+        doMoviesRequest()
+       
     }
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+        }
     }
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    initialiseView()
-  }
-  
-  // MARK: Do Movies ViewController
-  
+    
+    // MARK: View lifecycle
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        showCollectionView()
+        initialiseView()
+    }
+    
+    // MARK: Do Movies ViewController
+    
     @IBOutlet weak var collectionView: UICollectionView!
-    let numberOfCollectionViewCellsInSingleLine:CGFloat = isiPad ? 3 : 2
-    let collectionViewCellSpacing:CGFloat = 6 // Used in cell size calculation
-  
-    func doSomething()
-  {
-    let request = Movies.Something.Request()
-    interactor?.doSomething(request: request)
-  }
-  
-  func displaySomething(viewModel: Movies.Something.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
-  }
+    
+    
+    //MARK:- Request For Movies
+    func doMoviesRequest()
+    {
+        SVProgressHUD.show()
+        let request = Movies.MyListMovies.Request()
+        interactor?.doMovies(request: request)
+    }
+    
+    func displayMyListMoviesError(response: Movies.MyListMovies.Response){
+        SVProgressHUD.dismiss()
+        print("Movies Error:\(response)")
+        showCollectionView()
+    }
+    func displayMyListMoviesResponse(response: [Movies.MyListMovies.Response]){
+        SVProgressHUD.dismiss()
+        print("Movies Response:\(response.count)")
+        moviesArray = response
+        showCollectionView()
+//        self.collectionView.reloadData()
+    }
+    //MARK:- Check Hide And Show Collection View
+    func showCollectionView() {
+        if moviesArray.isEmpty  {
+            self.collectionView.isHidden = true
+            //self.defaultLabelForEmptyTableView.isHidden = false
+        }
+        else {
+            self.collectionView.dataSource = self
+            self.collectionView.delegate = self
+            self.collectionView.isHidden = false
+            //self.defaultLabelForEmptyTableView.isHidden = true
+            self.collectionView.reloadData()
+        }
+    }
 }
 
 extension MoviesViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -105,17 +134,18 @@ extension MoviesViewController : UICollectionViewDelegate, UICollectionViewDataS
         get { return collectionView.contentOffset.x }
     }
     
-    func setCollectionView(forRow row: Int, sectionData: Home.Section.Response) {
-        indexOfCell = row
-        collectionView.tag = row
-        self.collectionView.reloadData()
-    }
+//    func setCollectionView(forRow row: Int, moviesArray: Movies.MyListMovies.Response) {
+//        indexOfCell = row
+//        collectionView.tag = row
+//        self.collectionView.reloadData()
+//    }
     
     //MARK:- CollectionView Delegate And Datasource Methods
     //MARK: Datasource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return  10 //(sectionData!.shows?.count)!
+        //return  10 //(sectionData!.shows?.count)!
+        return moviesArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -123,9 +153,9 @@ extension MoviesViewController : UICollectionViewDelegate, UICollectionViewDataS
         print(indexPath.row)
         cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.homeImageVerticalCollectionViewCell, for: indexPath) as! HomeImagesCollectionViewCell
         cell.cellAlignment = .Vertical
-       // cell.setUICollectionViewCell(forRow: indexOfCell! , show: (self.sectionData?.shows![indexPath.item])!)
-        cell.contentView.layer.borderWidth = 1 
-       return cell
+        indexOfCell = indexPath.row
+        cell.setUIMoviesCollectionViewCell(forRow: indexOfCell!, show: self.moviesArray[indexPath.item])
+        return cell
     }
     
     //MARK: Delegate
