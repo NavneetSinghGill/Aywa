@@ -33,6 +33,7 @@
                         </variation>
                     </label>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="4CV-qh-LiE" secondAttribute="bottom" id="63f-v4-ZuU"/>
                     <constraint firstItem="4CV-qh-LiE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="D5h-po-K5p"/>
