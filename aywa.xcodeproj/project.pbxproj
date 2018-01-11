@@ -311,6 +311,7 @@
 		534788E11FE7B7E00031B727 /* ShowImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowImageTableViewCell.swift; sourceTree = "<group>"; };
 		534788E21FE7B7E00031B727 /* ShowImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowImageTableViewCell.xib; sourceTree = "<group>"; };
 		ADB62771C59A206259FEF1D5 /* Pods_aywa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_aywa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F11BB598200793C5006FBB74 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/UniversalStoryboard.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1093,6 +1094,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				48AAD6581FE5080C0097C0F3 /* Base */,
+				F11BB598200793C5006FBB74 /* ar */,
 			);
 			name = UniversalStoryboard.storyboard;
 			sourceTree = "<group>";
@@ -1104,6 +1106,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1161,6 +1164,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

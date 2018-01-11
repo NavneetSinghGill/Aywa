@@ -141,6 +141,8 @@ class LandingViewController: BPViewController, UIScrollViewDelegate
         loginButton.appBoldFont()
         skipButton.appBoldFont()
         _ = BackgroundImageManager.shared()
+        
+        Utils.set(semantic: .forceLeftToRight, to: self.view)
     }
     
     @objc func changeBackgroundImage(notification: Notification){

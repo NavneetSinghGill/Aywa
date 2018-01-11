@@ -56,4 +56,13 @@ class Utils: NSObject {
         
         inController.present(alert, animated: true, completion: nil)
     }
+    
+    //MARK: - UIView methods
+    
+    class func set(semantic: UISemanticContentAttribute, to view: UIView) {
+        view.semanticContentAttribute = semantic
+        for subView in view.subviews {
+            Utils.set(semantic: semantic, to: subView)
+        }
+    }
 }

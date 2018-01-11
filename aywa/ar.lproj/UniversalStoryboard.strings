@@ -1,0 +1,63 @@
+
+/* Class = "UILabel"; text = "OR"; ObjectID = "04O-8q-M3w"; */
+"04O-8q-M3w.text" = "OR";
+
+/* Class = "UIButton"; normalTitle = "Have an account?  Sign in"; ObjectID = "0BD-Bl-YUV"; */
+"0BD-Bl-YUV.normalTitle" = "Have an account?  Sign in";
+
+/* Class = "UILabel"; text = "OR"; ObjectID = "5hR-rE-reA"; */
+"5hR-rE-reA.text" = "OR";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "7V3-r9-XFM"; */
+"7V3-r9-XFM.placeholder" = "Password";
+
+/* Class = "UIButton"; normalTitle = "Reset Password"; ObjectID = "9r0-bq-goT"; */
+"9r0-bq-goT.normalTitle" = "Reset Password";
+
+/* Class = "UILabel"; text = "Sign in to your Aywa account"; ObjectID = "ALF-cg-kiY"; */
+"ALF-cg-kiY.text" = "Sign in to your Aywa account";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "J6D-tX-kPu"; */
+"J6D-tX-kPu.placeholder" = "Email";
+
+/* Class = "UILabel"; text = "Search for movies, TV shows, and stars."; ObjectID = "NlJ-Pf-olw"; */
+"NlJ-Pf-olw.text" = "Search for movies, TV shows, and stars.";
+
+/* Class = "UITextField"; placeholder = "Gender"; ObjectID = "U6I-3k-LoG"; */
+"U6I-3k-LoG.placeholder" = "Gender";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "VbZ-bT-B6D"; */
+"VbZ-bT-B6D.placeholder" = "Email";
+
+/* Class = "UITextField"; placeholder = "Age"; ObjectID = "XGd-qp-c5k"; */
+"XGd-qp-c5k.placeholder" = "Age";
+
+/* Class = "UIButton"; normalTitle = "Forgot password?"; ObjectID = "XPe-w3-jIb"; */
+"XPe-w3-jIb.normalTitle" = "Forgot password?";
+
+/* Class = "UIButton"; normalTitle = "Sign in"; ObjectID = "b7B-W1-rSJ"; */
+"b7B-W1-rSJ.normalTitle" = "Sign in";
+
+/* Class = "UIButton"; normalTitle = "Shows"; ObjectID = "bJ1-zw-E0w"; */
+"bJ1-zw-E0w.normalTitle" = "Shows";
+
+/* Class = "UITextField"; placeholder = "Name"; ObjectID = "cuc-1h-AC8"; */
+"cuc-1h-AC8.placeholder" = "Name";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "hjP-8d-GxA"; */
+"hjP-8d-GxA.placeholder" = "Password";
+
+/* Class = "UIButton"; normalTitle = "Networks"; ObjectID = "lWb-ze-LVT"; */
+"lWb-ze-LVT.normalTitle" = "Networks";
+
+/* Class = "UILabel"; text = "Use the         button to add movies, shows or networks to your favorite list."; ObjectID = "s12-PF-oEU"; */
+"s12-PF-oEU.text" = "Use the         button to add movies, shows or networks to your favorite list.";
+
+/* Class = "UIButton"; normalTitle = "Movies"; ObjectID = "uo5-uN-rj7"; */
+"uo5-uN-rj7.normalTitle" = "Movies";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "vra-Hm-mjL"; */
+"vra-Hm-mjL.placeholder" = "Email";
+
+/* Class = "UIButton"; normalTitle = "Create Account"; ObjectID = "xO8-l1-c5t"; */
+"xO8-l1-c5t.normalTitle" = "Create Account";

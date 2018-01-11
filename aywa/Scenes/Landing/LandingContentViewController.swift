@@ -219,6 +219,8 @@ class LandingContentViewController: UIViewController {
     }
     
     func setup(){
+        Utils.set(semantic: .forceLeftToRight, to: self.view)
+        
         initialHeaderView.isHidden = pageIndex != 0
         backgroundImageView.image = UIImage(named: BackgroundImageManager.shared().pageContentImage + "\(pageIndex+1)")
         self.gradientImageView.image = UIImage(named: "landingGradient\(pageIndex+1)")
