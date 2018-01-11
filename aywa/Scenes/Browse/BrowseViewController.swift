@@ -36,6 +36,9 @@ class BrowseViewController: UIViewController, BrowseDisplayLogic
     static let displayOrderOne: Int = 1
     static let displayOrderSix: Int = 6
     
+    var isCatalogApiCompleted = false
+    var isBrowseSectionApiCompleted = false
+    
     //var browseArray = [movies, tvShows, networks]
     
     
@@ -93,7 +96,7 @@ class BrowseViewController: UIViewController, BrowseDisplayLogic
         self.tableView.dataSource = self
         self.tableView.backgroundColor = UIColor.clear
         
-        refreshSectionsItemsArray()
+//        refreshSectionsItemsArrayAndTableViewIfRequired()
         
         doCatalogsRequest()
         doBrowseSectionRequest()
@@ -131,20 +134,18 @@ class BrowseViewController: UIViewController, BrowseDisplayLogic
     
     // Get Catalogs Response handle Protocal methods
     func displayBrowseCatalogError(response: Browse.Catalogs.Response){
-        SVProgressHUD.dismiss()
         print("Show Catalogs Error Response!!!:\(String(describing: response)) ")
+        isBrowseSectionApiCompleted = true
+        refreshSectionsItemsArrayAndTableViewIfRequired()
     }
     func displayBrowserCatalogsResponse(response: Browse.Catalogs.Response){
-        SVProgressHUD.dismiss()
         for indexValue in 0..<(response.catalogs?.count ?? 0 ) {
             let nameString = response.catalogs![indexValue].name
             //browseArray.append(nameString!)
             sectionSecondArray.append(nameString!)
         }
-        refreshSectionsItemsArray()
-        //        print("Catalog List :\(sectionSecondArray)")
-        // browseArray = browseArray.sorted(by: <) //TODO: Sorting
-        self.tableView.reloadData()
+        isCatalogApiCompleted = true
+        refreshSectionsItemsArrayAndTableViewIfRequired()
     }
     
     // For Section API Request and Get Response
@@ -154,46 +155,33 @@ class BrowseViewController: UIViewController, BrowseDisplayLogic
         interactor?.doSection(request: request)
     }
     func displayHomeSectionError(response: Home.Section.Response){
-        SVProgressHUD.dismiss()
         print("Get Home Section Error Response !!! \(response)")
+        isBrowseSectionApiCompleted = true
+        refreshSectionsItemsArrayAndTableViewIfRequired()
     }
     func displayHomeSectionResponse(response: [Home.Section.Response]){
-        SVProgressHUD.dismiss()
         print("Get Home Section Success Response !!! \(response)")
-        print(response.count)
-        
-        /*
-         //        for intIndex in 0..<(response.count) {
-         //            print(response[intIndex].displayOrder!)
-         //            if response[intIndex].displayOrder == BrowseViewController.displayOrderOne || response[intIndex].displayOrder == BrowseViewController.displayOrderSix {
-         //                browseArray.append(response[intIndex].name!)
-         //            }
-         //        }
-         //        browseArray.append(BrowseViewController.genres)
-         //browseArray = browseArray.sorted(by: <) //TODO: Sorting
-         */
-        
-        //  For Section than use
-        //print(browseSectionArray.count)
         for indexValue in 0..<(response.count) {
             if response[indexValue].displayOrder == BrowseViewController.displayOrderOne || response[indexValue].displayOrder == BrowseViewController.displayOrderSix {
                 let nameString = response[indexValue].name
                 sectionThridArray.append(nameString!)
             }
         }
-        //print("Section List :\(sectionThridArray)")
         print("Section List :\(sectionThridArray)")
-        refreshSectionsItemsArray()
-        
-        self.tableView.reloadData()
+        isBrowseSectionApiCompleted = true
+        refreshSectionsItemsArrayAndTableViewIfRequired()
     }
     
-    func refreshSectionsItemsArray() {
+    func refreshSectionsItemsArrayAndTableViewIfRequired() {
         browseSectionsItemsArray.removeAll()
         browseSectionsItemsArray.append(sectionFirstArray)
         browseSectionsItemsArray.append(sectionSecondArray)
         browseSectionsItemsArray.append(sectionThridArray)
         browseSectionsItemsArray.append(sectionfourthArray)
+        if isBrowseSectionApiCompleted && isCatalogApiCompleted {
+            self.tableView.reloadData()
+            SVProgressHUD.dismiss()
+        }
     }
 }
 

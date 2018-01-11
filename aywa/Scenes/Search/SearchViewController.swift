@@ -22,8 +22,8 @@ class SearchViewController: UIViewController, SearchDisplayLogic, UISearchBarDel
     var interactor: SearchBusinessLogic?
     var router: (NSObjectProtocol & SearchRoutingLogic & SearchDataPassing)?
     
-    let verticalCellHeight: CGFloat = 235
-    let horizontalCellHeight: CGFloat = 175
+    let verticalCellHeight: CGFloat = 235 * (isiPad ? 1.3 : 1) + 40 //40 is the hieght of tableview cell heading
+    let horizontalCellHeight: CGFloat = 175 * (isiPad ? 1.3 : 1) + 40
     
     var arrayOfSearch = [Home.Section.Response]()
     var mArrryFilteredSearchList = [Home.Section.Response]()
