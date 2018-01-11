@@ -14,7 +14,7 @@ import UIKit
 
 protocol NetworksPresentationLogic
 {
-  func presentSomething(response: Networks.Something.Response)
+  func presentSomething(response: Networks.MyListShows.Response)
 }
 
 class NetworksPresenter: NetworksPresentationLogic
@@ -23,9 +23,9 @@ class NetworksPresenter: NetworksPresentationLogic
   
   // MARK: Do something
   
-  func presentSomething(response: Networks.Something.Response)
+  func presentSomething(response: Networks.MyListShows.Response)
   {
-    let viewModel = Networks.Something.ViewModel()
+    let viewModel = Networks.MyListShows.ViewModel()
     viewController?.displaySomething(viewModel: viewModel)
   }
 }

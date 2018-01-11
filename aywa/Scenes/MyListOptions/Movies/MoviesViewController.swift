@@ -109,7 +109,6 @@ class MoviesViewController: UIViewController, MoviesDisplayLogic
         print("Movies Response:\(response.count)")
         moviesArray = response
         showCollectionView()
-//        self.collectionView.reloadData()
     }
     //MARK:- Check Hide And Show Collection View
     func showCollectionView() {

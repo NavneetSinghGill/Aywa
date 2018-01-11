@@ -14,7 +14,7 @@ import UIKit
 
 protocol NetworksDisplayLogic: class
 {
-  func displaySomething(viewModel: Networks.Something.ViewModel)
+  func displaySomething(viewModel: Networks.MyListShows.ViewModel)
 }
 
 class NetworksViewController: UIViewController, NetworksDisplayLogic
@@ -78,11 +78,11 @@ class NetworksViewController: UIViewController, NetworksDisplayLogic
   
     func doSomething()
   {
-    let request = Networks.Something.Request()
+    let request = Networks.MyListShows.Request()
     interactor?.doSomething(request: request)
   }
   
-  func displaySomething(viewModel: Networks.Something.ViewModel)
+  func displaySomething(viewModel: Networks.MyListShows.ViewModel)
   {
     //nameTextField.text = viewModel.name
   }
