@@ -30,6 +30,7 @@
 		2356E9431FEA4AD8009B7AC8 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2356E9371FEA4423009B7AC8 /* LoginRouter.swift */; };
 		2356E9441FEA4AD8009B7AC8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2356E9381FEA4423009B7AC8 /* LoginViewController.swift */; };
 		2356E9451FEA4AD8009B7AC8 /* LoginWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2356E9391FEA4423009B7AC8 /* LoginWorker.swift */; };
+		23670D802007309E00FEE2D9 /* SearchBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23670D7F2007309E00FEE2D9 /* SearchBarExtension.swift */; };
 		23682E161FECDF6E006CF18C /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23682E101FECDF6E006CF18C /* SearchInteractor.swift */; };
 		23682E171FECDF6E006CF18C /* SearchModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23682E111FECDF6E006CF18C /* SearchModels.swift */; };
 		23682E181FECDF6E006CF18C /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23682E121FECDF6E006CF18C /* SearchPresenter.swift */; };
@@ -182,6 +183,7 @@
 		2356E9371FEA4423009B7AC8 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		2356E9381FEA4423009B7AC8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2356E9391FEA4423009B7AC8 /* LoginWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWorker.swift; sourceTree = "<group>"; };
+		23670D7F2007309E00FEE2D9 /* SearchBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarExtension.swift; sourceTree = "<group>"; };
 		23682E101FECDF6E006CF18C /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
 		23682E111FECDF6E006CF18C /* SearchModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModels.swift; sourceTree = "<group>"; };
 		23682E121FECDF6E006CF18C /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
@@ -568,6 +570,7 @@
 				48728D0D1FE3ADAC00780DBF /* URLExtensions.swift */,
 				48AAD66B1FE514950097C0F3 /* ViewControllerExtensions.swift */,
 				1830A53B1FF4D0A90099D8EF /* BPViewControllerExtension.swift */,
+				23670D7F2007309E00FEE2D9 /* SearchBarExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1044,6 +1047,7 @@
 				483B29511FDFBAF1005F5D67 /* Constants.swift in Sources */,
 				2396EDF22004F154008CB272 /* NetworksViewController.swift in Sources */,
 				23682E301FECDFA6006CF18C /* AlertPresenter.swift in Sources */,
+				23670D802007309E00FEE2D9 /* SearchBarExtension.swift in Sources */,
 				18E48BB220034F0000A3711E /* StoryboardInstantiable.swift in Sources */,
 				1846C6D61FF3758B006BF9FC /* BaseWorker.swift in Sources */,
 				18EE12571FF5FEAF00E72BD6 /* TokenWorker.swift in Sources */,

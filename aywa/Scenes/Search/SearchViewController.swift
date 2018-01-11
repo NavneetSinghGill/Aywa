@@ -120,12 +120,17 @@ class SearchViewController: UIViewController, SearchDisplayLogic, UISearchBarDel
     //MARK:- Private Methods
     func configureSearchController(){
         searchBar = UISearchBar.init(frame: CGRect.init(origin: .zero, size: CGSize.init(width: UIScreen.main.bounds.width, height: (navigationController?.navigationBar.frame.height)!)))
+        //UISearchBar(frame: CGRect(x: 0, y: 20, width: UIScreen.main.bounds.width, height: 44))
         navigationItem.titleView = searchBar
         searchBar.delegate = self
-        searchBar.placeholder = "Search"
-        searchBar.barTintColor = UIColor.white
-        searchBar.backgroundColor = UIColor.clear
         
+        searchBar.placeholder = "Search"
+        searchBar.setTextColor(color: .white)
+        searchBar.setTextFieldColor(color: UIColor.clear)
+        searchBar.setPlaceholderTextColor(color: .white)
+        searchBar.setMagnifyingGlassColorTo(color: .white)
+        searchBar.tintColor = UIColor.white
+        //searchBar.hideorShowLeftSearchIcon(isShow: false)
     }
     
     func updateSearchResults(searchText : String) {
