@@ -14,18 +14,19 @@ import UIKit
 
 protocol TVShowsPresentationLogic
 {
-  func presentSomething(response: TVShows.Something.Response)
+    func presentError(response:  TVShows.MyListShows.Response)
+    func presentResponse(response:  [TVShows.MyListShows.Response])
 }
 
 class TVShowsPresenter: TVShowsPresentationLogic
 {
   weak var viewController: TVShowsDisplayLogic?
   
-  // MARK: Do something
-  
-  func presentSomething(response: TVShows.Something.Response)
-  {
-    let viewModel = TVShows.Something.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
-  }
+  // MARK: Do TVShowsPresenter Handle response and Present
+    func presentError(response:  TVShows.MyListShows.Response){
+        viewController?.displayMyListShowsError(response: response)
+    }
+    func presentResponse(response:  [TVShows.MyListShows.Response]){
+        viewController?.displayMyListShowsResponse(response: response)
+    }
 }

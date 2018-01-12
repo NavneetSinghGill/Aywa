@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8P3-nz-1eY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8P3-nz-1eY">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -963,6 +963,30 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myListGradient" translatesAutoresizingMaskIntoConstraints="NO" id="Vet-DZ-Tv2">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use the         button to add movies, shows or networks to your favorite list." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yg0-fA-wQ8" userLabel="labelForAddMovies">
+                                <rect key="frame" x="42" y="118" width="290" height="80.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="290" id="2xX-fN-WuU">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="377"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="30"/>
+                                </variation>
+                            </label>
+                            <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aj4-c0-Zcz" userLabel="addButton">
+                                <rect key="frame" x="132" y="116" width="35" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="6WV-Yd-T90">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="46"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" secondItem="aj4-c0-Zcz" secondAttribute="height" multiplier="35:32" id="XCP-cl-qdD"/>
+                                </constraints>
+                                <state key="normal" image="addButton"/>
+                            </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rDm-xt-keV">
                                 <rect key="frame" x="22.5" y="0.0" width="330" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -974,10 +998,6 @@
                                     <inset key="sectionInset" minX="0.0" minY="20" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells/>
-                                <connections>
-                                    <outlet property="dataSource" destination="Vet-DZ-Tv2" id="gjJ-o9-IZl"/>
-                                    <outlet property="delegate" destination="Vet-DZ-Tv2" id="2Ww-4U-Kq4"/>
-                                </connections>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Upb-AQ-46y" userLabel="leftConstantView">
                                 <rect key="frame" x="0.0" y="333" width="22.5" height="1"/>
@@ -1005,19 +1025,26 @@ EHJpZ2h0Q29uc3RhbnRWaWV3A
                             <constraint firstItem="Qsb-4G-fvb" firstAttribute="width" secondItem="fZB-wY-L54" secondAttribute="width" multiplier="0.06" id="KYJ-XW-KsA"/>
                             <constraint firstItem="Vet-DZ-Tv2" firstAttribute="leading" secondItem="jaC-km-AET" secondAttribute="leading" id="O0Z-GL-hXU"/>
                             <constraint firstItem="Vet-DZ-Tv2" firstAttribute="bottom" secondItem="jaC-km-AET" secondAttribute="bottom" id="Qrb-gE-NAc"/>
+                            <constraint firstItem="Yg0-fA-wQ8" firstAttribute="centerX" secondItem="fZB-wY-L54" secondAttribute="centerX" id="Vzx-7a-iJs"/>
+                            <constraint firstItem="aj4-c0-Zcz" firstAttribute="leading" secondItem="Yg0-fA-wQ8" secondAttribute="leading" constant="90" id="e8V-fX-sxY"/>
                             <constraint firstItem="Vet-DZ-Tv2" firstAttribute="top" secondItem="fZB-wY-L54" secondAttribute="top" id="eTv-s1-elG"/>
+                            <constraint firstItem="aj4-c0-Zcz" firstAttribute="top" secondItem="Yg0-fA-wQ8" secondAttribute="top" constant="-2" id="eyy-x5-0nj"/>
+                            <constraint firstItem="aj4-c0-Zcz" firstAttribute="width" secondItem="aj4-c0-Zcz" secondAttribute="height" multiplier="35:32" id="jYK-lR-OBg"/>
                             <constraint firstItem="Upb-AQ-46y" firstAttribute="width" secondItem="Qsb-4G-fvb" secondAttribute="width" id="mAL-xY-Qt0"/>
                             <constraint firstItem="Qsb-4G-fvb" firstAttribute="centerY" secondItem="rDm-xt-keV" secondAttribute="centerY" id="mOv-FN-efs"/>
                             <constraint firstItem="Upb-AQ-46y" firstAttribute="leading" secondItem="fZB-wY-L54" secondAttribute="leading" id="oYY-HE-KIb"/>
                             <constraint firstItem="Vet-DZ-Tv2" firstAttribute="trailing" secondItem="jaC-km-AET" secondAttribute="trailing" id="rLZ-9y-5O2"/>
                             <constraint firstItem="rDm-xt-keV" firstAttribute="bottom" secondItem="jaC-km-AET" secondAttribute="bottom" id="rcb-fA-YvL"/>
                             <constraint firstItem="Upb-AQ-46y" firstAttribute="centerY" secondItem="rDm-xt-keV" secondAttribute="centerY" id="uSH-qL-gYO"/>
+                            <constraint firstItem="Yg0-fA-wQ8" firstAttribute="top" secondItem="jaC-km-AET" secondAttribute="top" constant="98" id="zny-le-64x"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jaC-km-AET"/>
                     </view>
                     <navigationItem key="navigationItem" id="dSl-cy-coX"/>
                     <connections>
+                        <outlet property="buttonForAddMovies" destination="aj4-c0-Zcz" id="erF-ln-NLP"/>
                         <outlet property="collectionView" destination="rDm-xt-keV" id="iUl-Il-Rw7"/>
+                        <outlet property="labelForAddMovies" destination="Yg0-fA-wQ8" id="GVu-5z-WaH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SmP-zf-RvC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1035,7 +1062,7 @@ EHJpZ2h0Q29uc3RhbnRWaWV3A
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myListGradient" translatesAutoresizingMaskIntoConstraints="NO" id="s2t-zU-qWj">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use the         button to add movies, shows or networks to your favorite list." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s12-PF-oEU">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use the         button to add movies, shows or networks to your favorite list." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s12-PF-oEU" userLabel="labelForAddNetworks">
                                 <rect key="frame" x="42.5" y="118" width="290" height="80.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="290" id="toQ-J4-enc">
@@ -1049,7 +1076,7 @@ EHJpZ2h0Q29uc3RhbnRWaWV3A
                                     <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="30"/>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2j6-Un-2tS" userLabel="addButton">
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2j6-Un-2tS" userLabel="addButton">
                                 <rect key="frame" x="132.5" y="116" width="35" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="2j6-Un-2tS" secondAttribute="height" multiplier="35:32" id="FtC-kv-RBC"/>
@@ -1078,6 +1105,10 @@ EHJpZ2h0Q29uc3RhbnRWaWV3A
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RVv-eK-mNh"/>
                     </view>
+                    <connections>
+                        <outlet property="buttonForAddNetworks" destination="2j6-Un-2tS" id="5YA-cC-zef"/>
+                        <outlet property="labelForAddNetworks" destination="s12-PF-oEU" id="osR-Xq-X38"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RQg-nH-b4l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1346,6 +1377,30 @@ EHJpZ2h0Q29uc3RhbnRWaWV3A
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myListGradient" translatesAutoresizingMaskIntoConstraints="NO" id="ufp-UG-bRS">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use the         button to add movies, shows or networks to your favorite list." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRI-jz-wC0" userLabel="labelForAddShows">
+                                <rect key="frame" x="42" y="118" width="290" height="80.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="290" id="gUp-5f-tcb">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="377"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="30"/>
+                                </variation>
+                            </label>
+                            <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7UM-Nn-qtT" userLabel="addButton">
+                                <rect key="frame" x="132" y="116" width="35" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="08F-4q-GNL">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="46"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" secondItem="7UM-Nn-qtT" secondAttribute="height" multiplier="35:32" id="h1u-xF-Abs"/>
+                                </constraints>
+                                <state key="normal" image="addButton"/>
+                            </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eAJ-TM-51j">
                                 <rect key="frame" x="30" y="0.0" width="315" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1357,10 +1412,6 @@ EHJpZ2h0Q29uc3RhbnRWaWV3A
                                     <inset key="sectionInset" minX="0.0" minY="20" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells/>
-                                <connections>
-                                    <outlet property="dataSource" destination="ufp-UG-bRS" id="9eW-5a-kvo"/>
-                                    <outlet property="delegate" destination="ufp-UG-bRS" id="fBl-PK-kVc"/>
-                                </connections>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BFA-MO-bSV" userLabel="leftConstantView">
                                 <rect key="frame" x="0.0" y="333" width="30" height="1"/>
@@ -1385,9 +1436,12 @@ EHJpZ2h0Q29uc3RhbnRWaWV3A
                             <constraint firstItem="ufp-UG-bRS" firstAttribute="trailing" secondItem="17R-Kp-nXy" secondAttribute="trailing" id="4hH-uo-jhA"/>
                             <constraint firstItem="BFA-MO-bSV" firstAttribute="leading" secondItem="sFh-H0-eiz" secondAttribute="leading" id="5Z5-tF-BTC"/>
                             <constraint firstItem="cCe-tJ-xz5" firstAttribute="leading" secondItem="eAJ-TM-51j" secondAttribute="trailing" id="7dT-pu-7fn"/>
+                            <constraint firstItem="hRI-jz-wC0" firstAttribute="top" secondItem="17R-Kp-nXy" secondAttribute="top" constant="98" id="9xK-tO-RYw"/>
                             <constraint firstItem="cCe-tJ-xz5" firstAttribute="centerY" secondItem="eAJ-TM-51j" secondAttribute="centerY" id="F4i-SV-xqM"/>
                             <constraint firstItem="ufp-UG-bRS" firstAttribute="bottom" secondItem="17R-Kp-nXy" secondAttribute="bottom" id="FOo-ba-jkO"/>
                             <constraint firstItem="eAJ-TM-51j" firstAttribute="top" secondItem="sFh-H0-eiz" secondAttribute="top" id="KE3-JX-rRy"/>
+                            <constraint firstItem="7UM-Nn-qtT" firstAttribute="top" secondItem="hRI-jz-wC0" secondAttribute="top" constant="-2" id="KhG-Qk-B1i"/>
+                            <constraint firstItem="7UM-Nn-qtT" firstAttribute="width" secondItem="7UM-Nn-qtT" secondAttribute="height" multiplier="35:32" id="M0d-Wa-6kC"/>
                             <constraint firstItem="cCe-tJ-xz5" firstAttribute="width" secondItem="sFh-H0-eiz" secondAttribute="width" multiplier="0.08" id="NJB-D8-Hc0"/>
                             <constraint firstItem="eAJ-TM-51j" firstAttribute="bottom" secondItem="17R-Kp-nXy" secondAttribute="bottom" id="NaZ-dz-Kmj"/>
                             <constraint firstItem="BFA-MO-bSV" firstAttribute="centerY" secondItem="eAJ-TM-51j" secondAttribute="centerY" id="P6y-jr-L9y"/>
@@ -1395,12 +1449,16 @@ EHJpZ2h0Q29uc3RhbnRWaWV3A
                             <constraint firstAttribute="trailing" secondItem="cCe-tJ-xz5" secondAttribute="trailing" id="X9A-6r-cCI"/>
                             <constraint firstItem="eAJ-TM-51j" firstAttribute="leading" secondItem="BFA-MO-bSV" secondAttribute="trailing" id="g3w-Ek-Vxf"/>
                             <constraint firstItem="ufp-UG-bRS" firstAttribute="leading" secondItem="17R-Kp-nXy" secondAttribute="leading" id="n2r-Md-SDu"/>
+                            <constraint firstItem="7UM-Nn-qtT" firstAttribute="leading" secondItem="hRI-jz-wC0" secondAttribute="leading" constant="90" id="pMw-oL-gPl"/>
+                            <constraint firstItem="hRI-jz-wC0" firstAttribute="centerX" secondItem="sFh-H0-eiz" secondAttribute="centerX" id="usC-Yr-IlR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="17R-Kp-nXy"/>
                     </view>
                     <navigationItem key="navigationItem" id="JA9-Yl-b0W"/>
                     <connections>
+                        <outlet property="buttonForAddShows" destination="7UM-Nn-qtT" id="cDm-SO-hTy"/>
                         <outlet property="collectionView" destination="eAJ-TM-51j" id="ADx-WV-N4S"/>
+                        <outlet property="labelForAddShows" destination="hRI-jz-wC0" id="vdN-dz-vlx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kvx-gc-xqG" userLabel="First Responder" sceneMemberID="firstResponder"/>

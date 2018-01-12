@@ -12,9 +12,43 @@
 
 import UIKit
 
+typealias tvShowsSuccessResponseHandler = (_ response: [TVShows.MyListShows.Response]) ->()
+typealias tvShowsFailureResponseHandler = (_ response: TVShows.MyListShows.Response) ->()
+
 class TVShowsWorker
 {
-  func doSomeWork()
-  {
-  }
+    func doTVShowsWork(request:TVShows.MyListShows.Request, success:@escaping(tvShowsSuccessResponseHandler), fail:@escaping(tvShowsFailureResponseHandler))
+    {
+        //call network for movies etc.
+        let manager = RequestManager()
+        manager.fetchShows(request: request.baseRequest()) { (status, response) in
+            self.handleTVShowsResponse(success: success, fail: fail, status: status, response: response)
+        }
+    }
+    
+    // Handle TVShows Response
+    
+    func handleTVShowsResponse(success:@escaping(tvShowsSuccessResponseHandler), fail:@escaping(tvShowsFailureResponseHandler), status: Bool, response: Any?) {
+        var message:String = Constants.kErrorMessage
+        if status {
+            if let result = response as? [TVShows.MyListShows.Response] {
+                success(result)
+                return
+            }
+        }
+        else {
+            if let result = response as? TVShows.MyListShows.Response {
+                fail(result)
+                return
+            }
+            else
+            {
+                if let result = response as? String {
+                    message = result
+                }
+            }
+        }
+        fail(TVShows.MyListShows.Response(message: message)!)
+    }
 }
+

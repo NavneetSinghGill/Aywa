@@ -12,20 +12,20 @@
 
 import UIKit
 import ObjectMapper
-let myListShowsURL = "/mylist/shows"
+let myListNetworksURL = "/mylist/shows"
 
 enum Networks
 {
     // MARK: Use cases
     
-    enum MyListShows
+    enum MyListNetworks
     {
         struct Request
         {
             func baseRequest() -> BaseRequest {
                 let baseRequest = BaseRequest()
-                baseRequest.urlPath = myListShowsURL
-                baseRequest.parameters[Constants.kShowTypesKey] = ShowTypes.TWO.rawValue
+                baseRequest.urlPath = myListNetworksURL
+                baseRequest.parameters[Constants.kShowTypesKey] = ShowTypes.THREE.rawValue
                 baseRequest.parameters[BaseRequest.hasArrayResponse] = true
                 return baseRequest
             }

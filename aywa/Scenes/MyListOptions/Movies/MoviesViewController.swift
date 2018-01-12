@@ -56,14 +56,36 @@ class MoviesViewController: UIViewController, MoviesDisplayLogic
         router.viewController = viewController
         router.dataStore = interactor
     }
+    //MARK:- Private Methods
+    //For Hide And Show Collection View , label and Button
+    func showCollectionView() {
+        if moviesArray.isEmpty  {
+            self.collectionView.isHidden = true
+            self.labelForAddMovies.isHidden = false
+            self.buttonForAddMovies.isHidden = false
+        }
+        else {
+            self.collectionView.dataSource = self
+            self.collectionView.delegate = self
+            self.collectionView.isHidden = false
+            self.labelForAddMovies.isHidden = true
+            self.buttonForAddMovies.isHidden = true
+            
+            self.collectionView.reloadData()
+        }
+    }
     func initialiseView() {
         // Initialization code
         let nib = UINib(nibName: Identifiers.homeImageVerticalCollectionViewCell, bundle: Bundle.main)
         collectionView.register(nib, forCellWithReuseIdentifier: Identifiers.homeImageVerticalCollectionViewCell)
-        self.collectionView.delegate = self
-        self.collectionView.dataSource = self
+        
+        self.collectionView.isHidden = true
+        self.labelForAddMovies.isHidden = true
+        self.buttonForAddMovies.isHidden = true
+        
+        // Call Movies API Request
         doMoviesRequest()
-       
+        
     }
     // MARK: Routing
     
@@ -88,6 +110,10 @@ class MoviesViewController: UIViewController, MoviesDisplayLogic
     
     // MARK: Do Movies ViewController
     
+    @IBOutlet weak var labelForAddMovies: UILabel!
+    
+    @IBOutlet weak var buttonForAddMovies: UIButton!//TODO: User interactions Enable
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     
@@ -110,20 +136,7 @@ class MoviesViewController: UIViewController, MoviesDisplayLogic
         moviesArray = response
         showCollectionView()
     }
-    //MARK:- Check Hide And Show Collection View
-    func showCollectionView() {
-        if moviesArray.isEmpty  {
-            self.collectionView.isHidden = true
-            //self.defaultLabelForEmptyTableView.isHidden = false
-        }
-        else {
-            self.collectionView.dataSource = self
-            self.collectionView.delegate = self
-            self.collectionView.isHidden = false
-            //self.defaultLabelForEmptyTableView.isHidden = true
-            self.collectionView.reloadData()
-        }
-    }
+    
 }
 
 extension MoviesViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -133,25 +146,24 @@ extension MoviesViewController : UICollectionViewDelegate, UICollectionViewDataS
         get { return collectionView.contentOffset.x }
     }
     
-//    func setCollectionView(forRow row: Int, moviesArray: Movies.MyListMovies.Response) {
-//        indexOfCell = row
-//        collectionView.tag = row
-//        self.collectionView.reloadData()
-//    }
+    //    func setCollectionView(forRow row: Int, moviesArray: Movies.MyListMovies.Response) {
+    //        indexOfCell = row
+    //        collectionView.tag = row
+    //        self.collectionView.reloadData()
+    //    }
     
     //MARK:- CollectionView Delegate And Datasource Methods
     //MARK: Datasource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //return  10 //(sectionData!.shows?.count)!
         return moviesArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: HomeImagesCollectionViewCell
-        print(indexPath.row)
         cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.homeImageVerticalCollectionViewCell, for: indexPath) as! HomeImagesCollectionViewCell
         cell.cellAlignment = .Vertical
+        
         indexOfCell = indexPath.row
         cell.setUIMoviesCollectionViewCell(forRow: indexOfCell!, show: self.moviesArray[indexPath.item])
         return cell

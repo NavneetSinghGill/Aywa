@@ -77,7 +77,7 @@ extension UIViewController {
             button.backgroundColor = .clear
             button.setImage(UIImage(named: "backButton"), for: .normal)
             button.setTitle(leftSideTitle, for: .normal)
-            button.titleLabel?.font = UIFont(name: "Helvetica", size: 18)!
+            button.titleLabel?.font = UIFont(name: "Helvetica", size: 24)!
             button.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
             let backBarButton = UIBarButtonItem(customView: button)
             self.navigationItem.leftBarButtonItem = backBarButton

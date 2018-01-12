@@ -29,8 +29,19 @@ class HomeImagesCollectionViewCell: UICollectionViewCell {
         }
         self.setUICellImage(strImageName: setURLImageSting)
     }
-    // Set Cell UI For Movies
     
+    // Set Cell UI For Shows
+    func setUIShowsCollectionViewCell(shows: TVShows.MyListShows.Response) {
+        var setURLImageSting: String!
+        if self.cellAlignment == .Vertical {
+            setURLImageSting = shows.image2x2
+        }
+        else{
+            setURLImageSting = shows.image1x2
+        }
+        self.setUICellImage(strImageName: setURLImageSting)
+    }
+    // Set Cell UI For Movies
     func setUIMoviesCollectionViewCell(forRow row: Int, show: Movies.MyListMovies.Response) {
         
         var setURLImageSting: String!
@@ -44,7 +55,6 @@ class HomeImagesCollectionViewCell: UICollectionViewCell {
     }
     func setUICellImage(strImageName: String) {
         print(strImageName)
-        //displayImageView.sd_setImage(with: URL(string:strImageName))//, placeholderImage: UIImage(named: "placeholder.png"))
         if self.cellAlignment == .Vertical {
             displayImageView.sd_setImage(with: URL(string:strImageName), placeholderImage: UIImage(named: "placeholderVertical"))
         } else {

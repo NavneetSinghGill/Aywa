@@ -11,90 +11,125 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 protocol TVShowsDisplayLogic: class
 {
-  func displaySomething(viewModel: TVShows.Something.ViewModel)
+    func displayMyListShowsError(response: TVShows.MyListShows.Response)
+    func displayMyListShowsResponse(response: [TVShows.MyListShows.Response])
 }
 
 class TVShowsViewController: UIViewController, TVShowsDisplayLogic
 {
-  var interactor: TVShowsBusinessLogic?
-  var router: (NSObjectProtocol & TVShowsRoutingLogic & TVShowsDataPassing)?
- 
+    var interactor: TVShowsBusinessLogic?
+    var router: (NSObjectProtocol & TVShowsRoutingLogic & TVShowsDataPassing)?
+    var myListShowsArray = [TVShows.MyListShows.Response]()
+    
     var indexOfCell: Int?
     
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = TVShowsInteractor()
-    let presenter = TVShowsPresenter()
-    let router = TVShowsRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    // MARK: Setup
+    
+    private func setup()
+    {
+        let viewController = self
+        let interactor = TVShowsInteractor()
+        let presenter = TVShowsPresenter()
+        let router = TVShowsRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    //MARK:- Private Methods
+    //For Hide And Show Collection View , label and Button
+    func showCollectionView() {
+        if myListShowsArray.isEmpty  {
+            self.collectionView.isHidden = true
+            self.labelForAddShows.isHidden = false
+            self.buttonForAddShows.isHidden = false
+        }
+        else {
+            self.collectionView.dataSource = self
+            self.collectionView.delegate = self
+            self.collectionView.isHidden = false
+            self.labelForAddShows.isHidden = true
+            self.buttonForAddShows.isHidden = true
+            
+            self.collectionView.reloadData()
+        }
+    }
+    
     func initialiseView() {
         // Initialization code
         let nib = UINib(nibName: Identifiers.homeImageHorizontalCollectionViewCell, bundle: Bundle.main)
         collectionView.register(nib, forCellWithReuseIdentifier: Identifiers.homeImageHorizontalCollectionViewCell)
-        self.collectionView.delegate = self
-        self.collectionView.dataSource = self
+        
+        self.collectionView.isHidden = true
+        self.labelForAddShows.isHidden = true
+        self.buttonForAddShows.isHidden = true
+        
+        // Call Shows Request
+        doMyListShows()
     }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
+    
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+        }
     }
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    initialiseView()
-  }
-  
-  // MARK: Do TV Show Controller
-  
+    
+    // MARK: View lifecycle
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        initialiseView()
+    }
+    
+    // MARK: Do TV Show Controller
+    
+    @IBOutlet weak var labelForAddShows: UILabel!
+    @IBOutlet weak var buttonForAddShows: UIButton!//TODO: User interactions Enable
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
-  func doSomething()
-  {
-    let request = TVShows.Something.Request()
-    interactor?.doSomething(request: request)
-  }
-  
-  func displaySomething(viewModel: TVShows.Something.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
-  }
+    //MARK:- Request For TV Shows
+    func doMyListShows()
+    {
+        let request = TVShows.MyListShows.Request()
+        interactor?.doTVShows(request: request)
+    }
+    
+    func displayMyListShowsError(response: TVShows.MyListShows.Response){
+        showCollectionView()
+    }
+    func displayMyListShowsResponse(response: [TVShows.MyListShows.Response]){
+        myListShowsArray = response
+        showCollectionView()
+    }
+    
 }
 
 extension TVShowsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -104,26 +139,21 @@ extension TVShowsViewController: UICollectionViewDelegate, UICollectionViewDataS
         get { return collectionView.contentOffset.x }
     }
     
-    func setCollectionView(forRow row: Int, sectionData: Home.Section.Response) {
-        indexOfCell = row
-        collectionView.tag = row
-        self.collectionView.reloadData()
-    }
-    
     //MARK:- CollectionView Delegate And Datasource Methods
     //MARK: Datasource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return  10 //(sectionData!.shows?.count)!
+        return  myListShowsArray.count 
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: HomeImagesCollectionViewCell
-        print(indexPath.row)
         cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.homeImageHorizontalCollectionViewCell, for: indexPath) as! HomeImagesCollectionViewCell
+        
         cell.cellAlignment = .Horizontal
-        // cell.setUICollectionViewCell(forRow: indexOfCell! , show: (self.sectionData?.shows![indexPath.item])!)
-        cell.contentView.layer.borderWidth = 1
+        indexOfCell = indexPath.row
+        
+        cell.setUIShowsCollectionViewCell(shows: self.myListShowsArray[indexPath.row])
         return cell
     }
     

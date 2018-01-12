@@ -14,7 +14,7 @@ import UIKit
 
 protocol TVShowsBusinessLogic
 {
-  func doSomething(request: TVShows.Something.Request)
+  func doTVShows(request: TVShows.MyListShows.Request)
 }
 
 protocol TVShowsDataStore
@@ -26,16 +26,17 @@ class TVShowsInteractor: TVShowsBusinessLogic, TVShowsDataStore
 {
   var presenter: TVShowsPresentationLogic?
   var worker: TVShowsWorker?
-  //var name: String = ""
   
-  // MARK: Do something
+  // MARK: Do TVShows Interactor
   
-  func doSomething(request: TVShows.Something.Request)
+  func doTVShows(request: TVShows.MyListShows.Request)
   {
     worker = TVShowsWorker()
-    worker?.doSomeWork()
-    
-    let response = TVShows.Something.Response()
-    presenter?.presentSomething(response: response)
+    worker?.doTVShowsWork(request: request, success: { (response) in
+        print(response)
+        self.presenter?.presentResponse(response: response)
+    }, fail: { (response) in
+        self.presenter?.presentError(response: response)
+    })
   }
 }

@@ -14,7 +14,7 @@ import UIKit
 
 protocol NetworksBusinessLogic
 {
-  func doSomething(request: Networks.MyListShows.Request)
+  func doSomething(request: Networks.MyListNetworks.Request)
 }
 
 protocol NetworksDataStore
@@ -30,7 +30,7 @@ class NetworksInteractor: NetworksBusinessLogic, NetworksDataStore
   
   // MARK: Do something
   
-  func doSomething(request: Networks.MyListShows.Request)
+  func doSomething(request: Networks.MyListNetworks.Request)
   {
     worker = NetworksWorker()
     worker?.doSomeWork()
