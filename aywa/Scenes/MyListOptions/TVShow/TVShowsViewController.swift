@@ -149,8 +149,8 @@ extension TVShowsViewController: UICollectionViewDelegate, UICollectionViewDataS
         cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.homeImageHorizontalCollectionViewCell, for: indexPath) as! HomeImagesCollectionViewCell
         
         cell.cellAlignment = .Horizontal
-        
-        cell.setUICollectionViewCellForShows(forRow: indexPath.row, shows: [self.myListShowsArray[indexPath.row] as Any])
+              cell.setUICollectionViewCellForShows( shows: self.myListShowsArray[indexPath.item])
+//        cell.setUICollectionViewCellForShows(forRow: indexPath.row, shows: [self.myListShowsArray[indexPath.item] as Any])
         return cell
     }
     

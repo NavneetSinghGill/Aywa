@@ -29,33 +29,54 @@ class HomeImagesCollectionViewCell: UICollectionViewCell {
         }
         self.setUICellImage(strImageName: setURLImageSting)
     }
-    // Set Cell UI For Shows
- 
-    // For Set UI For Movies Shows And Networks
-    func setUICollectionViewCellForShows(forRow row: Int, shows: [Any] ) {
+    
+    // Set Cell UI For Shows Movies Shows and Networks
+    func setUICollectionViewCellForMovies( shows: Movies.MyListMovies.Response) {
         var setURLImageSting: String!
-        
-        if let shows_Movies = shows as? [Movies.MyListMovies.Response] {
-            if self.cellAlignment == .Vertical {
-                setURLImageSting = shows_Movies[row].image2x2
-            }
-            else{
-                setURLImageSting = shows_Movies[row].image1x2
-            }
-        } else if  let shows_tvShows = shows as? [TVShows.MyListShows.Response] {
-            if self.cellAlignment == .Vertical {
-                setURLImageSting = shows_tvShows[row].image2x2
-            }
-            else{
-                setURLImageSting = shows_tvShows[row].image1x2
-            }
+        if self.cellAlignment == .Vertical {
+            setURLImageSting = shows.image2x2
         }
-        else  {
+        else{
+            setURLImageSting = shows.image1x2
         }
-        
+        self.setUICellImage(strImageName: setURLImageSting)
+    }
+    func setUICollectionViewCellForShows( shows: TVShows.MyListShows.Response) {
+        var setURLImageSting: String!
+        if self.cellAlignment == .Vertical {
+            setURLImageSting = shows.image2x2
+        }
+        else{
+            setURLImageSting = shows.image1x2
+        }
         self.setUICellImage(strImageName: setURLImageSting)
     }
     
+    /*  // For Set UI For Movies Shows And Networks
+     func setUICollectionViewCellForShows(forRow row: Int, shows: [Any] ) {
+     var setURLImageSting: String!
+     
+     if let shows_Movies = shows as? [Movies.MyListMovies.Response] {
+     if self.cellAlignment == .Vertical {
+     setURLImageSting = shows_Movies[row].image2x2
+     }
+     else{
+     setURLImageSting = shows_Movies[row].image1x2
+     }
+     } else if  let shows_tvShows = shows as? [TVShows.MyListShows.Response] {
+     if self.cellAlignment == .Vertical {
+     setURLImageSting = shows_tvShows[row].image2x2
+     }
+     else{
+     setURLImageSting = shows_tvShows[row].image1x2
+     }
+     }
+     else  {
+     }
+     
+     self.setUICellImage(strImageName: setURLImageSting)
+     }
+     */
     func setUICellImage(strImageName: String) {
         print(strImageName)
         if self.cellAlignment == .Vertical {

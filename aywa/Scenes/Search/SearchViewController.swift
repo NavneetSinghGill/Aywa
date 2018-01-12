@@ -62,16 +62,19 @@ class SearchViewController: UIViewController, SearchDisplayLogic, UISearchBarDel
     }
     //MARK:- Private Methods
     func configureSearchController(){
-//        searchBar = UISearchBar.init(frame: CGRect.init(origin: .zero, size: CGSize.init(width: UIScreen.main.bounds.width, height: (navigationController?.navigationBar.frame.height)!)))
-        searchBar = UISearchBar(frame: CGRect(x: 125, y: 0, width: UIScreen.main.bounds.width, height: (navigationController?.navigationBar.frame.height)!))
+        searchBar = UISearchBar.init(frame: CGRect.init(origin: .zero, size: CGSize.init(width: UIScreen.main.bounds.width, height: (navigationController?.navigationBar.frame.height)!)))
+        //        searchBar = UISearchBar(frame: CGRect(x: 100, y: 0, width: UIScreen.main.bounds.width - 100, height: (navigationController?.navigationBar.frame.height)!))
+        //
+        //       navigationItem.titleView?.frame = CGRect(x: 100, y: 0, width: (UIScreen.main.bounds.width) - 100, height: (navigationController?.navigationBar.frame.height)!)
+        
         navigationItem.titleView = searchBar
         searchBar.delegate = self
         
         searchBar.placeholder = "Search"
         searchBar.showsCancelButton = true
-       // let cancelButtonAttributes: NSDictionary = [NSAttributedStringKey.foregroundColor: UIColor.white]
-       
+        
         searchBar.tintColor = UIColor.white
+        searchBar.setCancelButtonColor(color: UIColor.white)
         searchBar.setTextColor(color: .white)
         searchBar.setTextFieldColor(color: UIColor.clear)
         searchBar.setPlaceholderTextColor(color: .white)

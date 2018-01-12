@@ -158,7 +158,9 @@ extension MoviesViewController : UICollectionViewDelegate, UICollectionViewDataS
         let cell: HomeImagesCollectionViewCell
         cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.homeImageVerticalCollectionViewCell, for: indexPath) as! HomeImagesCollectionViewCell
         cell.cellAlignment = .Vertical
-         cell.setUICollectionViewCellForShows(forRow: indexPath.row, shows: [self.moviesArray[indexPath.row] as Any])
+          cell.setUICollectionViewCellForMovies( shows: self.moviesArray[indexPath.item])
+        // cell.setUICollectionViewCellForShows(forRow: indexPath.row, shows: [self.moviesArray[indexPath.item] as Any])
+        
         return cell
     }
     
