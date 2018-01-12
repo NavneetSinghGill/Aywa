@@ -80,17 +80,17 @@ extension UISearchBar {
         defaultCancelButton.tintColor = color
     }
     
-  /*  func customizeSearchBar()
+    func customizeSearchBar(imageName: String)
     {
         if  let textFieldInsideSearchBar = self.value(forKey: "searchField") as? UITextField
         {
             let imageView = UIImageView()
-            let image = UIImage(named: "searchBarIcon")
+            let image = UIImage(named: imageName)
             imageView.image = image
-            imageView.frame = CGRect(x: 100, y: 0, width: 35, height: 35)
+            imageView.frame = CGRect(x: 100, y: 0, width: (image?.size.width)!, height: (image?.size.height)!)
             textFieldInsideSearchBar.leftView = imageView
-            //            textFieldInsideSearchBar.leftView?.frame = CGRect(x: 200, y: 0, width:(textFieldInsideSearchBar.leftView?.frame.size.width)! , height: (textFieldInsideSearchBar.leftView?.frame.size.height)!)
+            textFieldInsideSearchBar.leftView?.tintColor =  UIColor.white
             textFieldInsideSearchBar.leftViewMode = UITextFieldViewMode.always
         }
-    }*/
+    }
 }
