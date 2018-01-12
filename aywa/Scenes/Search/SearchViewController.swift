@@ -60,6 +60,41 @@ class SearchViewController: UIViewController, SearchDisplayLogic, UISearchBarDel
         router.dataStore = interactor
         
     }
+    //MARK:- Private Methods
+    func configureSearchController(){
+//        searchBar = UISearchBar.init(frame: CGRect.init(origin: .zero, size: CGSize.init(width: UIScreen.main.bounds.width, height: (navigationController?.navigationBar.frame.height)!)))
+        searchBar = UISearchBar(frame: CGRect(x: 125, y: 0, width: UIScreen.main.bounds.width, height: (navigationController?.navigationBar.frame.height)!))
+        navigationItem.titleView = searchBar
+        searchBar.delegate = self
+        
+        searchBar.placeholder = "Search"
+        searchBar.showsCancelButton = true
+       // let cancelButtonAttributes: NSDictionary = [NSAttributedStringKey.foregroundColor: UIColor.white]
+       
+        searchBar.tintColor = UIColor.white
+        searchBar.setTextColor(color: .white)
+        searchBar.setTextFieldColor(color: UIColor.clear)
+        searchBar.setPlaceholderTextColor(color: .white)
+        searchBar.setMagnifyingGlassColorTo(color: .white)
+        searchBar.setTextFieldClearButtonColor(color: .white)
+        
+        //searchBar.hideorShowLeftSearchIcon(isShow: false)
+    }
+    
+    func updateSearchResults(searchText : String) {
+        if searchBar.text! == ""{
+            self.tableView.isHidden = true
+            self.defaultLabelForEmptyTableView.isHidden = false
+        }
+        else{
+            mArrryFilteredSearchList = arrayOfSearch.filter { ($0 ).name!.lowercased().contains(searchBar.text!.lowercased()) }
+        }
+        if !mArrryFilteredSearchList.isEmpty{
+            self.tableView.dataSource = self
+            self.tableView.delegate = self
+        }
+        self.tableView.reloadData()
+    }
     //MARK: Initial Setup
     private func initialiseView() {
         // Do any additional setup after loading the view.
@@ -116,37 +151,6 @@ class SearchViewController: UIViewController, SearchDisplayLogic, UISearchBarDel
     func displaySomething(viewModel: Search.Something.ViewModel)
     {
         //nameTextField.text = viewModel.name
-    }
-    //MARK:- Private Methods
-    func configureSearchController(){
-        searchBar = UISearchBar.init(frame: CGRect.init(origin: .zero, size: CGSize.init(width: UIScreen.main.bounds.width, height: (navigationController?.navigationBar.frame.height)!)))
-        //UISearchBar(frame: CGRect(x: 0, y: 20, width: UIScreen.main.bounds.width, height: 44))
-        navigationItem.titleView = searchBar
-        searchBar.delegate = self
-        
-        searchBar.placeholder = "Search"
-        searchBar.setTextColor(color: .white)
-        searchBar.setTextFieldColor(color: UIColor.clear)
-        searchBar.setPlaceholderTextColor(color: .white)
-        searchBar.setMagnifyingGlassColorTo(color: .white)
-        searchBar.setTextFieldClearButtonColor(color: .white)
-        
-        //searchBar.hideorShowLeftSearchIcon(isShow: false)
-    }
-    
-    func updateSearchResults(searchText : String) {
-        if searchBar.text! == ""{
-            self.tableView.isHidden = true
-            self.defaultLabelForEmptyTableView.isHidden = false
-        }
-        else{
-            mArrryFilteredSearchList = arrayOfSearch.filter { ($0 ).name!.lowercased().contains(searchBar.text!.lowercased()) }
-        }
-        if !mArrryFilteredSearchList.isEmpty{
-            self.tableView.dataSource = self
-            self.tableView.delegate = self
-        }
-        self.tableView.reloadData()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

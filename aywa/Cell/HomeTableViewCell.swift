@@ -81,8 +81,7 @@ extension HomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
         }
         cell.cellAlignment = self.cellAlignment
         cell.setUICollectionViewCell(forRow: indexOfCell! , show: (self.sectionData?.shows![indexPath.item])!)
-
-        print("\n\nindex: \(String(describing: indexOfCell)), collecIndex:\(indexPath.item)")
+        // print("\n\nindex: \(String(describing: indexOfCell)), collecIndex:\(indexPath.item)")
         return cell
     }
     

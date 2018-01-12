@@ -29,30 +29,33 @@ class HomeImagesCollectionViewCell: UICollectionViewCell {
         }
         self.setUICellImage(strImageName: setURLImageSting)
     }
-    
     // Set Cell UI For Shows
-    func setUIShowsCollectionViewCell(shows: TVShows.MyListShows.Response) {
+ 
+    // For Set UI For Movies Shows And Networks
+    func setUICollectionViewCellForShows(forRow row: Int, shows: [Any] ) {
         var setURLImageSting: String!
-        if self.cellAlignment == .Vertical {
-            setURLImageSting = shows.image2x2
-        }
-        else{
-            setURLImageSting = shows.image1x2
-        }
-        self.setUICellImage(strImageName: setURLImageSting)
-    }
-    // Set Cell UI For Movies
-    func setUIMoviesCollectionViewCell(forRow row: Int, show: Movies.MyListMovies.Response) {
         
-        var setURLImageSting: String!
-        if self.cellAlignment == .Vertical {
-            setURLImageSting = show.image2x2
+        if let shows_Movies = shows as? [Movies.MyListMovies.Response] {
+            if self.cellAlignment == .Vertical {
+                setURLImageSting = shows_Movies[row].image2x2
+            }
+            else{
+                setURLImageSting = shows_Movies[row].image1x2
+            }
+        } else if  let shows_tvShows = shows as? [TVShows.MyListShows.Response] {
+            if self.cellAlignment == .Vertical {
+                setURLImageSting = shows_tvShows[row].image2x2
+            }
+            else{
+                setURLImageSting = shows_tvShows[row].image1x2
+            }
         }
-        else{
-            setURLImageSting = show.image1x2
+        else  {
         }
+        
         self.setUICellImage(strImageName: setURLImageSting)
     }
+    
     func setUICellImage(strImageName: String) {
         print(strImageName)
         if self.cellAlignment == .Vertical {

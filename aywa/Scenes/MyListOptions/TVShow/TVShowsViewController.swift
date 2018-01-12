@@ -24,9 +24,7 @@ class TVShowsViewController: UIViewController, TVShowsDisplayLogic
     var interactor: TVShowsBusinessLogic?
     var router: (NSObjectProtocol & TVShowsRoutingLogic & TVShowsDataPassing)?
     var myListShowsArray = [TVShows.MyListShows.Response]()
-    
-    var indexOfCell: Int?
-    
+
     // MARK: Object lifecycle
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -151,9 +149,8 @@ extension TVShowsViewController: UICollectionViewDelegate, UICollectionViewDataS
         cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.homeImageHorizontalCollectionViewCell, for: indexPath) as! HomeImagesCollectionViewCell
         
         cell.cellAlignment = .Horizontal
-        indexOfCell = indexPath.row
         
-        cell.setUIShowsCollectionViewCell(shows: self.myListShowsArray[indexPath.row])
+        cell.setUICollectionViewCellForShows(forRow: indexPath.row, shows: [self.myListShowsArray[indexPath.row] as Any])
         return cell
     }
     
@@ -165,7 +162,7 @@ extension TVShowsViewController: UICollectionViewDelegate, UICollectionViewDataS
         return CGSize(width: width, height: width/Constants.generalHorizontalCellAspectRatio)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Collection view at row \(collectionView.tag) selected index path \(indexPath)")
+        print("Collection view selected index path \(indexPath)")
     }
 }
 

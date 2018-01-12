@@ -25,8 +25,9 @@ class MoviesViewController: UIViewController, MoviesDisplayLogic
     var router: (NSObjectProtocol & MoviesRoutingLogic & MoviesDataPassing)?
     let numberOfCollectionViewCellsInSingleLine:CGFloat = isiPad ? 3 : 2
     let collectionViewCellSpacing:CGFloat = 6 // Used in cell size calculation
-    var indexOfCell: Int?
+
     var moviesArray = [Movies.MyListMovies.Response]()
+    
     // MARK: Object lifecycle
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -132,7 +133,7 @@ class MoviesViewController: UIViewController, MoviesDisplayLogic
     }
     func displayMyListMoviesResponse(response: [Movies.MyListMovies.Response]){
         SVProgressHUD.dismiss()
-        print("Movies Response:\(response.count)")
+       // print("Movies Response:\(response.count)")
         moviesArray = response
         showCollectionView()
     }
@@ -146,12 +147,6 @@ extension MoviesViewController : UICollectionViewDelegate, UICollectionViewDataS
         get { return collectionView.contentOffset.x }
     }
     
-    //    func setCollectionView(forRow row: Int, moviesArray: Movies.MyListMovies.Response) {
-    //        indexOfCell = row
-    //        collectionView.tag = row
-    //        self.collectionView.reloadData()
-    //    }
-    
     //MARK:- CollectionView Delegate And Datasource Methods
     //MARK: Datasource
     
@@ -163,9 +158,7 @@ extension MoviesViewController : UICollectionViewDelegate, UICollectionViewDataS
         let cell: HomeImagesCollectionViewCell
         cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.homeImageVerticalCollectionViewCell, for: indexPath) as! HomeImagesCollectionViewCell
         cell.cellAlignment = .Vertical
-        
-        indexOfCell = indexPath.row
-        cell.setUIMoviesCollectionViewCell(forRow: indexOfCell!, show: self.moviesArray[indexPath.item])
+         cell.setUICollectionViewCellForShows(forRow: indexPath.row, shows: [self.moviesArray[indexPath.row] as Any])
         return cell
     }
     
@@ -177,6 +170,6 @@ extension MoviesViewController : UICollectionViewDelegate, UICollectionViewDataS
         return CGSize(width: width, height: width/Constants.generalVerticalCellAspectRatio)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Collection view at row \(collectionView.tag) selected index path \(indexPath)")
+       print("Collection view  selected index path \(indexPath)")
     }
 }
