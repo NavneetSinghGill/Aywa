@@ -14,47 +14,151 @@ import UIKit
 
 @objc protocol BrowseRoutingLogic
 {
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
+    // func routeToMoveViewController(storyboardIdentifierIs: String)
+    func selectedRowAtIndex(selectedIndex: Int, title: String )
 }
 
 protocol BrowseDataPassing
 {
-  var dataStore: BrowseDataStore? { get }
+    var dataStore: BrowseDataStore? { get }
 }
 
 class BrowseRouter: NSObject, BrowseRoutingLogic, BrowseDataPassing
 {
-  weak var viewController: BrowseViewController?
-  var dataStore: BrowseDataStore?
-  
-  // MARK: Routing
-  
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
-  //{
-  //  if let segue = segue {
-  //    let destinationVC = segue.destination as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //  } else {
-  //    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-  //    let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //    navigateToSomewhere(source: viewController!, destination: destinationVC)
-  //  }
-  //}
+    weak var viewController: BrowseViewController?
+    var dataStore: BrowseDataStore?
+    
+    // MARK: Routing
 
-  // MARK: Navigation
-  
-  //func navigateToSomewhere(source: BrowseViewController, destination: SomewhereViewController)
-  //{
-  //  source.show(destination, sender: nil)
-  //}
-  
-  // MARK: Passing data
-  
-  //func passDataToSomewhere(source: BrowseDataStore, destination: inout SomewhereDataStore)
-  //{
-  //  destination.name = source.name
-  //}
+    func selectedRowAtIndex(selectedIndex: Int, title: String ) {
+        var destinationVC = UIViewController()
+        print(title)
+        
+        switch title {
+        case BrowseViewController.moviesString:
+            destinationVC = MoviesViewController.create(of: .UniversalStoryboard)
+        case BrowseViewController.tvShowsString:
+            destinationVC = TVShowsViewController.create(of: .UniversalStoryboard)
+        case BrowseViewController.networksString:
+            destinationVC = NetworksViewController.create(of: .UniversalStoryboard)
+        case BrowseIdentifier.documentariesString:
+            destinationVC = HomeViewController.create(of: .UniversalStoryboard)
+            passDataToHomeCatalogId(source: viewController!, destination: destinationVC as! HomeViewController)
+        case BrowseIdentifier.kidString:
+            destinationVC = HomeViewController.create(of: .UniversalStoryboard)
+            passDataToHomeCatalogId(source: viewController!, destination: destinationVC as! HomeViewController)
+        case BrowseIdentifier.newReleasesString:
+            destinationVC = HomeViewController.create(of: .UniversalStoryboard)
+        case BrowseIdentifier.recently_AddedString:
+            destinationVC = HomeViewController.create(of: .UniversalStoryboard)
+        case BrowseIdentifier.genresString:
+            print("Genres")
+        default:
+            print(title)
+        }
+        navigateToSomewhere(source: viewController!, destination: destinationVC)
+    }
+    
+    // MARK: Navigation
+    func navigateToSomewhere(source: BrowseViewController, destination: UIViewController){
+        source.bpPush(viewController: destination)
+    }
+    
+    // MARK: Passing data
+    // For Home Section
+    func passDataToHomeCatalogId(source: BrowseViewController, destination: HomeViewController){
+        let selectedRow: Int = (viewController?.tableView.indexPathForSelectedRow?.row)!
+        let arrayCatalogsIs = viewController?.browseCatalogsArray
+        let catalogIdIs: Int = (arrayCatalogsIs?.catalogs![selectedRow].id!)!
+        print(catalogIdIs)
+        destination.catalogIdForHomeSection = catalogIdIs
+    }
+    
+    
+    /* func passDataToHomeCatalogId(source: BrowseDataStore, destination: inout HomeDataStore)
+     {
+     let selectedRow: Int = (viewController?.tableView.indexPathForSelectedRow?.row)!
+     let tableviewSection: Int = (viewController?.tableView.indexPathForSelectedRow?.section)!
+     let catalogArray = viewController?.browsSectionsArray[tableviewSection][selectedRow]
+     // let catalogArray = viewController?.browsSectionsArray[tableviewSection]
+     print(catalogArray as Any)
+     let idIs = ((catalogArray as Any) as! Browse.Catalogs.Response).catalogs![selectedRow].id!
+     print(idIs)
+     
+     //        for indexValue in 0..<(((catalogArray as Any) as! Browse.Catalogs.Response).catalogs?.count ?? 0 ) {
+     //            let idIs = ((catalogArray as! Any) as! Browse.Catalogs.Response).catalogs![indexValue].id!
+     //            //browseArray.append(nameString!)
+     //            print(idIs)
+     //        }
+     
+     //destination.catalogId = source.catalogIdIs
+     }
+     */
+    
+    
+    /* func selectedRowAtIndex(selectedIndex: Int, title: String ) {
+     switch title {
+     case BrowseViewController.moviesString:
+     self.routeToMoveViewController(storyboardIdentifierIs: Identifiers.sIdMoviesViewController)
+     case BrowseViewController.tvShowsString:
+     self.routeToMoveViewController(storyboardIdentifierIs: Identifiers.sIdTVShowsViewController)
+     case BrowseViewController.networksString:
+     print("Networks")
+     self.routeToMoveViewController(storyboardIdentifierIs: Identifiers.sIdNetworksViewController)
+     case BrowseIdentifier.documentariesString:
+     print("Documentaries")
+     self.routeToMoveViewController(storyboardIdentifierIs: title)
+     case BrowseIdentifier.kidString:
+     print("Kids")
+     self.routeToMoveViewController(storyboardIdentifierIs: title)
+     case BrowseIdentifier.newReleasesString:
+     print("New Releases")
+     self.routeToMoveViewController(storyboardIdentifierIs: title)
+     case BrowseIdentifier.recently_AddedString:
+     print("Recently Added")
+     self.routeToMoveViewController(storyboardIdentifierIs: title)
+     case BrowseIdentifier.genresString:
+     print("Genres")
+     self.routeToMoveViewController(storyboardIdentifierIs: title)
+     default:
+     print(title)
+     }
+     }
+     func routeToMoveViewController(storyboardIdentifierIs: String){
+     var destinationVC = UIViewController()
+     switch storyboardIdentifierIs {
+     case Identifiers.sIdMoviesViewController:
+     destinationVC = MoviesViewController.create(of: .UniversalStoryboard)
+     case Identifiers.sIdTVShowsViewController:
+     destinationVC = TVShowsViewController.create(of: .UniversalStoryboard)
+     case Identifiers.sIdNetworksViewController:
+     destinationVC = NetworksViewController.create(of: .UniversalStoryboard)
+     print("Networks")
+     case BrowseRouter.documentariesString:
+     destinationVC = HomeViewController.create(of: .UniversalStoryboard)
+     passDataToHomeCatalogId(source: viewController!, destination: destinationVC as! HomeViewController)
+     
+     case BrowseRouter.kidString:
+     destinationVC = HomeViewController.create(of: .UniversalStoryboard)
+     passDataToHomeCatalogId(source: viewController!, destination: destinationVC as! HomeViewController)
+     
+     //            let homeVC = UIStoryboard.getHomeViewController()
+     //            var destinationDataStore = homeVC.router!.dataStore!
+     //            destinationVC = homeVC
+     //            passDataToHomeCatalogId(source: dataStore!, destination: &destinationDataStore)
+     
+     case BrowseRouter.newReleasesString:
+     destinationVC = HomeViewController.create(of: .UniversalStoryboard)
+     case BrowseRouter.recently_AddedString:
+     destinationVC = HomeViewController.create(of: .UniversalStoryboard)
+     case BrowseRouter.genresString:
+     destinationVC = HomeViewController.create(of: .UniversalStoryboard)
+     default:
+     print(storyboardIdentifierIs)
+     }
+     
+     navigateToSomewhere(source: viewController!, destination: destinationVC)
+     }
+     
+     */
 }

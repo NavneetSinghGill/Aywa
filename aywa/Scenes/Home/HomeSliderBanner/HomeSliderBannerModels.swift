@@ -32,6 +32,18 @@ enum HomeSliderBanner
                 return baseRequest
             }
         }
+
+        struct RequestWithCatalogId
+         {
+         var catalogId :Int?
+         func baseRequest() -> BaseRequest {
+         let baseRequest = BaseRequest()
+         baseRequest.urlPath = sliderURL
+         baseRequest.parameters[Constants.kClientTypeKey] = Constants.kClientTypeValue
+         baseRequest.parameters[Constants.kCatalogIdKey] = catalogId // 2 For home Screen and 1 for kids and for for documentaries.
+         return baseRequest
+         }
+         }
         struct Response: Mappable
         {
             

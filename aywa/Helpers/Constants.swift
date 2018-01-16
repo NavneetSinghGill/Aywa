@@ -119,12 +119,24 @@ struct Identifiers {
     static let browseTableViewCell = "BrowseTableViewCell"
     
     //Storyboard Identifiers
+    // Home
+    static let sIdHomeViewController = "HomeViewController"
+    
     //MyListViewController
     static let sIdMyListViewController = "MyListViewController"
     static let sIdMoviesViewController = "MoviesViewController"
     static let sIdTVShowsViewController = "TVShowsViewController"
     static let sIdNetworksViewController = "NetworksViewController"
 }
+
+struct BrowseIdentifier {
+    static let documentariesString = "Documentaries"
+    static let kidString = "Kids"
+    static let newReleasesString = "New Releases"
+    static let recently_AddedString = "Recently Added"
+    static let genresString = "Genres"
+}
+
 
 enum CellAlignment {
     case Vertical

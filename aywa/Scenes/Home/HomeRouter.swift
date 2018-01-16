@@ -14,47 +14,37 @@ import UIKit
 
 @objc protocol HomeRoutingLogic
 {
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
+    func routeToMoveHomeBannerViewController()
 }
 
 protocol HomeDataPassing
 {
-  var dataStore: HomeDataStore? { get }
+    var dataStore: HomeDataStore? { get }
 }
 
 class HomeRouter: NSObject, HomeRoutingLogic, HomeDataPassing
 {
-  weak var viewController: HomeViewController?
-  var dataStore: HomeDataStore?
-  
-  // MARK: Routing
-  
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
-  //{
-  //  if let segue = segue {
-  //    let destinationVC = segue.destination as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //  } else {
-  //    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-  //    let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //    navigateToSomewhere(source: viewController!, destination: destinationVC)
-  //  }
-  //}
-
-  // MARK: Navigation
-  
-  //func navigateToSomewhere(source: HomeViewController, destination: SomewhereViewController)
-  //{
-  //  source.show(destination, sender: nil)
-  //}
-  
-  // MARK: Passing data
-  
-  //func passDataToSomewhere(source: HomeDataStore, destination: inout SomewhereDataStore)
-  //{
-  //  destination.name = source.name
-  //}
+    weak var viewController: HomeViewController?
+    var dataStore: HomeDataStore?
+    
+    // MARK: Routing
+    
+    func routeToMoveHomeBannerViewController(){
+        let destinationVC = HomeSliderBannerViewController.create(of: .UniversalStoryboard)
+        passDataToHomeSliderBannerCatalogId(source: viewController!, destination: destinationVC)
+        addHomeBanner(source: viewController!, destination: destinationVC)
+    }
+    
+    // MARK: Navigation
+    func addHomeBanner(source: HomeViewController, destination: UIViewController){
+        source.homeHeader = destination
+        source.homeHeader.view.bounds.size = CGSize(width: source.view.frame.size.width, height: source.view.frame.size.width * (236/source.view.frame.size.width))
+        source.tableView.tableHeaderView = source.homeHeader.view
+    }
+    
+    // MARK: Passing data
+    // For Home Banner
+    func passDataToHomeSliderBannerCatalogId(source: HomeViewController, destination: HomeSliderBannerViewController){
+        destination.catalogIdForHomeSlider = source.catalogIdForHomeSection
+    }
 }

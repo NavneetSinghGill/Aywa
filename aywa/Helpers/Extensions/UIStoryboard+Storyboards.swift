@@ -48,6 +48,22 @@ extension UIStoryboard {
         
         return viewController
     }
+    
+     //MARK:- Get Movies View Controoler
+     class func getMoviesViewController() -> MoviesViewController {
+     let mainStoryboard  = self.getMainStoryboard()
+     return mainStoryboard.instantiateViewController(withIdentifier: Identifiers.sIdMoviesViewController) as! MoviesViewController
+     }
+    
+    //MARK:- Get Home View Controoler
+    class func getHomeViewController() -> HomeViewController {
+        let mainStoryboard  = self.getMainStoryboard()
+        return mainStoryboard.instantiateViewController(withIdentifier: Identifiers.sIdHomeViewController) as! HomeViewController
+    }
+     
+     class func getMainStoryboard() -> UIStoryboard {
+     return UIStoryboard(name: "UniversalStoryboard", bundle: nil)
+     }
 }
 
 

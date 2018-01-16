@@ -12,6 +12,7 @@
 
 import UIKit
 import SVProgressHUD
+import BPViewsSubviewsInOutAnimation
 
 protocol BrowseDisplayLogic: class
 {
@@ -22,16 +23,17 @@ protocol BrowseDisplayLogic: class
     func displayHomeSectionResponse(response: [Home.Section.Response])
 }
 
-class BrowseViewController: UIViewController, BrowseDisplayLogic
+class BrowseViewController: BPViewController, BrowseDisplayLogic
 {
     var interactor: BrowseBusinessLogic?
     var router: (NSObjectProtocol & BrowseRoutingLogic & BrowseDataPassing)?
+    
     let cellHeight: CGFloat = isiPad ? 88*1.3 : 88
     
-    static let movies = "Movies"
-    static let tvShows = "TV Shows"
-    static let networks = "Networks"
-    static let genres = "Genres"
+    static let moviesString = "Movies"
+    static let tvShowsString = "TV Shows"
+    static let networksString = "Networks"
+    //static let genresString = "Genres"
     
     static let displayOrderOne: Int = 1
     static let displayOrderSix: Int = 6
@@ -39,21 +41,20 @@ class BrowseViewController: UIViewController, BrowseDisplayLogic
     var isCatalogApiCompleted = false
     var isBrowseSectionApiCompleted = false
     
-    //var browseArray = [movies, tvShows, networks]
-    
-    
     // Section 1 For Movies, TV Shows and Networks
-    let sectionFirstArray = [movies, tvShows, networks]
+    let sectionFirstArray = [moviesString, tvShowsString, networksString]
     // Section 2 for Catalogs
     var sectionSecondArray = [String]()
     // Section 3 For Recently Add and New Releases
     var sectionThridArray = [String]()
     // Section 4 For Genres
-    var sectionfourthArray = [genres]
+    var sectionfourthArray = [BrowseIdentifier.genresString]
     var browseSectionsItemsArray = [Array<Any>]()
     
-    var browseSectionArray = [Home.Section.Response]()
-    var browseDictionary: Dictionary =  [String : Any]()
+    //var browsSectionsArray = [Array<Any>]()   //[Any]()
+    
+    var homeSectionArray = [Home.Section.Response]()
+    var browseCatalogsArray: Browse.Catalogs.Response?
     
     private let browseReuseIdentifier = "BrowseTableViewCell"
     
@@ -96,7 +97,7 @@ class BrowseViewController: UIViewController, BrowseDisplayLogic
         self.tableView.dataSource = self
         self.tableView.backgroundColor = UIColor.clear
         
-//        refreshSectionsItemsArrayAndTableViewIfRequired()
+        //        refreshSectionsItemsArrayAndTableViewIfRequired()
         
         doCatalogsRequest()
         doBrowseSectionRequest()
@@ -139,6 +140,7 @@ class BrowseViewController: UIViewController, BrowseDisplayLogic
         refreshSectionsItemsArrayAndTableViewIfRequired()
     }
     func displayBrowserCatalogsResponse(response: Browse.Catalogs.Response){
+        browseCatalogsArray =  response
         for indexValue in 0..<(response.catalogs?.count ?? 0 ) {
             let nameString = response.catalogs![indexValue].name
             //browseArray.append(nameString!)
@@ -160,6 +162,8 @@ class BrowseViewController: UIViewController, BrowseDisplayLogic
         refreshSectionsItemsArrayAndTableViewIfRequired()
     }
     func displayHomeSectionResponse(response: [Home.Section.Response]){
+        homeSectionArray = response
+        
         print("Get Home Section Success Response !!! \(response)")
         for indexValue in 0..<(response.count) {
             if response[indexValue].displayOrder == BrowseViewController.displayOrderOne || response[indexValue].displayOrder == BrowseViewController.displayOrderSix {
@@ -174,15 +178,25 @@ class BrowseViewController: UIViewController, BrowseDisplayLogic
     
     func refreshSectionsItemsArrayAndTableViewIfRequired() {
         browseSectionsItemsArray.removeAll()
+   
         browseSectionsItemsArray.append(sectionFirstArray)
         browseSectionsItemsArray.append(sectionSecondArray)
         browseSectionsItemsArray.append(sectionThridArray)
         browseSectionsItemsArray.append(sectionfourthArray)
+        
+        //        browsSectionsArray.removeAll()
+        //        browsSectionsArray.append(sectionFirstArray)
+        //        browsSectionsArray.append([browseCatalogsArray as Any])
+        //        browsSectionsArray.append((homeSectionArray as Any as! [Home.Section.Response]))
+        //        browsSectionsArray.append(sectionfourthArray)
+        
         if isBrowseSectionApiCompleted && isCatalogApiCompleted {
             self.tableView.reloadData()
             SVProgressHUD.dismiss()
         }
     }
+    
+    
 }
 
 extension BrowseViewController: UITableViewDataSource, UITableViewDelegate {
@@ -196,7 +210,6 @@ extension BrowseViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return (self.browseSectionsItemsArray[section] as AnyObject).count
-        ///return self.browseArray.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: BrowseTableViewCell = tableView.dequeueReusableCell(withIdentifier: Identifiers.browseTableViewCell, for: indexPath) as! BrowseTableViewCell
@@ -210,9 +223,11 @@ extension BrowseViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return cellHeight
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //print("Selected Browse is: \(self.browseArray[indexPath.row])")
         print("Selected Browse is: \(self.browseSectionsItemsArray[indexPath.section] [indexPath.row])")
+        let gotoVC = self.browseSectionsItemsArray[indexPath.section] [indexPath.row] as! String
+        router?.selectedRowAtIndex(selectedIndex: indexPath.row, title: gotoVC )
     }
 }
 

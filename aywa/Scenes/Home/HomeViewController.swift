@@ -12,6 +12,7 @@
 
 import UIKit
 import SVProgressHUD
+import BPViewsSubviewsInOutAnimation
 
 protocol HomeDisplayLogic: class
 {
@@ -20,17 +21,19 @@ protocol HomeDisplayLogic: class
     
 }
 
-class HomeViewController: UIViewController, HomeDisplayLogic, UITableViewDelegate, UITableViewDataSource
+class HomeViewController: BPViewController, HomeDisplayLogic, UITableViewDelegate, UITableViewDataSource
 {
     var interactor: HomeBusinessLogic?
     var router: (NSObjectProtocol & HomeRoutingLogic & HomeDataPassing)?
     let homeSliderBannerViewController  = "HomeSliderBannerViewController"
     
-    var homeHeader = HomeSliderBannerViewController()
+    var homeHeader: UIViewController!
+    var catalogIdForHomeSection: Int? = nil
     
     var storedOffsets = [Int: CGFloat]()
     let verticalCellHeight: CGFloat = 235 * (isiPad ? 1.3 : 1) + 40 //40 is the hieght of tableview cell heading
     let horizontalCellHeight: CGFloat = 175 * (isiPad ? 1.3 : 1) + 40
+    
     public var sectionArray = [Home.Section.Response]()
     
     // MARK: Object lifecycle
@@ -69,14 +72,21 @@ class HomeViewController: UIViewController, HomeDisplayLogic, UITableViewDelegat
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        
-        self.homeHeader = self.storyboard?.instantiateViewController(withIdentifier: homeSliderBannerViewController) as! HomeSliderBannerViewController
-        self.homeHeader.view.bounds.size = CGSize(width: self.view.frame.size.width, height: self.view.frame.size.width * (236/self.view.frame.size.width))// TODO: Header height
-        self.tableView.tableHeaderView = homeHeader.view
         self.tableView.separatorStyle = .none
+        
+        // call router
+        router?.routeToMoveHomeBannerViewController()
         
         self.navigationItem.hidesBackButton = true
         //  UIApplication.shared.statusBarStyle = .lightContent
+      
+        if catalogIdForHomeSection == nil {
+            print("CatalogId ForHome Section Id nil")
+        }
+        else{
+             print(catalogIdForHomeSection!)
+        }
+
         // Call section API
         doSectionAPI()
     }
@@ -101,6 +111,7 @@ class HomeViewController: UIViewController, HomeDisplayLogic, UITableViewDelegat
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        hideNavigationBar()
     }
     
     override func viewWillDisappear(_ animated: Bool) {

@@ -33,6 +33,22 @@ enum Home
                 return baseRequest
             }
         }
+        // Request with catalogId
+        struct RequestWithCatalogId
+        {
+             var catalogID :Int?
+            
+            func baseRequest() -> BaseRequest {
+                let baseRequest = BaseRequest()
+                baseRequest.urlPath = sectionURL
+                baseRequest.parameters[Constants.kIncludeShowsKey] = Constants.kIncludeShowsValue
+                baseRequest.parameters[Constants.kCatalogIdKey] = catalogID  // 1 for kids 4 for Dcumentaries For home Screen
+                baseRequest.parameters[Constants.kMenuSectionsOnlyKey] = Constants.kMenuSectionsOnlyValue
+                baseRequest.parameters[BaseRequest.hasArrayResponse] = true
+                return baseRequest
+            }
+        }
+
         // Request For Browse For sections
         
         struct RequestForBrowseSection

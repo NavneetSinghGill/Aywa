@@ -24,7 +24,7 @@ class TVShowsViewController: UIViewController, TVShowsDisplayLogic
     var interactor: TVShowsBusinessLogic?
     var router: (NSObjectProtocol & TVShowsRoutingLogic & TVShowsDataPassing)?
     var myListShowsArray = [TVShows.MyListShows.Response]()
-
+    
     // MARK: Object lifecycle
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -75,6 +75,8 @@ class TVShowsViewController: UIViewController, TVShowsDisplayLogic
     
     func initialiseView() {
         // Initialization code
+        
+        navigationBarWithLeftSideTitle(isTitle: false, titleName: "  Shows")
         let nib = UINib(nibName: Identifiers.homeImageHorizontalCollectionViewCell, bundle: Bundle.main)
         collectionView.register(nib, forCellWithReuseIdentifier: Identifiers.homeImageHorizontalCollectionViewCell)
         
@@ -149,8 +151,8 @@ extension TVShowsViewController: UICollectionViewDelegate, UICollectionViewDataS
         cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.homeImageHorizontalCollectionViewCell, for: indexPath) as! HomeImagesCollectionViewCell
         
         cell.cellAlignment = .Horizontal
-              cell.setUICollectionViewCellForShows( shows: self.myListShowsArray[indexPath.item])
-//        cell.setUICollectionViewCellForShows(forRow: indexPath.row, shows: [self.myListShowsArray[indexPath.item] as Any])
+        cell.setUICollectionViewCellForShows( shows: self.myListShowsArray[indexPath.item])
+        //        cell.setUICollectionViewCellForShows(forRow: indexPath.row, shows: [self.myListShowsArray[indexPath.item] as Any])
         return cell
     }
     

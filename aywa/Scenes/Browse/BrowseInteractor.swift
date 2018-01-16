@@ -20,10 +20,13 @@ protocol BrowseBusinessLogic
 
 protocol BrowseDataStore
 {
+ var catalogIdIs: String { get }
 }
 
 class BrowseInteractor: BrowseBusinessLogic, BrowseDataStore
 {
+    var catalogIdIs: String = ""
+    
     var presenter: BrowsePresentationLogic?
     var worker: BrowseWorker?
     var workerSection: HomeWorker?

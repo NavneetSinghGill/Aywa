@@ -25,7 +25,7 @@ class MoviesViewController: UIViewController, MoviesDisplayLogic
     var router: (NSObjectProtocol & MoviesRoutingLogic & MoviesDataPassing)?
     let numberOfCollectionViewCellsInSingleLine:CGFloat = isiPad ? 3 : 2
     let collectionViewCellSpacing:CGFloat = 6 // Used in cell size calculation
-
+    
     var moviesArray = [Movies.MyListMovies.Response]()
     
     // MARK: Object lifecycle
@@ -77,13 +77,20 @@ class MoviesViewController: UIViewController, MoviesDisplayLogic
     }
     func initialiseView() {
         // Initialization code
+//        print(stringValue!)
+//        if (stringValue?.isEmpty)! {
+//            print("String Value is empty ")
+//        }
+//        else{
+//            print(stringValue!)
+//        }
+        
         let nib = UINib(nibName: Identifiers.homeImageVerticalCollectionViewCell, bundle: Bundle.main)
         collectionView.register(nib, forCellWithReuseIdentifier: Identifiers.homeImageVerticalCollectionViewCell)
-        
         self.collectionView.isHidden = true
         self.labelForAddMovies.isHidden = true
         self.buttonForAddMovies.isHidden = true
-        
+        navigationBarWithLeftSideTitle(isTitle: false, titleName: "  Movies")
         // Call Movies API Request
         doMoviesRequest()
         

@@ -24,6 +24,8 @@ class HomeSliderBannerViewController: UIViewController, HomeSliderBannerDisplayL
 {
     var interactor: HomeSliderBannerBusinessLogic?
     var router: (NSObjectProtocol & HomeSliderBannerRoutingLogic & HomeSliderBannerDataPassing)?
+    var catalogIdForHomeSlider: Int? = nil
+
     
     // DropDowns
     let menuDropDown = DropDown()
@@ -59,6 +61,13 @@ class HomeSliderBannerViewController: UIViewController, HomeSliderBannerDisplayL
     }
     //MARK: Initial Setup
     private func initialiseView() {
+        
+        if catalogIdForHomeSlider == nil {
+            print("Catalog Id nil")
+        }
+        else{
+            print(catalogIdForHomeSlider!)
+        }
         // Call Slider Banner API
         doCallSliderBannerAPI()
         let nib = UINib(nibName: Identifiers.homeAdvertCollectionCell, bundle: Bundle.main)
