@@ -137,6 +137,15 @@ struct BrowseIdentifier {
     static let genresString = "Genres"
 }
 
+struct LocaleKeys {
+    static let kSignIn = "SignIn"
+    static let kFbSignIn = "FbSignIn"
+    
+    static let kSignUp = "SignUp"
+    static let kFbSignUp = "FbSignUp"
+    
+    static let kBackButton = "backButton"
+}
 
 enum CellAlignment {
     case Vertical

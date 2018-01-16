@@ -67,7 +67,8 @@ class SignupViewController: BPViewController, SignupDisplayLogic, UITextFieldDel
         setupDropDowns()
         showNavigationBar()
         //updateNavigationBar()
-        navigationBarWithLeftSideTitle(isTitle: false, titleName: "  Sign up")
+        navigationBarWithLeftSideTitle(isTitle: false, titleName: LocaleKeys.kSignUp.localize())
+        fbLabel.text = LocaleKeys.kFbSignUp.localize()
     }
     
     private func setup()
@@ -120,6 +121,7 @@ class SignupViewController: BPViewController, SignupDisplayLogic, UITextFieldDel
     @IBOutlet weak var ageGroupTextField: FloatingHeaderTextField!
     @IBOutlet weak var genderTextField: FloatingHeaderTextField!
     @IBOutlet weak var gradientImageView: UIImageView!
+    @IBOutlet weak var fbLabel: UILabel!
     
     // MARK: Have Account Button Tapped
     @IBAction func haveAccountButtonTapped(_ sender: Any) {

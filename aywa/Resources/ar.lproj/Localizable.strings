@@ -1,9 +1,9 @@
 /* 
   Localizable.strings
-  Skeleton
+  aywa
 
-  Created by BestPeers on 31/12/14.
-  Copyright (c) 2014 BestPeers. All rights reserved.
+  Created by Zoeb on 16/01/18.
+  Copyright © 2018 Alpha Solutions. All rights reserved.
 */
 
 //NSLocalizedString(@"CommonBannerTitle", @"");
@@ -31,3 +31,14 @@
 "Invalid email/password" = "Invalid email address/password combination.";
 "Password is too short" = "Password is too short.";
 
+//Sign in
+"SignInToYourAywaAccount" = "تسجيل الدخول لحسابك\nالخاص";
+"SignIn" = "  تسجيل الدخول";
+"FbSignIn" = "دخول بواسطة فيسبوك";
+
+//Sign up
+"SignUp" = "  حساب جديد";
+"FbSignUp" = "تسجيل بواسطة فيسبوك";
+
+//Images
+"backButton" = "backButtonArabic";

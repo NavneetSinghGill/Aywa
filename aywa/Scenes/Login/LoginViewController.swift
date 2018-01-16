@@ -56,7 +56,9 @@ class LoginViewController: BPViewController, LoginDisplayLogic, UITextFieldDeleg
         passwordTextField.text = "123456"
         showNavigationBar()
         //updateNavigationBar()
-        navigationBarWithLeftSideTitle(isTitle: false, titleName: "  Sign in")
+        navigationBarWithLeftSideTitle(isTitle: false, titleName: LocaleKeys.kSignIn.localize())
+        signInToYourAywaAccountLabel.text = "SignInToYourAywaAccount".localize()
+        fbLabel.text = LocaleKeys.kFbSignIn.localize()
     }
     
     private func setup()
@@ -118,6 +120,8 @@ class LoginViewController: BPViewController, LoginDisplayLogic, UITextFieldDeleg
     @IBOutlet weak var emailTextField: FloatingHeaderTextField!
     @IBOutlet weak var passwordTextField: FloatingHeaderTextField!
     @IBOutlet weak var gradientImageView: UIImageView!
+    @IBOutlet weak var signInToYourAywaAccountLabel: UILabel!
+    @IBOutlet weak var fbLabel: UILabel!
     
     //MARK: Login 
     @IBAction func loginButtonTapped(_ sender: Any) {

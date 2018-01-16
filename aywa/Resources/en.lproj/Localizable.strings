@@ -1,0 +1,44 @@
+/* 
+  Localizable.strings
+  aywa
+
+  Created by Zoeb on 16/01/18.
+  Copyright © 2018 Alpha Solutions. All rights reserved.
+*/
+
+//NSLocalizedString(@"CommonBannerTitle", @"");
+
+"CommonFailureBannerTitle"     = "Sorry";
+"CommonSuccessBannerTitle"     = "Success";
+"SomethingWentWrongMessage" = "Something went wrong. We are working on it!";
+
+//Signup
+"EnterUsernameAndEmailTitle" = "Uh oh!";
+"EnterUsernameAndEmailMessage" = "Please enter your Username and Email.";
+"InvalidEmailTitle" = "Email Invalid";
+"InvalidEmailMessage" = "Please enter a valid email address.";
+"PasswordMissingTitle" = "Password missing";
+"PasswordMissingMessage" = "Please enter your Password.";
+
+"InvalidUsernameTitle" = "Username Invalid" ;
+"InvalidUsernameMessage" = "Name should be between 4-30 characters.";
+"PasswordTooShortTitle" = "Password too short";
+"PasswordTooShortMessage" = "Password should be at least 8 characters long.";
+
+// Error MSG Signup
+"Field required" = "This field is required.";
+"Email addrees invalid" = "This email address is invalid.";
+"Invalid email/password" = "Invalid email address/password combination.";
+"Password is too short" = "Password is too short.";
+
+//Sign in
+"SignInToYourAywaAccount" = "Sign in to your\nAywa account";
+"SignIn" = "  Sign in";
+"FbSignIn" = "Sign in with Facebook";
+
+//Sign up
+"SignUp" = "  Sign up";
+"FbSignUp" = "Sign up with Facebook";
+
+//Images
+"backButton" = "backButton";

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8P3-nz-1eY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8P3-nz-1eY">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -35,7 +35,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k1y-sf-i0W">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="596.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="596"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cuc-1h-AC8" customClass="FloatingHeaderTextField" customModule="aywa" customModuleProvider="target">
                                                 <rect key="frame" x="25.5" y="60" width="325" height="40"/>
@@ -239,7 +239,7 @@
                                                     </constraint>
                                                     <constraint firstAttribute="width" secondItem="qA0-jZ-NRo" secondAttribute="height" multiplier="699:129" id="tmz-6i-uZB"/>
                                                 </constraints>
-                                                <state key="normal" backgroundImage="facebookSignUp"/>
+                                                <state key="normal" image="facebookBackground"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
                                                         <integer key="value" value="9"/>
@@ -249,12 +249,27 @@
                                                     <action selector="createAccountWithFacebookIdButtonTapped:" destination="wKh-GD-z1k" eventType="touchUpInside" id="geC-q2-vD6"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in with Facebook" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbx-aJ-286">
+                                                <rect key="frame" x="114" y="533" width="166.5" height="43.5"/>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
+                                                        <integer key="value" value="9"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="22"/>
+                                                </variation>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="l76-4b-QmZ" firstAttribute="centerX" secondItem="k1y-sf-i0W" secondAttribute="centerX" id="2lF-CK-Ods"/>
                                             <constraint firstItem="vra-Hm-mjL" firstAttribute="leading" secondItem="cuc-1h-AC8" secondAttribute="leading" id="5xh-Dj-diZ"/>
+                                            <constraint firstItem="bbx-aJ-286" firstAttribute="bottom" secondItem="qA0-jZ-NRo" secondAttribute="bottom" id="9yx-EB-b46"/>
                                             <constraint firstItem="U6I-3k-LoG" firstAttribute="trailing" secondItem="cuc-1h-AC8" secondAttribute="trailing" id="B5B-2o-JWN"/>
                                             <constraint firstItem="cuc-1h-AC8" firstAttribute="width" secondItem="k1y-sf-i0W" secondAttribute="width" multiplier="0.866" id="DHp-5b-u7s">
                                                 <variation key="heightClass=regular-widthClass=regular" constant="-500"/>
@@ -265,6 +280,7 @@
                                             <constraint firstItem="0BD-Bl-YUV" firstAttribute="centerX" secondItem="k1y-sf-i0W" secondAttribute="centerX" id="IuW-Dm-r8d"/>
                                             <constraint firstItem="l76-4b-QmZ" firstAttribute="top" secondItem="0BD-Bl-YUV" secondAttribute="bottom" constant="30" id="Ja2-JT-Puf"/>
                                             <constraint firstItem="XGd-qp-c5k" firstAttribute="top" secondItem="hjP-8d-GxA" secondAttribute="bottom" constant="30" id="K95-Bi-Pcw"/>
+                                            <constraint firstItem="bbx-aJ-286" firstAttribute="top" secondItem="qA0-jZ-NRo" secondAttribute="top" id="Kdt-Lh-Tdw"/>
                                             <constraint firstItem="hjP-8d-GxA" firstAttribute="trailing" secondItem="cuc-1h-AC8" secondAttribute="trailing" id="L3m-Kw-YC7"/>
                                             <constraint firstItem="vra-Hm-mjL" firstAttribute="top" secondItem="cuc-1h-AC8" secondAttribute="bottom" constant="30" id="L3r-cP-VYR"/>
                                             <constraint firstItem="xO8-l1-c5t" firstAttribute="centerX" secondItem="k1y-sf-i0W" secondAttribute="centerX" id="L9L-TU-dJz"/>
@@ -280,6 +296,9 @@
                                             <constraint firstItem="U6I-3k-LoG" firstAttribute="width" secondItem="XGd-qp-c5k" secondAttribute="width" id="hZo-oK-xp8"/>
                                             <constraint firstAttribute="bottom" secondItem="qA0-jZ-NRo" secondAttribute="bottom" constant="20" id="hjk-5w-CSk"/>
                                             <constraint firstItem="qA0-jZ-NRo" firstAttribute="top" secondItem="l76-4b-QmZ" secondAttribute="bottom" constant="25" id="iNI-po-lEe"/>
+                                            <constraint firstItem="bbx-aJ-286" firstAttribute="leading" secondItem="qA0-jZ-NRo" secondAttribute="leading" constant="44" id="ppc-kl-Izq">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="58"/>
+                                            </constraint>
                                             <constraint firstItem="U6I-3k-LoG" firstAttribute="height" secondItem="XGd-qp-c5k" secondAttribute="height" id="t5d-VM-Rt2"/>
                                             <constraint firstItem="U6I-3k-LoG" firstAttribute="leading" secondItem="XGd-qp-c5k" secondAttribute="trailing" constant="65" id="taX-ho-cvC"/>
                                             <constraint firstItem="0BD-Bl-YUV" firstAttribute="top" secondItem="xO8-l1-c5t" secondAttribute="bottom" constant="15" id="vKC-fa-L56"/>
@@ -318,6 +337,7 @@
                         <outlet property="ageGroupTextField" destination="XGd-qp-c5k" id="zMU-nM-qqe"/>
                         <outlet property="backgroundImageView" destination="Y0s-qX-22I" id="cyh-QK-kZD"/>
                         <outlet property="emailTextField" destination="vra-Hm-mjL" id="Lq4-Jr-bJg"/>
+                        <outlet property="fbLabel" destination="bbx-aJ-286" id="3H5-V3-WY5"/>
                         <outlet property="genderTextField" destination="U6I-3k-LoG" id="HZ0-KW-BCj"/>
                         <outlet property="gradientImageView" destination="Tmd-qe-QYH" id="Gev-cG-mnr"/>
                         <outlet property="nameTextField" destination="cuc-1h-AC8" id="ruT-qC-TeZ"/>
@@ -346,15 +366,10 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kI7-ht-Bgb" userLabel="ContainerView">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="593"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="544.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in to your Aywa account" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ALF-cg-kiY">
-                                                <rect key="frame" x="50.5" y="28" width="275" height="97"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="275" id="dv7-CF-Npb">
-                                                        <variation key="heightClass=regular-widthClass=regular" constant="356"/>
-                                                    </constraint>
-                                                </constraints>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in to your Aywa account" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ALF-cg-kiY">
+                                                <rect key="frame" x="0.0" y="28" width="375" height="48.5"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="42"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -368,14 +383,14 @@
                                                 </variation>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BB4-Su-oSF" userLabel="FbButton">
-                                                <rect key="frame" x="70" y="171" width="235" height="43.5"/>
+                                                <rect key="frame" x="70" y="122.5" width="235" height="43.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="BB4-Su-oSF" secondAttribute="height" multiplier="699:129" id="UnU-EF-rIe"/>
                                                     <constraint firstAttribute="width" constant="235" id="YHH-Fv-hGv">
                                                         <variation key="heightClass=regular-widthClass=regular" constant="305"/>
                                                     </constraint>
                                                 </constraints>
-                                                <state key="normal" image="facebookLogin"/>
+                                                <state key="normal" image="facebookBackground"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
                                                         <integer key="value" value="2"/>
@@ -385,8 +400,22 @@
                                                     <action selector="facebookLoginButtonTapped:" destination="bFY-JS-lCR" eventType="touchUpInside" id="1Dg-H0-46X"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in with Facebook" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Yb-vr-IjP">
+                                                <rect key="frame" x="114" y="122.5" width="166.5" height="43.5"/>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="BPDelay">
+                                                        <integer key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="22"/>
+                                                </variation>
+                                            </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bug-Pq-5sG" userLabel="ORView">
-                                                <rect key="frame" x="82" y="234.5" width="211.5" height="20"/>
+                                                <rect key="frame" x="82" y="186" width="211.5" height="20"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CQ3-0l-Aja" userLabel="LeftLineView">
                                                         <rect key="frame" x="0.0" y="9.5" width="81" height="1"/>
@@ -434,7 +463,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="VbZ-bT-B6D" customClass="FloatingHeaderTextField" customModule="aywa" customModuleProvider="target">
-                                                <rect key="frame" x="25" y="304.5" width="325" height="40"/>
+                                                <rect key="frame" x="25" y="256" width="325" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="qPU-U4-uRx"/>
                                                 </constraints>
@@ -454,7 +483,7 @@
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7V3-r9-XFM" customClass="FloatingHeaderTextField" customModule="aywa" customModuleProvider="target">
-                                                <rect key="frame" x="25" y="373.5" width="325" height="40"/>
+                                                <rect key="frame" x="25" y="325" width="325" height="40"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
@@ -471,7 +500,7 @@
                                                 </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b7B-W1-rSJ" userLabel="SigninButton">
-                                                <rect key="frame" x="70" y="468.5" width="235" height="43.5"/>
+                                                <rect key="frame" x="70" y="420" width="235" height="43.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="235" id="H3X-M9-iau">
@@ -493,7 +522,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XPe-w3-jIb">
-                                                <rect key="frame" x="70.5" y="550" width="235" height="43"/>
+                                                <rect key="frame" x="70.5" y="501.5" width="235" height="43"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="43" id="WBe-6o-LgM"/>
                                                 </constraints>
@@ -519,22 +548,28 @@
                                         <constraints>
                                             <constraint firstItem="VbZ-bT-B6D" firstAttribute="centerX" secondItem="kI7-ht-Bgb" secondAttribute="centerX" id="5tY-NO-MII"/>
                                             <constraint firstAttribute="bottom" secondItem="XPe-w3-jIb" secondAttribute="bottom" id="6tg-CD-q4p"/>
+                                            <constraint firstItem="0Yb-vr-IjP" firstAttribute="leading" secondItem="BB4-Su-oSF" secondAttribute="leading" constant="44" id="73C-Os-cZL">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="58"/>
+                                            </constraint>
                                             <constraint firstItem="b7B-W1-rSJ" firstAttribute="top" secondItem="7V3-r9-XFM" secondAttribute="bottom" constant="55" id="Biy-Ol-5V2"/>
                                             <constraint firstItem="XPe-w3-jIb" firstAttribute="width" secondItem="b7B-W1-rSJ" secondAttribute="width" id="IIY-PA-EMH"/>
+                                            <constraint firstItem="0Yb-vr-IjP" firstAttribute="top" secondItem="BB4-Su-oSF" secondAttribute="top" id="N2b-yJ-sPc"/>
                                             <constraint firstItem="7V3-r9-XFM" firstAttribute="leading" secondItem="VbZ-bT-B6D" secondAttribute="leading" id="OIX-vV-bb3"/>
                                             <constraint firstItem="7V3-r9-XFM" firstAttribute="height" secondItem="VbZ-bT-B6D" secondAttribute="height" id="Oiw-EC-800"/>
                                             <constraint firstItem="ALF-cg-kiY" firstAttribute="top" secondItem="kI7-ht-Bgb" secondAttribute="top" constant="28" id="QFN-Fm-8yK"/>
                                             <constraint firstItem="VbZ-bT-B6D" firstAttribute="top" secondItem="bug-Pq-5sG" secondAttribute="bottom" constant="50" id="U1y-7L-SyQ"/>
+                                            <constraint firstItem="ALF-cg-kiY" firstAttribute="leading" secondItem="kI7-ht-Bgb" secondAttribute="leading" id="Y8a-l9-hAw"/>
+                                            <constraint firstAttribute="trailing" secondItem="ALF-cg-kiY" secondAttribute="trailing" id="ZAf-4b-aKi"/>
                                             <constraint firstItem="XPe-w3-jIb" firstAttribute="top" secondItem="b7B-W1-rSJ" secondAttribute="bottom" constant="38" id="bMw-wL-hCa"/>
                                             <constraint firstItem="BB4-Su-oSF" firstAttribute="top" secondItem="ALF-cg-kiY" secondAttribute="bottom" constant="46" id="bn0-5b-WEO"/>
                                             <constraint firstItem="b7B-W1-rSJ" firstAttribute="centerX" secondItem="kI7-ht-Bgb" secondAttribute="centerX" id="dI3-0B-ahd"/>
-                                            <constraint firstItem="ALF-cg-kiY" firstAttribute="centerX" secondItem="kI7-ht-Bgb" secondAttribute="centerX" id="exQ-eu-3qH"/>
                                             <constraint firstItem="bug-Pq-5sG" firstAttribute="top" secondItem="BB4-Su-oSF" secondAttribute="bottom" constant="20" id="fVl-hj-O4S"/>
                                             <constraint firstItem="VbZ-bT-B6D" firstAttribute="width" secondItem="kI7-ht-Bgb" secondAttribute="width" multiplier="0.8666" id="hsV-2G-0Af">
                                                 <variation key="heightClass=regular-widthClass=regular" constant="-500"/>
                                             </constraint>
                                             <constraint firstItem="bug-Pq-5sG" firstAttribute="centerX" secondItem="kI7-ht-Bgb" secondAttribute="centerX" id="j7G-i3-4nX"/>
                                             <constraint firstItem="XPe-w3-jIb" firstAttribute="centerX" secondItem="kI7-ht-Bgb" secondAttribute="centerX" id="lwk-gD-KwE"/>
+                                            <constraint firstItem="0Yb-vr-IjP" firstAttribute="bottom" secondItem="BB4-Su-oSF" secondAttribute="bottom" id="rwc-YS-IYl"/>
                                             <constraint firstItem="BB4-Su-oSF" firstAttribute="centerX" secondItem="kI7-ht-Bgb" secondAttribute="centerX" id="t0y-Cb-jNs"/>
                                             <constraint firstItem="7V3-r9-XFM" firstAttribute="trailing" secondItem="VbZ-bT-B6D" secondAttribute="trailing" id="uei-KO-cg5"/>
                                             <constraint firstItem="7V3-r9-XFM" firstAttribute="top" secondItem="VbZ-bT-B6D" secondAttribute="bottom" constant="29" id="vpd-IS-z9e"/>
@@ -570,8 +605,10 @@
                     <connections>
                         <outlet property="backgroundImageView" destination="lug-JT-5K4" id="E7T-aW-R4L"/>
                         <outlet property="emailTextField" destination="VbZ-bT-B6D" id="d86-3v-eyD"/>
+                        <outlet property="fbLabel" destination="0Yb-vr-IjP" id="pfo-Qi-kHI"/>
                         <outlet property="gradientImageView" destination="Wjc-wa-Z1i" id="sqU-pd-gxo"/>
                         <outlet property="passwordTextField" destination="7V3-r9-XFM" id="Bam-WP-aO6"/>
+                        <outlet property="signInToYourAywaAccountLabel" destination="ALF-cg-kiY" id="ksk-8O-ocT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rop-4i-iHd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1472,8 +1509,7 @@ EHJpZ2h0Q29uc3RhbnRWaWV3A
         <image name="browse" width="20" height="20"/>
         <image name="browseGradient" width="375" height="539"/>
         <image name="browse_selected" width="20" height="20"/>
-        <image name="facebookLogin" width="234" height="44"/>
-        <image name="facebookSignUp" width="232" height="43"/>
+        <image name="facebookBackground" width="235" height="43"/>
         <image name="favorite" width="21" height="20"/>
         <image name="favorite_selected" width="21" height="20"/>
         <image name="home_icon" width="22" height="20"/>

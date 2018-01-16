@@ -1,51 +1,51 @@
 
 /* Class = "UILabel"; text = "OR"; ObjectID = "04O-8q-M3w"; */
-"04O-8q-M3w.text" = "OR";
+"04O-8q-M3w.text" = "او";
 
 /* Class = "UIButton"; normalTitle = "Have an account?  Sign in"; ObjectID = "0BD-Bl-YUV"; */
-"0BD-Bl-YUV.normalTitle" = "Have an account?  Sign in";
+"0BD-Bl-YUV.normalTitle" = "لديك حساب؟  تسجيل الدخول";
 
 /* Class = "UILabel"; text = "OR"; ObjectID = "5hR-rE-reA"; */
-"5hR-rE-reA.text" = "OR";
+"5hR-rE-reA.text" = "او";
 
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "7V3-r9-XFM"; */
-"7V3-r9-XFM.placeholder" = "Password";
+"7V3-r9-XFM.placeholder" = "كلمة المرور";
 
 /* Class = "UIButton"; normalTitle = "Reset Password"; ObjectID = "9r0-bq-goT"; */
 "9r0-bq-goT.normalTitle" = "Reset Password";
 
 /* Class = "UILabel"; text = "Sign in to your Aywa account"; ObjectID = "ALF-cg-kiY"; */
-"ALF-cg-kiY.text" = "Sign in to your Aywa account";
+"ALF-cg-kiY.text" = "تسجيل الدخول لحسابك الخاص";
 
 /* Class = "UITextField"; placeholder = "Email"; ObjectID = "J6D-tX-kPu"; */
-"J6D-tX-kPu.placeholder" = "Email";
+"J6D-tX-kPu.placeholder" = "البريد الالكتروني";
 
 /* Class = "UILabel"; text = "Search for movies, TV shows, and stars."; ObjectID = "NlJ-Pf-olw"; */
 "NlJ-Pf-olw.text" = "Search for movies, TV shows, and stars.";
 
 /* Class = "UITextField"; placeholder = "Gender"; ObjectID = "U6I-3k-LoG"; */
-"U6I-3k-LoG.placeholder" = "Gender";
+"U6I-3k-LoG.placeholder" = "العمر";
 
 /* Class = "UITextField"; placeholder = "Email"; ObjectID = "VbZ-bT-B6D"; */
-"VbZ-bT-B6D.placeholder" = "Email";
+"VbZ-bT-B6D.placeholder" = "البريد الالكتروني";
 
 /* Class = "UITextField"; placeholder = "Age"; ObjectID = "XGd-qp-c5k"; */
-"XGd-qp-c5k.placeholder" = "Age";
+"XGd-qp-c5k.placeholder" = "الجنس";
 
 /* Class = "UIButton"; normalTitle = "Forgot password?"; ObjectID = "XPe-w3-jIb"; */
-"XPe-w3-jIb.normalTitle" = "Forgot password?";
+"XPe-w3-jIb.normalTitle" = "هل نسيت كلمة المرور؟";
 
 /* Class = "UIButton"; normalTitle = "Sign in"; ObjectID = "b7B-W1-rSJ"; */
-"b7B-W1-rSJ.normalTitle" = "Sign in";
+"b7B-W1-rSJ.normalTitle" = "تسجيل الدخول";
 
 /* Class = "UIButton"; normalTitle = "Shows"; ObjectID = "bJ1-zw-E0w"; */
 "bJ1-zw-E0w.normalTitle" = "Shows";
 
 /* Class = "UITextField"; placeholder = "Name"; ObjectID = "cuc-1h-AC8"; */
-"cuc-1h-AC8.placeholder" = "Name";
+"cuc-1h-AC8.placeholder" = "الاسم";
 
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "hjP-8d-GxA"; */
-"hjP-8d-GxA.placeholder" = "Password";
+"hjP-8d-GxA.placeholder" = "كلمة المرور";
 
 /* Class = "UIButton"; normalTitle = "Networks"; ObjectID = "lWb-ze-LVT"; */
 "lWb-ze-LVT.normalTitle" = "Networks";
@@ -57,7 +57,7 @@
 "uo5-uN-rj7.normalTitle" = "Movies";
 
 /* Class = "UITextField"; placeholder = "Email"; ObjectID = "vra-Hm-mjL"; */
-"vra-Hm-mjL.placeholder" = "Email";
+"vra-Hm-mjL.placeholder" = "البريد الالكتروني";
 
 /* Class = "UIButton"; normalTitle = "Create Account"; ObjectID = "xO8-l1-c5t"; */
-"xO8-l1-c5t.normalTitle" = "Create Account";
+"xO8-l1-c5t.normalTitle" = "تسجيل الحساب";

@@ -75,7 +75,7 @@ extension UIViewController {
         else{
             let button = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
             button.backgroundColor = .clear
-            button.setImage(UIImage(named: "backButton"), for: .normal)
+            button.setImage(UIImage(named: LocaleKeys.kBackButton.localize()), for: .normal)
             button.setTitle(leftSideTitle, for: .normal)
             button.titleLabel?.font = UIFont(name: "Helvetica", size: 24)!
             button.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
