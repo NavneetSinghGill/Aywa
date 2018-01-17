@@ -26,6 +26,7 @@ class TVShowsViewController: UIViewController, TVShowsDisplayLogic
     var myListShowsArray = [TVShows.MyListShows.Response]()
     
     var homeSectionArray: Home.Section.Response?
+    var setTitle: String = ""
     
     // MARK: Object lifecycle
     
@@ -59,7 +60,7 @@ class TVShowsViewController: UIViewController, TVShowsDisplayLogic
     //MARK:- Private Methods
     //For Hide And Show Collection View , label and Button
     func showCollectionView() {
-        if myListShowsArray.isEmpty  {
+        if myListShowsArray.isEmpty && homeSectionArray == nil {
             self.collectionView.isHidden = true
             self.labelForAddShows.isHidden = false
             self.buttonForAddShows.isHidden = false
@@ -78,16 +79,22 @@ class TVShowsViewController: UIViewController, TVShowsDisplayLogic
     func initialiseView() {
         // Initialization code
         
-        navigationBarWithLeftSideTitle(isTitle: false, titleName: "  Shows")
         let nib = UINib(nibName: Identifiers.homeImageHorizontalCollectionViewCell, bundle: Bundle.main)
         collectionView.register(nib, forCellWithReuseIdentifier: Identifiers.homeImageHorizontalCollectionViewCell)
         
         self.collectionView.isHidden = true
         self.labelForAddShows.isHidden = true
         self.buttonForAddShows.isHidden = true
+        if setTitle.isEmpty {
+            navigationBarWithLeftSideTitle(isTitle: false, titleName: "Shows")
+            // Call Shows Request
+            doMyListShows()
+           
+        }else{
+            navigationBarWithLeftSideTitle(isTitle: false, titleName: setTitle)
+            showCollectionView()
+        }
         
-        // Call Shows Request
-        doMyListShows()
     }
     
     // MARK: Routing
@@ -145,6 +152,9 @@ extension TVShowsViewController: UICollectionViewDelegate, UICollectionViewDataS
     //MARK: Datasource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if homeSectionArray != nil {
+            return (homeSectionArray?.shows?.count)!
+        }
         return  myListShowsArray.count 
     }
     
@@ -153,8 +163,13 @@ extension TVShowsViewController: UICollectionViewDelegate, UICollectionViewDataS
         cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.homeImageHorizontalCollectionViewCell, for: indexPath) as! HomeImagesCollectionViewCell
         
         cell.cellAlignment = .Horizontal
-        cell.setUICollectionViewCellForShows( shows: self.myListShowsArray[indexPath.item])
-        //        cell.setUICollectionViewCellForShows(forRow: indexPath.row, shows: [self.myListShowsArray[indexPath.item] as Any])
+        
+        if homeSectionArray != nil {
+            cell.setUICollectionViewCell(forRow: indexPath.row, show: (homeSectionArray?.shows?[indexPath.row])!)
+        }else{
+            cell.setUICollectionViewCellForShows( shows: self.myListShowsArray[indexPath.item])
+        }
+     
         return cell
     }
     

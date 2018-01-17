@@ -56,7 +56,6 @@ class HomeRouter: NSObject, HomeRoutingLogic, HomeDataPassing
     }
     
     // MARK: Navigation
-    // MARK: Navigation
     func navigateToSomewhere(source: HomeViewController, destination: UIViewController){
         source.bpPush(viewController: destination)
     }
@@ -73,10 +72,11 @@ class HomeRouter: NSObject, HomeRoutingLogic, HomeDataPassing
         destination.catalogIdForHomeSlider = source.catalogIdForHomeSection
     }
     func passDataToMoviesViewController(source: HomeViewController, destination: MoviesViewController, selectedRowIndex: Int){
-        // destination.catalogIdForHomeSlider = source.catalogIdForHomeSection
+        destination.setTitle = source.sectionArray[selectedRowIndex].name!
         destination.homeSectionArray = source.sectionArray[selectedRowIndex]
     }
     func passDataToTVShowViewController(source: HomeViewController, destination: TVShowsViewController, selectedRowIndex: Int) {
+        destination.setTitle = source.sectionArray[selectedRowIndex].name!
         destination.homeSectionArray = source.sectionArray[selectedRowIndex]
     }
 }

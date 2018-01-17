@@ -66,7 +66,7 @@ class NetworksViewController: UIViewController, NetworksDisplayLogic
     //MARK:- Private Methods
     func initialiseView() {
         // Initialization code
-        navigationBarWithLeftSideTitle(isTitle: false, titleName: "  Networks")
+        navigationBarWithLeftSideTitle(isTitle: false, titleName: "Networks")
     }
     
     // MARK: View lifecycle

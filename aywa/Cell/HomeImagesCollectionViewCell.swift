@@ -51,7 +51,6 @@ class HomeImagesCollectionViewCell: UICollectionViewCell {
         }
         self.setUICellImage(strImageName: setURLImageSting)
     }
-    
     /*  // For Set UI For Movies Shows And Networks
      func setUICollectionViewCellForShows(forRow row: Int, shows: [Any] ) {
      var setURLImageSting: String!

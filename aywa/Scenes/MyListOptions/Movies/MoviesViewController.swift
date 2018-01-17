@@ -1,3 +1,8 @@
+
+
+
+
+
 //
 //  MoviesViewController.swift
 //  aywa
@@ -63,7 +68,7 @@ class MoviesViewController: UIViewController, MoviesDisplayLogic
     //MARK:- Private Methods
     //For Hide And Show Collection View , label and Button
     func showCollectionView() {
-        if moviesArray.isEmpty  {
+        if moviesArray.isEmpty && homeSectionArray == nil  {
             self.collectionView.isHidden = true
             self.labelForAddMovies.isHidden = false
             self.buttonForAddMovies.isHidden = false
@@ -79,34 +84,20 @@ class MoviesViewController: UIViewController, MoviesDisplayLogic
         }
     }
     func initialiseView() {
-       
+        
         let nib = UINib(nibName: Identifiers.homeImageVerticalCollectionViewCell, bundle: Bundle.main)
         collectionView.register(nib, forCellWithReuseIdentifier: Identifiers.homeImageVerticalCollectionViewCell)
         self.collectionView.isHidden = true
         self.labelForAddMovies.isHidden = true
         self.buttonForAddMovies.isHidden = true
-        
         if setTitle.isEmpty {
-          navigationBarWithLeftSideTitle(isTitle: false, titleName: "  Movies")
-        }else{
-            navigationBarWithLeftSideTitle(isTitle: false, titleName: "\(  setTitle)")
-
-        }
-        
-        if homeSectionArray == nil {
+            navigationBarWithLeftSideTitle(isTitle: false, titleName: "Movies")
             // Call Movies API Request
             doMoviesRequest()
+        }else{
+            navigationBarWithLeftSideTitle(isTitle: false, titleName: setTitle)
+            showCollectionView()
         }
-        else {
-//            self.collectionView.dataSource = self
-//            self.collectionView.delegate = self
-//            self.collectionView.isHidden = false
-//            self.labelForAddMovies.isHidden = true
-//            self.buttonForAddMovies.isHidden = true
-//            self.collectionView.reloadData()
-        }
-        
-       
         
     }
     // MARK: Routing
@@ -154,7 +145,7 @@ class MoviesViewController: UIViewController, MoviesDisplayLogic
     }
     func displayMyListMoviesResponse(response: [Movies.MyListMovies.Response]){
         SVProgressHUD.dismiss()
-       // print("Movies Response:\(response.count)")
+        // print("Movies Response:\(response.count)")
         moviesArray = response
         showCollectionView()
     }
@@ -172,16 +163,24 @@ extension MoviesViewController : UICollectionViewDelegate, UICollectionViewDataS
     //MARK: Datasource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return moviesArray.count
+        if homeSectionArray != nil{
+            return (homeSectionArray?.shows?.count)!
+        }
+        else{
+             return moviesArray.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: HomeImagesCollectionViewCell
         cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.homeImageVerticalCollectionViewCell, for: indexPath) as! HomeImagesCollectionViewCell
         cell.cellAlignment = .Vertical
-          cell.setUICollectionViewCellForMovies( shows: self.moviesArray[indexPath.item])
-        // cell.setUICollectionViewCellForShows(forRow: indexPath.row, shows: [self.moviesArray[indexPath.item] as Any])
-        
+        if homeSectionArray != nil {
+            cell.setUICollectionViewCell(forRow: indexPath.row, show: (homeSectionArray?.shows![indexPath.row])!)
+        }
+        else{
+        cell.setUICollectionViewCellForMovies( shows: self.moviesArray[indexPath.item])
+        }
         return cell
     }
     
@@ -193,6 +192,6 @@ extension MoviesViewController : UICollectionViewDelegate, UICollectionViewDataS
         return CGSize(width: width, height: width/Constants.generalVerticalCellAspectRatio)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-       print("Collection view  selected index path \(indexPath)")
+        print("Collection view  selected index path \(indexPath.row)")
     }
 }

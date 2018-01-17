@@ -50,7 +50,8 @@ extension UIViewController {
     // MARK: NavigationBar with left side title
     func navigationBarWithLeftSideTitle(isTitle: Bool, titleName: String) {
         self.updateNavigationBarColor()
-        updateBackButtonWithTitle(isLeftTitle: isTitle, leftSideTitle: titleName)
+        let titleWithSpace = "  \(titleName)  "
+        updateBackButtonWithTitle(isLeftTitle: isTitle, leftSideTitle: titleWithSpace)
         
     }
     func updateBackButtonWithTitle(isLeftTitle: Bool, leftSideTitle: String){
@@ -73,6 +74,7 @@ extension UIViewController {
             navigationItem.rightBarButtonItems = [menuButton, shareButton]
         }
         else{
+            
             let button = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
             button.backgroundColor = .clear
             button.setImage(UIImage(named: LocaleKeys.kBackButton.localize()), for: .normal)

@@ -33,15 +33,15 @@
 
 //Sign in
 "SignInToYourAywaAccount" = "Sign in to your\nAywa account";
-"SignIn" = "  Sign in";
+"SignIn" = "Sign in";
 "FbSignIn" = "Sign in with Facebook";
 
 //Sign up
-"SignUp" = "  Sign up";
+"SignUp" = "Sign up";
 "FbSignUp" = "Sign up with Facebook";
 
 //Reset and forgot password
-"ForgotPassword" = "  Forgot password";
+"ForgotPassword" = "Forgot password";
 
 //Images
 "backButton" = "backButton";

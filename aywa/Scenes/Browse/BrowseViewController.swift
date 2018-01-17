@@ -89,7 +89,7 @@ class BrowseViewController: BPViewController, BrowseDisplayLogic
     
     //MARK: Initial Setup
     private func initialiseView() {
-        navigationBarWithLeftSideTitle(isTitle: true, titleName: "  Browse")
+        navigationBarWithLeftSideTitle(isTitle: true, titleName: "Browse")
         let browseNIB = UINib(nibName: Identifiers.browseTableViewCell, bundle: nil)
         tableView.register(browseNIB, forCellReuseIdentifier: Identifiers.browseTableViewCell)
         self.tableView.separatorStyle = .none
