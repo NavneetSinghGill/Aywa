@@ -29,6 +29,7 @@ class HomeViewController: BPViewController, HomeDisplayLogic, UITableViewDelegat
     
     var homeHeader: UIViewController!
     var catalogIdForHomeSection: Int? = nil
+    var sectionString: String = ""
     
     var storedOffsets = [Int: CGFloat]()
     let verticalCellHeight: CGFloat = 235 * (isiPad ? 1.3 : 1) + 40 //40 is the hieght of tableview cell heading
@@ -79,14 +80,14 @@ class HomeViewController: BPViewController, HomeDisplayLogic, UITableViewDelegat
         
         self.navigationItem.hidesBackButton = true
         //  UIApplication.shared.statusBarStyle = .lightContent
-      
+        
         if catalogIdForHomeSection == nil {
             print("CatalogId ForHome Section Id nil")
         }
         else{
-             print(catalogIdForHomeSection!)
+            print(catalogIdForHomeSection!)
         }
-
+        
         // Call section API
         doSectionAPI()
     }
@@ -116,7 +117,8 @@ class HomeViewController: BPViewController, HomeDisplayLogic, UITableViewDelegat
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-
+        showNavigationBar()
+        
     }
     // MARK: Do Home View Controller
     
@@ -144,7 +146,7 @@ class HomeViewController: BPViewController, HomeDisplayLogic, UITableViewDelegat
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 1 {
+        if self.sectionArray[indexPath.row].configuration == "E" {
             return horizontalCellHeight
         }
         return verticalCellHeight
@@ -160,6 +162,19 @@ class HomeViewController: BPViewController, HomeDisplayLogic, UITableViewDelegat
         SVProgressHUD.dismiss()
         print("Show Home Section Data!!!: \(response)")
         self.sectionArray = response
+        
+        if sectionString.isEmpty {
+            print("Section String Empty")
+        }
+        else if sectionString.isEqual(BrowseIdentifier.newReleasesString) {
+            self.sectionArray = [self.sectionArray[NumericValue.ZERO.rawValue]]
+        }
+        else if sectionString.isEqual(BrowseIdentifier.recently_AddedString) {
+            self.sectionArray = [self.sectionArray[NumericValue.FIFTH.rawValue]]
+        }
+        else{
+            
+        }
         self.tableView.reloadData()
         print(response)
     }
@@ -172,7 +187,15 @@ class HomeViewController: BPViewController, HomeDisplayLogic, UITableViewDelegat
     //MARK: For Call Section API
     func doSectionAPI()  {
         SVProgressHUD.show()
-        let request = Home.Section.Request()
+        
+        var request = Home.Section.Request()
+        if catalogIdForHomeSection == nil {
+            request = Home.Section.Request(catalogID: NumericValue.ZERO.rawValue)
+        }
+        else{
+            request = Home.Section.Request(catalogID: catalogIdForHomeSection!)
+        }
+        
         interactor?.doSectionAPI(request: request)
     }
 }

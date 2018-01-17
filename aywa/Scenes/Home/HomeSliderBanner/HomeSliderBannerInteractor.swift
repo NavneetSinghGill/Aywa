@@ -15,7 +15,6 @@ import UIKit
 protocol HomeSliderBannerBusinessLogic
 {
     func doCallSliderBannerAPI(request: HomeSliderBanner.SliderBanner.Request)
-    
 }
 
 protocol HomeSliderBannerDataStore

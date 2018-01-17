@@ -21,7 +21,7 @@ enum Home
     
     enum Section
     {
-        struct Request
+       /* struct Request
         {
             func baseRequest() -> BaseRequest {
                 let baseRequest = BaseRequest()
@@ -32,9 +32,9 @@ enum Home
                 baseRequest.parameters[BaseRequest.hasArrayResponse] = true
                 return baseRequest
             }
-        }
+        }*/
         // Request with catalogId
-        struct RequestWithCatalogId
+        struct Request
         {
              var catalogID :Int?
             

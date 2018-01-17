@@ -22,7 +22,7 @@ class HomeWorker
         let manager = RequestManager()
         manager.fetchSection(request: request.baseRequest()) { (status, response) in
             self.handleSectionResponse(success: success, fail: fail, status: status, response: response)
-
+            
         }
     }
     // Browse Section

@@ -25,7 +25,7 @@ enum TVShows
         func baseRequest() -> BaseRequest {
             let baseRequest = BaseRequest()
             baseRequest.urlPath = myListShowsURL
-            baseRequest.parameters[Constants.kShowTypesKey] = ShowTypes.TWO.rawValue
+            baseRequest.parameters[Constants.kShowTypesKey] = NumericValue.TWO.rawValue
             baseRequest.parameters[BaseRequest.hasArrayResponse] = true
             return baseRequest
         }

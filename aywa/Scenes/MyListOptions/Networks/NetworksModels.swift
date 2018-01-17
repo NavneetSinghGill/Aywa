@@ -25,7 +25,7 @@ enum Networks
             func baseRequest() -> BaseRequest {
                 let baseRequest = BaseRequest()
                 baseRequest.urlPath = myListNetworksURL
-                baseRequest.parameters[Constants.kShowTypesKey] = ShowTypes.THREE.rawValue
+                baseRequest.parameters[Constants.kShowTypesKey] = NumericValue.THREE.rawValue
                 baseRequest.parameters[BaseRequest.hasArrayResponse] = true
                 return baseRequest
             }

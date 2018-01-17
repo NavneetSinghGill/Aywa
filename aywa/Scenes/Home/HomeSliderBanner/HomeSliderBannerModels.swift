@@ -22,18 +22,18 @@ enum HomeSliderBanner
     
     enum SliderBanner
     {
-        struct Request
-        {
-            func baseRequest() -> BaseRequest {
-                let baseRequest = BaseRequest()
-                baseRequest.urlPath = sliderURL
-                baseRequest.parameters[Constants.kClientTypeKey] = Constants.kClientTypeValue
-                baseRequest.parameters[Constants.kCatalogIdKey] = 0 // 2 For home Screen
-                return baseRequest
-            }
-        }
+//        struct Request
+//        {
+//            func baseRequest() -> BaseRequest {
+//                let baseRequest = BaseRequest()
+//                baseRequest.urlPath = sliderURL
+//                baseRequest.parameters[Constants.kClientTypeKey] = Constants.kClientTypeValue
+//                baseRequest.parameters[Constants.kCatalogIdKey] = 0 // 2 For home Screen
+//                return baseRequest
+//            }
+//        }
 
-        struct RequestWithCatalogId
+        struct Request
          {
          var catalogId :Int?
          func baseRequest() -> BaseRequest {

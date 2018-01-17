@@ -15,7 +15,6 @@ import UIKit
 protocol HomeBusinessLogic
 {
     func doSectionAPI(request: Home.Section.Request)
-    func showCatalogID()
 }
 
 protocol HomeDataStore
@@ -28,8 +27,9 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
   var presenter: HomePresentationLogic?
   var worker: HomeWorker?
    var catalogId: String = ""
-  // MARK: Do Home Interactor
-    func doSectionAPI(request: Home.Section.Request) {
+  
+    // MARK: Do Home Interactor
+      func doSectionAPI(request: Home.Section.Request) {
         worker = HomeWorker()
         worker?.homeSection(request: request, success: { (response) in
             print(response)
@@ -39,7 +39,5 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
             self.presenter?.presentError(response: response)
         })
     }
-    
-    func showCatalogID() {
-    }
+   
 }

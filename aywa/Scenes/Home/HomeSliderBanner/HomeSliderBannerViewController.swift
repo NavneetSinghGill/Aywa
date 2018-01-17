@@ -61,13 +61,6 @@ class HomeSliderBannerViewController: UIViewController, HomeSliderBannerDisplayL
     }
     //MARK: Initial Setup
     private func initialiseView() {
-        
-        if catalogIdForHomeSlider == nil {
-            print("Catalog Id nil")
-        }
-        else{
-            print(catalogIdForHomeSlider!)
-        }
         // Call Slider Banner API
         doCallSliderBannerAPI()
         let nib = UINib(nibName: Identifiers.homeAdvertCollectionCell, bundle: Bundle.main)
@@ -107,7 +100,6 @@ class HomeSliderBannerViewController: UIViewController, HomeSliderBannerDisplayL
         doMenuAction()
     }
     
-    
     //MARK: Do TV Share Action
     func doTVShareAction() {
         print("Perform TV Share Action")
@@ -116,7 +108,6 @@ class HomeSliderBannerViewController: UIViewController, HomeSliderBannerDisplayL
     func doMenuAction() {
         print("Perform Menu Action")
         menuDropDown.show()
-        
     }
     
     func displayError(response: HomeSliderBanner.SliderBanner.Response)
@@ -141,7 +132,14 @@ class HomeSliderBannerViewController: UIViewController, HomeSliderBannerDisplayL
     
     //MARK: For Call Slider Banner API
     func doCallSliderBannerAPI()  {
-        let request = HomeSliderBanner.SliderBanner.Request()
+        var request = HomeSliderBanner.SliderBanner.Request()
+        if catalogIdForHomeSlider == nil {
+            request = HomeSliderBanner.SliderBanner.Request(catalogId: NumericValue.ZERO.rawValue)
+        }
+        else{
+            print(catalogIdForHomeSlider!)
+            request = HomeSliderBanner.SliderBanner.Request(catalogId: catalogIdForHomeSlider!)
+        }
         interactor?.doCallSliderBannerAPI(request: request)
     }
     
