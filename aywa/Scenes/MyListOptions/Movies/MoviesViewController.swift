@@ -27,6 +27,9 @@ class MoviesViewController: UIViewController, MoviesDisplayLogic
     let collectionViewCellSpacing:CGFloat = 6 // Used in cell size calculation
     
     var moviesArray = [Movies.MyListMovies.Response]()
+    var homeSectionArray : Home.Section.Response?
+    var setTitle: String = ""
+    
     
     // MARK: Object lifecycle
     
@@ -82,9 +85,28 @@ class MoviesViewController: UIViewController, MoviesDisplayLogic
         self.collectionView.isHidden = true
         self.labelForAddMovies.isHidden = true
         self.buttonForAddMovies.isHidden = true
-        navigationBarWithLeftSideTitle(isTitle: false, titleName: "  Movies")
-        // Call Movies API Request
-        doMoviesRequest()
+        
+        if setTitle.isEmpty {
+          navigationBarWithLeftSideTitle(isTitle: false, titleName: "  Movies")
+        }else{
+            navigationBarWithLeftSideTitle(isTitle: false, titleName: "\(  setTitle)")
+
+        }
+        
+        if homeSectionArray == nil {
+            // Call Movies API Request
+            doMoviesRequest()
+        }
+        else {
+//            self.collectionView.dataSource = self
+//            self.collectionView.delegate = self
+//            self.collectionView.isHidden = false
+//            self.labelForAddMovies.isHidden = true
+//            self.buttonForAddMovies.isHidden = true
+//            self.collectionView.reloadData()
+        }
+        
+       
         
     }
     // MARK: Routing

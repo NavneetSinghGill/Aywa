@@ -25,6 +25,8 @@ class TVShowsViewController: UIViewController, TVShowsDisplayLogic
     var router: (NSObjectProtocol & TVShowsRoutingLogic & TVShowsDataPassing)?
     var myListShowsArray = [TVShows.MyListShows.Response]()
     
+    var homeSectionArray: Home.Section.Response?
+    
     // MARK: Object lifecycle
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)

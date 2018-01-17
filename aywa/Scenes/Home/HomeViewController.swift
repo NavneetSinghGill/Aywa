@@ -151,6 +151,9 @@ class HomeViewController: BPViewController, HomeDisplayLogic, UITableViewDelegat
         }
         return verticalCellHeight
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        router?.routeSelectedRowDataMoveViewController()
+    }
     //MARK:- Show Response
     func displayError(response: Home.Section.Response)
     {
