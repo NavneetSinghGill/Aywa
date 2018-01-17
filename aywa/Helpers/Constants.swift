@@ -144,6 +144,8 @@ struct LocaleKeys {
     static let kSignUp = "SignUp"
     static let kFbSignUp = "FbSignUp"
     
+    static let kForgotPassword = "ForgotPassword"
+    
     static let kBackButton = "backButton"
 }
 

@@ -66,9 +66,20 @@ class FloatingHeaderTextField: UITextField {
         underLineLayer.path = path.cgPath
     }
     
+    @objc func showHidePassword(button: UIButton) {
+        self.isSecureTextEntry = !self.isSecureTextEntry
+        button.isSelected = !self.isSecureTextEntry
+    }
+    
     func setup() {
-        leftViewMode = .always
-        leftView = UIView(frame: CGRect(x: 0, y: 0, width: 2, height: 20))
+        if self.isSecureTextEntry {
+            rightViewMode = .always
+            let buttonPassword = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+            buttonPassword.addTarget(self, action: #selector(self.showHidePassword), for: .touchUpInside)
+            buttonPassword.setImage(UIImage(named: "hidePassword"), for: .normal)
+            buttonPassword.setImage(UIImage(named: "showPassword"), for: .selected)
+            rightView = buttonPassword
+        }
         
         underLineLayer = CAShapeLayer()
         refreshUnderLineLayerFrame()
@@ -82,7 +93,6 @@ class FloatingHeaderTextField: UITextField {
         } else {
             isActive = false
         }
-        
         addSubview(placeholderLabel)
     }
     
@@ -136,6 +146,9 @@ class FloatingHeaderTextField: UITextField {
         self.placeholderLabel.frame = CGRect(x: 0, y: -25, width: self.bounds.size.width - 20, height: 44)
         self.placeholderLabel.transform = CGAffineTransform(scaleX: self.placeholderFontScale, y: self.placeholderFontScale)
         self.placeholderLabel.frame.origin = CGPoint(x: 0, y: self.placeholderLabel.frame.origin.y)
+        if self.placeholderLabel.effectiveUserInterfaceLayoutDirection == .rightToLeft {
+            self.placeholderLabel.frame.origin = CGPoint(x: self.frame.size.width - self.placeholderLabel.frame.size.width, y: self.placeholderLabel.frame.origin.y)
+        }
     }
     
     func setInActiveStateIfShould() {

@@ -91,4 +91,8 @@ extension UIViewController {
     @objc func didTapShareButton(){
         print("Share TV Button Tapped")
     }
+    
+    open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 }

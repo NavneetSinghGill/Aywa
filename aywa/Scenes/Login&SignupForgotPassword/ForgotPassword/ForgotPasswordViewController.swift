@@ -54,7 +54,7 @@ class ForgotPasswordViewController: BPViewController, ForgotPasswordDisplayLogic
         backgroundImageView.image = BackgroundImageManager.shared().getBackgroundImage()
         self.emailTextField.delegate = self
         showNavigationBar()
-        navigationBarWithLeftSideTitle(isTitle: false, titleName: " Reset password")
+        navigationBarWithLeftSideTitle(isTitle: false, titleName: LocaleKeys.kForgotPassword.localize())
     }
     
     // MARK: Setup

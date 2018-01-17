@@ -40,5 +40,8 @@
 "SignUp" = "  Sign up";
 "FbSignUp" = "Sign up with Facebook";
 
+//Reset and forgot password
+"ForgotPassword" = "  Forgot password";
+
 //Images
 "backButton" = "backButton";

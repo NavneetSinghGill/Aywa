@@ -40,5 +40,8 @@
 "SignUp" = "  حساب جديد";
 "FbSignUp" = "تسجيل بواسطة فيسبوك";
 
+//Reset and forgot password
+"ForgotPassword" = "  هل نسيت كلمة المرور؟";
+
 //Images
 "backButton" = "backButtonArabic";

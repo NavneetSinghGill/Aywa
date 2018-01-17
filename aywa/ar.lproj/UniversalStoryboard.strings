@@ -61,3 +61,11 @@
 
 /* Class = "UIButton"; normalTitle = "Create Account"; ObjectID = "xO8-l1-c5t"; */
 "xO8-l1-c5t.normalTitle" = "تسجيل الحساب";
+
+//Password screens
+
+"zGi-lm-RSm.normalTitle" = "تأكيد"; // Confirm
+"Bgw-c5-qzX.text" = "أدخل كلمة مرور جديدة"; // Enter new password
+
+"Rhn-3c-c3S.text" = "أدخل البريد الإلكتروني"; // Enter email
+"9r0-bq-goT.normalTitle" = "إعادة تعيين كلمة المرور"; // Reset password
