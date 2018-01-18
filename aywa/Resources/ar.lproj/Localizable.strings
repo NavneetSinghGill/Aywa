@@ -35,15 +35,15 @@
 
 //Sign in
 "SignInToYourAywaAccount" = "تسجيل الدخول لحسابك\nالخاص";
-"SignIn" = "  تسجيل الدخول";
+"SignIn" = "تسجيل الدخول";
 "FbSignIn" = "دخول بواسطة فيسبوك";
 
 //Sign up
-"SignUp" = "  حساب جديد";
+"SignUp" = "حساب جديد";
 "FbSignUp" = "تسجيل بواسطة فيسبوك";
 
 //Reset and forgot password
-"ForgotPassword" = "  هل نسيت كلمة المرور؟";
+"ForgotPassword" = "هل نسيت كلمة المرور؟";
 
 //For set title
 "Browse" = "تصفح";

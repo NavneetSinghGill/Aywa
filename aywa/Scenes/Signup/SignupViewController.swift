@@ -192,7 +192,7 @@ class SignupViewController: BPViewController, SignupDisplayLogic, UITextFieldDel
             passwordTextField.resignFirstResponder()
             //confirmPasswordTextField.resignFirstResponder()
             ageGroupTextField.resignFirstResponder()
-            ageDropDown.show()
+            ageDropDown.showWithLocalisation()
             ageDropDown.direction = .top
             return false
         }
@@ -203,7 +203,7 @@ class SignupViewController: BPViewController, SignupDisplayLogic, UITextFieldDel
             passwordTextField.resignFirstResponder()
             //confirmPasswordTextField.resignFirstResponder()
             genderTextField.resignFirstResponder()
-            genderDropDown.show()
+            genderDropDown.showWithLocalisation()
             genderDropDown.direction = .bottom
             return false
         }

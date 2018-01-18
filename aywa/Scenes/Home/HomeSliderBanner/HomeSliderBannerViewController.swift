@@ -107,7 +107,8 @@ class HomeSliderBannerViewController: UIViewController, HomeSliderBannerDisplayL
     //MARK: Do Menu Action
     func doMenuAction() {
         print("Perform Menu Action")
-        menuDropDown.show()
+        
+        menuDropDown.showWithLocalisation()
     }
     
     func displayError(response: HomeSliderBanner.SliderBanner.Response)

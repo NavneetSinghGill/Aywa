@@ -153,6 +153,7 @@
 		534788E31FE7B7E00031B727 /* ShowImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534788E11FE7B7E00031B727 /* ShowImageTableViewCell.swift */; };
 		534788E41FE7B7E00031B727 /* ShowImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 534788E21FE7B7E00031B727 /* ShowImageTableViewCell.xib */; };
 		53C5E8D0200366990026328C /* Main~ipad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48AAD6531FE506390097C0F3 /* Main~ipad.storyboard */; };
+		F12E69BB20107E4000A80711 /* DropDownExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E69BA20107E4000A80711 /* DropDownExtension.swift */; };
 		F1C0F15E200DF29E00651D46 /* StringExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C0F15D200DF29E00651D46 /* StringExtention.swift */; };
 		F1C0F161200E079800651D46 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F1C0F163200E079800651D46 /* Localizable.strings */; };
 		F3E2B83D070F1488BA7CB3B7 /* Pods_aywa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB62771C59A206259FEF1D5 /* Pods_aywa.framework */; };
@@ -312,6 +313,7 @@
 		534788E21FE7B7E00031B727 /* ShowImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowImageTableViewCell.xib; sourceTree = "<group>"; };
 		ADB62771C59A206259FEF1D5 /* Pods_aywa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_aywa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F11BB598200793C5006FBB74 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/UniversalStoryboard.strings; sourceTree = "<group>"; };
+		F12E69BA20107E4000A80711 /* DropDownExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownExtension.swift; sourceTree = "<group>"; };
 		F1C0F15D200DF29E00651D46 /* StringExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtention.swift; sourceTree = "<group>"; };
 		F1C0F162200E079800651D46 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F1C0F164200E07BC00651D46 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -576,6 +578,7 @@
 				1830A53B1FF4D0A90099D8EF /* BPViewControllerExtension.swift */,
 				23670D7F2007309E00FEE2D9 /* SearchBarExtension.swift */,
 				F1C0F15D200DF29E00651D46 /* StringExtention.swift */,
+				F12E69BA20107E4000A80711 /* DropDownExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -995,6 +998,8 @@
 				2356E9411FEA4AD8009B7AC8 /* LoginModels.swift in Sources */,
 				237F1AC02010B715005C185A /* NotificationsViewController.swift in Sources */,
 				232792181FF5131C00A218B6 /* FacebookWorker.swift in Sources */,
+				23682E321FECDFA6006CF18C /* AlertViewController.swift in Sources */,
+				F12E69BB20107E4000A80711 /* DropDownExtension.swift in Sources */,
 				2396EDE42004F130008CB272 /* TVShowsPresenter.swift in Sources */,
 				F1C0F15E200DF29E00651D46 /* StringExtention.swift in Sources */,
 				2396EDEF2004F154008CB272 /* NetworksModels.swift in Sources */,
