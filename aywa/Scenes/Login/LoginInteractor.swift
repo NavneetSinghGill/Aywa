@@ -58,26 +58,29 @@ class LoginInteractor: LoginBusinessLogic, LoginDataStore
         var isValid = false
         var errorMsg : String?
         if request.email == nil || request.password == nil {
-            print("This field is required.")
+            //print("This field is required.")
+            errorMsg = "Field required".localize()
         }
         else if ((request.email!.count) < 1)
         {
-            errorMsg = "This field is required."
+            errorMsg = "Field required".localize()
         }
         else if !(Utils.isValid(email: (request.email)!))
         {
-            errorMsg = "Invalid email address/password combination."
+            errorMsg = "Invalid email/password".localize()
         }
         else if ((request.password!.count) < 5)
         {
-            errorMsg = "Password is too short."
+            errorMsg = "PasswordTooShortMessage".localize()
+            //"Password is too short."
         }
             
         else {
             isValid = true
         }
         if(!isValid && errorMsg!.count > 0) {
-            print(errorMsg!)
+           // print(errorMsg!)
+            BannerManager.showFailureBanner(subtitle: errorMsg!)
         }
         return isValid
         

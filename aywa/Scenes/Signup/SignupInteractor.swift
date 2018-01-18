@@ -60,23 +60,25 @@ class SignupInteractor: SignupBusinessLogic, SignupDataStore
         var errorMsg : String?
         
         if request.email == nil || request.password == nil || request.name == nil || request.ageGroup == nil || request.gender == nil {
-            print("This field is required.")
+            //print("This field is required.")
+            errorMsg = "Field required".localize()
         }
         else if ((request.name!.count) < 1)
         {
-            errorMsg = "This field is required."
+            errorMsg = "Field required".localize()
         }
         else if ((request.email!.count) < 1)
         {
-            errorMsg = "This field is required."
+            errorMsg = "Field required".localize()
         }
         else if !(Utils.isValid(email: (request.email)!))
         {
-            errorMsg = "This email address is invalid."
+            errorMsg =  "Email addrees invalid".localize()
         }
         else if ((request.password!.count) < 5)
         {
-            errorMsg = "Password field may not be empty and must be minimum 5 length."
+            errorMsg = "Password should be at least 8 characters long.".localize()
+            //"Password field may not be empty and must be minimum 5 length."
         }
       /*  else if ((request.confirmPassword!.count) < 5)
         {
@@ -94,23 +96,23 @@ class SignupInteractor: SignupBusinessLogic, SignupDataStore
             //            } // TODO: date formate validation
         }
         else if ((request.ageGroup!.count) < 1){
-            errorMsg = "This field is required."
+            errorMsg = "Field required".localize()     //"This field is required."
         }
         else if ((request.gender!.count) < 1){
-            errorMsg = "This field is required."
+            errorMsg = "Field required".localize()
         }
         else if !(request.country == nil){
             if ((request.country!.count) < 1){
-                errorMsg = "Country field may not be empty."
+                errorMsg =  "Country field may not be empty."
             }
         }
         else if !(request.countryName == nil){
             if ((request.countryName!.count) < 1){
-                errorMsg = "Country name field may not be empty."
+                errorMsg = "Country Name field required".localize()
             }        }
         else if !(request.phone == nil){
             if ((request.phone!.count) < 10){
-                errorMsg = "Phone field may not be empty and Must be minimum 10 digit."
+                errorMsg = "PhoneNumberTooShortMessage".localize()
             }
         }
             
@@ -120,7 +122,9 @@ class SignupInteractor: SignupBusinessLogic, SignupDataStore
         }
         if(!isValid && errorMsg!.count > 0) {
             //Utils.showAlertWith(title: "Oops!", message: errorMsg!, inController: SignupInteractor)
-            print(errorMsg!)
+            //BannerManager.showFailureBanner(subtitle: Constants.kNoNetworkMessage)
+            BannerManager.showFailureBanner(subtitle: errorMsg!)
+           // print(errorMsg!)
         }
         return isValid
     }

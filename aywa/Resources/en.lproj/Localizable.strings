@@ -12,24 +12,26 @@
 "CommonSuccessBannerTitle"     = "Success";
 "SomethingWentWrongMessage" = "Something went wrong. We are working on it!";
 
-//Signup
+// Error MSG Signup
 "EnterUsernameAndEmailTitle" = "Uh oh!";
 "EnterUsernameAndEmailMessage" = "Please enter your Username and Email.";
-"InvalidEmailTitle" = "Email Invalid";
+"InvalidEmailTitle" = "Email Invalid.";
 "InvalidEmailMessage" = "Please enter a valid email address.";
-"PasswordMissingTitle" = "Password missing";
+"PasswordMissingTitle" = "Password missing.";
 "PasswordMissingMessage" = "Please enter your Password.";
 
-"InvalidUsernameTitle" = "Username Invalid" ;
+"InvalidUsernameTitle" = "Username Invalid." ;
 "InvalidUsernameMessage" = "Name should be between 4-30 characters.";
-"PasswordTooShortTitle" = "Password too short";
-"PasswordTooShortMessage" = "Password should be at least 8 characters long.";
+"PasswordTooShortTitle" = "Password too short.";
+"PasswordTooShortMessage" = "Password should be at least 5 characters long.";
+ "Country field required"  = "Country field may not be empty.";
+"Country Name field required"  = "Country name field may not be empty.";
+"PhoneNumberTooShortMessage" = "Phone number field may not be empty and Must be minimum 10 digit.";
 
-// Error MSG Signup
+// Error MSG Signin
 "Field required" = "This field is required.";
 "Email addrees invalid" = "This email address is invalid.";
 "Invalid email/password" = "Invalid email address/password combination.";
-"Password is too short" = "Password is too short.";
 
 //Sign in
 "SignInToYourAywaAccount" = "Sign in to your\nAywa account";

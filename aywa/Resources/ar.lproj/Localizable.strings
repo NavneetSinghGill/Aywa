@@ -8,28 +8,30 @@
 
 //NSLocalizedString(@"CommonBannerTitle", @"");
 
-"CommonFailureBannerTitle"     = "Sorry";
-"CommonSuccessBannerTitle"     = "Success";
-"SomethingWentWrongMessage" = "Something went wrong. We are working on it!";
+"CommonFailureBannerTitle"     = "آسف";
+"CommonSuccessBannerTitle"     = "نجاح";
+"SomethingWentWrongMessage" = "هناك خطأ ما. نحن نعمل عليه!";
 
-//Signup
-"EnterUsernameAndEmailTitle" = "Uh oh!";
-"EnterUsernameAndEmailMessage" = "Please enter your Username and Email.";
-"InvalidEmailTitle" = "Email Invalid";
-"InvalidEmailMessage" = "Please enter a valid email address.";
-"PasswordMissingTitle" = "Password missing";
-"PasswordMissingMessage" = "Please enter your Password.";
+//Error MSG Signup
+"EnterUsernameAndEmailTitle" = "أه أوه!";
+"EnterUsernameAndEmailMessage" = "الرجاء إدخال اسم المستخدم والبريد الإلكتروني.";
+"InvalidEmailTitle" = "البريد الإلكتروني غير صالح.";
+"InvalidEmailMessage" = "رجاء قم بإدخال بريد الكتروني صحيح.";
+"PasswordMissingTitle" = "كلمة المرور مفقودة.";
+"PasswordMissingMessage" = "من فضلك أدخل رقمك السري.";
 
-"InvalidUsernameTitle" = "Username Invalid" ;
-"InvalidUsernameMessage" = "Name should be between 4-30 characters.";
-"PasswordTooShortTitle" = "Password too short";
-"PasswordTooShortMessage" = "Password should be at least 8 characters long.";
+"InvalidUsernameTitle" = "اسم المستخدم غير صالح." ;
+"InvalidUsernameMessage" = "يجب أن يكون الاسم بين 4-30 حرفا.";
+"PasswordTooShortTitle" = "كلمة المرور قصيرة جدا.";
+"PasswordTooShortMessage" = "يجب أن تتكون كلمة المرور من 8 أحرف على الأقل.";
+"Country field required"  = "قد لا يكون حقل البلد فارغا.";
+"Country Name field required" = "حقل اسم البلد قد لا يكون فارغا.";
+"PhoneNumberTooShortMessage" = "قد لا يكون حقل رقم الهاتف فارغا ويجب ألا يقل عن 10 أرقام.";
 
 // Error MSG Signup
-"Field required" = "This field is required.";
-"Email addrees invalid" = "This email address is invalid.";
-"Invalid email/password" = "Invalid email address/password combination.";
-"Password is too short" = "Password is too short.";
+"Field required" = "هذه الخانة مطلوبه.";
+"Email addrees invalid" = "عنوان البريد الإلكتروني هذا غير صالح.";
+"Invalid email/password" = "تركيبة عنوان البريد الإلكتروني / كلمة المرور غير صالحة.";
 
 //Sign in
 "SignInToYourAywaAccount" = "تسجيل الدخول لحسابك\nالخاص";
