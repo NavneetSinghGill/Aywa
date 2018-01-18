@@ -129,24 +129,33 @@ struct Identifiers {
     static let sIdNetworksViewController = "NetworksViewController"
 }
 
-struct BrowseIdentifier {
-    static let documentariesString = "Documentaries"
-    static let kidString = "Kids"
-    static let newReleasesString = "New Releases"
-    static let recently_AddedString = "Recently Added"
-    static let genresString = "Genres"
-}
-
 struct LocaleKeys {
     static let kSignIn = "SignIn"
     static let kFbSignIn = "FbSignIn"
     
     static let kSignUp = "SignUp"
     static let kFbSignUp = "FbSignUp"
-    
     static let kForgotPassword = "ForgotPassword"
     
+    static let kBrowse = "Browse".localize()
+    static let kPlans = "Plans".localize()
+    static let kLogout = "Logout".localize()
+    static let kShows = "Shows".localize()
+    static let kSearch = "Search".localize()
+    static let kMyList = "My List".localize()
+    static let kNotifications = "Notifications"
+    
+    //Browse Identifier for Strings
+    static let kMoviesString = "MoviesString".localize()
+    static let kTvShowsString = "TvShowsString".localize()
+    static let kNetworksString = "NetworksString".localize()
+    static let kDocumentariesString = "DocumentariesString".localize()
+    static let kKidString = "KidString".localize()
+    static let kNewReleasesString = "NewReleasesString".localize()
+    static let kRecently_AddedString = "Recently_AddedString".localize()
+    static let kGenresString = "GenresString".localize()
     static let kBackButton = "backButton"
+    
 }
 
 enum CellAlignment {

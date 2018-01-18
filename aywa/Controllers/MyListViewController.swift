@@ -36,7 +36,7 @@ class MyListViewController: UIViewController, UIScrollViewDelegate, UIPageViewCo
     }
     //MARK: Initial Setup
     private func initialiseView() {
-        navigationBarWithLeftSideTitle(isTitle: true, titleName: "My List")
+        navigationBarWithLeftSideTitle(isTitle: true, titleName: LocaleKeys.kMyList)
         currentPage = 0
         createPageViewController()
     }

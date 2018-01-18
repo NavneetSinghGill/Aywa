@@ -91,7 +91,7 @@ class MoviesViewController: UIViewController, MoviesDisplayLogic
         self.labelForAddMovies.isHidden = true
         self.buttonForAddMovies.isHidden = true
         if setTitle.isEmpty {
-            navigationBarWithLeftSideTitle(isTitle: false, titleName: "Movies")
+            navigationBarWithLeftSideTitle(isTitle: false, titleName: LocaleKeys.kMoviesString)
             // Call Movies API Request
             doMoviesRequest()
         }else{

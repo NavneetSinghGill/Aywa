@@ -149,15 +149,25 @@ class HomeSliderBannerViewController: UIViewController, HomeSliderBannerDisplayL
         menuDropDown.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 1.0)
         menuDropDown.textColor = UIColor.white
         menuDropDown.dataSource = [
-            "Logout"
+            "Logout",
+            "Plans"
         ]
         
         // Action triggered on selection
         menuDropDown.selectionAction = {(index, item) in
-            let loginManager = FBSDKLoginManager()
-            loginManager.logOut() //TODO Fackbook Logout
-            SecurityStorageWorker().updateLoggedInState(isLoggedIn: false)
-            ApplicationDelegate.setLandingAsRootViewController()
+           
+            switch item {
+            case LocaleKeys.kLogout:
+                let loginManager = FBSDKLoginManager()
+                loginManager.logOut() //TODO Fackbook Logout
+                SecurityStorageWorker().updateLoggedInState(isLoggedIn: false)
+                ApplicationDelegate.setLandingAsRootViewController()
+            case LocaleKeys.kPlans:
+                print(item)
+            default:
+                print(item)
+            }
+            
         }
     }
 }

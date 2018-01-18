@@ -30,10 +30,7 @@ class BrowseViewController: BPViewController, BrowseDisplayLogic
     
     let cellHeight: CGFloat = isiPad ? 88*1.3 : 88
     
-    static let moviesString = "Movies"
-    static let tvShowsString = "TV Shows"
-    static let networksString = "Networks"
-    //static let genresString = "Genres"
+    
     
     static let displayOrderOne: Int = 1
     static let displayOrderSix: Int = 6
@@ -42,13 +39,13 @@ class BrowseViewController: BPViewController, BrowseDisplayLogic
     var isBrowseSectionApiCompleted = false
     
     // Section 1 For Movies, TV Shows and Networks
-    let sectionFirstArray = [moviesString, tvShowsString, networksString]
+    let sectionFirstArray = [LocaleKeys.kMoviesString, LocaleKeys.kTvShowsString, LocaleKeys.kNetworksString]
     // Section 2 for Catalogs
     var sectionSecondArray = [String]()
     // Section 3 For Recently Add and New Releases
     var sectionThridArray = [String]()
     // Section 4 For Genres
-    var sectionfourthArray = [BrowseIdentifier.genresString]
+    var sectionfourthArray = [LocaleKeys.kGenresString]
     var browseSectionsItemsArray = [Array<Any>]()
     
     //var browsSectionsArray = [Array<Any>]()   //[Any]()
@@ -89,7 +86,7 @@ class BrowseViewController: BPViewController, BrowseDisplayLogic
     
     //MARK: Initial Setup
     private func initialiseView() {
-        navigationBarWithLeftSideTitle(isTitle: true, titleName: "Browse")
+        navigationBarWithLeftSideTitle(isTitle: true, titleName: LocaleKeys.kBrowse)
         let browseNIB = UINib(nibName: Identifiers.browseTableViewCell, bundle: nil)
         tableView.register(browseNIB, forCellReuseIdentifier: Identifiers.browseTableViewCell)
         self.tableView.separatorStyle = .none

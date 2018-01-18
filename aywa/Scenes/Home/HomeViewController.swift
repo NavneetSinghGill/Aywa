@@ -169,10 +169,10 @@ class HomeViewController: BPViewController, HomeDisplayLogic, UITableViewDelegat
         if sectionString.isEmpty {
             print("Section String Empty")
         }
-        else if sectionString.isEqual(BrowseIdentifier.newReleasesString) {
+        else if sectionString.isEqual(LocaleKeys.kNewReleasesString) {
             self.sectionArray = [self.sectionArray[NumericValue.ZERO.rawValue]]
         }
-        else if sectionString.isEqual(BrowseIdentifier.recently_AddedString) {
+        else if sectionString.isEqual(LocaleKeys.kRecently_AddedString) {
             self.sectionArray = [self.sectionArray[NumericValue.FIFTH.rawValue]]
         }
         else{

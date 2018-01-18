@@ -86,7 +86,7 @@ class TVShowsViewController: UIViewController, TVShowsDisplayLogic
         self.labelForAddShows.isHidden = true
         self.buttonForAddShows.isHidden = true
         if setTitle.isEmpty {
-            navigationBarWithLeftSideTitle(isTitle: false, titleName: "Shows")
+            navigationBarWithLeftSideTitle(isTitle: false, titleName: LocaleKeys.kShows)
             // Call Shows Request
             doMyListShows()
            

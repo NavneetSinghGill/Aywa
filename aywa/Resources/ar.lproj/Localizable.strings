@@ -23,7 +23,7 @@
 "InvalidUsernameTitle" = "اسم المستخدم غير صالح." ;
 "InvalidUsernameMessage" = "يجب أن يكون الاسم بين 4-30 حرفا.";
 "PasswordTooShortTitle" = "كلمة المرور قصيرة جدا.";
-"PasswordTooShortMessage" = "يجب أن تتكون كلمة المرور من 8 أحرف على الأقل.";
+"PasswordTooShortMessage" = "يجب أن تتكون كلمة المرور من 5 أحرف على الأقل.";
 "Country field required"  = "قد لا يكون حقل البلد فارغا.";
 "Country Name field required" = "حقل اسم البلد قد لا يكون فارغا.";
 "PhoneNumberTooShortMessage" = "قد لا يكون حقل رقم الهاتف فارغا ويجب ألا يقل عن 10 أرقام.";
@@ -45,5 +45,23 @@
 //Reset and forgot password
 "ForgotPassword" = "  هل نسيت كلمة المرور؟";
 
+//For set title
+"Browse" = "تصفح";
+"Plans" = "خطط";
+"Logout" = "الخروج";
+"Shows" = "عروض";
+"Search" = "بحث";
+"My List" = "قائمتي";
+"Notifications" = "إخطارات";
+
+// For Browse
+"MoviesString" = "أفلام";
+"TvShowsString" = "عرض تلفزيوني";
+"NetworksString" = "الشبكات";
+"DocumentariesString" = "الافلام الوثائقية";
+"KidString" = "أطفال";
+"NewReleasesString" = "الإصدارات الجديدة";
+"Recently_AddedString" = "اضاف في الأونة الأخيرة";
+"GenresString" = "الجنس الأدبي";
 //Images
 "backButton" = "backButtonArabic";

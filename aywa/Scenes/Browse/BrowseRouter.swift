@@ -34,16 +34,16 @@ class BrowseRouter: NSObject, BrowseRoutingLogic, BrowseDataPassing
         print(title)
         
         switch title {
-        case BrowseViewController.moviesString:
+        case LocaleKeys.kMoviesString:
             destinationVC = MoviesViewController.create(of: .UniversalStoryboard)
-        case BrowseViewController.tvShowsString:
+        case LocaleKeys.kTvShowsString:
             destinationVC = TVShowsViewController.create(of: .UniversalStoryboard)
-        case BrowseViewController.networksString:
+        case LocaleKeys.kNetworksString:
             destinationVC = NetworksViewController.create(of: .UniversalStoryboard)
-        case BrowseIdentifier.documentariesString, BrowseIdentifier.kidString, BrowseIdentifier.newReleasesString, BrowseIdentifier.recently_AddedString:
+        case LocaleKeys.kDocumentariesString, LocaleKeys.kKidString, LocaleKeys.kNewReleasesString, LocaleKeys.kRecently_AddedString:
             destinationVC = HomeViewController.create(of: .UniversalStoryboard)
             passDataToHomeCatalogId(source: viewController!, destination: destinationVC as! HomeViewController, selectedRowTitle: title)
-        case BrowseIdentifier.genresString:
+        case LocaleKeys.kGenresString:
             print("Genres")
         default:
             print(title)
@@ -61,9 +61,9 @@ class BrowseRouter: NSObject, BrowseRoutingLogic, BrowseDataPassing
     func passDataToHomeCatalogId(source: BrowseViewController, destination: HomeViewController, selectedRowTitle: String){
         print(selectedRowTitle)
         switch selectedRowTitle {
-        case BrowseIdentifier.newReleasesString , BrowseIdentifier.recently_AddedString:
+        case LocaleKeys.kNewReleasesString , LocaleKeys.kRecently_AddedString:
             destination.sectionString = selectedRowTitle
-        case BrowseIdentifier.documentariesString, BrowseIdentifier.kidString:
+        case LocaleKeys.kDocumentariesString, LocaleKeys.kKidString:
             let selectedRow: Int = (viewController?.tableView.indexPathForSelectedRow?.row)!
             let arrayCatalogsIs = viewController?.browseCatalogsArray
             let catalogIdIs: Int = (arrayCatalogsIs?.catalogs![selectedRow].id!)!

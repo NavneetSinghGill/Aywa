@@ -37,18 +37,6 @@
 		23682E191FECDF6E006CF18C /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23682E131FECDF6E006CF18C /* SearchRouter.swift */; };
 		23682E1A1FECDF6E006CF18C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23682E141FECDF6E006CF18C /* SearchViewController.swift */; };
 		23682E1B1FECDF6E006CF18C /* SearchWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23682E151FECDF6E006CF18C /* SearchWorker.swift */; };
-		23682E221FECDF91006CF18C /* LikeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23682E1C1FECDF91006CF18C /* LikeInteractor.swift */; };
-		23682E231FECDF91006CF18C /* LikeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23682E1D1FECDF91006CF18C /* LikeModels.swift */; };
-		23682E241FECDF91006CF18C /* LikePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23682E1E1FECDF91006CF18C /* LikePresenter.swift */; };
-		23682E251FECDF91006CF18C /* LikeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23682E1F1FECDF91006CF18C /* LikeRouter.swift */; };
-		23682E261FECDF91006CF18C /* LikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23682E201FECDF91006CF18C /* LikeViewController.swift */; };
-		23682E271FECDF91006CF18C /* LikeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23682E211FECDF91006CF18C /* LikeWorker.swift */; };
-		23682E2E1FECDFA6006CF18C /* AlertInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23682E281FECDFA6006CF18C /* AlertInteractor.swift */; };
-		23682E2F1FECDFA6006CF18C /* AlertModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23682E291FECDFA6006CF18C /* AlertModels.swift */; };
-		23682E301FECDFA6006CF18C /* AlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23682E2A1FECDFA6006CF18C /* AlertPresenter.swift */; };
-		23682E311FECDFA6006CF18C /* AlertRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23682E2B1FECDFA6006CF18C /* AlertRouter.swift */; };
-		23682E321FECDFA6006CF18C /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23682E2C1FECDFA6006CF18C /* AlertViewController.swift */; };
-		23682E331FECDFA6006CF18C /* AlertWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23682E2D1FECDFA6006CF18C /* AlertWorker.swift */; };
 		236B6F651FF60C480050B40E /* ForgotPasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236B6F5F1FF60C480050B40E /* ForgotPasswordInteractor.swift */; };
 		236B6F661FF60C480050B40E /* ForgotPasswordModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236B6F601FF60C480050B40E /* ForgotPasswordModels.swift */; };
 		236B6F671FF60C480050B40E /* ForgotPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236B6F611FF60C480050B40E /* ForgotPasswordPresenter.swift */; };
@@ -65,6 +53,18 @@
 		236F94C11FE9330700B16981 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236F94BB1FE9330300B16981 /* HomeRouter.swift */; };
 		236F94C21FE9330700B16981 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236F94BC1FE9330300B16981 /* HomeViewController.swift */; };
 		236F94C31FE9330700B16981 /* HomeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236F94BD1FE9330300B16981 /* HomeWorker.swift */; };
+		237F1AA320107B77005C185A /* PlansInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237F1A9D20107B77005C185A /* PlansInteractor.swift */; };
+		237F1AA420107B77005C185A /* PlansModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237F1A9E20107B77005C185A /* PlansModels.swift */; };
+		237F1AA520107B77005C185A /* PlansPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237F1A9F20107B77005C185A /* PlansPresenter.swift */; };
+		237F1AA620107B77005C185A /* PlansRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237F1AA020107B77005C185A /* PlansRouter.swift */; };
+		237F1AA720107B77005C185A /* PlansViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237F1AA120107B77005C185A /* PlansViewController.swift */; };
+		237F1AA820107B77005C185A /* PlansWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237F1AA220107B77005C185A /* PlansWorker.swift */; };
+		237F1ABC2010B715005C185A /* NotificationsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237F1AB62010B715005C185A /* NotificationsInteractor.swift */; };
+		237F1ABD2010B715005C185A /* NotificationsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237F1AB72010B715005C185A /* NotificationsModels.swift */; };
+		237F1ABE2010B715005C185A /* NotificationsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237F1AB82010B715005C185A /* NotificationsPresenter.swift */; };
+		237F1ABF2010B715005C185A /* NotificationsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237F1AB92010B715005C185A /* NotificationsRouter.swift */; };
+		237F1AC02010B715005C185A /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237F1ABA2010B715005C185A /* NotificationsViewController.swift */; };
+		237F1AC12010B715005C185A /* NotificationsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237F1ABB2010B715005C185A /* NotificationsWorker.swift */; };
 		238BCFC41FFB4F7500D4A0D6 /* BrowseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238BCFBE1FFB4F7500D4A0D6 /* BrowseInteractor.swift */; };
 		238BCFC51FFB4F7500D4A0D6 /* BrowseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238BCFBF1FFB4F7500D4A0D6 /* BrowseModels.swift */; };
 		238BCFC61FFB4F7500D4A0D6 /* BrowsePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238BCFC01FFB4F7500D4A0D6 /* BrowsePresenter.swift */; };
@@ -191,18 +191,6 @@
 		23682E131FECDF6E006CF18C /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
 		23682E141FECDF6E006CF18C /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		23682E151FECDF6E006CF18C /* SearchWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWorker.swift; sourceTree = "<group>"; };
-		23682E1C1FECDF91006CF18C /* LikeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeInteractor.swift; sourceTree = "<group>"; };
-		23682E1D1FECDF91006CF18C /* LikeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeModels.swift; sourceTree = "<group>"; };
-		23682E1E1FECDF91006CF18C /* LikePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikePresenter.swift; sourceTree = "<group>"; };
-		23682E1F1FECDF91006CF18C /* LikeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeRouter.swift; sourceTree = "<group>"; };
-		23682E201FECDF91006CF18C /* LikeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeViewController.swift; sourceTree = "<group>"; };
-		23682E211FECDF91006CF18C /* LikeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeWorker.swift; sourceTree = "<group>"; };
-		23682E281FECDFA6006CF18C /* AlertInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertInteractor.swift; sourceTree = "<group>"; };
-		23682E291FECDFA6006CF18C /* AlertModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModels.swift; sourceTree = "<group>"; };
-		23682E2A1FECDFA6006CF18C /* AlertPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresenter.swift; sourceTree = "<group>"; };
-		23682E2B1FECDFA6006CF18C /* AlertRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertRouter.swift; sourceTree = "<group>"; };
-		23682E2C1FECDFA6006CF18C /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
-		23682E2D1FECDFA6006CF18C /* AlertWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertWorker.swift; sourceTree = "<group>"; };
 		236B6F5F1FF60C480050B40E /* ForgotPasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordInteractor.swift; sourceTree = "<group>"; };
 		236B6F601FF60C480050B40E /* ForgotPasswordModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordModels.swift; sourceTree = "<group>"; };
 		236B6F611FF60C480050B40E /* ForgotPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordPresenter.swift; sourceTree = "<group>"; };
@@ -219,6 +207,18 @@
 		236F94BB1FE9330300B16981 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		236F94BC1FE9330300B16981 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		236F94BD1FE9330300B16981 /* HomeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorker.swift; sourceTree = "<group>"; };
+		237F1A9D20107B77005C185A /* PlansInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlansInteractor.swift; sourceTree = "<group>"; };
+		237F1A9E20107B77005C185A /* PlansModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlansModels.swift; sourceTree = "<group>"; };
+		237F1A9F20107B77005C185A /* PlansPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlansPresenter.swift; sourceTree = "<group>"; };
+		237F1AA020107B77005C185A /* PlansRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlansRouter.swift; sourceTree = "<group>"; };
+		237F1AA120107B77005C185A /* PlansViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlansViewController.swift; sourceTree = "<group>"; };
+		237F1AA220107B77005C185A /* PlansWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlansWorker.swift; sourceTree = "<group>"; };
+		237F1AB62010B715005C185A /* NotificationsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsInteractor.swift; sourceTree = "<group>"; };
+		237F1AB72010B715005C185A /* NotificationsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsModels.swift; sourceTree = "<group>"; };
+		237F1AB82010B715005C185A /* NotificationsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsPresenter.swift; sourceTree = "<group>"; };
+		237F1AB92010B715005C185A /* NotificationsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsRouter.swift; sourceTree = "<group>"; };
+		237F1ABA2010B715005C185A /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		237F1ABB2010B715005C185A /* NotificationsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsWorker.swift; sourceTree = "<group>"; };
 		238BCFBE1FFB4F7500D4A0D6 /* BrowseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseInteractor.swift; sourceTree = "<group>"; };
 		238BCFBF1FFB4F7500D4A0D6 /* BrowseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseModels.swift; sourceTree = "<group>"; };
 		238BCFC01FFB4F7500D4A0D6 /* BrowsePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowsePresenter.swift; sourceTree = "<group>"; };
@@ -409,32 +409,6 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
-		23682E011FECDD8B006CF18C /* Alert */ = {
-			isa = PBXGroup;
-			children = (
-				23682E281FECDFA6006CF18C /* AlertInteractor.swift */,
-				23682E291FECDFA6006CF18C /* AlertModels.swift */,
-				23682E2A1FECDFA6006CF18C /* AlertPresenter.swift */,
-				23682E2B1FECDFA6006CF18C /* AlertRouter.swift */,
-				23682E2C1FECDFA6006CF18C /* AlertViewController.swift */,
-				23682E2D1FECDFA6006CF18C /* AlertWorker.swift */,
-			);
-			path = Alert;
-			sourceTree = "<group>";
-		};
-		23682E021FECDE3D006CF18C /* Like */ = {
-			isa = PBXGroup;
-			children = (
-				23682E1C1FECDF91006CF18C /* LikeInteractor.swift */,
-				23682E1D1FECDF91006CF18C /* LikeModels.swift */,
-				23682E1E1FECDF91006CF18C /* LikePresenter.swift */,
-				23682E1F1FECDF91006CF18C /* LikeRouter.swift */,
-				23682E201FECDF91006CF18C /* LikeViewController.swift */,
-				23682E211FECDF91006CF18C /* LikeWorker.swift */,
-			);
-			path = Like;
-			sourceTree = "<group>";
-		};
 		23682E031FECDEED006CF18C /* Browse */ = {
 			isa = PBXGroup;
 			children = (
@@ -493,6 +467,32 @@
 				236F94BD1FE9330300B16981 /* HomeWorker.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		237F1A9C20107B47005C185A /* Plans */ = {
+			isa = PBXGroup;
+			children = (
+				237F1A9D20107B77005C185A /* PlansInteractor.swift */,
+				237F1A9E20107B77005C185A /* PlansModels.swift */,
+				237F1A9F20107B77005C185A /* PlansPresenter.swift */,
+				237F1AA020107B77005C185A /* PlansRouter.swift */,
+				237F1AA120107B77005C185A /* PlansViewController.swift */,
+				237F1AA220107B77005C185A /* PlansWorker.swift */,
+			);
+			path = Plans;
+			sourceTree = "<group>";
+		};
+		237F1AA92010B5D6005C185A /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				237F1AB62010B715005C185A /* NotificationsInteractor.swift */,
+				237F1AB72010B715005C185A /* NotificationsModels.swift */,
+				237F1AB82010B715005C185A /* NotificationsPresenter.swift */,
+				237F1AB92010B715005C185A /* NotificationsRouter.swift */,
+				237F1ABA2010B715005C185A /* NotificationsViewController.swift */,
+				237F1ABB2010B715005C185A /* NotificationsWorker.swift */,
+			);
+			path = Notifications;
 			sourceTree = "<group>";
 		};
 		2396EDC02004A9B5008CB272 /* MyListOptions */ = {
@@ -666,13 +666,13 @@
 		48B1122F1FDE5B8F001E92FE /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				237F1AA92010B5D6005C185A /* Notifications */,
+				237F1A9C20107B47005C185A /* Plans */,
 				2396EDC02004A9B5008CB272 /* MyListOptions */,
 				23682E031FECDEED006CF18C /* Browse */,
 				18EE124B1FF5FCAA00E72BD6 /* Token */,
 				236B6F5D1FF60BE30050B40E /* Login&SignupForgotPassword */,
 				23682E001FECDCC5006CF18C /* Search */,
-				23682E021FECDE3D006CF18C /* Like */,
-				23682E011FECDD8B006CF18C /* Alert */,
 				48B112301FDE5BD2001E92FE /* Landing */,
 				2356E9331FEA4423009B7AC8 /* Login */,
 				48AAD6671FE508970097C0F3 /* Signup */,
@@ -943,15 +943,13 @@
 				48AAD6601FE508690097C0F3 /* SignupInteractor.swift in Sources */,
 				48728D121FE3AED000780DBF /* CGFloatExtensions.swift in Sources */,
 				1846C6D91FF375B0006BF9FC /* BaseTabBarController.swift in Sources */,
-				23682E231FECDF91006CF18C /* LikeModels.swift in Sources */,
 				48728D131FE3AED000780DBF /* CGPointExtensions.swift in Sources */,
 				1830A53C1FF4D0A90099D8EF /* BPViewControllerExtension.swift in Sources */,
-				23682E2E1FECDFA6006CF18C /* AlertInteractor.swift in Sources */,
 				48AAD6611FE508690097C0F3 /* SignupModels.swift in Sources */,
 				48728D141FE3AED000780DBF /* CGSizeExtensions.swift in Sources */,
 				48728D151FE3AED000780DBF /* CLLocationExtensions.swift in Sources */,
+				237F1ABD2010B715005C185A /* NotificationsModels.swift in Sources */,
 				48728D161FE3AED000780DBF /* NSAttributedStringExtensions.swift in Sources */,
-				23682E2F1FECDFA6006CF18C /* AlertModels.swift in Sources */,
 				2396EDC92004A9F1008CB272 /* MoviesPresenter.swift in Sources */,
 				2396EDE22004F130008CB272 /* TVShowsInteractor.swift in Sources */,
 				236F94C11FE9330700B16981 /* HomeRouter.swift in Sources */,
@@ -960,8 +958,6 @@
 				23682E171FECDF6E006CF18C /* SearchModels.swift in Sources */,
 				48728D181FE3AED000780DBF /* NSViewExtensions.swift in Sources */,
 				23682E1B1FECDF6E006CF18C /* SearchWorker.swift in Sources */,
-				23682E331FECDFA6006CF18C /* AlertWorker.swift in Sources */,
-				23682E271FECDF91006CF18C /* LikeWorker.swift in Sources */,
 				2396EDE72004F130008CB272 /* TVShowsWorker.swift in Sources */,
 				238BCFC81FFB4F7500D4A0D6 /* BrowseViewController.swift in Sources */,
 				236F94B41FE8ED5000B16981 /* HomeImagesCollectionViewCell.swift in Sources */,
@@ -971,7 +967,7 @@
 				238BCFC61FFB4F7500D4A0D6 /* BrowsePresenter.swift in Sources */,
 				2396EDC82004A9F1008CB272 /* MoviesModels.swift in Sources */,
 				2396EDE32004F130008CB272 /* TVShowsModels.swift in Sources */,
-				23682E261FECDF91006CF18C /* LikeViewController.swift in Sources */,
+				237F1AA320107B77005C185A /* PlansInteractor.swift in Sources */,
 				48728D1B1FE3AED000780DBF /* DateExtensions.swift in Sources */,
 				238BCFC91FFB4F7500D4A0D6 /* BrowseWorker.swift in Sources */,
 				239310991FEA610300337C4B /* HomeSliderBannerInteractor.swift in Sources */,
@@ -991,23 +987,26 @@
 				48728D201FE3AED000780DBF /* LocaleExtensions.swift in Sources */,
 				2356E9431FEA4AD8009B7AC8 /* LoginRouter.swift in Sources */,
 				48728D211FE3AED000780DBF /* OptionalExtensions.swift in Sources */,
-				23682E251FECDF91006CF18C /* LikeRouter.swift in Sources */,
 				18E48BB520034F2100A3711E /* UIStoryboard+Storyboards.swift in Sources */,
 				48728D231FE3AED000780DBF /* SwifterSwift.swift in Sources */,
 				48AAD6621FE508690097C0F3 /* SignupPresenter.swift in Sources */,
+				237F1AA720107B77005C185A /* PlansViewController.swift in Sources */,
 				238BCFC71FFB4F7500D4A0D6 /* BrowseRouter.swift in Sources */,
 				2356E9411FEA4AD8009B7AC8 /* LoginModels.swift in Sources */,
+				237F1AC02010B715005C185A /* NotificationsViewController.swift in Sources */,
 				232792181FF5131C00A218B6 /* FacebookWorker.swift in Sources */,
-				23682E321FECDFA6006CF18C /* AlertViewController.swift in Sources */,
 				2396EDE42004F130008CB272 /* TVShowsPresenter.swift in Sources */,
 				F1C0F15E200DF29E00651D46 /* StringExtention.swift in Sources */,
 				2396EDEF2004F154008CB272 /* NetworksModels.swift in Sources */,
 				2396EDCB2004A9F1008CB272 /* MoviesViewController.swift in Sources */,
 				48728D3A1FE3AED000780DBF /* URLExtensions.swift in Sources */,
+				237F1AA820107B77005C185A /* PlansWorker.swift in Sources */,
 				18EE12561FF5FEAF00E72BD6 /* TokenManager.swift in Sources */,
 				236B6F6A1FF60C480050B40E /* ForgotPasswordWorker.swift in Sources */,
 				483B29521FDFBB23005F5D67 /* AppSettings.plist in Sources */,
+				237F1AC12010B715005C185A /* NotificationsWorker.swift in Sources */,
 				18EE12531FF5FEAF00E72BD6 /* TokenModels.swift in Sources */,
+				237F1AA620107B77005C185A /* PlansRouter.swift in Sources */,
 				2396EDCC2004A9F1008CB272 /* MoviesWorker.swift in Sources */,
 				2393109E1FEA610300337C4B /* HomeSliderBannerWorker.swift in Sources */,
 				48AAD66E1FE533E80097C0F3 /* Utils.swift in Sources */,
@@ -1029,18 +1028,19 @@
 				2396EDEE2004F154008CB272 /* NetworksInteractor.swift in Sources */,
 				483B29491FDFBAC7005F5D67 /* RequestManager.swift in Sources */,
 				48B1124A1FDE69B1001E92FE /* LandingContentViewController.swift in Sources */,
+				237F1ABF2010B715005C185A /* NotificationsRouter.swift in Sources */,
 				483B294A1FDFBACE005F5D67 /* RealAPI.swift in Sources */,
 				48B112471FDE5D39001E92FE /* LandingViewController.swift in Sources */,
-				23682E311FECDFA6006CF18C /* AlertRouter.swift in Sources */,
 				2356E9401FEA4AD8009B7AC8 /* LoginInteractor.swift in Sources */,
-				23682E241FECDF91006CF18C /* LikePresenter.swift in Sources */,
 				483B294C1FDFBAD6005F5D67 /* BaseRequest.swift in Sources */,
 				18EE125C1FF6481100E72BD6 /* FloatingHeaderTextField.swift in Sources */,
+				237F1ABE2010B715005C185A /* NotificationsPresenter.swift in Sources */,
 				238BCFC41FFB4F7500D4A0D6 /* BrowseInteractor.swift in Sources */,
-				23682E221FECDF91006CF18C /* LikeInteractor.swift in Sources */,
 				18EE12591FF6091300E72BD6 /* SplashViewController.swift in Sources */,
+				237F1AA520107B77005C185A /* PlansPresenter.swift in Sources */,
 				2356E9421FEA4AD8009B7AC8 /* LoginPresenter.swift in Sources */,
 				48B1121E1FDE5B4C001E92FE /* AppDelegate.swift in Sources */,
+				237F1ABC2010B715005C185A /* NotificationsInteractor.swift in Sources */,
 				2396EDF02004F154008CB272 /* NetworksPresenter.swift in Sources */,
 				236F94BF1FE9330700B16981 /* HomeModels.swift in Sources */,
 				236F94C21FE9330700B16981 /* HomeViewController.swift in Sources */,
@@ -1050,10 +1050,10 @@
 				483B29501FDFBAEB005F5D67 /* AppSettingsManager.swift in Sources */,
 				236B6F691FF60C480050B40E /* ForgotPasswordViewController.swift in Sources */,
 				2396EDF12004F154008CB272 /* NetworksRouter.swift in Sources */,
+				237F1AA420107B77005C185A /* PlansModels.swift in Sources */,
 				48AAD66C1FE514950097C0F3 /* ViewControllerExtensions.swift in Sources */,
 				483B29511FDFBAF1005F5D67 /* Constants.swift in Sources */,
 				2396EDF22004F154008CB272 /* NetworksViewController.swift in Sources */,
-				23682E301FECDFA6006CF18C /* AlertPresenter.swift in Sources */,
 				23670D802007309E00FEE2D9 /* SearchBarExtension.swift in Sources */,
 				18E48BB220034F0000A3711E /* StoryboardInstantiable.swift in Sources */,
 				1846C6D61FF3758B006BF9FC /* BaseWorker.swift in Sources */,

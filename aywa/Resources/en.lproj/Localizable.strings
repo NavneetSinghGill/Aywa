@@ -1,10 +1,10 @@
 /* 
-  Localizable.strings
-  aywa
-
-  Created by Zoeb on 16/01/18.
-  Copyright © 2018 Alpha Solutions. All rights reserved.
-*/
+ Localizable.strings
+ aywa
+ 
+ Created by Zoeb on 16/01/18.
+ Copyright © 2018 Alpha Solutions. All rights reserved.
+ */
 
 //NSLocalizedString(@"CommonBannerTitle", @"");
 
@@ -24,7 +24,7 @@
 "InvalidUsernameMessage" = "Name should be between 4-30 characters.";
 "PasswordTooShortTitle" = "Password too short.";
 "PasswordTooShortMessage" = "Password should be at least 5 characters long.";
- "Country field required"  = "Country field may not be empty.";
+"Country field required"  = "Country field may not be empty.";
 "Country Name field required"  = "Country name field may not be empty.";
 "PhoneNumberTooShortMessage" = "Phone number field may not be empty and Must be minimum 10 digit.";
 
@@ -45,5 +45,23 @@
 //Reset and forgot password
 "ForgotPassword" = "Forgot password";
 
+//For set title
+"Browse" = "Browse";
+"Plans" = "Plans";
+"Logout" = "Logout";
+"Shows" = "Shows";
+"Search" = "Search";
+"My List" = "My List";
+"Notifications" = "Notifications";
+
+// For Browse
+"MoviesString" = "Movies";
+"TvShowsString" = "TV Shows";
+"NetworksString" = "Networks";
+"DocumentariesString" = "Documentaries";
+"KidString" = "Kids";
+"NewReleasesString" = "New Releases";
+"Recently_AddedString" = "Recently Added";
+"GenresString" = "Genres";
 //Images
 "backButton" = "backButton";
