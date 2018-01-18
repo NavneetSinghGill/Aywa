@@ -74,6 +74,7 @@ class MyListViewController: UIViewController, UIScrollViewDelegate, UIPageViewCo
         pageController.view.backgroundColor = UIColor.clear
         pageController.delegate = self
         pageController.dataSource = self
+        pageController.view.semanticContentAttribute = .forceLeftToRight
         
         for svScroll in pageController.view.subviews as! [UIScrollView] {
             svScroll.delegate = self

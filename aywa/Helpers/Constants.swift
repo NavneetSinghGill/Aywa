@@ -15,6 +15,8 @@ typealias CompletionHandler = (_ success: Bool, _ response: Any?) -> Void
 
 let isiPad: Bool = UIDevice.current.userInterfaceIdiom == .pad
 
+let isArabic: Bool = (UIApplication.shared.keyWindow?.effectiveUserInterfaceLayoutDirection == .rightToLeft)
+
 struct Constants {
     
     // MARK: - General Constants
@@ -154,6 +156,8 @@ struct LocaleKeys {
     static let kNewReleasesString = "NewReleasesString".localize()
     static let kRecently_AddedString = "Recently_AddedString".localize()
     static let kGenresString = "GenresString".localize()
+
+    //Images
     static let kBackButton = "backButton"
     
 }

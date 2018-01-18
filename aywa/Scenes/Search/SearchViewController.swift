@@ -107,7 +107,6 @@ class SearchViewController: UIViewController, SearchDisplayLogic, UISearchBarDel
         let searchNIB = UINib(nibName: Identifiers.homeTableCell, bundle: nil)
         tableView.register(searchNIB, forCellReuseIdentifier: Identifiers.homeTableCell)
         
-        
         let navC = self.tabBarController?.viewControllers?.first as? UINavigationController
         let homeViewController  = navC?.viewControllers.first  as! HomeViewController!
         arrayOfSearch = (homeViewController?.sectionArray)!

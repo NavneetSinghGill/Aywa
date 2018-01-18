@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8P3-nz-1eY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8P3-nz-1eY">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -896,7 +896,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vo5-M4-g0d">
                                 <rect key="frame" x="0.0" y="64" width="375" height="45"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SnT-Ig-Uez">
+                                    <view contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" translatesAutoresizingMaskIntoConstraints="NO" id="SnT-Ig-Uez">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                         <subviews>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uo5-uN-rj7" userLabel="moviesButton">
@@ -1005,7 +1005,7 @@
         <scene sceneID="R3P-q7-yCA">
             <objects>
                 <viewController storyboardIdentifier="MoviesViewController" id="xMM-Eg-AHC" customClass="MoviesViewController" customModule="aywa" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="fZB-wY-L54">
+                    <view key="view" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" id="fZB-wY-L54">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -1104,7 +1104,7 @@ EHJpZ2h0Q29uc3RhbnRWaWV3A
         <scene sceneID="UBB-3k-IBY">
             <objects>
                 <viewController storyboardIdentifier="NetworksViewController" id="CNG-fY-Nwl" customClass="NetworksViewController" customModule="aywa" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="aT1-Xc-yUR">
+                    <view key="view" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" id="aT1-Xc-yUR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -1125,7 +1125,7 @@ EHJpZ2h0Q29uc3RhbnRWaWV3A
                                     <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="30"/>
                                 </variation>
                             </label>
-                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2j6-Un-2tS" userLabel="addButton">
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2j6-Un-2tS" userLabel="addButton">
                                 <rect key="frame" x="132.5" y="116" width="35" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="2j6-Un-2tS" secondAttribute="height" multiplier="35:32" id="FtC-kv-RBC"/>
@@ -1417,7 +1417,7 @@ EHJpZ2h0Q29uc3RhbnRWaWV3A
         <scene sceneID="td6-iD-QoP">
             <objects>
                 <viewController storyboardIdentifier="TVShowsViewController" id="U88-qp-qrh" customClass="TVShowsViewController" customModule="aywa" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="sFh-H0-eiz">
+                    <view key="view" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" id="sFh-H0-eiz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
