@@ -156,6 +156,7 @@
 		F12E69BB20107E4000A80711 /* DropDownExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E69BA20107E4000A80711 /* DropDownExtension.swift */; };
 		F12E69C02010D27600A80711 /* PlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E69BE2010D27600A80711 /* PlanTableViewCell.swift */; };
 		F12E69C12010D27600A80711 /* PlanTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F12E69BF2010D27600A80711 /* PlanTableViewCell.xib */; };
+		F1AA87062011CB610015ECBB /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA87052011CB610015ECBB /* SwipeViewController.swift */; };
 		F1C0F15E200DF29E00651D46 /* StringExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C0F15D200DF29E00651D46 /* StringExtention.swift */; };
 		F1C0F161200E079800651D46 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F1C0F163200E079800651D46 /* Localizable.strings */; };
 		F3E2B83D070F1488BA7CB3B7 /* Pods_aywa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB62771C59A206259FEF1D5 /* Pods_aywa.framework */; };
@@ -318,6 +319,7 @@
 		F12E69BA20107E4000A80711 /* DropDownExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownExtension.swift; sourceTree = "<group>"; };
 		F12E69BE2010D27600A80711 /* PlanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanTableViewCell.swift; sourceTree = "<group>"; };
 		F12E69BF2010D27600A80711 /* PlanTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlanTableViewCell.xib; sourceTree = "<group>"; };
+		F1AA87052011CB610015ECBB /* SwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
 		F1C0F15D200DF29E00651D46 /* StringExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtention.swift; sourceTree = "<group>"; };
 		F1C0F162200E079800651D46 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F1C0F164200E07BC00651D46 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -341,6 +343,7 @@
 				1846C6D81FF375B0006BF9FC /* BaseTabBarController.swift */,
 				18EE12581FF6091300E72BD6 /* SplashViewController.swift */,
 				2396EDBE200496D6008CB272 /* MyListViewController.swift */,
+				F1AA87052011CB610015ECBB /* SwipeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -958,6 +961,7 @@
 				48AAD6631FE508690097C0F3 /* SignupRouter.swift in Sources */,
 				534788E31FE7B7E00031B727 /* ShowImageTableViewCell.swift in Sources */,
 				2396EDF32004F154008CB272 /* NetworksWorker.swift in Sources */,
+				F1AA87062011CB610015ECBB /* SwipeViewController.swift in Sources */,
 				48AAD6601FE508690097C0F3 /* SignupInteractor.swift in Sources */,
 				48728D121FE3AED000780DBF /* CGFloatExtensions.swift in Sources */,
 				1846C6D91FF375B0006BF9FC /* BaseTabBarController.swift in Sources */,
