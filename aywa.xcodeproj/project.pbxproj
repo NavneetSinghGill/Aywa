@@ -154,6 +154,8 @@
 		534788E41FE7B7E00031B727 /* ShowImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 534788E21FE7B7E00031B727 /* ShowImageTableViewCell.xib */; };
 		53C5E8D0200366990026328C /* Main~ipad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48AAD6531FE506390097C0F3 /* Main~ipad.storyboard */; };
 		F12E69BB20107E4000A80711 /* DropDownExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E69BA20107E4000A80711 /* DropDownExtension.swift */; };
+		F12E69C02010D27600A80711 /* PlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E69BE2010D27600A80711 /* PlanTableViewCell.swift */; };
+		F12E69C12010D27600A80711 /* PlanTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F12E69BF2010D27600A80711 /* PlanTableViewCell.xib */; };
 		F1C0F15E200DF29E00651D46 /* StringExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C0F15D200DF29E00651D46 /* StringExtention.swift */; };
 		F1C0F161200E079800651D46 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F1C0F163200E079800651D46 /* Localizable.strings */; };
 		F3E2B83D070F1488BA7CB3B7 /* Pods_aywa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB62771C59A206259FEF1D5 /* Pods_aywa.framework */; };
@@ -314,6 +316,8 @@
 		ADB62771C59A206259FEF1D5 /* Pods_aywa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_aywa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F11BB598200793C5006FBB74 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/UniversalStoryboard.strings; sourceTree = "<group>"; };
 		F12E69BA20107E4000A80711 /* DropDownExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownExtension.swift; sourceTree = "<group>"; };
+		F12E69BE2010D27600A80711 /* PlanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanTableViewCell.swift; sourceTree = "<group>"; };
+		F12E69BF2010D27600A80711 /* PlanTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlanTableViewCell.xib; sourceTree = "<group>"; };
 		F1C0F15D200DF29E00651D46 /* StringExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtention.swift; sourceTree = "<group>"; };
 		F1C0F162200E079800651D46 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F1C0F164200E07BC00651D46 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -460,6 +464,7 @@
 				236F94B21FE8ED5000B16981 /* HomeImagesCollectionViewCell.swift */,
 				534788DA1FE795220031B727 /* HomeHeaderAdvertisementCollectionViewCell.swift */,
 				238BCFCA1FFB558C00D4A0D6 /* BrowseTableViewCell.swift */,
+				F12E69BE2010D27600A80711 /* PlanTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -618,6 +623,7 @@
 				238BCFCE1FFB560300D4A0D6 /* BrowseTableViewCell.xib */,
 				236F94B31FE8ED5000B16981 /* HomeImageVerticalCollectionViewCell.xib */,
 				23EE18511FE9484000B1FB8C /* HomeImageHorizontalCollectionViewCell.xib */,
+				F12E69BF2010D27600A80711 /* PlanTableViewCell.xib */,
 			);
 			name = StoryboardsAndXIBs;
 			sourceTree = "<group>";
@@ -827,6 +833,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F12E69C12010D27600A80711 /* PlanTableViewCell.xib in Resources */,
 				236F94B51FE8ED5000B16981 /* HomeImageVerticalCollectionViewCell.xib in Resources */,
 				48AAD6681FE50B8F0097C0F3 /* LaunchScreen.storyboard in Resources */,
 				48AAD6691FE50B8F0097C0F3 /* Main.storyboard in Resources */,
@@ -992,6 +999,7 @@
 				236B6F681FF60C480050B40E /* ForgotPasswordRouter.swift in Sources */,
 				2393109B1FEA610300337C4B /* HomeSliderBannerPresenter.swift in Sources */,
 				236F94B01FE8DC4E00B16981 /* HomeTableViewCell.swift in Sources */,
+				F12E69C02010D27600A80711 /* PlanTableViewCell.swift in Sources */,
 				2396EDE52004F130008CB272 /* TVShowsRouter.swift in Sources */,
 				23682E191FECDF6E006CF18C /* SearchRouter.swift in Sources */,
 				18EE12541FF5FEAF00E72BD6 /* TokenPresenter.swift in Sources */,

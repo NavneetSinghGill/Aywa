@@ -129,6 +129,11 @@ struct Identifiers {
     static let sIdMoviesViewController = "MoviesViewController"
     static let sIdTVShowsViewController = "TVShowsViewController"
     static let sIdNetworksViewController = "NetworksViewController"
+    
+    //PlansViewController
+    static let selectPlanTableViewCell = "SelectPlan"
+    static let continuePlanTableViewCell = "ContinuePlan"
+    static let planTableViewCell = "PlanTableViewCell"
 }
 
 struct LocaleKeys {

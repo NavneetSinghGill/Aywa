@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Helvetica.ttc">
+            <string>Helvetica</string>
+            <string>Helvetica-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PlanTableViewCell" rowHeight="197" id="KGk-i7-Jjw" customClass="PlanTableViewCell" customModule="aywa" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="389" height="197"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="389" height="196.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" translatesAutoresizingMaskIntoConstraints="NO" id="C9v-9o-xHC" userLabel="ContainerView">
+                        <rect key="frame" x="15" y="5" width="359" height="186.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7.99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCP-xm-pru">
+                                <rect key="frame" x="135" y="67" width="90" height="53"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="46"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/MONTH" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dzj-lA-XxX">
+                                <rect key="frame" x="227" y="95.5" width="63.5" height="18"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="US $ " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DjQ-Ky-PnY">
+                                <rect key="frame" x="80" y="72" width="53" height="24.5"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monthly Membership" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gqb-rd-duB">
+                                <rect key="frame" x="68.5" y="39" width="223" height="28"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(ONE TIME PAYMENT)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1gt-7k-cjI">
+                                <rect key="frame" x="96" y="125" width="167.5" height="18.5"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xCP-xm-pru" firstAttribute="centerY" secondItem="C9v-9o-xHC" secondAttribute="centerY" id="LCi-wo-NVV"/>
+                            <constraint firstItem="DjQ-Ky-PnY" firstAttribute="top" secondItem="xCP-xm-pru" secondAttribute="top" constant="5" id="Lvw-BA-NzL"/>
+                            <constraint firstItem="xCP-xm-pru" firstAttribute="leading" secondItem="DjQ-Ky-PnY" secondAttribute="trailing" constant="2" id="Ngd-y3-65C"/>
+                            <constraint firstItem="Dzj-lA-XxX" firstAttribute="baseline" secondItem="xCP-xm-pru" secondAttribute="baseline" id="TIg-EI-bCG"/>
+                            <constraint firstItem="xCP-xm-pru" firstAttribute="top" secondItem="Gqb-rd-duB" secondAttribute="bottom" id="YUb-gy-q7e"/>
+                            <constraint firstItem="1gt-7k-cjI" firstAttribute="centerX" secondItem="C9v-9o-xHC" secondAttribute="centerX" id="fQV-cR-wEN"/>
+                            <constraint firstItem="xCP-xm-pru" firstAttribute="centerX" secondItem="C9v-9o-xHC" secondAttribute="centerX" id="pnH-7S-QSa"/>
+                            <constraint firstItem="1gt-7k-cjI" firstAttribute="top" secondItem="xCP-xm-pru" secondAttribute="bottom" constant="5" id="pzE-4Q-i3C"/>
+                            <constraint firstItem="Dzj-lA-XxX" firstAttribute="leading" secondItem="xCP-xm-pru" secondAttribute="trailing" constant="2" id="t6h-xR-xNN"/>
+                            <constraint firstItem="Gqb-rd-duB" firstAttribute="centerX" secondItem="C9v-9o-xHC" secondAttribute="centerX" id="wVE-3j-efG"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="C9v-9o-xHC" secondAttribute="bottom" constant="5" id="34n-FB-1ER"/>
+                    <constraint firstAttribute="trailing" secondItem="C9v-9o-xHC" secondAttribute="trailing" constant="15" id="dBS-3z-gGj"/>
+                    <constraint firstItem="C9v-9o-xHC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="djB-2y-Vkp"/>
+                    <constraint firstItem="C9v-9o-xHC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="lhn-dV-xTA"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="containerView" destination="C9v-9o-xHC" id="L1U-d2-dVH"/>
+                <outlet property="currencyAmountLabel" destination="DjQ-Ky-PnY" id="1Bd-MJ-Bfb"/>
+                <outlet property="membershipAmountLabel" destination="xCP-xm-pru" id="rAI-QN-jrl"/>
+                <outlet property="membershipDurationLabel" destination="Dzj-lA-XxX" id="6eV-bd-q4T"/>
+                <outlet property="membershipLabel" destination="Gqb-rd-duB" id="7X8-mx-rV5"/>
+                <outlet property="paymentLabel" destination="1gt-7k-cjI" id="Tdh-ER-iC2"/>
+            </connections>
+            <point key="canvasLocation" x="69.5" y="130.5"/>
+        </tableViewCell>
+    </objects>
+</document>

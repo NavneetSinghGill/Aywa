@@ -21,6 +21,8 @@ class PlansViewController: UIViewController, PlansDisplayLogic
 {
   var interactor: PlansBusinessLogic?
   var router: (NSObjectProtocol & PlansRoutingLogic & PlansDataPassing)?
+    
+    var selectedCellIndex = 0
 
   // MARK: Object lifecycle
   
@@ -50,13 +52,16 @@ class PlansViewController: UIViewController, PlansDisplayLogic
     presenter.viewController = viewController
     router.viewController = viewController
     router.dataStore = interactor
-  }
+    }
     func initialiseView() {
         // Initialization code
-          navigationBarWithLeftSideTitle(isTitle: false, titleName: LocaleKeys.kPlans)
+        navigationBarWithLeftSideTitle(isTitle: false, titleName: LocaleKeys.kPlans)
+        
+        let nib  = UINib(nibName: Identifiers.planTableViewCell, bundle: Bundle.main)
+        tableView.register(nib, forCellReuseIdentifier: Identifiers.planTableViewCell)
     }
-  // MARK: Routing
-  
+    // MARK: Routing
+    
   override func prepare(for segue: UIStoryboardSegue, sender: Any?)
   {
     if let scene = segue.identifier {
@@ -77,7 +82,7 @@ class PlansViewController: UIViewController, PlansDisplayLogic
   
   // MARK: Do something
   
-  //@IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var tableView: UITableView!
   
   func doSomething()
   {
@@ -89,4 +94,47 @@ class PlansViewController: UIViewController, PlansDisplayLogic
   {
     //nameTextField.text = viewModel.name
   }
+}
+
+extension PlansViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 || section == 2 {
+            return 1
+        } else {
+            return 3
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.section == 0 {
+            return tableView.dequeueReusableCell(withIdentifier: Identifiers.selectPlanTableViewCell, for: indexPath)
+        } else if indexPath.section == 2 {
+            return tableView.dequeueReusableCell(withIdentifier: Identifiers.continuePlanTableViewCell, for: indexPath)
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.planTableViewCell, for: indexPath) as! PlanTableViewCell
+            cell.isSelectedPlan = indexPath.row == selectedCellIndex
+            return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedCellIndex = indexPath.row
+        tableView.reloadData()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            return 75
+        } else if indexPath.section == 2 {
+            return 85
+        } else {
+            return 140
+        }
+    }
+    
 }
