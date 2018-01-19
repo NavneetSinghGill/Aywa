@@ -21,11 +21,11 @@ protocol HomeDisplayLogic: class
     
 }
 
-class HomeViewController: BPViewController, HomeDisplayLogic, UITableViewDelegate, UITableViewDataSource
+class HomeViewController: BPViewController, HomeDisplayLogic, UITableViewDelegate, UITableViewDataSource, HomeSliderBannerForPlans
 {
     var interactor: HomeBusinessLogic?
     var router: (NSObjectProtocol & HomeRoutingLogic & HomeDataPassing)?
-    let homeSliderBannerViewController  = "HomeSliderBannerViewController"
+   
     
     var homeHeader: UIViewController!
     var catalogIdForHomeSection: Int? = nil
@@ -74,6 +74,7 @@ class HomeViewController: BPViewController, HomeDisplayLogic, UITableViewDelegat
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.separatorStyle = .none
+      
         
         // call router
         router?.routeToMoveHomeBannerViewController()
@@ -181,7 +182,11 @@ class HomeViewController: BPViewController, HomeDisplayLogic, UITableViewDelegat
         self.tableView.reloadData()
         print(response)
     }
-    
+    //MARK:-  For  Plans Protocal Method
+    func gotoPlans() {
+        print("GotoPlansView")
+        router?.routeToMovePlansViewController()
+    }
     //MARK: For StatusBarStyle
     //    override var preferredStatusBarStyle: UIStatusBarStyle {
     //        return .lightContent

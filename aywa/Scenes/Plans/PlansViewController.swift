@@ -53,23 +53,7 @@ class PlansViewController: UIViewController, PlansDisplayLogic
   }
     func initialiseView() {
         // Initialization code
-        
-//        let nib = UINib(nibName: Identifiers.homeImageHorizontalCollectionViewCell, bundle: Bundle.main)
-//        collectionView.register(nib, forCellWithReuseIdentifier: Identifiers.homeImageHorizontalCollectionViewCell)
-//
-//        self.collectionView.isHidden = true
-//        self.labelForAddShows.isHidden = true
-//        self.buttonForAddShows.isHidden = true
-//        if setTitle.isEmpty {
-//            navigationBarWithLeftSideTitle(isTitle: false, titleName: "Shows")
-//            // Call Shows Request
-//            doMyListShows()
-//
-//        }else{
-//            navigationBarWithLeftSideTitle(isTitle: false, titleName: setTitle)
-//            showCollectionView()
-//        }
-          navigationBarWithLeftSideTitle(isTitle: false, titleName: "Plans")
+          navigationBarWithLeftSideTitle(isTitle: false, titleName: LocaleKeys.kPlans)
     }
   // MARK: Routing
   
@@ -88,7 +72,7 @@ class PlansViewController: UIViewController, PlansDisplayLogic
   override func viewDidLoad()
   {
     super.viewDidLoad()
-    doSomething()
+    initialiseView()
   }
   
   // MARK: Do something

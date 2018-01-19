@@ -14,29 +14,26 @@ import UIKit
 import ObjectMapper
 
 let sectionURL = "/sections"
-
+let meURL = "/me"
 enum Home
 {
     // MARK: Use cases
     
     enum Section
     {
-       /* struct Request
+        //Request For Me
+        struct RequestForMe
         {
             func baseRequest() -> BaseRequest {
                 let baseRequest = BaseRequest()
                 baseRequest.urlPath = sectionURL
-                baseRequest.parameters[Constants.kIncludeShowsKey] = Constants.kIncludeShowsValue
-                baseRequest.parameters[Constants.kCatalogIdKey] = 0 // 2 For home Screen
-                baseRequest.parameters[Constants.kMenuSectionsOnlyKey] = Constants.kMenuSectionsOnlyValue
                 baseRequest.parameters[BaseRequest.hasArrayResponse] = true
                 return baseRequest
             }
-        }*/
-        // Request with catalogId
+        }
         struct Request
         {
-             var catalogID :Int?
+            var catalogID :Int?
             
             func baseRequest() -> BaseRequest {
                 let baseRequest = BaseRequest()
@@ -48,22 +45,21 @@ enum Home
                 return baseRequest
             }
         }
-
+       
         // Request For Browse For sections
-        
         struct RequestForBrowseSection
         {
             func baseRequest() -> BaseRequest {
                 let baseRequest = BaseRequest()
                 baseRequest.urlPath = sectionURL
-               // baseRequest.parameters[Constants.kMenuSectionsOnlyKey] = Constants.kMenuSectionsTrueValue
+                // baseRequest.parameters[Constants.kMenuSectionsOnlyKey] = Constants.kMenuSectionsTrueValue
                 baseRequest.parameters[Constants.kMenuSectionsOnlyKey] = Constants.kMenuSectionsTrueValue
                 baseRequest.parameters[Constants.kIncludeShowsKey] = Constants.kMenuSectionsTrueValue
                 baseRequest.parameters[BaseRequest.hasArrayResponse] = true
                 return baseRequest
             }
         }
-        
+        // Response For Section
         struct Response: Mappable {
             
             // MARK: Declaration for string constants to be used to decode and also serialize.
@@ -291,7 +287,9 @@ enum Home
             }
             
         }
-        
+        // Response For Me
+        struct ResponseForMe {
+        }
         struct ViewModel
         {
         }

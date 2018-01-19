@@ -16,6 +16,7 @@ import UIKit
 {
     func routeToMoveHomeBannerViewController()
     func routeSelectedRowDataMoveViewController()
+    func routeToMovePlansViewController()
 }
 
 protocol HomeDataPassing
@@ -34,6 +35,12 @@ class HomeRouter: NSObject, HomeRoutingLogic, HomeDataPassing
         let destinationVC = HomeSliderBannerViewController.create(of: .UniversalStoryboard)
         passDataToHomeSliderBannerCatalogId(source: viewController!, destination: destinationVC)
         addHomeBanner(source: viewController!, destination: destinationVC)
+        destinationVC.delegateForHomeSliderBanner = viewController
+    }
+    func routeToMovePlansViewController()
+    {
+        let destinationViewController = PlansViewController.create(of: .UniversalStoryboard)
+        navigateToSomewhere(source: viewController!, destination: destinationViewController)
     }
     
     // For Move Movie View Controller If TableView Selected Row Vertical or Move Show ViewController (If Row data  Horizontal)

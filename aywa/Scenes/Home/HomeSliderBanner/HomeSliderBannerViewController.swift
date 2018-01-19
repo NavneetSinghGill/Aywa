@@ -13,19 +13,29 @@
 import UIKit
 import DropDown
 import FBSDKLoginKit
+import BPViewsSubviewsInOutAnimation
 
 protocol HomeSliderBannerDisplayLogic: class
 {
-    func displayError(response: HomeSliderBanner.SliderBanner.Response)
+     func displayError(response: HomeSliderBanner.SliderBanner.Response)
     func displayHomeScreen(response: HomeSliderBanner.SliderBanner.Response)
+   
 }
+ protocol HomeSliderBannerForPlans {
+    func gotoPlans()
+ }
 
-class HomeSliderBannerViewController: UIViewController, HomeSliderBannerDisplayLogic
+class HomeSliderBannerViewController: BPViewController, HomeSliderBannerDisplayLogic
 {
     var interactor: HomeSliderBannerBusinessLogic?
     var router: (NSObjectProtocol & HomeSliderBannerRoutingLogic & HomeSliderBannerDataPassing)?
     var catalogIdForHomeSlider: Int? = nil
-
+    
+    var sliderBannarArray = [HomeSliderBanner.SliderBanner.Banners]()
+    
+    //2. create delegate variable
+    var delegateForHomeSliderBanner: HomeSliderBannerForPlans?
+    
     
     // DropDowns
     let menuDropDown = DropDown()
@@ -85,11 +95,7 @@ class HomeSliderBannerViewController: UIViewController, HomeSliderBannerDisplayL
         super.viewDidLoad()
         initialiseView()
     }
-    
     // MARK: Do Slide Banner
-    
-    var sliderBannarArray = [HomeSliderBanner.SliderBanner.Banners]()
-    
     @IBOutlet weak var homeHeaderCollectionView: UICollectionView!
     @IBOutlet weak var menuButton: UIButton!
     
@@ -107,7 +113,6 @@ class HomeSliderBannerViewController: UIViewController, HomeSliderBannerDisplayL
     //MARK: Do Menu Action
     func doMenuAction() {
         print("Perform Menu Action")
-        
         menuDropDown.showWithLocalisation()
     }
     
@@ -130,7 +135,7 @@ class HomeSliderBannerViewController: UIViewController, HomeSliderBannerDisplayL
         self.homeHeaderCollectionView.reloadData()
         
     }
-    
+   
     //MARK: For Call Slider Banner API
     func doCallSliderBannerAPI()  {
         var request = HomeSliderBanner.SliderBanner.Request()
@@ -156,7 +161,7 @@ class HomeSliderBannerViewController: UIViewController, HomeSliderBannerDisplayL
         
         // Action triggered on selection
         menuDropDown.selectionAction = {(index, item) in
-           
+            
             switch item {
             case LocaleKeys.kLogout:
                 let loginManager = FBSDKLoginManager()
@@ -164,7 +169,10 @@ class HomeSliderBannerViewController: UIViewController, HomeSliderBannerDisplayL
                 SecurityStorageWorker().updateLoggedInState(isLoggedIn: false)
                 ApplicationDelegate.setLandingAsRootViewController()
             case LocaleKeys.kPlans:
-                print(item)
+                if let _ = self.delegateForHomeSliderBanner {
+                    self.delegateForHomeSliderBanner?.gotoPlans()
+                }
+                
             default:
                 print(item)
             }
