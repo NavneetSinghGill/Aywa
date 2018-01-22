@@ -162,13 +162,13 @@ class HomeSliderBannerViewController: BPViewController, HomeSliderBannerDisplayL
         // Action triggered on selection
         menuDropDown.selectionAction = {(index, item) in
             
-            switch item {
-            case LocaleKeys.kLogout:
+            switch index {
+            case 0: //Logout
                 let loginManager = FBSDKLoginManager()
                 loginManager.logOut() //TODO Fackbook Logout
                 SecurityStorageWorker().updateLoggedInState(isLoggedIn: false)
                 ApplicationDelegate.setLandingAsRootViewController()
-            case LocaleKeys.kPlans:
+            case 1: // Plans
                 if let _ = self.delegateForHomeSliderBanner {
                     self.delegateForHomeSliderBanner?.gotoPlans()
                 }

@@ -64,7 +64,7 @@ class HomeRouter: NSObject, HomeRoutingLogic, HomeDataPassing
     
     // MARK: Navigation
     func navigateToSomewhere(source: HomeViewController, destination: UIViewController){
-        source.bpPush(viewController: destination)
+        source.bpPush(viewController: destination, animated: true)
     }
     
     func addHomeBanner(source: HomeViewController, destination: UIViewController){

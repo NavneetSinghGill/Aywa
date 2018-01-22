@@ -44,7 +44,7 @@
 
 //Reset and forgot password
 "ForgotPassword" = "هل نسيت كلمة المرور؟";
-"CheckEmailforNewPassword" = "يرجى التحقق من بريدك الإلكتروني لكلمة المرور الجديدة"
+"CheckEmailforNewPassword" = "يرجى التحقق من بريدك الإلكتروني لكلمة المرور الجديدة";
 //For set title
 "Browse" = "تصفح";
 "Plans" = "خطط";
