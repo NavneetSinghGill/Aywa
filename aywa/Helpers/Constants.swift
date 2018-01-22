@@ -138,6 +138,7 @@ struct LocaleKeys {
     static let kSignUp = "SignUp"
     static let kFbSignUp = "FbSignUp"
     static let kForgotPassword = "ForgotPassword"
+    static let kCheckEmailforNewPassword = "CheckEmailforNewPassword"
     
     static let kBrowse = "Browse".localize()
     static let kPlans = "Plans".localize()

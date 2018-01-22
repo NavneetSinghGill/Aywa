@@ -372,6 +372,13 @@
 			path = Token;
 			sourceTree = "<group>";
 		};
+		2326B0E52011F9DF009E239E /* MyList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MyList;
+			sourceTree = "<group>";
+		};
 		2356E9331FEA4423009B7AC8 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -669,6 +676,7 @@
 		48B1122F1FDE5B8F001E92FE /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				2326B0E52011F9DF009E239E /* MyList */,
 				237F1AA92010B5D6005C185A /* Notifications */,
 				237F1A9C20107B47005C185A /* Plans */,
 				2396EDC02004A9B5008CB272 /* MyListOptions */,
@@ -998,7 +1006,6 @@
 				2356E9411FEA4AD8009B7AC8 /* LoginModels.swift in Sources */,
 				237F1AC02010B715005C185A /* NotificationsViewController.swift in Sources */,
 				232792181FF5131C00A218B6 /* FacebookWorker.swift in Sources */,
-				23682E321FECDFA6006CF18C /* AlertViewController.swift in Sources */,
 				F12E69BB20107E4000A80711 /* DropDownExtension.swift in Sources */,
 				2396EDE42004F130008CB272 /* TVShowsPresenter.swift in Sources */,
 				F1C0F15E200DF29E00651D46 /* StringExtention.swift in Sources */,

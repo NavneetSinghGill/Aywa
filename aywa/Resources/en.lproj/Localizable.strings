@@ -44,6 +44,7 @@
 
 //Reset and forgot password
 "ForgotPassword" = "Forgot password";
+"CheckEmailforNewPassword" = "Please check your email for your new password";
 
 //For set title
 "Browse" = "Browse";

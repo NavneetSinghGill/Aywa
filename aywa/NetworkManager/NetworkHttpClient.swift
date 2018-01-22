@@ -72,7 +72,6 @@ class NetworkHttpClient: NSObject {
         if headers == nil {
             headers = NetworkHttpClient.getHeader() as? HTTPHeaders
         }
-        
         if parameters?[BaseRequest.hasArrayResponse] != nil {
             var params:Dictionary<String, Any> = parameters!
             params[BaseRequest.hasArrayResponse] = nil
@@ -89,6 +88,30 @@ class NetworkHttpClient: NSObject {
                 }
             }
         }
+        else if parameters?[BaseRequest.hasNullResponse] != nil {
+            
+            var params:Dictionary<String, Any> = parameters!
+            params[BaseRequest.hasArrayResponse] = nil
+            Alamofire.request(completeURL, method: methodType, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseJSON { (response) -> Void in
+                switch response.result {
+                case .success(let value):
+                    print(value)
+                    success(response)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    failure(response)
+                }
+//                if response.result.isSuccess {
+//                    print(responseObject.result)
+//                    //                let resJson = JSON(response.result.value!)
+//                    success(responseObject)
+//                }
+//                if response.result.isFailure {
+//                    //                let error : Error = response.result.error!
+//                    failure(responseObject)
+//                }
+            }
+        }
         else
         {
             Alamofire.request(completeURL, method: methodType, parameters: parameters, encoding: (methodType == .get ? URLEncoding.default : JSONEncoding.default), headers: headers).responseObject { (response: DataResponse<T>) in
@@ -103,6 +126,7 @@ class NetworkHttpClient: NSObject {
                 }
             }
         }
+        
     }
     
     func multipartPostAPICall(_ strURL: String, parameters: Dictionary<String, Any>?, data: Data, name: String, fileName: String, mimeType: String, success: @escaping successBlock, failure: @escaping failureBlock) -> Void{

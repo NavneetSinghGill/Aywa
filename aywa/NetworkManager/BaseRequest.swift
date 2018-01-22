@@ -10,8 +10,8 @@ import UIKit
 import Alamofire
 
 class BaseRequest: NSObject {
-    static let hasArrayResponse = "HasArrayResponse"
-
+  static let hasArrayResponse = "HasArrayResponse"
+  static let hasNullResponse = "HasNullResponse"
     var urlPath: String
     var requestType: NSInteger
     var fileData: Data

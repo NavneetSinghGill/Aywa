@@ -86,11 +86,11 @@ class RealAPI: NSObject {
     func handleSuccessResponse<T:Mappable>(response: DataResponse<T>?, responseArray: DataResponse<[T]>?, block:@escaping CompletionHandler) -> Void {
         let responseStatus = response != nil ? response?.response : responseArray?.response
         
-        let message: String = String.init(format: "Success:- URL:%@\n", (responseStatus?.url?.absoluteString)!)
-        print(message)
+//        let message: String = String.init(format: "Success:- URL:%@\n", (responseStatus?.url?.absoluteString)!)
+//        print(message)
         
         if responseStatus?.statusCode == Constants.ResponseStatusSuccess || responseStatus?.statusCode == Constants.ResponseStatusCreated {
-            if response != nil || responseArray != nil {
+            if response != nil || responseArray != nil || (response?.result.isSuccess)! {
                 isForbiddenRetry = false
                 let value = getResultValue(response: response, responseArray: responseArray)
                 if let result = value {

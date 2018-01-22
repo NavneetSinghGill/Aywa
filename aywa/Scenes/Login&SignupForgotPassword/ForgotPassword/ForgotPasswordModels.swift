@@ -27,6 +27,7 @@ enum ForgotPassword
                 let baseRequest = BaseRequest()
                 baseRequest.urlPath = resetPasswordURL
                 baseRequest.parameters[Constants.kEmailKey] = email
+                baseRequest.parameters[BaseRequest.hasNullResponse] = true
                 return baseRequest
             }
         }
