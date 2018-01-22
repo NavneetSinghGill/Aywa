@@ -92,7 +92,7 @@ class NetworkHttpClient: NSObject {
             
             var params:Dictionary<String, Any> = parameters!
             params[BaseRequest.hasArrayResponse] = nil
-            Alamofire.request(completeURL, method: methodType, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseJSON { (response) -> Void in
+            Alamofire.request(completeURL, method: methodType, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseString { (response) -> Void in
                 switch response.result {
                 case .success(let value):
                     print(value)
